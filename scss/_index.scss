@@ -1,0 +1,31 @@
+// Global defaults
+$black: #000;
+$blue: blue;
+$green: green;
+$grey: #444;
+$grey-light: #777;
+$purple: purple;
+$red: red;
+$yellow: yellow;
+
+$primary: $purple;
+$secondary: $blue;
+$success: $green;
+$info: $blue;
+$warning: $yellow;
+$text: $black;
+$link: $black;
+$link-hover: $blue;
+
+@charset "utf-8";
+@import "base-normalize.scss";
+@import "buttons.scss";
+@import "columns.scss";
+@import "elements.scss";
+@import "forms.scss";
+@import "forms-vue-select.scss";
+@import "layout.scss";
+@import "modal.scss";
+@import "modifiers.scss";
+@import "spacing.scss";
+@import "tooltips.scss";

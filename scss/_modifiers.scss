@@ -30,6 +30,26 @@ $under-width: 3px;
     }
   }
 
+/* ---- Colors ----------------------- */
+
+  .c-primary { color: $primary; }
+  .c-secondary { color: $secondary; }
+  .c-success { color: $success; }
+  .c-info { color: $info; }
+  .c-warning { color: $warning; }
+  .c-text { color: $text; }
+  .c-link { color: $link; }
+  .c-link-hover { color: $link-hover; }
+
+  .bg-primary { background-color: $primary; }
+  .bg-secondary { background-color: $secondary; }
+  .bg-success { background-color: $success; }
+  .bg-info { background-color: $info; }
+  .bg-warning { background-color: $warning; }
+  .bg-text { background-color: $text; }
+  .bg-link { background-color: $link; }
+  .bg-link-hover { background-color: $link-hover; }
+  
 /* ---- Helpers ---------------------- */
 
   .left {
@@ -140,3 +160,4 @@ $under-width: 3px;
   .fade-leave-to {
     opacity: 0.1;
   }
+

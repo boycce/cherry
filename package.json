@@ -5,7 +5,7 @@
   "author": "Ricky Boyce <boycce@gmail.com> (https://rickyboyce.com)",
   "repository": "github:Boycce/cherry",
   "license": "MIT",
-  "main": "cherry.scss",
+  "main": "scss/_index.scss",
   "style": "css/cherry.min.css",
   "keywords": [
     "css",
@@ -26,13 +26,12 @@
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/cherry.css css/cherry.css",
     "build-cleancss": "cleancss -o css/cherry.min.css css/cherry.css",
     "build-clean": "rimraf css",
-    "build-sass": "node-sass --output-style expanded --source-map true cherry.scss css/cherry.css",
+    "build-sass": "node-sass --output-style expanded --source-map true scss/_index.scss css/cherry.css",
     "start": "npm run build-sass -- --watch"
   },
   "files": [
     "css",
     "scss",
-    "cherry.scss",
     "README.md"
   ]
 }

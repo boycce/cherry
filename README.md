@@ -18,7 +18,7 @@ npm install --save css-cherry
 After installation, you can then import the SCSS into your project sourcing from your `node_modules` directory:
 
 ```scss
-@import "../node_modules/css-cherry/cherry";
+@import "../node_modules/css-cherry/scss";
 ```
 
 ## Browser Support

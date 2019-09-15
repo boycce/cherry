@@ -291,7 +291,7 @@ form.loading .btn .loader {
 
 /* Button two (light purple) */
 .btn-two {
-  color: blue;
+  color: purple;
   background: #F7F5F8;
   box-shadow: 0 0 0px 2px rgba(84, 46, 167, 0.04) inset;
 }
@@ -299,12 +299,12 @@ form.loading .btn .loader {
 .btn-two:hover,
 .btn-two:focus {
   background: #F7F5F8;
-  color: blue;
+  color: purple;
   box-shadow: 0 0 0px 2px rgba(113, 81, 181, 0.18) inset;
 }
 
 form.loading .btn-two .loader {
-  color: blue;
+  color: purple;
 }
 
 /* Button three (white) */
@@ -1946,6 +1946,71 @@ body.dashboard .modal .x1 {
 .by-3 {
   border-top: 3px solid #f5f5f5;
   border-bottom: 3px solid #f5f5f5;
+}
+
+/* ---- Colors ----------------------- */
+.c-primary {
+  color: purple;
+}
+
+.c-secondary {
+  color: blue;
+}
+
+.c-success {
+  color: green;
+}
+
+.c-info {
+  color: blue;
+}
+
+.c-warning {
+  color: yellow;
+}
+
+.c-text {
+  color: #000;
+}
+
+.c-link {
+  color: #000;
+}
+
+.c-link-hover {
+  color: blue;
+}
+
+.bg-primary {
+  background-color: purple;
+}
+
+.bg-secondary {
+  background-color: blue;
+}
+
+.bg-success {
+  background-color: green;
+}
+
+.bg-info {
+  background-color: blue;
+}
+
+.bg-warning {
+  background-color: yellow;
+}
+
+.bg-text {
+  background-color: #000;
+}
+
+.bg-link {
+  background-color: #000;
+}
+
+.bg-link-hover {
+  background-color: blue;
 }
 
 /* ---- Helpers ---------------------- */
