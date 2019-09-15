@@ -1,0 +1,7 @@
+script:
+- echo "skipping tests"
+
+language: sass
+
+before_install:
+- gem install sass
