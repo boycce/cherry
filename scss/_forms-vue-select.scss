@@ -1,0 +1,265 @@
+/* ---- Main ------------------------- */
+
+  .v-select {
+    position: relative;
+  }
+  .vs__dropdown-toggle {
+    // container for selected-choices & search-input & actions
+    white-space: normal;
+    cursor: pointer;
+    padding-bottom: 7px !important;
+  }
+  .vs__selected-options {
+    // container for selected-choices & search-input
+    display: flex;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    position: relative;
+    cursor: pointer;
+  }
+
+/* ---- Selected text / tag ---------- */
+
+  .vs__selected {
+    display: flex;
+    align-items: center;
+    background-color: #444444;
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 0.8em;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin: 0 7px 7px 0;
+  }
+  .vs--single .vs__selected {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    padding: 0;
+  }
+  .vs--single .vs__selected {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 0.95rem;
+  }
+  .vs--single.vs--searchable.vs--open .vs__selected {
+    position: absolute;
+    opacity: .4;
+  }
+  .vs--single.vs--searching .vs__selected {
+    display: none;
+  }
+  .vs__deselect { // x button on tags
+    display: inline-flex;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0 -5px 0 5px;
+    padding: 5px;
+    border: 0;
+    cursor: pointer;
+    background: none;
+    fill: rgb(255, 255, 255);
+    text-shadow: 0 1px 0 #fff;
+    transition: all 0.2s ease;
+  }
+  .vs__deselect:hover {
+    fill: rgb(220, 220, 220);
+  }
+
+/* ---- Search input ----------------- */
+
+  .vs__search,
+  .vs__search:active,
+  .vs__search:focus {
+    width: 0;
+    max-width: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    flex-grow: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0 7px 7px 0;
+    background: transparent;
+  }
+  .vs--single.vs--searching:not(.vs--open):not(.vs--loading) .vs__search {
+    opacity: .2;
+  }
+
+/* ---- Menu ------------------------- */
+
+  .vs__dropdown-menu {
+    list-style: none;
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    top: 55px;
+    top:calc(100% - -5px);
+    max-height: 336px;
+    overflow-y: auto;
+    z-index: 5;
+    background: white;
+    padding: 1px;
+    margin: 0;
+    margin-top: 0px;
+    margin-left: -1px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 16px, inset rgba(60, 60, 60, 0.55) 0 0px 1px;
+    background-clip: content-box;
+    box-sizing: content-box;
+    cursor: default;
+  }
+  .vs__dropdown-menu {
+    .vs__dropdown-option {
+      position: relative;
+      list-style: none;
+      font-size: 0.9rem;
+      text-indent: 27px;
+      margin: 0px -1px;
+      font-weight: 400;
+      cursor: pointer;
+      height: 27px;
+      line-height: 27px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      text-shadow: none;
+      text-transform: capitalize;
+    }
+
+    /* First / last child */
+
+    .vs__dropdown-option:first-child {
+      margin: -1px -1px 0px -1px;
+      border-top: 3px solid transparent;
+      box-sizing: content-box;
+    }
+    .vs__dropdown-option:last-child {
+      margin: 0px -1px -1px -1px;
+      border-bottom: 2px solid transparent;
+      box-sizing: content-box;
+    }
+    .vs__dropdown-option--highlight:last-child,
+    .vs__dropdown-option--selected:last-child {
+      box-shadow: 0px 1px 0px 0px #000000;
+    }
+    .vs__dropdown-option--highlight.admin:last-child,
+    .vs__dropdown-option--selected.admin:last-child {
+      box-shadow: 0px 1px 0px 0px #285567, white 0 -5px 0 -1px, #dadada 0 -6px 0 -1px;
+    }
+    .vs__no-options,
+    .vs__dropdown-option:last-child:first-child {
+      box-shadow: none;
+      margin: -1px -1px -1px -1px;
+      height: 34px;
+      line-height: 31px;
+      padding: 0 !important;
+    }
+    .vs__no-options {
+      text-align: center;
+      height: 45px;
+      line-height: 45px;
+    }
+
+    /* Admin */
+
+    .vs__dropdown-option.admin {
+      box-shadow: 0px 1px 0px 0px #c7d0d2, white 0 -5px 0 -1px, #dadada 0 -6px 0 -1px;
+      background: rgb(40, 107, 123);
+      background: rgb(237, 243, 245);
+      margin: 9px 0px 0px 0px;
+      color: #3d515a;
+    }
+    .vs__dropdown-option--selected.admin,
+    .vs__dropdown-option--highlight.admin {
+      background: rgb(57, 110, 130);
+      color: #fff;
+      margin-left: -1px;
+      margin-right: -1px;
+      text-indent: 32px;
+    }
+
+    /* Hover */
+
+    .vs__dropdown-option--highlight,
+    .vs__dropdown-option--selected {
+      color: #fff;
+      background: #333;
+    }
+    //     @media only screen and (max-width: 480px) {
+    //       select {
+    //         display: inherit !important;
+    //       }
+    //       .minict_wrapper {
+    //         display: none !important;
+    //       }
+    //     }
+  }
+
+  /* Menu animation */
+
+  .vs__fade-enter-active,
+  .vs__fade-leave-active {
+    transition: opacity 0s ease;
+  }
+  .vs__fade-leave-active {
+    transition: opacity 0s 0s ease;
+  }
+  .vs__fade-enter,
+  .vs__fade-leave-to {
+    opacity: 0;
+  }
+
+/* ---- Spinner ---------------------- */
+
+  .vs__spinner {
+    align-self: center;
+    opacity: 0;
+    font-size: 5px;
+    text-indent: -9999em;
+    overflow: hidden;
+    border: .9em solid hsla(0, 0%, 39.2%, .1);
+    border-left-color: rgba(60, 60, 60, .45);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: vSpinner 1.1s linear infinite;
+    animation: vSpinner 1.1s linear infinite;
+    transition: opacity .1s;
+  }
+  .vs__spinner,
+  .vs__spinner:after {
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+  }
+  .vs--loading .vs__spinner {
+    opacity: 1;
+  }
+  @keyframes vSpinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(1turn);
+      transform: rotate(1turn);
+    }
+  }
+
+/* ---- Misc  ------------------------ */
+
+  .vs__search::-ms-clear,
+  .vs__search::-webkit-search-cancel-button,
+  .vs__search::-webkit-search-decoration,
+  .vs__search::-webkit-search-results-button,
+  .vs__search::-webkit-search-results-decoration {
+    display: none;
+  }
+  .vs__open-indicator {
+    display: none;
+  }

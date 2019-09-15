@@ -1,0 +1,198 @@
+$body-background-color: #fff !default;
+$body-color: $text !default;
+$body-font-family: Open Sans, sans-serif !default;
+$body-font-size: 15px !default;
+$body-font-weight: 400 !default;
+$body-line-height: 1.5em !default;
+
+/* ---- Main ------------------------- */
+
+  html {
+    font-size: $body-font-size;
+    -webkit-text-size-adjust: 100%;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @media only screen and (max-width: 1090px) {
+    html {
+      font-size: $body-font-size - 1px;
+    }
+  }
+  body {
+    background-color: $body-background-color;
+    $body-color: $text !default;
+    $body-font-family: Open Sans, sans-serif, arial !default;
+    $body-font-size: 15px !default;
+    $body-font-weight: 400 !default;
+    $body-line-height: 1.5em !default;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  *:focus {
+    outline: none !important;
+  }
+  q,
+  div,
+  article,
+  aside,
+  details,
+  figcaption,
+  form,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  menu,
+  nav,
+  section,
+  summary {
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  a {
+    background-color: transparent; /* ie10 */
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+  hr {
+    border: none;
+    height: 0;
+    border-bottom: 1px solid #f0f0f0;
+    overflow: hidden;
+  }
+  img {
+    border-style: none;
+  }
+  pre, code, kbd, samp {
+    font-family: monospace, monospace;
+    font-size: 0.9em;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  ul, ol, li {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+/* ---- Forms ------------------------ */
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+  }
+  button,
+  input {
+    overflow: visible;
+  }
+  button,
+  select {
+    text-transform: none;
+  }
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+  [type="checkbox"],
+  [type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+  }
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+  [type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+  [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+  [hidden] {
+    display: none;
+  }
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+  input[type="date"],
+  input[type="datetime-local"],
+  input[type="time"],
+  input[type="month"],
+  input[type="week"] {
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+  textarea {
+    overflow: auto;
+  }
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+
+/* ---- Selection -------------------- */
+
+  ::-moz-selection {
+    background: #5984FF;
+    text-shadow: none;
+    color: #fff;
+  }
+  ::selection {
+    background: #5984FF;
+    text-shadow: none;
+    color: #fff;
+  }
+  ::-moz-selection {
+    background: #5984FF;
+    text-shadow: none;
+    color: #fff;
+  }

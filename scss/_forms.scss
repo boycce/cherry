@@ -1,0 +1,345 @@
+/* ---- Main ------------------------- */
+
+  form input,
+  form select,
+  textarea,
+  .input,
+  .vs__dropdown-toggle {
+    width: 100%;
+    padding: 13px 16px 14px;
+    margin-bottom: 2em;
+    font-family: Muli, sans-serif;
+    color: #281C13;
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.5px;
+    background: #fff; //fbfbfb
+    border: 1px solid rgba(121, 121, 121, 0.3);
+    box-shadow: 0 0 0 1px transparent;
+    box-sizing: border-box;
+    border-radius: 3px;
+    vertical-align: top;  
+    transition: border-color ease .2s, box-shadow ease .2s;
+  }
+  form input[type="password"] {
+    letter-spacing: 1px;
+  }
+  form input[type="file"] {
+    padding: 10px 16px 11px;
+  }
+  form textarea {
+    min-height: 126px;
+    min-height: 150px;
+  }
+  form select:invalid {
+    color: gray;
+  }
+  form .input-grp,
+  form .radio-grp {
+    position: relative;
+  }
+  form input.code,
+  form .input.code {
+    font-size: 1.3rem;
+    letter-spacing: 4px;
+    margin-bottom: 1.45em;
+  }
+
+  /* Form message */
+
+  form .form-error-message {
+    display: none;
+    color: #db2139;
+    font-size: 1em;
+  }
+  form.has-error .form-error-message {
+    display: block;
+  }
+
+  /* Color: Grey form BG inputs */
+
+  form.form-grey input,
+  form.form-grey select,
+  form.form-grey textarea,
+  form.form-grey .input,
+  form.form-grey .radio-grp input + label:before,
+  form.form-grey .checkbox-grp input + label:before  {
+    background: #fcfcfc;
+  }
+
+/* ---- Labels ----------------------- */
+
+  form label,
+  .label-password {
+    color: #1d1d1d; 
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0.9rem;
+    line-height: 1.4em;
+    padding-bottom: 5px;
+    cursor: pointer;
+    user-select: none;
+    /* closely knit to util.errorElement  */
+    transition: opacity 0.15s ease, color 0.25s ease; // was 0.25
+  }
+  form label.invalid-out {
+    //opacity: 0.2;
+  }
+  form label.invalid-in {
+    //opacity: 1;
+    color: #ef3049;
+    color: #db2139;
+  }
+  .label-password, 
+  a.label-password {
+    display: block;
+    float: right;
+    margin-right: 1px;
+  }
+  .label-bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+/* ---- Radio/checkbox --------------- */
+
+  form .radio-grp,
+  form .checkbox-grp {
+    margin-bottom: 1.4em;
+    input {
+      position: absolute;
+      left: -9999px;
+    }
+    label {
+      display: block;
+    }
+    .has-tooltip {
+      display: inline;
+      padding: 0;
+      /*font-weight: 300;*/
+      font-family: Muli;
+    }
+    input + label {
+      position: relative;
+      display: inline-block;
+      padding: 0 30px 0 27px;
+      line-height: 32px;
+      color: inherit;
+      font-weight: 400;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently */
+    }
+    input + label:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      border: 1px solid #cacad2;
+      background: #fff;
+      border-radius: 100%;
+      width: 16px;
+      height: 16px;
+      text-align: center;
+      line-height: 20px;
+    }
+    input:checked + label:before {
+      border: 1px solid #bcd843;
+    }
+    input:checked + label:after {
+      content: '';
+      position: absolute;
+      background: #bcd843;
+      border-radius: 100%;
+      width: 10px;
+      height: 10px;
+      line-height: 10px;
+      top: 10px;
+      left: 4px;
+    }
+  }
+  form .checkbox-grp input + label:before,
+  form .checkbox-grp input + label:after {
+    border-radius: 3px !important;
+  }
+
+  /* simple checkbox toggle */
+
+  .toggle {
+    display: none;
+  }
+  .toggle + .toggle-btn {
+    position: relative;
+    display: block;
+    width: 4em;
+    height: 2em;
+    padding: 2px;
+    border-radius: 2em;
+    background: #ececec;
+    transition: all .3s ease;
+    box-sizing: border-box;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  .toggle + .toggle-btn:after {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+    left: 0;
+    border-radius: 50%;
+    background: #fff;
+    transition: all .2s ease;
+    box-sizing: border-box;
+  }
+  .toggle:checked + .toggle-btn {
+    background: #cce854;
+  }
+  .toggle:checked + .toggle-btn:after {
+    left: 50%;
+  }
+
+/* ---- Select ----------------------- */
+
+  form select,
+  .minict_wrapper input,
+  .vs__dropdown-toggle {
+    background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20class=%22arrow%22%20viewBox=%220%200%20300%20300%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cstyle%20type=%22text/css%22%3E.arrow%20polygon%7Bfill:%23c5cbd2;stroke:%23fff;stroke-width:10px;%7D%3C/style%3E%3Cpolygon%20points=%22293.514,94.987%20260.027,61.5%20150,171.527%2039.974,61.5%206.486,94.987%20150,238.5%22/%3E%3C/svg%3E);
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-repeat: no-repeat;
+    background-size: auto 26%;
+    background-size: auto 12.5px;
+    background-position: right 13px center;
+  }
+
+/* ---- Input states ----------------- */
+
+  input:active, 
+  input:focus, 
+  select:active, 
+  select:focus, 
+  textarea:active, 
+  textarea:focus,
+  .vs--open .vs__dropdown-toggle {
+    outline: 0;
+    border: 1px solid #c4de51fa;
+    box-shadow: 0 0 0 1px #c1dc4b;
+    background-color: #fff;
+  }
+  form input.invalid,
+  form select.invalid,
+  form textarea.invalid {
+    box-shadow: 0 0 0 1px #fe2946;
+    border-color: #fe2946;
+    box-shadow: 0 0 0 1px #e85271;
+    border-color: #e85271;
+    background-color: #fffcfd;
+    color: #7b1a1a;
+    animation: shake 0.40s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+  }
+  form input[type='radio'].invalid + label,
+  form input[type='checkbox'].invalid + label {
+    animation: shake 0.40s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    color: #7b1a1a;
+  }
+  form input[type='radio'].invalid + label:before,
+  form input[type='checkbox'].invalid + label:before {
+    border-color: #7b1a1ac7;
+    background-color: #fffcfd;
+  }
+  form textarea:disabled, 
+  form input:disabled {
+    background-color: #f9f9f9;
+  }
+
+  @keyframes shake {
+    30% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    60% {
+      transform: translate3d(1px, 0, 0);
+    }
+    80% {
+      transform: translate3d(0px, 0, 0);
+    }
+  }
+
+/* ---- Miscellaneous ---------------- */
+
+  /* Placeholders */
+
+  ::-moz-placeholder {
+    font-size: 0.95rem;
+    color: rgba(150, 150, 156, 0.7);
+  }
+  :-ms-input-placeholder {
+    font-size: 0.95rem;
+    color: rgba(150, 150, 156, 0.7);
+  }
+  ::-webkit-input-placeholder {
+    font-size: 0.95rem;
+    color: rgba(150, 150, 156, 0.7);
+  }
+
+  /* Removing autofill colours */
+
+  input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+  }
+  @-webkit-keyframes autofill {
+    to {
+      color: #281C13;
+      background: #fff;
+    }
+  }
+
+  /* Prevent input zooming */
+
+  @media (max-width: 550px) {
+    form.form-mobile {
+      input[type="color"],
+      input[type="date"],
+      input[type="datetime"],
+      input[type="datetime-local"],
+      input[type="email"],
+      input[type="month"],
+      input[type="number"],
+      input[type="password"],
+      input[type="search"],
+      input[type="tel"],
+      input[type="text"],
+      input[type="time"],
+      input[type="url"],
+      input[type="week"],
+      select,
+      textarea {
+        font-size: 16px;
+        letter-spacing: 0;
+      }
+      ::-moz-placeholder {
+          font-size: 16px;
+          letter-spacing: 0;
+      }
+      :-ms-input-placeholder {
+          font-size: 16px;
+          letter-spacing: 0;
+      }
+      ::-webkit-input-placeholder {
+          font-size: 16px;
+          letter-spacing: 0;
+      }
+    }
+  }

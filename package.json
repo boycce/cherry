@@ -1,0 +1,38 @@
+{
+  "name": "cherrycss",
+  "description": "Minimal and comprehensible CSS framework",
+  "version": "0.1.0",
+  "author": "Ricky Boyce <boycce@gmail.com> (https://rickyboyce.com)",
+  "repository": "github:Boycce/cherry-css",
+  "license": "MIT",
+  "main": "cherry.scss",
+  "style": "css/cherry.min.css",
+  "keywords": [
+    "css",
+    "flexbox",
+    "framework",
+    "minimal",
+    "scss"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.12.0",
+    "postcss-cli": "^6.1.2",
+    "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/cherry.css css/cherry.css",
+    "build-cleancss": "cleancss -o css/cherry.min.css css/cherry.css",
+    "build-clean": "rimraf css",
+    "build-sass": "node-sass --output-style expanded --source-map true cherry.scss css/cherry.css",
+    "start": "npm run build-sass -- --watch"
+  },
+  "files": [
+    "css",
+    "scss",
+    "cherry.scss",
+    "README.md"
+  ]
+}

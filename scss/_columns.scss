@@ -1,0 +1,241 @@
+/* ---- Columns ---------------------- */
+
+  /* Based on bootstrap 3 grids 
+  https://getbootstrap.com/docs/3.3/css/#grid */
+
+  .row {
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .row:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+  .col,
+  .col-1-4,// 7 columns
+  .col-1-5,// 8 columns
+  .col-2,  // 6 columns
+  .col-25,
+  .col-3,
+  .col-4,
+  .col-5,
+  .col-6,
+  .col-7,
+  .col-8,
+  .col-9,
+  .col-12 { 
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .col-12 {
+    width: 100%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-8 {
+    width: 66.66666667%;
+  }
+  .col-7 {
+    width: 58.33333333%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-5 {
+    width: 41.66666667%;
+  }
+  .col,
+  .col-4 {
+    width: 33.33333333%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-25 {
+    width: 20%;
+  }
+  .col-2 {
+    width: 16.66666667%;
+  }
+  .col-1-5 {
+    width: 12.5%; // 8 columns
+  }
+  .col-1-4 {
+    width: 14.285% // 7 columns
+  }
+  @media (max-width: 1000px) {
+    .col-1-4,
+    .col-1-5,
+    .col-2 {
+      width: 33.33333333%;
+    }
+    .col-1-4:nth-child(3n + 1),
+    .col-1-5:nth-child(3n + 1),
+    .col-2:nth-child(3n + 1) {
+      clear: both;
+    }
+  }
+  @media (max-width: 770px) {
+    .col,
+    .col-1-4,
+    .col-1-5,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8,
+    .col-9,
+    .col-12 {
+      width: 100%;
+      float: none;
+    }
+    .col-2,
+    .col-25,
+    .col-3,
+    .col-4,
+    .col-4.col-break1 {
+      float: left;
+      width: 50%;
+    }
+    .col-2:nth-child(2n + 1),
+    .col-25:nth-child(2n + 1),
+    .col-3:nth-child(2n + 1),
+    .col-4:nth-child(2n + 1),
+    .col-4.col-break1:nth-child(2n + 1) {
+      clear: both;
+    }
+    .col-no-break {
+      float: none;
+      width: 100%;
+    }
+  }
+  @media (max-width: 590px) {
+    .col-3,
+    .col-4,
+    .col-4.col-break1 {
+      width: 100%;
+      float: none;
+    }
+  }
+  @media (max-width: 470px) {
+    .col-2,
+    .col-25 {
+      width: 100%;
+      float: none;
+    }
+  }
+
+  /* Gutters */
+
+  .gutters-0 {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .gutters-0>.col,
+  .gutters-0>[class*="col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .gutters-8 {
+    margin-right: -8px;
+    margin-left: -8px;
+  }
+  .gutters-8>.col,
+  .gutters-8>[class*="col-"] {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+  .gutters-10 {
+    margin-right: -10px;
+    margin-left: -10px;
+  }
+  .gutters-10>.col,
+  .gutters-10>[class*="col-"] {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .gutters-25 {
+    margin-right: -25px;
+    margin-left: -25px;
+  }
+  .gutters-25>.col,
+  .gutters-25>[class*="col-"] {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+  .gutters-30 {
+    margin-right: -30px;
+    margin-left: -30px;
+    margin-right: -2rem;
+    margin-left: -2rem;
+  }
+  .gutters-30>.col,
+  .gutters-30>[class*="col-"] {
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  .gutters-35 {
+    margin-right: -35px;
+    margin-left: -35px;
+  }
+  .gutters-35>.col,
+  .gutters-35>[class*="col-"] {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+  .gutters-40 {
+    margin-right: -40px;
+    margin-left: -40px;
+  }
+  .gutters-40>.col,
+  .gutters-40>[class*="col-"] {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+/* ---- Text columns ----------------- */
+
+  .text3 {
+    column-count: 3;
+    column-gap: 50px;
+    padding: 0 1px;
+  }
+  .text3 p {
+    margin: 0px;
+    display: inline;
+  }
+  @media only screen and (max-width: 880px) {
+    .text3 {
+      column-count: 2;
+    }
+  }
+  @media only screen and (max-width: 680px) {
+    .text3 {
+      column-count: 1;
+    }
+  }
+
+/* ---- Narrow typo --------------- */
+
+  .typo-narrow p,
+  .typo-narrow ul {
+    width: 70%;
+  }
+  @media only screen and (max-width: 1000px) {
+    .typo-narrow p,
+    .typo-narrow ul {
+      width: 88%;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .typo-narrow p,
+    .typo-narrow ul {
+      width: 100%;
+    }
+  }
