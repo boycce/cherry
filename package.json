@@ -1,9 +1,9 @@
 {
-  "name": "cherrycss",
+  "name": "css-cherry",
   "description": "Minimal and comprehensible CSS framework",
   "version": "0.1.0",
   "author": "Ricky Boyce <boycce@gmail.com> (https://rickyboyce.com)",
-  "repository": "github:Boycce/cherry-css",
+  "repository": "github:Boycce/cherry",
   "license": "MIT",
   "main": "cherry.scss",
   "style": "css/cherry.min.css",
@@ -12,7 +12,7 @@
     "flexbox",
     "framework",
     "minimal",
-    "scss"
+    "sass"
   ],
   "devDependencies": {
     "autoprefixer": "^9.5.1",
