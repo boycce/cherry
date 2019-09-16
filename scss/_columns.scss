@@ -1,22 +1,15 @@
 /* ---- Columns ---------------------- */
 
-  /* Based on bootstrap 3 grids 
-  https://getbootstrap.com/docs/3.3/css/#grid */
-
   .row {
     margin-right: -15px;
     margin-left: -15px;
-  }
-  .row:after {
-    display: block;
-    content: "";
-    clear: both;
+    display: flex;
+    flex-wrap: wrap;
   }
   .col,
-  .col-1-4,// 7 columns
-  .col-1-5,// 8 columns
+  .col-15, // 8 columns
   .col-2,  // 6 columns
-  .col-25,
+  .col-25, // ..
   .col-3,
   .col-4,
   .col-5,
@@ -24,8 +17,8 @@
   .col-7,
   .col-8,
   .col-9,
-  .col-12 { 
-    float: left;
+  .col-12 {
+    flex: none;
     position: relative;
     min-height: 1px;
     padding-left: 15px;
@@ -62,28 +55,18 @@
   .col-2 {
     width: 16.66666667%;
   }
-  .col-1-5 {
+  .col-15 {
     width: 12.5%; // 8 columns
   }
-  .col-1-4 {
-    width: 14.285% // 7 columns
-  }
   @media (max-width: 1000px) {
-    .col-1-4,
-    .col-1-5,
+    .col-15,
     .col-2 {
       width: 33.33333333%;
-    }
-    .col-1-4:nth-child(3n + 1),
-    .col-1-5:nth-child(3n + 1),
-    .col-2:nth-child(3n + 1) {
-      clear: both;
     }
   }
   @media (max-width: 770px) {
     .col,
-    .col-1-4,
-    .col-1-5,
+    .col-15,
     .col-5,
     .col-6,
     .col-7,
@@ -91,41 +74,24 @@
     .col-9,
     .col-12 {
       width: 100%;
-      float: none;
     }
     .col-2,
     .col-25,
     .col-3,
-    .col-4,
-    .col-4.col-break1 {
-      float: left;
+    .col-4 {
       width: 50%;
-    }
-    .col-2:nth-child(2n + 1),
-    .col-25:nth-child(2n + 1),
-    .col-3:nth-child(2n + 1),
-    .col-4:nth-child(2n + 1),
-    .col-4.col-break1:nth-child(2n + 1) {
-      clear: both;
-    }
-    .col-no-break {
-      float: none;
-      width: 100%;
     }
   }
   @media (max-width: 590px) {
     .col-3,
-    .col-4,
-    .col-4.col-break1 {
+    .col-4 {
       width: 100%;
-      float: none;
     }
   }
   @media (max-width: 470px) {
     .col-2,
     .col-25 {
       width: 100%;
-      float: none;
     }
   }
 
@@ -170,15 +136,11 @@
   .gutters-30 {
     margin-right: -30px;
     margin-left: -30px;
-    margin-right: -2rem;
-    margin-left: -2rem;
   }
   .gutters-30>.col,
   .gutters-30>[class*="col-"] {
     padding-right: 30px;
     padding-left: 30px;
-    padding-right: 2rem;
-    padding-left: 2rem;
   }
   .gutters-35 {
     margin-right: -35px;

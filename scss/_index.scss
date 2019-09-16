@@ -1,21 +1,21 @@
 // Global defaults
-$black: #000;
-$blue: blue;
-$green: green;
-$grey: #444;
-$grey-light: #777;
-$purple: purple;
-$red: red;
-$yellow: yellow;
+$black: #000 !default;
+$blue: blue !default;
+$green: green !default;
+$grey: #444 !default;
+$grey-light: #777 !default;
+$purple: purple !default;
+$red: red !default;
+$yellow: yellow !default;
 
-$primary: $purple;
-$secondary: $blue;
-$success: $green;
-$info: $blue;
-$warning: $yellow;
-$text: $black;
-$link: $black;
-$link-hover: $blue;
+$primary: $purple !default;
+$secondary: $blue !default;
+$success: $green !default;
+$info: $blue !default;
+$warning: $yellow !default;
+$text: $black !default;
+$link: $black !default;
+$link-hover: $blue !default;
 
 @charset "utf-8";
 @import "base-normalize.scss";
