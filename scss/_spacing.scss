@@ -1,135 +1,137 @@
 $spacer: 10px;
-$md: 0.8; 
+$md: 0.8;
 $sm: 0.65;
-$sizes: 0.5 1 1.5 2 3 4 5 6 7 8 9 10 11 12 13 14; 
+$sizes: 0.5 1 1.5 2 3 4 5 6 7 8 9 10 11 12 13 14;
 // Special naming for 0.5 and 1.5 sizes: "mb-05" "mb-15"
 
-@each $type, $t in (padding, p), (margin, m) {
-  @media (max-width: 580px) {
-    @each $i in $sizes {
-      $ii: $i;
-      @if $i == 0.5 { $ii: '05'; }
-      @if $i == 1.5 { $ii: '15'; }
-      
-      .#{$t}-#{$ii} {
-        #{$type}: $spacer * $i * $sm !important;
-      }
-      .#{$t}t-#{$ii},
-      .#{$t}y-#{$ii} {
-        #{$type}-top: $spacer * $i * $sm !important;
-      } 
-      .#{$t}b-#{$ii},
-      .#{$t}y-#{$ii} {
-        #{$type}-bottom: $spacer * $i * $sm !important;
-      }
-      .#{$t}l-#{$ii},
-      .#{$t}x-#{$ii} {
-        #{$type}-left: $spacer * $i * $sm !important;
-      }
-      .#{$t}r-#{$ii},
-      .#{$t}x-#{$ii} {
-        #{$type}-right: $spacer * $i * $sm !important;
-      }
-    }
-  }
-  @media (min-width: 581px) and (max-width: 770px) { 
-    @each $i in $sizes {
-      $ii: $i;
-      @if $i == 0.5 { $ii: '05'; }
-      @if $i == 1.5 { $ii: '15'; }
+/* ---- Main ------------------------- */
 
-      .#{$t}-#{$ii} {
-        #{$type}: $spacer * $i * $md !important;
-      }
-      .#{$t}t-#{$ii},
-      .#{$t}y-#{$ii} {
-        #{$type}-top: $spacer * $i * $md !important;
-      }
-      .#{$t}b-#{$ii},
-      .#{$t}y-#{$ii} {
-        #{$type}-bottom: $spacer * $i * $md !important;
-      }
-      .#{$t}l-#{$ii},
-      .#{$t}x-#{$ii} {
-        #{$type}-left: $spacer * $i * $md !important;
-      }
-      .#{$t}r-#{$ii},
-      .#{$t}x-#{$ii} {
-        #{$type}-right: $spacer * $i * $md !important;
-      }
-    }
-    @each $i in $sizes {
-      $ii: $i;
-      @if $i == 0.5 { $ii: '05'; }
-      @if $i == 1.5 { $ii: '15'; }
+  @each $type, $t in (padding, p), (margin, m) {
+    @media (max-width: 580px) {
+      @each $i in $sizes {
+        $ii: $i;
+        @if $i == 0.5 { $ii: '05'; }
+        @if $i == 1.5 { $ii: '15'; }
 
-      .sm-md.#{$t}-#{$ii} {
-        #{$type}: $spacer * $i * $sm !important;
-      }
-      .sm-md.#{$t}t-#{$ii},
-      .sm-md.#{$t}y-#{$ii} {
-        #{$type}-top: $spacer * $i * $sm !important; 
-      }
-      .sm-md.#{$t}b-#{$ii},
-      .sm-md.#{$t}y-#{$ii} {
-        #{$type}-bottom: $spacer * $i * $sm !important;
-      }
-      .sm-md.#{$t}l-#{$ii},
-      .sm-md.#{$t}x-#{$ii} {
-        #{$type}-left: $spacer * $i * $sm !important;
-      }
-      .sm-md.#{$t}r-#{$ii},
-      .sm-md.#{$t}x-#{$ii} {
-        #{$type}-right: $spacer * $i * $sm !important;
+        .#{$t}-#{$ii} {
+          #{$type}: $spacer * $i * $sm !important;
+        }
+        .#{$t}t-#{$ii},
+        .#{$t}y-#{$ii} {
+          #{$type}-top: $spacer * $i * $sm !important;
+        }
+        .#{$t}b-#{$ii},
+        .#{$t}y-#{$ii} {
+          #{$type}-bottom: $spacer * $i * $sm !important;
+        }
+        .#{$t}l-#{$ii},
+        .#{$t}x-#{$ii} {
+          #{$type}-left: $spacer * $i * $sm !important;
+        }
+        .#{$t}r-#{$ii},
+        .#{$t}x-#{$ii} {
+          #{$type}-right: $spacer * $i * $sm !important;
+        }
       }
     }
-  }
-  @media (min-width: 771px) {
-    @each $i in $sizes {
-      $ii: $i;
-      @if $i == 0.5 { $ii: '05'; }
-      @if $i == 1.5 { $ii: '15'; }
+    @media (min-width: 581px) and (max-width: 770px) {
+      @each $i in $sizes {
+        $ii: $i;
+        @if $i == 0.5 { $ii: '05'; }
+        @if $i == 1.5 { $ii: '15'; }
 
-      .#{$t}-#{$ii} {
-        #{$type}: $spacer * $i !important;
+        .#{$t}-#{$ii} {
+          #{$type}: $spacer * $i * $md !important;
+        }
+        .#{$t}t-#{$ii},
+        .#{$t}y-#{$ii} {
+          #{$type}-top: $spacer * $i * $md !important;
+        }
+        .#{$t}b-#{$ii},
+        .#{$t}y-#{$ii} {
+          #{$type}-bottom: $spacer * $i * $md !important;
+        }
+        .#{$t}l-#{$ii},
+        .#{$t}x-#{$ii} {
+          #{$type}-left: $spacer * $i * $md !important;
+        }
+        .#{$t}r-#{$ii},
+        .#{$t}x-#{$ii} {
+          #{$type}-right: $spacer * $i * $md !important;
+        }
       }
-      .#{$t}t-#{$ii},
-      .#{$t}y-#{$ii} {
-        #{$type}-top: $spacer * $i !important;
+      @each $i in $sizes {
+        $ii: $i;
+        @if $i == 0.5 { $ii: '05'; }
+        @if $i == 1.5 { $ii: '15'; }
+
+        .sm-md.#{$t}-#{$ii} {
+          #{$type}: $spacer * $i * $sm !important;
+        }
+        .sm-md.#{$t}t-#{$ii},
+        .sm-md.#{$t}y-#{$ii} {
+          #{$type}-top: $spacer * $i * $sm !important;
+        }
+        .sm-md.#{$t}b-#{$ii},
+        .sm-md.#{$t}y-#{$ii} {
+          #{$type}-bottom: $spacer * $i * $sm !important;
+        }
+        .sm-md.#{$t}l-#{$ii},
+        .sm-md.#{$t}x-#{$ii} {
+          #{$type}-left: $spacer * $i * $sm !important;
+        }
+        .sm-md.#{$t}r-#{$ii},
+        .sm-md.#{$t}x-#{$ii} {
+          #{$type}-right: $spacer * $i * $sm !important;
+        }
       }
-      .#{$t}b-#{$ii},
-      .#{$t}y-#{$ii} {
-        #{$type}-bottom: $spacer * $i !important;
+    }
+    @media (min-width: 771px) {
+      @each $i in $sizes {
+        $ii: $i;
+        @if $i == 0.5 { $ii: '05'; }
+        @if $i == 1.5 { $ii: '15'; }
+
+        .#{$t}-#{$ii} {
+          #{$type}: $spacer * $i !important;
+        }
+        .#{$t}t-#{$ii},
+        .#{$t}y-#{$ii} {
+          #{$type}-top: $spacer * $i !important;
+        }
+        .#{$t}b-#{$ii},
+        .#{$t}y-#{$ii} {
+          #{$type}-bottom: $spacer * $i !important;
+        }
+        .#{$t}l-#{$ii},
+        .#{$t}x-#{$ii} {
+          #{$type}-left: $spacer * $i !important;
+        }
+        .#{$t}r-#{$ii},
+        .#{$t}x-#{$ii} {
+          #{$type}-right: $spacer * $i !important;
+        }
       }
-      .#{$t}l-#{$ii},
-      .#{$t}x-#{$ii} {
-        #{$type}-left: $spacer * $i !important;
+    }
+    @media (min-width: 0px) {
+      .#{$t}-0 {
+        #{$type}: 0 !important;
       }
-      .#{$t}r-#{$ii},
-      .#{$t}x-#{$ii} {
-        #{$type}-right: $spacer * $i !important;
+      .#{$t}t-0,
+      .#{$t}y-0 {
+        #{$type}-top: 0 !important;
+      }
+      .#{$t}b-0,
+      .#{$t}y-0 {
+        #{$type}-bottom: 0 !important;
+      }
+      .#{$t}l-0,
+      .#{$t}x-0 {
+        #{$type}-left: 0 !important;
+      }
+      .#{$t}r-0,
+      .#{$t}x-0 {
+        #{$type}-right: 0 !important;
       }
     }
   }
-  @media (min-width: 0px) {
-    .#{$t}-0 {
-      #{$type}: 0 !important;
-    }
-    .#{$t}t-0,
-    .#{$t}y-0 {
-      #{$type}-top: 0 !important;
-    }
-    .#{$t}b-0,
-    .#{$t}y-0 {
-      #{$type}-bottom: 0 !important;
-    }
-    .#{$t}l-0,
-    .#{$t}x-0 {
-      #{$type}-left: 0 !important;
-    }
-    .#{$t}r-0,
-    .#{$t}x-0 {
-      #{$type}-right: 0 !important;
-    }
-  }
-}

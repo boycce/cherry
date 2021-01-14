@@ -8,111 +8,113 @@ $btn-min-height: 0 !default;
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="#{encodecolor($color)}" stroke-width="2"/></svg>')
 }
 
-.btn {
-  position: relative;
-  display: inline-block;
-  padding: $btn-padding;
-  font-family: $btn-font-family;
-  font-style: normal;
-  font-weight: $btn-font-weight;
-  font-size: $btn-font-size;
-  min-height: $btn-min-height;
-  line-height: 1.5em;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  border-radius: 30px;
-  border: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  transition: all 200ms ease;
-}
-.btn img,
-.btn svg {
-  vertical-align: middle;
-  transition: opacity 200ms ease;
-}
-.btn svg {
-  color: inherit;
-  font-size: $btn-font-size;
-  font-weight: normal;
-}
-.btn-small {
-  min-width: 0;
-  width: 100%;
-}
+/* ---- Main ------------------------- */
 
-/* Loading */
-
-.btn::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 18px;
-  height: 18px;
-  margin: -10px;
-  opacity: 0;
-  z-index: 0;
-  animation: loaderOne .9s cubic-bezier(.435,.165,.615,.81) infinite;
-  background-size: auto;
-  background-position: top;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-  z-index: 2;
-  @include loader(#fff);
-}
-.btn-loader-dark::after {
-  @include loader($text);
-}
-.btn.is-loading,
-.btn.is-loading:hover,
-.btn.is-loading:focus {
-  cursor: default;
-  color: transparent !important;
-}
-.btn.is-loading img {
-  opacity: 0;
-}
-.btn.is-loading svg {
-  fill: transparent !important;
-}
-.btn.is-loading::after {
-  opacity: 1;
-}
-@keyframes loaderOne {
-  0% {
-    transform:rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Button */
-
-.btn {
-  color: #fff;
-  background: $btn-background;
-}
-
-/* Mulitple buttons */
-
-.btns {
-  display: flex;
-}
-.btns .btn {
-  margin-right: 0.8rem;
-}
-.btns .btn:last-child {
-  margin-right: 0;
-}
-@media (max-width: 580px) {
   .btn {
-    min-width: 180px;
-    padding: 11px 34px 12px;
+    position: relative;
+    display: inline-block;
+    padding: $btn-padding;
+    font-family: $btn-font-family;
+    font-style: normal;
+    font-weight: $btn-font-weight;
+    font-size: $btn-font-size;
+    min-height: $btn-min-height;
+    line-height: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 30px;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 200ms ease;
+  }
+  .btn img,
+  .btn svg {
+    vertical-align: middle;
+    transition: opacity 200ms ease;
+  }
+  .btn svg {
+    color: inherit;
+    font-size: $btn-font-size;
+    font-weight: normal;
+  }
+  .btn-small {
+    min-width: 0;
     width: 100%;
+  }
+
+  /* Loading */
+
+  .btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    margin: -10px;
+    opacity: 0;
+    z-index: 0;
+    animation: loaderOne .9s cubic-bezier(.435,.165,.615,.81) infinite;
+    background-size: auto;
+    background-position: top;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    z-index: 2;
+    @include loader(#fff);
+  }
+  .btn-loader-dark::after {
+    @include loader($text);
+  }
+  .btn.is-loading,
+  .btn.is-loading:hover,
+  .btn.is-loading:focus {
+    cursor: default;
+    color: transparent !important;
+  }
+  .btn.is-loading img {
+    opacity: 0;
+  }
+  .btn.is-loading svg {
+    fill: transparent !important;
+  }
+  .btn.is-loading::after {
+    opacity: 1;
+  }
+  @keyframes loaderOne {
+    0% {
+      transform:rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Button */
+
+  .btn {
+    color: #fff;
+    background: $btn-background;
+  }
+
+  /* Mulitple buttons */
+
+  .btns {
+    display: flex;
+  }
+  .btns .btn {
+    margin-right: 0.8rem;
+  }
+  .btns .btn:last-child {
     margin-right: 0;
   }
-}
+  @media (max-width: 580px) {
+    .btn {
+      min-width: 180px;
+      padding: 11px 34px 12px;
+      width: 100%;
+      margin-right: 0;
+    }
+  }
