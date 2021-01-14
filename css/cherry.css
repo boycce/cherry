@@ -22,6 +22,22 @@ html, body {
   margin: 0;
 }
 
+a {
+  color: #000;
+  background-color: transparent;
+  /* ie10 */
+  text-decoration: underline;
+  -webkit-text-decoration-color: #000;
+          text-decoration-color: #000;
+}
+
+a:hover,
+a:focus {
+  color: blue;
+  -webkit-text-decoration-color: blue;
+          text-decoration-color: blue;
+}
+
 *:focus {
   outline: none !important;
 }
@@ -44,11 +60,6 @@ section,
 summary {
   display: block;
   box-sizing: border-box;
-}
-
-a {
-  background-color: transparent;
-  /* ie10 */
 }
 
 b, strong {
@@ -221,7 +232,6 @@ textarea {
 .btn {
   position: relative;
   display: inline-block;
-  background: #6D4EB1;
   padding: 14px 30px 14px;
   margin-top: 2px;
   /* helpful in content */
@@ -233,7 +243,6 @@ textarea {
   text-align: center;
   text-decoration: none;
   color: #fff;
-  box-shadow: 0px 5px 12px rgba(111, 73, 219, 0.27);
   transition: all 200ms ease;
   border-radius: 30px;
   border: 0;
@@ -246,150 +255,39 @@ textarea {
   margin: 4px -4px 0px 10px;
 }
 
-.btn-left-svg {
-  text-align: right;
-}
-
-.btn-left-svg svg {
-  float: left;
-  transform: rotateY(180deg);
-  margin: 4px 10px 0px -4px;
-}
-
 .btn-small {
   padding: 9px 30px;
   min-width: 0;
 }
 
-.btn:hover,
-.btn:focus {
-  background: #7c5dc1;
-  color: #fff;
-}
-
-.btns .btn {
-  margin-right: 0.8rem;
-}
-
-.btns .btn:last-child {
-  margin-right: 0;
-}
-
-/* Submit button */
-.btn .loader {
+/* Loading */
+.btn::after {
+  content: "";
   display: none;
-}
-
-form.loading .btn .normal {
-  display: none;
-}
-
-form.loading .btn .loader {
-  display: block;
-  color: #fff;
-}
-
-/* Button two (light purple) */
-.btn-two {
-  color: purple;
-  background: #F7F5F8;
-  box-shadow: 0 0 0px 2px rgba(84, 46, 167, 0.04) inset;
-}
-
-.btn-two:hover,
-.btn-two:focus {
-  background: #F7F5F8;
-  color: purple;
-  box-shadow: 0 0 0px 2px rgba(113, 81, 181, 0.18) inset;
-}
-
-form.loading .btn-two .loader {
-  color: purple;
-}
-
-/* Button three (white) */
-.btn-three {
-  color: #000;
-  background: #fff;
-  box-shadow: 0 0 0px 2px rgba(113, 81, 181, 0.08) inset;
-}
-
-.btn-three:hover,
-.btn-three:focus {
-  color: #000;
-  background: #f6f6f6;
-  box-shadow: 0 0 0px 2px rgba(113, 81, 181, 0.18) inset;
-}
-
-form.loading .btn-three .loader {
-  color: #000;
-}
-
-/* Plus icon */
-.btn .i-plus {
-  margin: -9px -22px -9px 15px;
-}
-
-@media (max-width: 580px) {
-  .btn {
-    min-width: 180px;
-    padding: 11px 34px 12px;
-    width: 100%;
-    margin-right: 0;
-  }
-}
-
-/* Form buttons */
-form .default {
-  visibility: visible;
-}
-
-form .loader {
-  display: none;
-}
-
-form.loading button {
-  cursor: default;
-}
-
-form.loading .default {
-  visibility: hidden;
-}
-
-form.loading .loader {
-  display: block;
-}
-
-.loader {
   position: absolute;
   left: 50%;
   top: 50%;
-}
-
-.loader-one,
-.loader-two {
-  width: 12px;
-  height: 12px;
-  margin: -9px;
-  padding: 0;
-  border: 2px solid;
-  border-top-color: transparent;
+  width: 1.2em;
+  height: 1.2em;
+  margin: -0.62em;
+  border: 2px solid #444;
   border-left-color: transparent;
+  border-top-color: transparent;
   border-radius: 50%;
-  color: rgba(0, 0, 0, 0.85);
-  background-color: transparent;
+  box-sizing: border-box;
   -webkit-animation: loaderOne 0.9s cubic-bezier(0.435, 0.165, 0.615, 0.81) infinite;
           animation: loaderOne 0.9s cubic-bezier(0.435, 0.165, 0.615, 0.81) infinite;
 }
 
-.loader-two {
-  /*infinite-scroll*/
-  width: 18px;
-  height: 18px;
-  opacity: 0.9;
-  display: inline-block;
-  vertical-align: top;
-  margin: 0;
+.btn.is-loading,
+.btn.is-loading:hover,
+.btn.is-loading:focus {
+  cursor: default;
+  color: transparent !important;
+}
+
+.btn.is-loading::after {
+  display: block;
 }
 
 @-webkit-keyframes loaderOne {
@@ -404,23 +302,72 @@ form.loading .loader {
   }
 }
 
+/* Button (white) */
+.btn {
+  color: #000;
+  background: #fff;
+  box-shadow: 0 0 0px 2px #444 inset;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #000;
+  box-shadow: 0 0 0px 2px #303030 inset;
+  background-color: #f7f7f7;
+}
+
+.btn::after {
+  border-right-color: #000;
+  border-bottom-color: #000;
+}
+
+/* Button two (primary) */
+.btn-two {
+  color: #fff;
+  background: purple;
+  box-shadow: 0px 5px 12px rgba(128, 0, 128, 0.27);
+}
+
+.btn-two:hover,
+.btn-two:focus {
+  color: #fff;
+  background: #570057;
+  box-shadow: 0px 5px 12px rgba(128, 0, 128, 0.27);
+}
+
+.btn-two::after {
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Form buttons */
+.btns .btn {
+  margin-right: 0.8rem;
+}
+
+.btns .btn:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 580px) {
+  .btn {
+    min-width: 180px;
+    padding: 11px 34px 12px;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
 /* ---- Columns ---------------------- */
-/* Based on bootstrap 3 grids 
-  https://getbootstrap.com/docs/3.3/css/#grid */
 .row {
   margin-right: -15px;
   margin-left: -15px;
-}
-
-.row:after {
-  display: block;
-  content: "";
-  clear: both;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .col,
-.col-1-4,
-.col-1-5,
+.col-15,
 .col-2,
 .col-25,
 .col-3,
@@ -431,7 +378,7 @@ form.loading .loader {
 .col-8,
 .col-9,
 .col-12 {
-  float: left;
+  flex: none;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -479,31 +426,20 @@ form.loading .loader {
   width: 16.66666667%;
 }
 
-.col-1-5 {
+.col-15 {
   width: 12.5%;
 }
 
-.col-1-4 {
-  width: 14.285%;
-}
-
 @media (max-width: 1000px) {
-  .col-1-4,
-  .col-1-5,
+  .col-15,
   .col-2 {
     width: 33.33333333%;
-  }
-  .col-1-4:nth-child(3n + 1),
-  .col-1-5:nth-child(3n + 1),
-  .col-2:nth-child(3n + 1) {
-    clear: both;
   }
 }
 
 @media (max-width: 770px) {
   .col,
-  .col-1-4,
-  .col-1-5,
+  .col-15,
   .col-5,
   .col-6,
   .col-7,
@@ -511,35 +447,19 @@ form.loading .loader {
   .col-9,
   .col-12 {
     width: 100%;
-    float: none;
   }
   .col-2,
   .col-25,
   .col-3,
-  .col-4,
-  .col-4.col-break1 {
-    float: left;
+  .col-4 {
     width: 50%;
-  }
-  .col-2:nth-child(2n + 1),
-  .col-25:nth-child(2n + 1),
-  .col-3:nth-child(2n + 1),
-  .col-4:nth-child(2n + 1),
-  .col-4.col-break1:nth-child(2n + 1) {
-    clear: both;
-  }
-  .col-no-break {
-    float: none;
-    width: 100%;
   }
 }
 
 @media (max-width: 590px) {
   .col-3,
-  .col-4,
-  .col-4.col-break1 {
+  .col-4 {
     width: 100%;
-    float: none;
   }
 }
 
@@ -547,7 +467,6 @@ form.loading .loader {
   .col-2,
   .col-25 {
     width: 100%;
-    float: none;
   }
 }
 
@@ -599,16 +518,12 @@ form.loading .loader {
 .gutters-30 {
   margin-right: -30px;
   margin-left: -30px;
-  margin-right: -2rem;
-  margin-left: -2rem;
 }
 
 .gutters-30 > .col,
 .gutters-30 > [class*="col-"] {
   padding-right: 30px;
   padding-left: 30px;
-  padding-right: 2rem;
-  padding-left: 2rem;
 }
 
 .gutters-35 {
