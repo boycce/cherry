@@ -6,7 +6,11 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .col-full {
+    flex: 1;
+  }
   .col,
+  .col-1,
   .col-15, // 8 columns
   .col-2,  // 6 columns
   .col-25, // ..
@@ -17,6 +21,8 @@
   .col-7,
   .col-8,
   .col-9,
+  .col-10,
+  .col-11,
   .col-12 {
     flex: none;
     position: relative;
@@ -26,6 +32,12 @@
   }
   .col-12 {
     width: 100%;
+  }
+  .col-11 {
+    width: 91.6666667%;
+  }
+  .col-10 {
+    width: 83.33333333%;
   }
   .col-9 {
     width: 75%;
@@ -55,6 +67,9 @@
   .col-2 {
     width: 16.66666667%;
   }
+  .col-1 {
+    width: 8.333333333%;
+  }
   .col-15 {
     width: 12.5%; // 8 columns
   }
@@ -72,9 +87,12 @@
     .col-7,
     .col-8,
     .col-9,
+    .col-10,
+    .col-11,
     .col-12 {
       width: 100%;
     }
+    .col-1,
     .col-2,
     .col-25,
     .col-3,
@@ -89,6 +107,7 @@
     }
   }
   @media (max-width: 470px) {
+    .col-1,
     .col-2,
     .col-25 {
       width: 100%;
@@ -101,8 +120,8 @@
     margin-right: 0;
     margin-left: 0;
   }
-  .gutters-0>.col,
-  .gutters-0>[class*="col-"] {
+  .gutters-0 > .col,
+  .gutters-0 > [class*="col-"] {
     padding-right: 0;
     padding-left: 0;
   }
@@ -110,8 +129,8 @@
     margin-right: -8px;
     margin-left: -8px;
   }
-  .gutters-8>.col,
-  .gutters-8>[class*="col-"] {
+  .gutters-8 > .col,
+  .gutters-8 > [class*="col-"] {
     padding-right: 8px;
     padding-left: 8px;
   }
@@ -119,17 +138,26 @@
     margin-right: -10px;
     margin-left: -10px;
   }
-  .gutters-10>.col,
-  .gutters-10>[class*="col-"] {
+  .gutters-10 > .col,
+  .gutters-10 > [class*="col-"] {
     padding-right: 10px;
     padding-left: 10px;
+  }
+  .gutters-20 {
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+  .gutters-20 > .col,
+  .gutters-20 > [class*="col-"] {
+    padding-right: 20px;
+    padding-left: 20px;
   }
   .gutters-25 {
     margin-right: -25px;
     margin-left: -25px;
   }
-  .gutters-25>.col,
-  .gutters-25>[class*="col-"] {
+  .gutters-25 > .col,
+  .gutters-25 > [class*="col-"] {
     padding-right: 25px;
     padding-left: 25px;
   }
@@ -137,8 +165,8 @@
     margin-right: -30px;
     margin-left: -30px;
   }
-  .gutters-30>.col,
-  .gutters-30>[class*="col-"] {
+  .gutters-30 > .col,
+  .gutters-30 > [class*="col-"] {
     padding-right: 30px;
     padding-left: 30px;
   }
@@ -146,8 +174,8 @@
     margin-right: -35px;
     margin-left: -35px;
   }
-  .gutters-35>.col,
-  .gutters-35>[class*="col-"] {
+  .gutters-35 > .col,
+  .gutters-35 > [class*="col-"] {
     padding-right: 35px;
     padding-left: 35px;
   }
@@ -155,8 +183,8 @@
     margin-right: -40px;
     margin-left: -40px;
   }
-  .gutters-40>.col,
-  .gutters-40>[class*="col-"] {
+  .gutters-40 > .col,
+  .gutters-40 > [class*="col-"] {
     padding-right: 40px;
     padding-left: 40px;
   }

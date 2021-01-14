@@ -18,6 +18,28 @@
   .infinite-status-prompt {
     padding: 0 !important;
   }
+  .infinite-loader {
+    display: inline-block;
+    vertical-align: top;
+    width: 18px;
+    height: 18px;
+    margin: 0px;
+    padding: 0;
+    border: 2px solid;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-radius: 50%;
+    opacity: 0.9;
+    color: rgba(0, 0, 0, 0.85);
+    color: $primary;
+    background-color: transparent;
+    animation: infinite-loader .9s cubic-bezier(.435,.165,.615,.81) infinite
+  }
+  @keyframes infinite-loader {
+    100% {
+      transform: rotate(360deg)
+    }
+  }
 
 /* ---- NProgress -------------------- */
 
@@ -35,7 +57,7 @@
     to {opacity: 1;}
   }
   #nprogress .bar {
-    background: #d4f158;
+    background: $primary;
     position: fixed;
     z-index: 1031;
     top: 0;
@@ -50,7 +72,7 @@
     right: 0px;
     width: 100px;
     height: 100%;
-    box-shadow: 0 0 8px #d1ff0c, 0 0 4px #d1ff0c;
+    box-shadow: 0 0 8px $primary, 0 0 4px $primary;
     opacity: 1.0;
     transform: rotate(3deg) translate(0px, -4px);
   }
@@ -64,11 +86,9 @@
 
 /* ---- X ---------------------------- */
   
-  .x1 {
-    
-  }
+  .x1 {}
   .x1,
-  .x2 {
+  .x2 { 
     width: 34px;
     height: 34px;
     display: block;
@@ -106,13 +126,10 @@
     transform: rotate(-45deg)
   }
   .x1:before,
-  .x1:after {
-    background-color: #111;
-    box-shadow: 0 0 1px rgba(255,255,255,.12)
-  }
+  .x1:after,
   .x2:before,
   .x2:after {
-    background-color: #000;
+    background-color: #111;
     box-shadow: 0 0 1px rgba(255,255,255,.12)
   }
   .x1:hover:before,
@@ -121,4 +138,29 @@
   .x2:hover:after {
     width: 16px;
     margin-left: -8px
+  }
+
+  /* x2 deviations */
+
+
+  .x2:before,
+  .x2:after {
+    margin-top: -2px;
+    margin-left: -8px;
+    width: 17px;
+    height: 2.5px;
+    border-radius: 0px;
+  }
+  .x2:hover:before,
+  .x2:hover:after {
+    width: 19px;
+    margin-left: -9px
+  }
+
+  /* white */
+
+  .x-white:before,
+  .x-white:after {
+    background-color: #fff;
+    box-shadow: none;
   }

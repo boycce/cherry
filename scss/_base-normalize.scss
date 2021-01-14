@@ -21,15 +21,20 @@ $body-line-height: 1.5em !default;
   }
   body {
     background-color: $body-background-color;
-    $body-color: $text !default;
-    $body-font-family: Open Sans, sans-serif, arial !default;
-    $body-font-size: 15px !default;
-    $body-font-weight: 400 !default;
-    $body-line-height: 1.5em !default;
+    color: $body-color;
+    font-family: $body-font-family;
+    font-size: $body-font-size;
+    font-weight: $body-font-weight;
+    line-height: $body-line-height;
+    overflow-y: scroll;
   }
   html, body {
     height: 100%;
     margin: 0;
+  }
+  .preload * {
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
   }
   a {
     color: $link;
@@ -42,9 +47,8 @@ $body-line-height: 1.5em !default;
     color: $link-hover;
     text-decoration-color: $link-hover;
   }
-
   *:focus {
-    outline: none !important;
+    //outline: none !important;
   }
   q,
   div,
@@ -64,7 +68,7 @@ $body-line-height: 1.5em !default;
   summary {
     display: block;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box; 
   }
   b, strong {
     font-weight: bolder;

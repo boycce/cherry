@@ -1,96 +1,170 @@
+// Checkbox/radio
+$checkbox-height: 20px !default;
+$checkbox-inner-height: 10px !default;
+$toggle-height: 1.8em !default;
+$toggle-width: $toggle-height * 1.8 !default;
+$toggle-color-active: $input-border-color-active !default;
+
+// Error
+$error-font-size: 0.95rem !default;
+
+// Input
+$input-background: #fff !default;
+$input-background--invalid: #fffcfd !default;
+$input-border-color: #efefef !default;
+$input-border-color-active: $primary !default;
+$input-border-width: 2px !default;
+$input-color: $text !default;
+$input-font-family: $body-font-family !default;
+$input-font-size: 0.95rem !default;
+$input-font-weight: inherit !default;
+$input-padding: 15px 19px !default;
+$input-border-radius: 2px !default;
+$input-placeholder-color: rgba($text, 0.5) !default;
+
+// Label
+$label-color: $text-light !default;
+$label-font-size: 0.85rem !default;
+
 /* ---- Main ------------------------- */
 
-  form input,
-  form select,
+  input,
+  select,
   textarea,
   .input,
   .vs__dropdown-toggle {
     width: 100%;
-    padding: 13px 16px 14px;
-    margin-bottom: 2em;
-    font-family: Muli, sans-serif;
-    color: #281C13;
-    font-size: 0.95rem;
+    padding: $input-padding;
+    font-family: $input-font-family;
+    color: $input-color;
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
     line-height: 1.5rem;
-    letter-spacing: 0.5px;
-    background: #fff; //fbfbfb
-    border: 1px solid rgba(121, 121, 121, 0.3);
-    box-shadow: 0 0 0 1px transparent;
+    background: $input-background;
+    box-shadow: 0 0 0 2px $input-border-color inset;
+    border: 0;
     box-sizing: border-box;
-    border-radius: 3px;
-    vertical-align: top;  
-    transition: border-color ease .2s, box-shadow ease .2s;
+    border-radius: $input-border-radius;
+    vertical-align: top;
+    transition: border-color ease 0.2s, box-shadow ease 0.2s;
   }
-  form input[type="password"] {
+  .onloading input,
+  .onloading select,
+  .onloading textarea,
+  .onloading .input,
+  .onloading .vs__dropdown-toggle {
+    transition: none; /* Stops autofill bg flashing */
+  }
+  .input,
+  .input-grp,
+  .radio-grp,
+  .checkbox-grp,
+  .toggle-grp {
+    margin-bottom: 1.5rem;
+  }
+  input[type="password"] {
     letter-spacing: 1px;
   }
-  form input[type="file"] {
-    padding: 10px 16px 11px;
+  input[type="file"] {
+    padding: 10px 19px 11px;
   }
-  form textarea {
-    min-height: 126px;
-    min-height: 150px;
+  textarea {
+    // min-height: 150px;
   }
-  form select:invalid {
-    color: gray;
-  }
-  form .input-grp,
-  form .radio-grp {
+  .input-grp,
+  .radio-grp,
+  .checkbox-grp,
+  .toggle-grp {
+    text-align: left;
     position: relative;
   }
-  form input.code,
-  form .input.code {
+  input.code,
+  .input.code {
     font-size: 1.3rem;
     letter-spacing: 4px;
     margin-bottom: 1.45em;
   }
 
+  /* Input + button element  */
+
+  .input-btn {
+    display: flex;
+  }
+  .input-btn input {
+    flex: 1;
+  }
+  .input-btn .btn {
+    width: auto !important;
+    min-width: 0;
+    font-size: 12px;
+    line-height: 1.5rem;
+    border-radius: $input-border-radius;
+    padding: $input-padding;
+    margin-left: -5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
   /* Form message */
 
-  form .form-error-message {
+  form .form-error {
     display: none;
-    color: #db2139;
-    font-size: 1em;
+    // color: $red;
+    color: white;
+    font-size: $error-font-size;
+    padding: $input-padding;
+    border-radius: 6px;
+    background-color: $red-light;
+    box-shadow: 0 0 0 1px $red inset;
   }
-  form.has-error .form-error-message {
+  form .form-error:empty {
+    padding: 0px;
+    margin: 0 !important;
+  }
+  form.has-errors .form-error {
     display: block;
   }
 
   /* Color: Grey form BG inputs */
 
-  form.form-grey input,
-  form.form-grey select,
-  form.form-grey textarea,
-  form.form-grey .input,
-  form.form-grey .radio-grp input + label:before,
-  form.form-grey .checkbox-grp input + label:before  {
-    background: #fcfcfc;
+  .form-grey input,
+  .form-grey select,
+  .form-grey textarea,
+  .form-grey .input,
+  .form-grey .radio-grp input + label:before,
+  .form-grey .checkbox-grp input + label:before {
+    background: $input-background;
   }
 
 /* ---- Labels ----------------------- */
 
-  form label,
+  label,
   .label-password {
-    color: #1d1d1d; 
     display: inline-block;
     vertical-align: top;
-    font-size: 0.9rem;
+    text-decoration-color: $label-color;
+    text-decoration: none;
+    font-size: $label-font-size;
     line-height: 1.4em;
-    padding-bottom: 5px;
+    margin-bottom: 0.45em;
     cursor: pointer;
     user-select: none;
     /* closely knit to util.errorElement  */
-    transition: opacity 0.15s ease, color 0.25s ease; // was 0.25
+    transition: opacity 0.15s ease, color 0.25s ease,
+      text-decoration-color 0.25s ease; // was 0.25
   }
-  form label.invalid-out {
+  label,
+  .label-color {
+    color: $label-color;
+  }
+  label.invalid-out {
     //opacity: 0.2;
   }
-  form label.invalid-in {
+  label.invalid-in {
     //opacity: 1;
-    color: #ef3049;
-    color: #db2139;
+    color: $red;
   }
-  .label-password, 
+  .label-password,
   a.label-password {
     display: block;
     float: right;
@@ -102,11 +176,18 @@
     bottom: 0;
   }
 
-/* ---- Radio/checkbox --------------- */
+  /* ---- Radio/checkbox/toggle -------- */
 
-  form .radio-grp,
-  form .checkbox-grp {
-    margin-bottom: 1.4em;
+  // The label needs to come after the input.
+  // <div class="toggle-grp">
+  //   <input id="subscribe" type="checkbox" checked>
+  //   <label for="subscribe">Subscribe</label>
+  // </div>
+
+  .radio-grp,
+  .checkbox-grp {
+    $checkbox-width: $checkbox-height;
+    $checkbox-inner-width: $checkbox-inner-height;
     input {
       position: absolute;
       left: -9999px;
@@ -117,151 +198,140 @@
     .has-tooltip {
       display: inline;
       padding: 0;
-      /*font-weight: 300;*/
-      font-family: Muli;
     }
     input + label {
       position: relative;
       display: inline-block;
-      padding: 0 30px 0 27px;
-      line-height: 32px;
-      color: inherit;
-      font-weight: 400;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently */
+      padding: $input-padding;
+      padding-left: $checkbox-width + 12px; //0.8em;
+      padding-right: 1em;
+      user-select: none;
+      margin-bottom: 0;
     }
     input + label:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
-      top: 6px;
-      border: 1px solid #cacad2;
-      background: #fff;
-      border-radius: 100%;
-      width: 16px;
-      height: 16px;
-      text-align: center;
-      line-height: 20px;
+      top: 50%;
+      width: $checkbox-width;
+      height: $checkbox-height;
+      margin-top: -($checkbox-height / 2);
+      background: $input-background;
+      border: 2px solid darken($input-background, 12%);
+      border-radius: 3px;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+    input + label:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: $checkbox-inner-width;
+      height: $checkbox-inner-height;
+      margin-left: ($checkbox-width - $checkbox-inner-width) / 2;
+      margin-top: -($checkbox-inner-height / 2);
+      border-radius: 3px;
+      transition: all 0.2s ease;
     }
     input:checked + label:before {
-      border: 1px solid #bcd843;
+      border-color: $input-border-color-active;
     }
     input:checked + label:after {
-      content: '';
-      position: absolute;
-      background: #bcd843;
-      border-radius: 100%;
-      width: 10px;
-      height: 10px;
-      line-height: 10px;
-      top: 10px;
-      left: 4px;
+      background-color: $input-border-color-active;
     }
   }
-  form .checkbox-grp input + label:before,
-  form .checkbox-grp input + label:after {
-    border-radius: 3px !important;
+  .radio-grp input + label:before,
+  .radio-grp input + label:after {
+    border-radius: 100% !important;
   }
-
-  /* simple checkbox toggle */
-
-  .toggle {
-    display: none;
-  }
-  .toggle + .toggle-btn {
-    position: relative;
-    display: block;
-    width: 4em;
-    height: 2em;
-    padding: 2px;
-    border-radius: 2em;
-    background: #ececec;
-    transition: all .3s ease;
-    box-sizing: border-box;
-    outline: 0;
-    cursor: pointer;
-    user-select: none;
-  }
-  .toggle + .toggle-btn:after {
-    position: relative;
-    display: block;
-    content: "";
-    width: 50%;
-    height: 100%;
-    left: 0;
-    border-radius: 50%;
-    background: #fff;
-    transition: all .2s ease;
-    box-sizing: border-box;
-  }
-  .toggle:checked + .toggle-btn {
-    background: #cce854;
-  }
-  .toggle:checked + .toggle-btn:after {
-    left: 50%;
-  }
-
-/* ---- Select ----------------------- */
-
-  form select,
-  .minict_wrapper input,
-  .vs__dropdown-toggle {
-    background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20class=%22arrow%22%20viewBox=%220%200%20300%20300%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cstyle%20type=%22text/css%22%3E.arrow%20polygon%7Bfill:%23c5cbd2;stroke:%23fff;stroke-width:10px;%7D%3C/style%3E%3Cpolygon%20points=%22293.514,94.987%20260.027,61.5%20150,171.527%2039.974,61.5%206.486,94.987%20150,238.5%22/%3E%3C/svg%3E);
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    background-repeat: no-repeat;
-    background-size: auto 26%;
-    background-size: auto 12.5px;
-    background-position: right 13px center;
+  .toggle-grp {
+    input {
+      position: absolute;
+      left: -9999px;
+    }
+    label {
+      display: block;
+    }
+    input + label {
+      position: relative;
+      display: inline-block;
+      padding: $input-padding;
+      padding-left: $toggle-width + 0.8em;
+      padding-right: 1.2em;
+      margin-bottom: 0;
+      user-select: none;
+    }
+    input + label:before,
+    input + label:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -$toggle-height/2;
+      background: $input-background;
+      border-radius: $toggle-height;
+      width: $toggle-width;
+      height: $toggle-height;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+    input + label:after {
+      width: $toggle-height;
+      border: 2px solid transparent;
+      border-color: transparent;
+      background-color: #fff;
+      background-clip: content-box;
+    }
+    input:checked + label:before {
+      background-color: $toggle-color-active;
+    }
+    input:checked + label:after {
+      left: $toggle-width - $toggle-height;
+    }
   }
 
 /* ---- Input states ----------------- */
 
-  input:active, 
-  input:focus, 
-  select:active, 
-  select:focus, 
-  textarea:active, 
+  input:active,
+  input:focus,
+  select:active,
+  select:focus,
+  textarea:active,
   textarea:focus,
   .vs--open .vs__dropdown-toggle {
     outline: 0;
-    border: 1px solid #c4de51fa;
-    box-shadow: 0 0 0 1px #c1dc4b;
-    background-color: #fff;
+    box-shadow: 0 0 0 2px $input-border-color-active inset;
+    background-color: $input-background;
   }
-  form input.invalid,
-  form select.invalid,
-  form textarea.invalid {
-    box-shadow: 0 0 0 1px #fe2946;
-    border-color: #fe2946;
-    box-shadow: 0 0 0 1px #e85271;
-    border-color: #e85271;
-    background-color: #fffcfd;
-    color: #7b1a1a;
-    animation: shake 0.40s cubic-bezier(.36,.07,.19,.97) both;
+  input.invalid,
+  select.invalid,
+  textarea.invalid,
+  .vs__dropdown-toggle.invalid {
+    box-shadow: 0 0 0 2px $danger inset;
+    // doesnt work for dropdown-toggle
+    //background-color: $input-background--invalid;
+    color: darken($danger, 20%);
+    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
   }
-  form input[type='radio'].invalid + label,
-  form input[type='checkbox'].invalid + label {
-    animation: shake 0.40s cubic-bezier(.36,.07,.19,.97) both;
+  input[type="radio"].invalid + label,
+  input[type="checkbox"].invalid + label {
+    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
     backface-visibility: hidden;
     color: #7b1a1a;
   }
-  form input[type='radio'].invalid + label:before,
-  form input[type='checkbox'].invalid + label:before {
-    border-color: #7b1a1ac7;
-    background-color: #fffcfd;
+  input[type="radio"].invalid + label:before,
+  input[type="checkbox"].invalid + label:before {
+    border-color: $danger;
+    background-color: $input-background--invalid;
   }
-  form textarea:disabled, 
-  form input:disabled {
-    background-color: #f9f9f9;
+  textarea:disabled,
+  input:disabled {
+    background-color: #f7f7f7;
+    color: #a5a5a5;
   }
 
   @keyframes shake {
@@ -276,40 +346,80 @@
     }
   }
 
+/* ---- Select ----------------------- */
+
+  select,
+  .vs__dropdown-toggle {
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%23c5cbd2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    appearance: none;
+    background-repeat: no-repeat;
+    background-size: auto 7px;
+    background-position: right 17px center;
+    transition: all 200ms ease;
+  }
+
+/* ---- Select states ---------------- */
+
+  select.select-colored,
+  .select-colored .vs__dropdown-toggle {
+    box-shadow: 0px 5px 12px rgba(111, 73, 219, 0.27);
+    background-color: $primary;
+    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  }
+  select.select-colored,
+  .select-colored input,
+  .select-colored.vs--single .vs__selected {
+    color: #fff;
+  }
+  select.select-colored:focus,
+  .select-colored.vs--open .vs__dropdown-toggle {
+    box-shadow: 0 0 0 2px darken($primary, 15%) inset,
+      0px 5px 12px rgba(111, 73, 219, 0.27);
+    background-color: darken($primary, 3%);
+  }
+  select.select-colored:hover,
+  .select-colored .vs__dropdown-toggle:hover {
+    background-color: darken($primary, 8%);
+  }
+
 /* ---- Miscellaneous ---------------- */
 
   /* Placeholders */
 
   ::-moz-placeholder {
-    font-size: 0.95rem;
-    color: rgba(150, 150, 156, 0.7);
+    color: $input-placeholder-color;
   }
   :-ms-input-placeholder {
-    font-size: 0.95rem;
-    color: rgba(150, 150, 156, 0.7);
+    color: $input-placeholder-color;
   }
   ::-webkit-input-placeholder {
-    font-size: 0.95rem;
-    color: rgba(150, 150, 156, 0.7);
+    color: $input-placeholder-color;
   }
 
-  /* Removing autofill colours */
+  /* Removing autofill colours & fonts */
 
   input:-webkit-autofill {
-    -webkit-animation-name: autofill;
-    -webkit-animation-fill-mode: both;
+    -webkit-text-fill-color: $input-color;
+    -webkit-box-shadow: 0 0 0 2px $input-border-color inset, 0 0 0 30px $input-background inset;
   }
-  @-webkit-keyframes autofill {
-    to {
-      color: #281C13;
-      background: #fff;
-    }
+  input:active:-webkit-autofill,
+  input:focus:-webkit-autofill,
+  select:active:-webkit-autofill,
+  select:focus:-webkit-autofill,
+  textarea:active:-webkit-autofill,
+  textarea:focus:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 2px $input-border-color-active inset, 0 0 0 30px $input-background inset;
+  }
+  input:-webkit-autofill::first-line {
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
   }
 
   /* Prevent input zooming */
 
   @media (max-width: 550px) {
-    form.form-mobile {
+    .form-mobile {
       input[type="color"],
       input[type="date"],
       input[type="datetime"],
@@ -330,16 +440,16 @@
         letter-spacing: 0;
       }
       ::-moz-placeholder {
-          font-size: 16px;
-          letter-spacing: 0;
+        font-size: 16px;
+        letter-spacing: 0;
       }
       :-ms-input-placeholder {
-          font-size: 16px;
-          letter-spacing: 0;
+        font-size: 16px;
+        letter-spacing: 0;
       }
       ::-webkit-input-placeholder {
-          font-size: 16px;
-          letter-spacing: 0;
+        font-size: 16px;
+        letter-spacing: 0;
       }
     }
   }

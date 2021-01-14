@@ -1,21 +1,35 @@
-// Global defaults
+// Color defaults
 $black: #000 !default;
 $blue: blue !default;
 $green: green !default;
 $grey: #444 !default;
 $grey-light: #777 !default;
+$grey-lighter: #eee !default;
 $purple: purple !default;
 $red: red !default;
-$yellow: yellow !default;
+$yellow: #c9af43 !default;
 
+// App color defaults
 $primary: $purple !default;
 $secondary: $blue !default;
 $success: $green !default;
 $info: $blue !default;
 $warning: $yellow !default;
 $text: $black !default;
+$text-light: $grey-light !default;
+$text-lighter: $grey-lighter !default;
 $link: $black !default;
 $link-hover: $blue !default;
+
+// Sass functions
+@function encodecolor($string) {
+  @if type-of($string) == 'color' {
+    $hex: str-slice(ie-hex-str($string), 4);
+    $string:unquote("#{$hex}");
+  }
+  $string: '%23' + $string;
+  @return $string;
+}
 
 @charset "utf-8";
 @import "base-normalize.scss";

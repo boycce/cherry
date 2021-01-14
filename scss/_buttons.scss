@@ -1,50 +1,70 @@
-$btn-border-color: $grey !default;
+$btn-background: $primary !default;
+$btn-font-family: $body-font-family !default;
+$btn-font-size: 16px !default;
+$btn-font-weight: 600 !default;
+$btn-padding: 12px 31px !default;
+$btn-min-height: 0 !default;
+@mixin loader($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="#{encodecolor($color)}" stroke-width="2"/></svg>')
+}
 
 .btn {
   position: relative;
   display: inline-block;
-  padding: 14px 30px 14px;
-  margin-top: 2px; /* helpful in content */
-  font-family: Open Sans;
+  padding: $btn-padding;
+  font-family: $btn-font-family;
   font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: $btn-font-weight;
+  font-size: $btn-font-size;
+  min-height: $btn-min-height;
   line-height: 1.5em;
   text-align: center;
   text-decoration: none;
   color: #fff;
-  transition: all 200ms ease;
   border-radius: 30px;
   border: 0;
+  box-sizing: border-box;
   cursor: pointer;
+  transition: all 200ms ease;
+}
+.btn img,
+.btn svg {
+  vertical-align: middle;
+  transition: opacity 200ms ease;
 }
 .btn svg {
-  display: block;
-  float: right;
-  margin: 4px -4px 0px 10px;
+  color: inherit;
+  font-size: $btn-font-size;
+  font-weight: normal;
 }
 .btn-small {
-  padding: 9px 30px;
   min-width: 0;
+  width: 100%;
 }
 
 /* Loading */
 
 .btn::after {
   content: "";
-  display: none;
+  display: block;
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 1.2em;
-  height: 1.2em;
-  margin: -0.62em;
-  border: 2px solid $grey;
-  border-left-color: transparent;
-  border-top-color: transparent;
-  border-radius: 50%;
-  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  margin: -10px;
+  opacity: 0;
+  z-index: 0;
   animation: loaderOne .9s cubic-bezier(.435,.165,.615,.81) infinite;
+  background-size: auto;
+  background-position: top;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  z-index: 2;
+  @include loader(#fff);
+}
+.btn-loader-dark::after {
+  @include loader($text);
 }
 .btn.is-loading,
 .btn.is-loading:hover,
@@ -52,60 +72,42 @@ $btn-border-color: $grey !default;
   cursor: default;
   color: transparent !important;
 }
+.btn.is-loading img {
+  opacity: 0;
+}
+.btn.is-loading svg {
+  fill: transparent !important;
+}
 .btn.is-loading::after {
-  display: block;
+  opacity: 1;
 }
 @keyframes loaderOne {
+  0% {
+    transform:rotate(0deg);
+  }
   100% {
     transform: rotate(360deg);
   }
 }
 
-/* Button (white) */
+/* Button */
 
 .btn {
-  color: $text;
-  background: #fff;
-  box-shadow: 0 0 0px 2px $btn-border-color inset;
-}
-.btn:hover,
-.btn:focus {
-  color: $text;
-  box-shadow: 0 0 0px 2px darken($btn-border-color, 8%) inset;
-  background-color: darken(#fff, 3%);
-}
-.btn::after {
-  border-right-color: $text;
-  border-bottom-color: $text;
-}
-
-/* Button two (primary) */
-
-.btn-two {
   color: #fff;
-  background: $primary;
-  box-shadow: 0px 5px 12px rgba($primary, 0.27);
-}
-.btn-two:hover,
-.btn-two:focus {
-  color: #fff;
-  background: darken($primary, 8%);
-  box-shadow: 0px 5px 12px rgba($primary, 0.27);
-}
-.btn-two::after {
-  border-right-color: #fff;
-  border-bottom-color: #fff;
+  background: $btn-background;
 }
 
-/* Form buttons */
+/* Mulitple buttons */
 
+.btns {
+  display: flex;
+}
 .btns .btn {
   margin-right: 0.8rem;
 }
 .btns .btn:last-child {
   margin-right: 0;
 }
-
 @media (max-width: 580px) {
   .btn {
     min-width: 180px;

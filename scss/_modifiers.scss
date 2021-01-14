@@ -3,8 +3,8 @@ $under-color: $text;
 $under-width: 3px;
 
 /* ---- Borders ---------------------- */
-  
-  @each $i in [1,2,3] {
+
+  @each $i in [1, 2, 3] {
     .b-#{$i} {
       border: #{$i}px solid $border-color;
     }
@@ -32,24 +32,70 @@ $under-width: 3px;
 
 /* ---- Colors ----------------------- */
 
-  .c-primary { color: $primary; }
-  .c-secondary { color: $secondary; }
-  .c-success { color: $success; }
-  .c-info { color: $info; }
-  .c-warning { color: $warning; }
-  .c-text { color: $text; }
-  .c-link { color: $link; }
-  .c-link-hover { color: $link-hover; }
+  .color-primary {
+    color: $primary;
+    fill: $primary;
+  }
+  .color-secondary {
+    color: $secondary;
+    fill: $secondary;
+  }
+  .color-success {
+    color: $success;
+    fill: $success;
+  }
+  .color-info {
+    color: $info;
+    fill: $info;
+  }
+  .color-warning {
+    color: $warning;
+    fill: $warning;
+  }
+  .color-danger {
+    color: $danger;
+    fill: $danger;
+  }
+  .color-text {
+    color: $text;
+    fill: $text;
+  }
+  .color-text-light {
+    color: $text-light;
+    fill: $text-light;
+  }
+  .color-text-lighter {
+    color: $text-lighter;
+    fill: $text-lighter;
+  }
+  .bg-primary {
+    background-color: $primary;
+  }
+  .bg-secondary {
+    background-color: $secondary;
+  }
+  .bg-success {
+    background-color: $success;
+  }
+  .bg-info {
+    background-color: $info;
+  }
+  .bg-warning {
+    background-color: $warning;
+  }
+  .bg-danger {
+    background-color: $danger;
+  }
+  .bg-text {
+    background-color: $text;
+  }
+  .bg-text-light {
+    background-color: $text-light;
+  }
+  .bg-text-lighter {
+    background-color: $text-lighter;
+  }
 
-  .bg-primary { background-color: $primary; }
-  .bg-secondary { background-color: $secondary; }
-  .bg-success { background-color: $success; }
-  .bg-info { background-color: $info; }
-  .bg-warning { background-color: $warning; }
-  .bg-text { background-color: $text; }
-  .bg-link { background-color: $link; }
-  .bg-link-hover { background-color: $link-hover; }
-  
 /* ---- Helpers ---------------------- */
 
   .left {
@@ -87,7 +133,10 @@ $under-width: 3px;
     display: table-cell;
     vertical-align: middle;
   }
-  .noselect {
+  .min-0 {
+    min-width: 0 !important;
+  }
+  .no-select {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -95,13 +144,14 @@ $under-width: 3px;
     -ms-user-select: none;
     user-select: none;
   }
-  .text-left { 
-    text-align: left; 
+  .text-left {
+    text-align: left;
   }
-  .text-right { 
-    text-align: right; 
+  .text-right {
+    text-align: right;
   }
-  .text-center, .center {
+  .text-center,
+  .center {
     text-align: center;
   }
   .flex {
@@ -109,6 +159,15 @@ $under-width: 3px;
   }
   .flex-1 {
     flex: 1;
+  }
+  .align-self-center {
+    align-self: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .relative {
+    position: relative;
   }
 
 /* ---- Underline -------------------- */
@@ -120,12 +179,12 @@ $under-width: 3px;
     content: "";
     display: block;
     position: absolute;
-    bottom: .25em;
+    bottom: 0.25em;
     height: $under-width;
     width: 100%;
     opacity: 0;
     background-color: $under-color;
-    transition: transform .15s ease, opacity .2s ease;
+    transition: transform 0.15s ease, opacity 0.2s ease;
   }
   .under:hover:before,
   .under:focus:before,
@@ -135,29 +194,28 @@ $under-width: 3px;
   }
 
 /* ---- Vue animations --------------- */
-  
+
   /* Slide */
 
   .slide-up-enter-active {
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   .slide-up-leave-active {
-    transition: all .2s ease-in;
+    transition: all 0.2s ease-in;
   }
-  .slide-up-enter, 
+  .slide-up-enter,
   .slide-up-leave-to {
     opacity: 0;
     transform: translateY(-12px);
   }
-  
+
   /* Fade */
 
-  .fade-enter-active, 
+  .fade-enter-active,
   .fade-leave-active {
-    transition: opacity .25s ease;
+    transition: opacity 0.15s ease;
   }
-  .fade-enter, 
+  .fade-enter,
   .fade-leave-to {
     opacity: 0.1;
   }
-
