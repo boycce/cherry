@@ -14,3 +14,5 @@ defaults:
     values:
       title: "Introduction"
       nav_order: 1
+
+theme: jekyll-theme-slate
