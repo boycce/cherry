@@ -1,8 +1,8 @@
 {
   "name": "css-cherry",
   "description": "Minimal and comprehensible CSS framework",
-  "version": "0.2.0",
-  "author": "Ricky Boyce <boycce@gmail.com> (https://rickyboyce.com)",
+  "version": "0.3.0",
+  "author": "Ricky Boyce <boycce@gmail.com>",
   "repository": "github:Boycce/cherry",
   "license": "MIT",
   "main": "scss/_index.scss",
@@ -20,9 +20,12 @@
     "node-sass": "^4.14.1",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "standard-version": "^9.1.0"
   },
   "scripts": {
+    "minor": "standard-version --release-as minor && npm publish",
+    "patch": "standard-version && npm publish",
     "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/cherry.css css/cherry.css",
     "build-cleancss": "cleancss -o css/cherry.min.css css/cherry.css",
@@ -34,5 +37,13 @@
     "css",
     "scss",
     "README.md"
-  ]
+  ],
+  "standard-version": {
+    "releaseCommitMessageFormat": "{{currentTag}}",
+    "sign": true,
+    "skip": {
+      "changelog": true,
+      "tag": true
+    }
+  }
 }
