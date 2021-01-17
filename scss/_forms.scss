@@ -396,7 +396,7 @@ $toggle-color-active: $input-border-color-active !default;
     color: $input-placeholder-color;
   }
 
-  /* Removing autofill colours & fonts */
+  /* Removing autofill colors & fonts */
 
   input:-webkit-autofill {
     -webkit-text-fill-color: $input-color;

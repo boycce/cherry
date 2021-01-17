@@ -1,5 +1,4 @@
-
-// Initial colours
+// Initial colors
 $black:         hsl(0, 0%, 0%) !default;
 $black-light:   hsl(0, 0%, 7%) !default;
 $black-lighter: hsl(0, 0%, 13%) !default;
@@ -18,7 +17,7 @@ $blue:          hsl(217, 71%,  53%) !default;
 $purple:        hsl(271, 100%, 71%) !default;
 $red:           hsl(348, 86%, 61%) !default;
 
-// Application colours
+// Application colors
 $primary:       $purple !default;
 $secondary:     $blue !default;
 $success:       $green !default;
@@ -34,7 +33,7 @@ $link:          $black !default;
 $link-focus:    $blue !default;
 $link-hover:    $blue !default;
 
-// Derived colours
+// Derived colors
 $primary-light: findLightColor($primary) !default;
 $secondary-dark: findDarkColor($secondary) !default;
 $secondary-light: findLightColor($secondary) !default;

@@ -1234,7 +1234,7 @@ select.select-colored:hover,
   color: rgba(18, 18, 18, 0.5);
 }
 
-/* Removing autofill colours & fonts */
+/* Removing autofill colors & fonts */
 input:-webkit-autofill {
   -webkit-text-fill-color: #121212;
   -webkit-box-shadow: 0 0 0 2px #efefef inset, 0 0 0 30px #fff inset;
@@ -1573,8 +1573,8 @@ input:-webkit-autofill::first-line {
 }
 
 /* ---- Media block ------------------ */
-/* 
-    Hint: imploy new layouts within modules via .media-layout-xx  
+/*
+    Hint: imploy new layouts within modules via .media-layout-xx
     From: philipwalton.github.io/solved-by-flexbox/demos/media-object */
 .media {
   display: flex;
