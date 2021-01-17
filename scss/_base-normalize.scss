@@ -1,6 +1,6 @@
-$body-background-color: #fff !default;
+$body-background: #fff !default;
 $body-color: $text !default;
-$body-font-family: Open Sans, sans-serif !default;
+$body-font-family: $family-primary;
 $body-font-size: 15px !default;
 $body-font-weight: 400 !default;
 $body-line-height: 1.5em !default;
@@ -20,7 +20,7 @@ $body-line-height: 1.5em !default;
     }
   }
   body {
-    background-color: $body-background-color;
+    background-color: $body-background;
     color: $body-color;
     font-family: $body-font-family;
     font-size: $body-font-size;
@@ -68,7 +68,7 @@ $body-line-height: 1.5em !default;
   summary {
     display: block;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box; 
+    box-sizing: border-box;
   }
   b, strong {
     font-weight: bolder;

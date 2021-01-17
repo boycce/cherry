@@ -1,27 +1,46 @@
-// Color defaults
-$black: #000 !default;
-$blue: blue !default;
-$green: green !default;
-$grey: #444 !default;
-$grey-light: #777 !default;
-$grey-lighter: #eee !default;
-$purple: purple !default;
-$red: red !default;
-$yellow: #c9af43 !default;
+@charset "utf-8";
 
-// App color defaults
-$primary: $purple !default;
-$secondary: $blue !default;
-$success: $green !default;
-$info: $blue !default;
-$warning: $yellow !default;
-$text: $black !default;
-$text-light: $grey-light !default;
-$text-lighter: $grey-lighter !default;
-$link: $black !default;
-$link-hover: $blue !default;
+// Initial colours
+$black:         hsl(0, 0%, 0%) !default;
+$black-light:   hsl(0, 0%, 7%) !default;
+$black-lighter: hsl(0, 0%, 13%) !default;
 
-// Sass functions
+$grey:          hsl(0, 0%, 27%) !default;
+$grey-light:    hsl(0, 0%, 47%) !default;
+$grey-lighter:  hsl(0, 0%, 73%) !default;
+$grey-lightest: hsl(0, 0%, 93%) !default;
+
+$orange:        hsl(14,  100%, 53%) !default;
+$yellow:        hsl(48,  100%, 67%) !default;
+$green:         hsl(141, 53%,  53%) !default;
+$turquoise:     hsl(171, 100%, 41%) !default;
+$cyan:          hsl(204, 71%,  53%) !default;
+$blue:          hsl(217, 71%,  53%) !default;
+$purple:        hsl(271, 100%, 71%) !default;
+$red:           hsl(348, 86%, 61%) !default;
+
+// Derived colours
+$primary:       $purple !default;
+$secondary:     $blue !default;
+$success:       $green !default;
+$info:          $blue !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+
+$text:          $black-light !default;
+$text-light:    $grey !default;
+$text-lighter:  $grey-light !default;
+$text-strong:   $black !default;
+$link:          $black !default;
+$link-focus:    $blue !default;
+$link-hover:    $blue !default;
+
+// Fonts
+$family-primary: Open Sans, sans-serif !default;
+$family-secondary: Open Sans, sans-serif !default;
+$family-code: monospace !default
+
+// SASS functions
 @function encodecolor($string) {
   @if type-of($string) == 'color' {
     $hex: str-slice(ie-hex-str($string), 4);
@@ -31,7 +50,6 @@ $link-hover: $blue !default;
   @return $string;
 }
 
-@charset "utf-8";
 @import "base-normalize.scss";
 @import "buttons.scss";
 @import "columns.scss";
