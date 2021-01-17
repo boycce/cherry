@@ -1,0 +1,16 @@
+remote_theme: boycce/github-docs
+title: Cherry
+description: Minimal and comprehensible CSS framework
+
+# Aux links for the naviation
+aux_links:
+  "Cherry on GitHub":
+    - "//github.com/boycce/cherry"
+
+defaults:
+  -
+    scope:
+      path: "readme.md"
+    values:
+      title: "Introduction"
+      nav_order: 1

@@ -3,7 +3,8 @@
   "description": "Minimal and comprehensible CSS framework",
   "version": "0.3.2",
   "author": "Ricky Boyce <boycce@gmail.com>",
-  "repository": "github:Boycce/cherry",
+  "repository": "github:boycce/cherry",
+  "homepage": "https://boycce.github.io/cherry/",
   "license": "MIT",
   "main": "scss/_index.scss",
   "style": "css/cherry.min.css",
@@ -14,15 +15,6 @@
     "minimal",
     "sass"
   ],
-  "devDependencies": {
-    "autoprefixer": "^9.5.1",
-    "clean-css-cli": "^4.3.0",
-    "node-sass": "^4.14.1",
-    "postcss": "^8.2.4",
-    "postcss-cli": "^8.3.1",
-    "rimraf": "^2.6.3",
-    "standard-version": "^9.1.0"
-  },
   "scripts": {
     "minor": "standard-version --release-as minor && npm publish",
     "patch": "standard-version && npm publish",
@@ -31,7 +23,17 @@
     "build-cleancss": "cleancss -o css/cherry.min.css css/cherry.css",
     "build-clean": "rimraf css",
     "build-sass": "node-sass --output-style expanded --source-map true cherry.scss css/cherry.css",
-    "start": "npm run build-sass -- --watch"
+    "start": "npm run build-sass -- --watch",
+    "docs": "cd docs && bundle exec jekyll serve --livereload --livereload-port 4001"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "rimraf": "^2.6.3",
+    "standard-version": "^9.1.0"
   },
   "files": [
     "css",

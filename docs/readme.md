@@ -1,9 +1,6 @@
-# Cherry
+![](./assets/imgs/cherry.jpg)
 
-Cherry is a minimal and comprehensible CSS framework.
-
-[![NPM](https://img.shields.io/npm/v/css-cherry.svg)](https://www.npmjs.com/package/css-cherry)
-[![Build Status](https://travis-ci.org/boycce/cherry.svg?branch=master)](https://travis-ci.org/boycce/cherry)
+[![NPM](https://img.shields.io/npm/v/css-cherry.svg)](https://www.npmjs.com/package/css-cherry) [![Build Status](https://travis-ci.org/boycce/cherry.svg?branch=master)](https://travis-ci.org/boycce/cherry)
 
 ## Install
 
@@ -18,7 +15,7 @@ npm install --save css-cherry
 After installation, you can then import the SCSS into your project sourcing from your `node_modules` directory:
 
 ```scss
-@import "../node_modules/css-cherry/scss";
+@import "../node_modules/css-cherry/cherry.scss";
 ```
 
 ## Browser Support
@@ -31,10 +28,6 @@ Cherry uses [autoprefixer](https://github.com/postcss/autoprefixer) to make (mos
 * Firefox
 * Opera
 * Safari
-
-## Documentation
-
-Coming soon...
 
 ## Copyright and license
 
