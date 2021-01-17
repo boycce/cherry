@@ -5,7 +5,7 @@ nav_order: 2
 
 # Colors
 
-## Variables
+### Variables
 
 You can use these variables to customize these elements. Simply set these variables before importing Cherry.
 
@@ -16,12 +16,10 @@ Variable | Default value
 `$black`            | `hsl(0, 0%, 0%)`
 `$black-light`      | `hsl(0, 0%, 7%)`
 `$black-lighter`    | `hsl(0, 0%, 13%)`
- |
 `$grey`             | `hsl(0, 0%, 27%)`
 `$grey-light`       | `hsl(0, 0%, 47%)`
 `$grey-lighter`     | `hsl(0, 0%, 73%)`
 `$grey-lightest`    | `hsl(0, 0%, 93%)`
- |
 `$orange`           | `hsl(14,  100%, 53%)`
 `$yellow`           | `hsl(48,  100%, 67%)`
 `$green`            | `hsl(141, 53%,  53%)`
@@ -41,7 +39,6 @@ Variable | Default value | Computed value
 `$info`             | `$blue` | ..
 `$warning`          | `$yellow` | ..
 `$danger`           | `$red` | ..
- | |
 `$text`             | `$black-light` | ..
 `$text-light`       | `$grey` | ..
 `$text-lighter`     | `$grey-light` | ..
