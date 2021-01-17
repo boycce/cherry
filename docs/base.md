@@ -3,7 +3,9 @@ title: Base
 nav_order: 2
 ---
 
-# Base variables
+# Base
+
+## Variables
 
 You can use these variables to customize these elements. Simply set these variables before importing Cherry.
 

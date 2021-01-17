@@ -5,7 +5,7 @@ nav_order: 3
 
 # Form
 
-## Variables
+### Variables
 
 You can use these variables to customize these elements. Simply set these variables before importing Cherry.
 
