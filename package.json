@@ -1,7 +1,7 @@
 {
   "name": "css-cherry",
   "description": "Minimal and comprehensible CSS framework",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Ricky Boyce <boycce@gmail.com>",
   "repository": "github:Boycce/cherry",
   "license": "MIT",
@@ -36,6 +36,7 @@
   "files": [
     "css",
     "scss",
+    "cherry.scss",
     "README.md"
   ],
   "standard-version": {
