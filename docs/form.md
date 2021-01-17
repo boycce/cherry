@@ -9,13 +9,13 @@ nav_order: 1
 
   You can use these variables to customize these elements. Simply set these variables before importing Cherry.
 
-  #### Error
+  ### Error
 
   Variable | Default value | Computed value
   - | - | -
   `$error-font-size` | `0.95rem` | same as default
 
-  #### Input
+  ### Input
 
   Variable | Default value | Computed value
   - | - | -
@@ -32,18 +32,18 @@ nav_order: 1
   `$input-border-radius`       | `2px`               | same as default
   `$input-placeholder-color`   | `rgba($text, 0.5)`  | ..
 
-  #### Label
+  ### Label
 
   Variable | Default value | Computed value
   - | - | -
   `$label-color`     | `$text-light` | ..
   `$label-font-size` | `0.85rem` | same as default
 
-  #### Toggle / Checkbox/ Radio
+  ### Toggle / Checkbox/ Radio
 
   Variable | Default value | Computed value
   - | - | -
-  `$checkbox-height`        | `20px                        | same as default
+  `$checkbox-height`        | `20px`                       | same as default
   `$checkbox-inner-height`  | `10px`                       | same as default
   `$toggle-height`          | `1.8em`                      | same as default
   `$toggle-width`           | `$toggle-height * 1.8`       | ..
