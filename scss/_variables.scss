@@ -1,4 +1,3 @@
-@charset "utf-8";
 
 // Initial colours
 $black:         hsl(0, 0%, 0%) !default;
@@ -19,7 +18,7 @@ $blue:          hsl(217, 71%,  53%) !default;
 $purple:        hsl(271, 100%, 71%) !default;
 $red:           hsl(348, 86%, 61%) !default;
 
-// Derived colours
+// Application colours
 $primary:       $purple !default;
 $secondary:     $blue !default;
 $success:       $green !default;
@@ -35,29 +34,21 @@ $link:          $black !default;
 $link-focus:    $blue !default;
 $link-hover:    $blue !default;
 
+// Derived colours
+$primary-light: findLightColor($primary) !default;
+$secondary-dark: findDarkColor($secondary) !default;
+$secondary-light: findLightColor($secondary) !default;
+$primary-dark: findDarkColor($primary) !default;
+$success-light: findLightColor($success) !default;
+$success-dark: findDarkColor($success) !default;
+$info-light: findLightColor($info) !default;
+$info-dark: findDarkColor($info) !default;
+$warning-light: findLightColor($warning) !default;
+$warning-dark: findDarkColor($warning) !default;
+$danger-light: findLightColor($danger) !default;
+$danger-dark: findDarkColor($danger) !default;
+
 // Fonts
 $family-primary: Open Sans, sans-serif !default;
 $family-secondary: Open Sans, sans-serif !default;
 $family-code: monospace !default
-
-// SASS functions
-@function encodecolor($string) {
-  @if type-of($string) == 'color' {
-    $hex: str-slice(ie-hex-str($string), 4);
-    $string:unquote("#{$hex}");
-  }
-  $string: '%23' + $string;
-  @return $string;
-}
-
-@import "base-normalize.scss";
-@import "buttons.scss";
-@import "columns.scss";
-@import "elements.scss";
-@import "forms.scss";
-@import "forms-vue-select.scss";
-@import "layout.scss";
-@import "modal.scss";
-@import "modifiers.scss";
-@import "spacing.scss";
-@import "tooltips.scss";
