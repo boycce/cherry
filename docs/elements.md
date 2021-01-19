@@ -1,13 +1,15 @@
 ---
-title: Buttons
+title: Elements
 nav_order: 5
 ---
 
-# Buttons
+# Elements
 
 ### Variables
 
 You can use these variables to customize these elements. Simply set these variables before importing Cherry.
+
+#### Buttons
 
 Variable | Default value | Computed value
 - | - | -
