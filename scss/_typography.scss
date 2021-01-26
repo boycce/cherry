@@ -1,31 +1,25 @@
 /* ---- Content (wysiwyg) ------------ */
 
   .content {
-    h1 {
+    h1, h2, h3, h4 {
       font-style: normal;
       font-weight: bold;
-      font-size: 25px;
       line-height: 1.5em;
       letter-spacing: -0.03em;
-      margin: 0 0 0em 0;
+      margin: 0 0 0.8em 0;
+    }
+    h1 {
+      font-size: 27px;
     }
     h2 {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 22px;
-      line-height: 1.5em;
-      letter-spacing: -0.03em;
-      margin: 0 0 0em 0;
+      font-size: 25px;
     }
     h3 {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 17px;
-      line-height: 1.5em;
-      letter-spacing: -0.03em;
-      margin: 0 0 0em 0;
+      font-size: 22px;
     }
-    h4 {}
+    h4 {
+      font-size: 18px;
+    }
     b, strong {
       color: #333;
       font-weight: bold;
@@ -37,7 +31,7 @@
     small,
     code {
       margin-top: 0;
-      margin-bottom: 1.6em;
+      margin-bottom: 1.4rem;
       line-height: 1.6em;
     }
     small,

@@ -48,8 +48,8 @@ Variable | Default value | Computed value
 `$text-lighter`     | `$grey-light`  | `hsl(0, 0%, 47%)`
 `$text-strong`      | `$black`       | `hsl(0, 0%, 0%)`
 `$link`             | `$black`       | `hsl(0, 0%, 0%)`
-`$link-focus`       | `$blue`        | `hsl(217, 71%,  53%)`
-`$link-hover`       | `$blue`        | `hsl(217, 71%,  53%)`
+`$link--focus`      | `$blue`        | `hsl(217, 71%,  53%)`
+`$link--hover`      | `$blue`        | `hsl(217, 71%,  53%)`
 You can also pass a map of custom colors | |
 `$custom-colors`    | `e.g. (cherry: (red, findColorInvert(red)), ..)` | ..
 

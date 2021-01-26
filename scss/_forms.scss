@@ -1,40 +1,52 @@
-// Error
-$error-font-size:           0.85rem !default;
+/* ---- Variables -------------------- */
 
-// Input
-$input-background:          #fdfdfd !default;
-$input-background--invalid: #fffcfd !default;
-$input-border-color:        #efefef !default;
-$input-border-color-active: $primary !default;
-$input-border-width:        2px !default;
-$input-color:               $text !default;
-$input-font-family:         $body-font-family !default;
-$input-font-size:           0.95rem !default;
-$input-font-weight:         inherit !default;
-$input-margin-bottom:       1.5rem !default;
-$input-padding:             13px 19px !default;
-$input-border-radius:       4px !default;
-$input-placeholder-color:   rgba($text, 0.5) !default;
+  // Error
+  $error-font-size:            0.85rem !default;
 
-// Label
-$label-color:               $text-light !default;
-$label-font-size:           0.85rem !default;
+  // Input
+  $input-background:           #fdfdfd !default;
+  $input-background--active:   $input-background !default;
+  $input-background--invalid:  $input-background !default;
+  $input-border-color:         #efefef !default;
+  $input-border-color--active: $primary !default;
+  $input-border-radius:        4px !default;
+  $input-border-width:         2px !default;
+  $input-color:                $text !default;
+  $input-font-family:          $body-font-family !default;
+  $input-font-size:            0.95rem !default;
+  $input-font-weight:          inherit !default;
+  $input-margin-bottom:        1.5rem !default;
+  $input-padding:              13px 19px !default;
+  $input-placeholder-color:    rgba($text, 0.5) !default;
 
-// Textarea
-$textarea-min-height:       7em !default;
+  // Label
+  $label-color:                $text-light !default;
+  $label-font-size:            0.85rem !default;
 
-// Toggle/checkbox/radio
-$checkbox-height:           20px !default; // determines width
-$checkbox-inner-height:     10px !default; // determines width
-$checkbox-padding-left:     12px !default;
-$checkbox-padding-right:    16px !default;
-$toggle-height:             1.8em !default;
-$toggle-width:              $toggle-height * 1.8 !default;
-$toggle-color:              darken($input-background, 10%) !default;
-$toggle-color-active:       $input-border-color-active !default;
+  // Textarea
+  $textarea-min-height:        7em !default;
+  $textarea-padding:           $input-padding !default;
+
+  // Variable inputs
+  $variable-color:             darken($input-background, 12%) !default;
+  $variable-color--active:     $input-border-color--active !default;
+  $checkbox-height:            20px !default; // determines width
+  $checkbox-inner-height:      10px !default; // determines width
+  $checkbox-padding-left:      12px !default;
+  $checkbox-padding-right:     16px !default;
+  $toggle-height:              1.8em !default;
+  $toggle-width:               $toggle-height * 1.8 !default;
 
 /* ---- Main ------------------------- */
 
+  /*
+
+
+    1st split misc element / definiations
+    Augument current form elements with .form2 & .form3
+
+
+  */
   input,
   select,
   textarea,
@@ -48,19 +60,12 @@ $toggle-color-active:       $input-border-color-active !default;
     font-weight: $input-font-weight;
     line-height: 1.5rem;
     background: $input-background;
-    box-shadow: 0 0 0 2px $input-border-color inset;
+    box-shadow: 0 0 0 $input-border-width $input-border-color inset;
     border: 0;
     box-sizing: border-box;
     border-radius: $input-border-radius;
     vertical-align: top;
-    transition: border-color ease 0.2s, box-shadow ease 0.2s;
-  }
-  .onloading input,
-  .onloading select,
-  .onloading textarea,
-  .onloading .input,
-  .onloading .vs__dropdown-toggle {
-    transition: none; /* Stops autofill bg flashing */
+    transition: background-color ease 0.2s, border-color ease 0.2s, box-shadow ease 0.2s;
   }
   .input,
   .input-grp,
@@ -76,6 +81,7 @@ $toggle-color-active:       $input-border-color-active !default;
     padding: 10px 19px 11px;
   }
   textarea {
+    padding: $textarea-padding;
     max-height: 40em;
     min-height: $textarea-min-height;
     resize: vertical;
@@ -87,12 +93,6 @@ $toggle-color-active:       $input-border-color-active !default;
     text-align: left;
     position: relative;
   }
-  input.code,
-  .input.code {
-    font-size: 1.3rem;
-    letter-spacing: 4px;
-    margin-bottom: 1.45em;
-  }
 
   /* Input + button element  */
 
@@ -101,6 +101,8 @@ $toggle-color-active:       $input-border-color-active !default;
   }
   .input-button input {
     flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .input-button .button {
     width: auto !important;
@@ -133,17 +135,6 @@ $toggle-color-active:       $input-border-color-active !default;
     display: block;
   }
 
-  /* Color: Grey form BG inputs */
-
-  .form-grey input,
-  .form-grey select,
-  .form-grey textarea,
-  .form-grey .input,
-  .form-grey .radio-grp input + label:before,
-  .form-grey .checkbox-grp input + label:before {
-    background: $input-background;
-  }
-
 /* ---- Labels ----------------------- */
 
   label,
@@ -151,28 +142,29 @@ $toggle-color-active:       $input-border-color-active !default;
   .label-right {
     display: inline-block;
     vertical-align: top;
-    text-decoration-color: $label-color;
-    text-decoration: none;
     font-size: $label-font-size;
     line-height: 1.4em;
     margin-bottom: 0.45em;
     cursor: pointer;
     user-select: none;
-    /* closely knit to util.errorElement  */
-    transition: opacity 0.15s ease, color 0.25s ease,
-      text-decoration-color 0.25s ease; // was 0.25
+  }
+  label,
+  .label {
+    /* matches util.errorElement  */
+    transition: opacity 0.15s ease, color 0.25s ease, text-decoration-color 0.25s ease;
   }
   label,
   .label,
   .label-color {
     color: $label-color;
+    text-decoration-color: $label-color;
   }
   label.invalid-out {
     //opacity: 0.2;
   }
   label.invalid-in {
     //opacity: 1;
-    color: $red;
+    color: $danger;
   }
   .label-right,
   a.label-right {
@@ -253,7 +245,7 @@ $toggle-color-active:       $input-border-color-active !default;
       height: $checkbox-height;
       margin-top: -($checkbox-height / 2);
       background: $input-background;
-      border: 2px solid darken($input-background, 12%);
+      border: 2px solid $variable-color;
       border-radius: 3px;
       box-sizing: border-box;
       transition: all 0.2s ease;
@@ -271,10 +263,10 @@ $toggle-color-active:       $input-border-color-active !default;
       transition: all 0.2s ease;
     }
     input:checked + label:before {
-      border-color: $input-border-color-active;
+      border-color: $variable-color--active;
     }
     input:checked + label:after {
-      background-color: $input-border-color-active;
+      background-color: $variable-color--active;
     }
   }
   .radio-grp input + label:before,
@@ -305,7 +297,7 @@ $toggle-color-active:       $input-border-color-active !default;
       left: 0;
       top: 50%;
       margin-top: -$toggle-height/2;
-      background: $toggle-color;
+      background: $variable-color;
       border-radius: $toggle-height;
       width: $toggle-width;
       height: $toggle-height;
@@ -320,7 +312,7 @@ $toggle-color-active:       $input-border-color-active !default;
       background-clip: content-box;
     }
     input:checked + label:before {
-      background-color: $toggle-color-active;
+      background-color: $variable-color--active;
     }
     input:checked + label:after {
       left: $toggle-width - $toggle-height;
@@ -337,16 +329,16 @@ $toggle-color-active:       $input-border-color-active !default;
   textarea:focus,
   .vs--open .vs__dropdown-toggle {
     outline: 0;
-    box-shadow: 0 0 0 2px $input-border-color-active inset;
-    background-color: $input-background;
+    box-shadow: 0 0 0 $input-border-width $input-border-color--active inset;
+    background-color: $input-background--active;
   }
   input.invalid,
   select.invalid,
   textarea.invalid,
   .vs__dropdown-toggle.invalid {
-    box-shadow: 0 0 0 2px $danger inset;
-    // doesnt work for dropdown-toggle
-    //background-color: $input-background--invalid;
+    box-shadow: 0 0 0 $input-border-width $danger inset;
+    // doesnt work for dropdown/toggle
+    background-color: $input-background--invalid;
     color: darken($danger, 20%);
     animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
@@ -370,18 +362,6 @@ $toggle-color-active:       $input-border-color-active !default;
     color: #a5a5a5;
   }
 
-  @keyframes shake {
-    30% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    60% {
-      transform: translate3d(1px, 0, 0);
-    }
-    80% {
-      transform: translate3d(0px, 0, 0);
-    }
-  }
-
 /* ---- Select ----------------------- */
 
   select,
@@ -394,31 +374,6 @@ $toggle-color-active:       $input-border-color-active !default;
     transition: all 200ms ease;
   }
 
-/* ---- Select states ---------------- */
-
-  select.select-colored,
-  .select-colored .vs__dropdown-toggle {
-    box-shadow: 0px 5px 12px rgba(111, 73, 219, 0.27);
-    background-color: $primary;
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-  }
-  select.select-colored,
-  .select-colored input,
-  .select-colored.vs--single .vs__selected {
-    color: #fff;
-  }
-  select.select-colored:focus,
-  .select-colored.vs--open .vs__dropdown-toggle {
-    box-shadow: 0 0 0 2px darken($primary, 15%) inset,
-      0px 5px 12px rgba(111, 73, 219, 0.27);
-    background-color: darken($primary, 3%);
-  }
-  select.select-colored:hover,
-  .select-colored .vs__dropdown-toggle:hover {
-    background-color: darken($primary, 8%);
-  }
-
-/* ---- Miscellaneous ---------------- */
 
   /* Placeholders */
 
@@ -436,7 +391,7 @@ $toggle-color-active:       $input-border-color-active !default;
 
   input:-webkit-autofill {
     -webkit-text-fill-color: $input-color;
-    -webkit-box-shadow: 0 0 0 2px $input-border-color inset, 0 0 0 30px $input-background inset;
+    -webkit-box-shadow: 0 0 0 $input-border-width $input-border-color inset, 0 0 0 30px $input-background inset;
   }
   input:active:-webkit-autofill,
   input:focus:-webkit-autofill,
@@ -444,12 +399,40 @@ $toggle-color-active:       $input-border-color-active !default;
   select:focus:-webkit-autofill,
   textarea:active:-webkit-autofill,
   textarea:focus:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0 2px $input-border-color-active inset, 0 0 0 30px $input-background inset;
+    -webkit-box-shadow:
+      0 0 0 $input-border-width $input-border-color--active inset,
+      0 0 0 1000px $input-background inset;
   }
   input:-webkit-autofill::first-line {
     font-family: $input-font-family;
     font-size: $input-font-size;
     font-weight: $input-font-weight;
+  }
+
+/* ---- Miscellaneous ---------------- */
+
+  /* Stop autofill background flash */
+
+  .onloading input,
+  .onloading select,
+  .onloading textarea,
+  .onloading .input,
+  .onloading .vs__dropdown-toggle {
+    transition: none;
+  }
+
+  /* Animations */
+
+  @keyframes shake {
+    30% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    60% {
+      transform: translate3d(1px, 0, 0);
+    }
+    80% {
+      transform: translate3d(0px, 0, 0);
+    }
   }
 
   /* Prevent input zooming */

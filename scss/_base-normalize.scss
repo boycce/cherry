@@ -43,14 +43,15 @@ $link-outline:         none !default;
     background-color: transparent; /* ie10 */
     text-decoration: $link-text-decoration;
     text-decoration-color: $link;
+    transition: 0.13s ease;
   }
   a:hover {
-    color: $link-hover;
-    text-decoration-color: $link-hover;
+    color: $link--hover;
+    text-decoration-color: $link--hover;
   }
   a:focus {
-    color: $link-focus;
-    text-decoration-color: $link-focus;
+    color: $link--focus;
+    text-decoration-color: $link--focus;
     outline: $link-outline;
   }
   q,

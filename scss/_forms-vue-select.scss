@@ -1,5 +1,5 @@
 $list-fade-time:      0s !default; // handy for list styling
-$option-color-active: $primary !default;
+$option-color--active: $primary !default;
 
 /* ---- Main ------------------------- */
 
@@ -161,11 +161,11 @@ $option-color-active: $primary !default;
     //.vs__dropdown-option:hover, arrow keys use highlight
     .vs__dropdown-option--highlight {
       color: #fff;
-      background: $option-color-active;
+      background: $option-color--active;
     }
     .vs__dropdown-option--selected {
       color: #fff;
-      background: darken($option-color-active, 6%);
+      background: darken($option-color--active, 6%);
     }
   }
   .v-select-no-wrap .vs__dropdown-option {
