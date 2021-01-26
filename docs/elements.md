@@ -26,6 +26,5 @@ Variable | Default value | Computed value
 `$button-box-shadow`      | `0 0 10px 0px rgba(0, 0, 0, 0.05)` |
 `$buttons-margin-right`   | `1rem` |
 `$buttons-margin-bottom`  | `1.5rem` |
-| |
-You can pass a map of shadows per color | |
+You can pass a map of shadows per app color ||
 `$button-box-shadows`     | `e.g. (primary: 0 0 10px 0 rgba($primary, 0.5), ..)` |
