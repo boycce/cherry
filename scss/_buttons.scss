@@ -1,52 +1,82 @@
-$btn-background: $primary !default;
-$btn-font-family: $body-font-family !default;
-$btn-font-size: 16px !default;
-$btn-font-weight: 600 !default;
-$btn-padding: 12px 31px !default;
-$btn-min-height: 0 !default;
+$button-background:      $primary !default;
+$button-border-radius:   5px !default;
+$button-font-family:     $body-font-family !default;
+$button-font-size:       14px !default;
+$button-font-weight:     600 !default;
+$button-padding:         12px 31px !default;
+$button-min-height:      0 !default;
+$button-icon-size:       1.3em !default;
+$button-icon-margin:     0.4em !default;
+$button-colors:          $colors !default;
+$button-box-shadow:      0 0 10px 0px rgba(0, 0, 0, 0.05) !default;
+$buttons-margin-right:   1rem !default;
+$buttons-margin-bottom:  1.5rem !default;
+
+// Custom button box-shadow
+$button-box-shadows:     (/*e.g. primary: 0 0 10px 0 rgba($primary, .5)*/) !default;
+
 @mixin loader($color) {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="#{encodecolor($color)}" stroke-width="2"/></svg>')
 }
 
+@function buttonBoxShadow($cssname, $name) {
+  $box-shadows: map-merge((button: $button-box-shadow), $button-box-shadows);
+  @if ($cssname == '.button') {
+    @return map-get($box-shadows, button);
+  }
+  @else {
+    @return map-get($box-shadows, $name);
+  }
+}
+
 /* ---- Main ------------------------- */
 
-  .btn {
+  .button {
     position: relative;
-    display: inline-block;
-    padding: $btn-padding;
-    font-family: $btn-font-family;
+    display: inline-flex;
+    -webkit-appearance: none;
+    align-items: center;
+    padding: $button-padding;
+    font-family: $button-font-family;
     font-style: normal;
-    font-weight: $btn-font-weight;
-    font-size: $btn-font-size;
-    min-height: $btn-min-height;
+    font-weight: $button-font-weight;
+    font-size: $button-font-size;
+    min-height: $button-min-height;
     line-height: 1.5em;
     text-align: center;
     text-decoration: none;
     color: #fff;
-    border-radius: 30px;
+    border-radius: $button-border-radius;
     border: 0;
     box-sizing: border-box;
+    box-shadow: $button-box-shadow;
     cursor: pointer;
     transition: all 200ms ease;
+    white-space: nowrap;
   }
-  .btn img,
-  .btn svg {
-    vertical-align: middle;
+
+  /* Icon */
+
+  .button .icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: $button-icon-size;
+    width: $button-icon-size;
     transition: opacity 200ms ease;
-  }
-  .btn svg {
-    color: inherit;
-    font-size: $btn-font-size;
-    font-weight: normal;
-  }
-  .btn-small {
-    min-width: 0;
-    width: 100%;
+    &:first-child:not(:last-child) {
+      margin-left: calc(-0.2em - 1px);
+      margin-right: $button-icon-margin;
+    }
+    &:last-child:not(:first-child) {
+      margin-right: calc(-0.2em - 1px);
+      margin-left: $button-icon-margin;
+    }
   }
 
   /* Loading */
 
-  .btn::after {
+  .button::after {
     content: "";
     display: block;
     position: absolute;
@@ -65,22 +95,19 @@ $btn-min-height: 0 !default;
     z-index: 2;
     @include loader(#fff);
   }
-  .btn-loader-dark::after {
-    @include loader($text);
-  }
-  .btn.is-loading,
-  .btn.is-loading:hover,
-  .btn.is-loading:focus {
+  .button.is-loading,
+  .button.is-loading:hover,
+  .button.is-loading:focus {
     cursor: default;
     color: transparent !important;
   }
-  .btn.is-loading img {
+  .button.is-loading .icon {
     opacity: 0;
   }
-  .btn.is-loading svg {
+  .button.is-loading svg.icon {
     fill: transparent !important;
   }
-  .btn.is-loading::after {
+  .button.is-loading::after {
     opacity: 1;
   }
   @keyframes loaderOne {
@@ -92,29 +119,170 @@ $btn-min-height: 0 !default;
     }
   }
 
-  /* Button */
+  /* Multiple buttons */
 
-  .btn {
-    color: #fff;
-    background: $btn-background;
-  }
-
-  /* Mulitple buttons */
-
-  .btns {
+  .buttons {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
   }
-  .btns .btn {
-    margin-right: 0.8rem;
+  .buttons .button {
+    margin-right: $buttons-margin-right;
+    margin-bottom: $buttons-margin-bottom;
   }
-  .btns .btn:last-child {
+  .buttons .button:last-child {
     margin-right: 0;
   }
-  @media (max-width: 580px) {
-    .btn {
-      min-width: 180px;
-      padding: 11px 34px 12px;
-      width: 100%;
-      margin-right: 0;
+
+  /* Button styles */
+
+  @each $name, $pair in $button-colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    $cssnames: '.button.is-#{$name}';
+    @if $name == 'primary' {
+      $cssnames: '.button', '.button.is-primary';
+    }
+
+    @each $cssname in $cssnames {
+      #{$cssname} {
+        background-color: $color;
+        border-color: transparent;
+        color: $color-invert;
+        box-shadow: buttonBoxShadow($cssname, $name);
+        &:hover,
+        &.is-hovered {
+          background-color: cherryDarken($color, 7%);
+          border-color: transparent;
+          color: $color-invert;
+        }
+        &:focus,
+        &.is-focused {
+          border-color: transparent;
+          color: $color-invert;
+          // &:not(:active) {
+          //   box-shadow: $button-focus-box-shadow-size cherryRgba($color, 0.25);
+          // }
+        }
+        &:active,
+        &.is-active {
+          background-color: cherryDarken($color, 7%);
+          border-color: transparent;
+          color: $color-invert;
+        }
+        &[disabled],
+        fieldset[disabled] & {
+          background-color: $color;
+          border-color: transparent;
+          box-shadow: none;
+        }
+        &.is-inverted {
+          background-color: $color-invert;
+          color: $color;
+          &:hover,
+          &.is-hovered {
+            background-color: cherryDarken($color-invert, 5%);
+          }
+          &[disabled],
+          fieldset[disabled] & {
+            background-color: $color-invert;
+            border-color: transparent;
+            box-shadow: none;
+            color: $color;
+          }
+        }
+        &.is-loading {
+          background-color: $color;
+          &::after {
+            @include loader($color-invert);
+          }
+        }
+        &.is-outlined {
+          background-color: transparent;
+          box-shadow: none;
+          border-color: $color;
+          color: $color;
+          &:hover,
+          &.is-hovered,
+          &:focus,
+          &.is-focused {
+            background-color: $color;
+            border-color: $color;
+            color: $color-invert;
+          }
+          &.is-loading {
+            background-color: $color;
+            &::after {
+              @include loader($color);
+            }
+            &:hover,
+            &.is-hovered,
+            &:focus,
+            &.is-focused {
+              &::after {
+                border-color: transparent transparent $color-invert $color-invert !important;
+              }
+            }
+          }
+          &[disabled],
+          fieldset[disabled] & {
+            background-color: transparent;
+            border-color: $color;
+            box-shadow: none;
+            color: $color;
+          }
+        }
+        &.is-inverted.is-outlined {
+          background-color: transparent;
+          border-color: $color-invert;
+          color: $color-invert;
+          &:hover,
+          &.is-hovered,
+          &:focus,
+          &.is-focused {
+            background-color: $color-invert;
+            color: $color;
+          }
+          &.is-loading {
+            &:hover,
+            &.is-hovered,
+            &:focus,
+            &.is-focused {
+              &::after {
+                border-color: transparent transparent $color $color !important;
+              }
+            }
+          }
+          &[disabled],
+          fieldset[disabled] & {
+            background-color: transparent;
+            border-color: $color-invert;
+            box-shadow: none;
+            color: $color-invert;
+          }
+        }
+        // If light and dark colors are provided
+        @if length($pair) >= 4 {
+          $color-light: nth($pair, 3);
+          $color-dark: nth($pair, 4);
+          &.is-light {
+            background-color: $color-light;
+            color: $color-dark;
+            &:hover,
+            &.is-hovered {
+              background-color: cherryDarken($color-light, 2.5%);
+              border-color: transparent;
+              color: $color-dark;
+            }
+            &:active,
+            &.is-active {
+              background-color: cherryDarken($color-light, 5%);
+              border-color: transparent;
+              color: $color-dark;
+            }
+          }
+        }
+      }
     }
   }

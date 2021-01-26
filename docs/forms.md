@@ -13,45 +13,48 @@ You can use these variables to customize these elements. Simply set these variab
 
 Variable | Default value | Computed value
 - | - | -
-`$error-font-size` | `0.95rem` | same as default
+`$error-font-size` | `0.85rem` |
 
 #### Input
 
 Variable | Default value | Computed value
 - | - | -
-`$input-background`          | `#fff`              |
+`$input-background`          | `#fdfdfd`           |
 `$input-background--invalid` | `#fffcfd`           |
 `$input-border-color`        | `#efefef`           |
-`$input-border-color-active` | `$primary`          | ..
+`$input-border-color-active` | `$primary`          | `hsl(259, 100%, 67%)`
 `$input-border-width`        | `2px`               |
-`$input-color`               | `$text`             | ..
-`$input-font-family`         | `$body-font-family` | ..
+`$input-color`               | `$text`             | `hsl(0, 0%, 7%)`
+`$input-font-family`         | `$body-font-family` | `Open Sans, sans-serif`
 `$input-font-size`           | `0.95rem`           |
 `$input-font-weight`         | `inherit`           |
-`$input-padding`             | `15px 19px`         |
-`$input-border-radius`       | `2px`               |
+`$input-margin-bottom`       | `1.5rem`            |
+`$input-padding`             | `13px 19px`         |
+`$input-border-radius`       | `4px`               |
 `$input-placeholder-color`   | `rgba($text, 0.5)`  | ..
 
 #### Label
 
 Variable | Default value | Computed value
 - | - | -
-`$label-color`     | `$text-light` | ..
+`$label-color`     | `$text-light` | `hsl(0, 0%, 27%)`
 `$label-font-size` | `0.85rem` |
+
+#### Textarea
+
+Variable | Default value | Computed value
+- | - | -
+`$textarea-min-height` | `7em` |
 
 #### Toggle / Checkbox/ Radio
 
 Variable | Default value | Computed value
 - | - | -
-`$checkbox-height`        | `20px`                       |
-`$checkbox-inner-height`  | `10px`                       |
-`$toggle-height`          | `1.8em`                      |
-`$toggle-width`           | `$toggle-height * 1.8`       | ..
-`$toggle-color-active`    | `$input-border-color-active` | ..
-
-#### Vue-select
-
-Variable | Default value | Computed value
-- | - | -
-`$list-fade-time`  | `0s` |
-`$option-color-active`  | `$primary` | ..
+`$checkbox-height`        | `20px`                           |
+`$checkbox-inner-height`  | `10px`                           |
+`$checkbox-padding-left`  | `12px`                           |
+`$checkbox-padding-right` | `16px`                           |
+`$toggle-height`          | `1.8em`                          |
+`$toggle-width`           | `$toggle-height * 1.8`           | `3.24em`
+`$toggle-color`           | `darken($input-background, 10%)` | ..
+`$toggle-color-active`    | `$input-border-color-active`     | `hsl(259, 100%, 67%)`

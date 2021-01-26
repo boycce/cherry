@@ -1,0 +1,97 @@
+/* ---- Content (wysiwyg) ------------ */
+
+  .content {
+    h1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 25px;
+      line-height: 1.5em;
+      letter-spacing: -0.03em;
+      margin: 0 0 0em 0;
+    }
+    h2 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 1.5em;
+      letter-spacing: -0.03em;
+      margin: 0 0 0em 0;
+    }
+    h3 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 1.5em;
+      letter-spacing: -0.03em;
+      margin: 0 0 0em 0;
+    }
+    h4 {}
+    b, strong {
+      color: #333;
+      font-weight: bold;
+    }
+    p,
+    ul,
+    ol,
+    q,
+    small,
+    code {
+      margin-top: 0;
+      margin-bottom: 1.6em;
+      line-height: 1.6em;
+    }
+    small,
+    code {
+      display: block;
+    }
+    pre {
+      margin: 0;
+    }
+    ul, ol {}
+    li {
+      margin: 0 0 0.2em 2em;
+    }
+    .ul-blank {
+      list-style: none;
+    }
+    .ul-blank li {
+      margin: 0 0 0.5em 0em;
+    }
+    ol a,
+    ul a,
+    p a {
+      text-decoration: underline;
+      //transition: color 0.1s ease;
+    }
+    ol a:hover,
+    ul a:hover,
+    p a:hover,
+    ol a:focus,
+    ul a:focus,
+    p a:focus {
+      text-decoration: underline;
+    }
+    ul li:last-child {
+      padding-bottom: 0.1em;
+    }
+    ul li:last-child {
+      padding-bottom: 0.1em;
+    }
+    small {
+      font-size: 0.85em;
+      line-height: 1.6em;
+    }
+    q {
+      background-color: #abc3441f;
+      color: #536311;
+      border-radius: 4px;
+      padding: 1.4em 1.5em;
+      & b {
+        color: #536311;
+      }
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+  }

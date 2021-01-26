@@ -1,19 +1,16 @@
 /* ---- Columns ---------------------- */
 
-  .row {
-    margin-right: -15px;
-    margin-left: -15px;
+  .cols {
+    margin-right: -16px;
+    margin-left: -16px;
     display: flex;
     flex-wrap: wrap;
   }
-  .col-full {
-    flex: 1;
-  }
   .col,
   .col-1,
-  .col-15, // 8 columns
+  .col-1-5, // 8 columns
   .col-2,  // 6 columns
-  .col-25, // ..
+  .col-2-5, // ..
   .col-3,
   .col-4,
   .col-5,
@@ -27,8 +24,8 @@
     flex: none;
     position: relative;
     min-height: 1px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   .col-12 {
     width: 100%;
@@ -54,14 +51,13 @@
   .col-5 {
     width: 41.66666667%;
   }
-  .col,
   .col-4 {
     width: 33.33333333%;
   }
   .col-3 {
     width: 25%;
   }
-  .col-25 {
+  .col-2-5 {
     width: 20%;
   }
   .col-2 {
@@ -70,8 +66,11 @@
   .col-1 {
     width: 8.333333333%;
   }
-  .col-15 {
+  .col-1-5 {
     width: 12.5%; // 8 columns
+  }
+  .col {
+    flex: 1;
   }
   @media (max-width: 1000px) {
     .col-15,
@@ -81,7 +80,7 @@
   }
   @media (max-width: 770px) {
     .col,
-    .col-15,
+    .col-1-5,
     .col-5,
     .col-6,
     .col-7,
@@ -94,7 +93,7 @@
     }
     .col-1,
     .col-2,
-    .col-25,
+    .col-2-5,
     .col-3,
     .col-4 {
       width: 50%;
@@ -109,84 +108,23 @@
   @media (max-width: 470px) {
     .col-1,
     .col-2,
-    .col-25 {
+    .col-2-5 {
       width: 100%;
     }
   }
 
-  /* Gutters */
+  /* Column gap */
 
-  .gutters-0 {
-    margin-right: 0;
-    margin-left: 0;
-  }
-  .gutters-0 > .col,
-  .gutters-0 > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-  }
-  .gutters-8 {
-    margin-right: -8px;
-    margin-left: -8px;
-  }
-  .gutters-8 > .col,
-  .gutters-8 > [class*="col-"] {
-    padding-right: 8px;
-    padding-left: 8px;
-  }
-  .gutters-10 {
-    margin-right: -10px;
-    margin-left: -10px;
-  }
-  .gutters-10 > .col,
-  .gutters-10 > [class*="col-"] {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-  .gutters-20 {
-    margin-right: -20px;
-    margin-left: -20px;
-  }
-  .gutters-20 > .col,
-  .gutters-20 > [class*="col-"] {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-  .gutters-25 {
-    margin-right: -25px;
-    margin-left: -25px;
-  }
-  .gutters-25 > .col,
-  .gutters-25 > [class*="col-"] {
-    padding-right: 25px;
-    padding-left: 25px;
-  }
-  .gutters-30 {
-    margin-right: -30px;
-    margin-left: -30px;
-  }
-  .gutters-30 > .col,
-  .gutters-30 > [class*="col-"] {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-  .gutters-35 {
-    margin-right: -35px;
-    margin-left: -35px;
-  }
-  .gutters-35 > .col,
-  .gutters-35 > [class*="col-"] {
-    padding-right: 35px;
-    padding-left: 35px;
-  }
-  .gutters-40 {
-    margin-right: -40px;
-    margin-left: -40px;
-  }
-  .gutters-40 > .col,
-  .gutters-40 > [class*="col-"] {
-    padding-right: 40px;
-    padding-left: 40px;
+  @each $i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] {
+    .gap-#{$i} {
+      margin-right: #{$i * -4px};
+      margin-left: #{$i * -4px};
+    }
+    .gap-#{$i} > .col,
+    .gap-#{$i} > [class*="col-"] {
+      padding-right: #{$i * 4px};
+      padding-left: #{$i * 4px};
+    }
   }
 
 /* ---- Text columns ----------------- */

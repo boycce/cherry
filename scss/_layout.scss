@@ -1,4 +1,4 @@
-$wrapper-width: 1200px !default;
+$wrapper-width:   1200px !default;
 $wrapper-padding: 45px !default;
 
 /* ---- Wrapper ---------------------- */
@@ -21,8 +21,8 @@ $wrapper-padding: 45px !default;
 
 /* ---- Media block ------------------ */
 
-  /* 
-    Hint: imploy new layouts within modules via .media-layout-xx  
+  /*
+    Hint: imploy new layouts within modules via .media-layout-xx
     From: philipwalton.github.io/solved-by-flexbox/demos/media-object */
 
   .media {

@@ -1,9 +1,11 @@
-$body-background: #fff !default;
-$body-color: $text !default;
-$body-font-family: $family-primary;
-$body-font-size: 15px !default;
-$body-font-weight: 400 !default;
-$body-line-height: 1.5em !default;
+$body-background:      #fff !default;
+$body-color:           $text !default;
+$body-font-family:     $family-primary !default;
+$body-font-size:       15px !default;
+$body-font-weight:     400 !default;
+$body-line-height:     1.5em !default;
+$link-text-decoration: underline !default;
+$link-outline:         none !default;
 
 /* ---- Main ------------------------- */
 
@@ -39,16 +41,17 @@ $body-line-height: 1.5em !default;
   a {
     color: $link;
     background-color: transparent; /* ie10 */
-    text-decoration: underline;
+    text-decoration: $link-text-decoration;
     text-decoration-color: $link;
   }
-  a:hover,
-  a:focus {
+  a:hover {
     color: $link-hover;
     text-decoration-color: $link-hover;
   }
-  *:focus {
-    //outline: none !important;
+  a:focus {
+    color: $link-focus;
+    text-decoration-color: $link-focus;
+    outline: $link-outline;
   }
   q,
   div,
@@ -113,6 +116,9 @@ $body-line-height: 1.5em !default;
 
 /* ---- Forms ------------------------ */
 
+  form {
+    margin: 0;
+  }
   button,
   input,
   optgroup,

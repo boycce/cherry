@@ -1,35 +1,4 @@
 @import "variables.scss";
-
-// SASS functions
-@function encodecolor($string) {
-  @if type-of($string) == 'color' {
-    $hex: str-slice(ie-hex-str($string), 4);
-    $string:unquote("#{$hex}");
-  }
-  $string: '%23' + $string;
-  @return $string;
-}
-@function findLightColor($color) {
-  @if type-of($color) == 'color' {
-    $l: 96%;
-    @if lightness($color) > 96% {
-      $l: lightness($color);
-    }
-    @return change-color($color, $lightness: $l);
-  }
-  @return $body-background;
-}
-@function findDarkColor($color) {
-  @if type-of($color) == 'color' {
-    $base-l: 29%;
-    $luminance: colorLuminance($color);
-    $luminance-delta: (0.53 - $luminance);
-    $target-l: round($base-l + ($luminance-delta * 53));
-    @return change-color($color, $lightness: max($base-l, $target-l));
-  }
-  @return $text-strong;
-}
-
 @import "base-normalize.scss";
 @import "buttons.scss";
 @import "columns.scss";
@@ -41,3 +10,4 @@
 @import "modifiers.scss";
 @import "spacing.scss";
 @import "tooltips.scss";
+@import "typography.scss";

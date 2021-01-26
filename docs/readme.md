@@ -1,13 +1,13 @@
 ![](./assets/imgs/cherry.jpg)
 
-[![NPM](https://img.shields.io/npm/v/css-cherry.svg)](https://www.npmjs.com/package/css-cherry) [![Build Status](https://travis-ci.org/boycce/cherry.svg?branch=master)](https://travis-ci.org/boycce/cherry)
+[![NPM](https://img.shields.io/npm/v/cherry.svg)](https://www.npmjs.com/package/cherry) [![Build Status](https://travis-ci.org/boycce/cherry.svg?branch=master)](https://travis-ci.org/boycce/cherry)
 
 ## Install
 
 This repository is distributed with NPM. After installing NPM, you can install Cherry CSS via:
 
 ```sh
-npm install --save css-cherry
+npm install --save cherry
 ```
 
 ## Usage
@@ -15,7 +15,14 @@ npm install --save css-cherry
 After installation, you can then import the SCSS into your project sourcing from your `node_modules` directory:
 
 ```scss
-@import "../node_modules/css-cherry/cherry.scss";
+@import "../node_modules/cherry/cherry.scss";
+
+// Or to modify the SASS variables, import like so
+
+@import "../node_modules/cherry/scss/variables.scss";
+// Your variable definitions here
+// e.g. $primary: blue;
+@import "../node_modules/cherry/cherry.scss";
 ```
 
 ## Browser Support
@@ -32,6 +39,7 @@ Cherry uses [autoprefixer](https://github.com/postcss/autoprefixer) to make (mos
 ## Special Thanks
 
 [Willy Blandin](https://github.com/blandinw)
+[The Bulma Project](https://github.com/jgthms/bulma)
 
 ## Copyright and license
 

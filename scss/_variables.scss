@@ -1,53 +1,82 @@
+@import "functions.scss";
+
 // Initial colors
-$black:         hsl(0, 0%, 0%) !default;
-$black-light:   hsl(0, 0%, 7%) !default;
-$black-lighter: hsl(0, 0%, 13%) !default;
+$black:            hsl(0, 0%, 0%) !default;
+$black-light:      hsl(0, 0%, 7%) !default;
+$black-lighter:    hsl(0, 0%, 13%) !default;
 
-$grey:          hsl(0, 0%, 27%) !default;
-$grey-light:    hsl(0, 0%, 47%) !default;
-$grey-lighter:  hsl(0, 0%, 73%) !default;
-$grey-lightest: hsl(0, 0%, 93%) !default;
+$grey:             hsl(0, 0%, 27%) !default;
+$grey-light:       hsl(0, 0%, 47%) !default;
+$grey-lighter:     hsl(0, 0%, 73%) !default;
+$grey-lightest:    hsl(0, 0%, 93%) !default;
 
-$orange:        hsl(14,  100%, 53%) !default;
-$yellow:        hsl(48,  100%, 67%) !default;
-$green:         hsl(141, 53%,  53%) !default;
-$turquoise:     hsl(171, 100%, 41%) !default;
-$cyan:          hsl(204, 71%,  53%) !default;
-$blue:          hsl(217, 71%,  53%) !default;
-$purple:        hsl(271, 100%, 71%) !default;
-$red:           hsl(348, 86%, 61%) !default;
+$white-darker:     hsl(0, 0%, 96%) !default;
+$white-dark:       hsl(0, 0%, 98%) !default;
+$white:            hsl(0, 0%, 100%) !default;
 
-// Application colors
-$primary:       $purple !default;
-$secondary:     $blue !default;
-$success:       $green !default;
-$info:          $blue !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
+$orange:           hsl(14,  100%, 53%) !default;
+$yellow:           hsl(48,  100%, 67%) !default;
+$green:            hsl(141, 53%,  53%) !default;
+$turquoise:        hsl(171, 100%, 41%) !default;
+$cyan:             hsl(204, 71%,  53%) !default;
+$blue:             hsl(217, 71%,  53%) !default;
+$violet:           hsl(259, 100%, 67%) !default;
+$purple:           hsl(271, 100%, 71%) !default;
+$red:              hsl(348, 86%, 61%) !default;
 
-$text:          $black-light !default;
-$text-light:    $grey !default;
-$text-lighter:  $grey-light !default;
-$text-strong:   $black !default;
-$link:          $black !default;
-$link-focus:    $blue !default;
-$link-hover:    $blue !default;
-
-// Derived colors
-$primary-light: findLightColor($primary) !default;
-$secondary-dark: findDarkColor($secondary) !default;
-$secondary-light: findLightColor($secondary) !default;
-$primary-dark: findDarkColor($primary) !default;
-$success-light: findLightColor($success) !default;
-$success-dark: findDarkColor($success) !default;
-$info-light: findLightColor($info) !default;
-$info-dark: findDarkColor($info) !default;
-$warning-light: findLightColor($warning) !default;
-$warning-dark: findDarkColor($warning) !default;
-$danger-light: findLightColor($danger) !default;
-$danger-dark: findDarkColor($danger) !default;
-
-// Fonts
-$family-primary: Open Sans, sans-serif !default;
+// Initial Fonts
+$family-primary:   Open Sans, sans-serif !default;
 $family-secondary: Open Sans, sans-serif !default;
-$family-code: monospace !default
+$family-code:      monospace !default
+
+// Derived app colors
+$primary:          $violet !default;
+$secondary:        $blue !default;
+$success:          $green !default;
+$info:             $blue !default;
+$warning:          $yellow !default;
+$danger:           $red !default;
+$text:             $black-light !default;
+$text-light:       $grey !default;
+$text-lighter:     $grey-light !default;
+$text-strong:      $black !default;
+$link:             $black-light !default;
+$link-hover:       $blue !default;
+$link-focus:       $blue !default;
+
+// Derived variations
+$primary-invert:   findColorInvert($primary) !default;
+$primary-light:    findLightColor($primary) !default;
+$primary-dark:     findDarkColor($primary) !default;
+$secondary-invert: findColorInvert($secondary) !default;
+$secondary-light:  findLightColor($secondary) !default;
+$secondary-dark:   findDarkColor($secondary) !default;
+$success-invert:   findColorInvert($success) !default;
+$success-light:    findLightColor($success) !default;
+$success-dark:     findDarkColor($success) !default;
+$info-invert:      findColorInvert($info) !default;
+$info-light:       findLightColor($info) !default;
+$info-dark:        findDarkColor($info) !default;
+$warning-invert:   findColorInvert($warning) !default;
+$warning-light:    findLightColor($warning) !default;
+$warning-dark:     findDarkColor($warning) !default;
+$danger-invert:    findColorInvert($danger) !default;
+$danger-light:     findLightColor($danger) !default;
+$danger-dark:      findDarkColor($danger) !default;
+
+$orange-invert:    findColorInvert($orange) !default;
+$yellow-invert:    findColorInvert($yellow) !default;
+$green-invert:     findColorInvert($green) !default;
+$turquoise-invert: findColorInvert($turquoise) !default;
+$cyan-invert:      findColorInvert($cyan) !default;
+$blue-invert:      findColorInvert($blue) !default;
+$purple-invert:    findColorInvert($purple) !default;
+$red-invert:       findColorInvert($red) !default;
+
+// Lists and maps
+$custom-colors:    null !default;
+$custom-shades:    null !default;
+
+$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "primary": ($primary, $primary-invert, $primary-light, $primary-dark), "secondary": ($secondary, $secondary-invert, $secondary-light, $secondary-dark), "info": ($info, $info-invert, $info-light, $info-dark), "success": ($success, $success-invert, $success-light, $success-dark), "warning": ($warning, $warning-invert, $warning-light, $warning-dark), "danger": ($danger, $danger-invert, $danger-light, $danger-dark)), $custom-colors) !default;
+
+$shades: mergeColorMaps(("black-light": $black-light, "black-lighter": $black-lighter, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "grey-lightest": $grey-lightest, "white-dark": $white-dark, "white-darker": $white-darker), $custom-shades) !default;

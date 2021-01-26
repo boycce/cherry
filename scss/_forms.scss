@@ -1,30 +1,37 @@
 // Error
-$error-font-size: 0.95rem !default;
+$error-font-size:           0.85rem !default;
 
 // Input
-$input-background: #fff !default;
+$input-background:          #fdfdfd !default;
 $input-background--invalid: #fffcfd !default;
-$input-border-color: #efefef !default;
+$input-border-color:        #efefef !default;
 $input-border-color-active: $primary !default;
-$input-border-width: 2px !default;
-$input-color: $text !default;
-$input-font-family: $body-font-family !default;
-$input-font-size: 0.95rem !default;
-$input-font-weight: inherit !default;
-$input-padding: 15px 19px !default;
-$input-border-radius: 2px !default;
-$input-placeholder-color: rgba($text, 0.5) !default;
+$input-border-width:        2px !default;
+$input-color:               $text !default;
+$input-font-family:         $body-font-family !default;
+$input-font-size:           0.95rem !default;
+$input-font-weight:         inherit !default;
+$input-margin-bottom:       1.5rem !default;
+$input-padding:             13px 19px !default;
+$input-border-radius:       4px !default;
+$input-placeholder-color:   rgba($text, 0.5) !default;
 
 // Label
-$label-color: $text-light !default;
-$label-font-size: 0.85rem !default;
+$label-color:               $text-light !default;
+$label-font-size:           0.85rem !default;
 
-// Toggle/Checkbox/radio
-$checkbox-height: 20px !default;
-$checkbox-inner-height: 10px !default;
-$toggle-height: 1.8em !default;
-$toggle-width: $toggle-height * 1.8 !default;
-$toggle-color-active: $input-border-color-active !default;
+// Textarea
+$textarea-min-height:       7em !default;
+
+// Toggle/checkbox/radio
+$checkbox-height:           20px !default; // determines width
+$checkbox-inner-height:     10px !default; // determines width
+$checkbox-padding-left:     12px !default;
+$checkbox-padding-right:    16px !default;
+$toggle-height:             1.8em !default;
+$toggle-width:              $toggle-height * 1.8 !default;
+$toggle-color:              darken($input-background, 10%) !default;
+$toggle-color-active:       $input-border-color-active !default;
 
 /* ---- Main ------------------------- */
 
@@ -60,7 +67,7 @@ $toggle-color-active: $input-border-color-active !default;
   .radio-grp,
   .checkbox-grp,
   .toggle-grp {
-    margin-bottom: 1.5rem;
+    margin-bottom: $input-margin-bottom;
   }
   input[type="password"] {
     letter-spacing: 1px;
@@ -69,7 +76,9 @@ $toggle-color-active: $input-border-color-active !default;
     padding: 10px 19px 11px;
   }
   textarea {
-    // min-height: 150px;
+    max-height: 40em;
+    min-height: $textarea-min-height;
+    resize: vertical;
   }
   .input-grp,
   .radio-grp,
@@ -87,13 +96,13 @@ $toggle-color-active: $input-border-color-active !default;
 
   /* Input + button element  */
 
-  .input-btn {
+  .input-button {
     display: flex;
   }
-  .input-btn input {
+  .input-button input {
     flex: 1;
   }
-  .input-btn .btn {
+  .input-button .button {
     width: auto !important;
     min-width: 0;
     font-size: 12px;
@@ -105,23 +114,22 @@ $toggle-color-active: $input-border-color-active !default;
     border-bottom-left-radius: 0;
   }
 
-  /* Form message */
+  /* Global form error */
 
-  form .form-error {
+  .form-error {
     display: none;
-    // color: $red;
-    color: white;
-    font-size: $error-font-size;
-    padding: $input-padding;
-    border-radius: 6px;
-    background-color: $danger-light;
-    box-shadow: 0 0 0 1px $danger inset;
+    color: $danger;
   }
-  form .form-error:empty {
-    padding: 0px;
+  .toggle-grp .form-error,
+  .checkbox-grp .form-error,
+  .radio-grp .form-error,
+  .input-grp .form-error {
+    font-size: $error-font-size;
+  }
+  .form-error:empty {
     margin: 0 !important;
   }
-  form.has-errors .form-error {
+  .has-error .form-error {
     display: block;
   }
 
@@ -139,7 +147,8 @@ $toggle-color-active: $input-border-color-active !default;
 /* ---- Labels ----------------------- */
 
   label,
-  .label-password {
+  .label,
+  .label-right {
     display: inline-block;
     vertical-align: top;
     text-decoration-color: $label-color;
@@ -154,6 +163,7 @@ $toggle-color-active: $input-border-color-active !default;
       text-decoration-color 0.25s ease; // was 0.25
   }
   label,
+  .label,
   .label-color {
     color: $label-color;
   }
@@ -164,8 +174,8 @@ $toggle-color-active: $input-border-color-active !default;
     //opacity: 1;
     color: $red;
   }
-  .label-password,
-  a.label-password {
+  .label-right,
+  a.label-right {
     display: block;
     float: right;
     margin-right: 1px;
@@ -176,13 +186,39 @@ $toggle-color-active: $input-border-color-active !default;
     bottom: 0;
   }
 
-/* ---- Radio/checkbox/toggle -------- */
+  /* Floating labels */
 
-  // The label needs to come after the input.
-  // <div class="toggle-grp">
-  //   <input id="subscribe" type="checkbox" checked>
-  //   <label for="subscribe">Subscribe</label>
-  // </div>
+  .has-float-label input + label,
+  .has-float-label select + label,
+  .has-float-label textarea + label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: text;
+    color: $label-color;
+    font-size: $label-font-size;
+    opacity: 0;
+    transform: translateY(3px);
+    transition: all 0.2s;
+  }
+  .has-float-label input:not(:placeholder-shown) + *,
+  .has-float-label select:not(:placeholder-shown) + *,
+  .has-float-label textarea:not(:placeholder-shown) + *,
+  .has-float-label input:-webkit-autofill + * {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  .has-float-label input::-moz-placeholder {
+    transition: all 0.2s;
+  }
+  .has-float-label input::-ms-input-placeholder {
+    transition: all 0.2s;
+  }
+  .has-float-label input::-webkit-input-placeholder {
+    transition: all 0.2s;
+  }
+
+/* ---- Radio/checkbox/toggle -------- */
 
   .radio-grp,
   .checkbox-grp {
@@ -203,8 +239,8 @@ $toggle-color-active: $input-border-color-active !default;
       position: relative;
       display: inline-block;
       padding: $input-padding;
-      padding-left: $checkbox-width + 12px; //0.8em;
-      padding-right: 1em;
+      padding-left: $checkbox-width + $checkbox-padding-left; //0.8em;
+      padding-right: $checkbox-padding-right;
       user-select: none;
       margin-bottom: 0;
     }
@@ -269,7 +305,7 @@ $toggle-color-active: $input-border-color-active !default;
       left: 0;
       top: 50%;
       margin-top: -$toggle-height/2;
-      background: $input-background;
+      background: $toggle-color;
       border-radius: $toggle-height;
       width: $toggle-width;
       height: $toggle-height;
@@ -389,7 +425,7 @@ $toggle-color-active: $input-border-color-active !default;
   ::-moz-placeholder {
     color: $input-placeholder-color;
   }
-  :-ms-input-placeholder {
+  ::-ms-input-placeholder {
     color: $input-placeholder-color;
   }
   ::-webkit-input-placeholder {

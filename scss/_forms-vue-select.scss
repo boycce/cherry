@@ -1,4 +1,4 @@
-$list-fade-time: 0s !default; // handy for list styling
+$list-fade-time:      0s !default; // handy for list styling
 $option-color-active: $primary !default;
 
 /* ---- Main ------------------------- */
@@ -169,8 +169,8 @@ $option-color-active: $primary !default;
     }
   }
   .v-select-no-wrap .vs__dropdown-option {
-    white-space: nowrap; 
-    text-overflow: ellipsis; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
     text-shadow: none;
   }
 
