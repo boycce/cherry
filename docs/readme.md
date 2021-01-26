@@ -29,6 +29,10 @@ Cherry uses [autoprefixer](https://github.com/postcss/autoprefixer) to make (mos
 * Opera
 * Safari
 
+## Special Thanks
+
+[Willy Blandin](https://github.com/blandinw)
+
 ## Copyright and license
 
 Copyright 2019 Ricky Boyce. Code released under [the MIT license](https://github.com/boycce/cherry/blob/master/LICENSE).
