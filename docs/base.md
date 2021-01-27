@@ -18,6 +18,7 @@ Variable | Default value | Computed value
 `$body-font-family`     | `$family-primary` | `Open Sans, sans-serif`
 `$body-font-size`       | `15px` |
 `$body-font-weight`     | `400` |
+`$body-letter-spacing`  | `0` |
 `$body-line-height`     | `1.5em` |
 `$link-text-decoration` | `underline` |
 `$link-outline`         | `none` |

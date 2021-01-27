@@ -19,6 +19,9 @@
     "input-border-color--invalid": $danger,
     "input-border-radius":         4px,
     "input-border-width":          2px,
+    "input-box-shadow":            map-get($form, "input-box-shadow"),
+    "input-box-shadow--active":    map-get($form, "input-box-shadow"),
+    "input-box-shadow--invalid":   map-get($form, "input-box-shadow"),
     "input-color":                 $text,
     "input-color--invalid":        $text,
     "input-font-family":           $body-font-family,
@@ -30,6 +33,7 @@
     // Label
     "label-color":                 $text-light,
     "label-font-size":             0.85rem,
+    "label-margin-bottom":         0.45rem,
     // Textarea
     "textarea-min-height":         7em,
     "textarea-padding":            map-get($form, "input-padding"),
@@ -49,7 +53,7 @@
   $map: ();
   $class: ".form-#{$i}";
   @if $i == 1 { $map: formDefaults($form); $class: ".form"; }
-  @else if $i == 2 { $map: formDefaults(map-merge($form, $form-2)); }
+  @else if $i == 2 { $map: formDefaults($form-2); }
 
   #{$class} {
 
@@ -68,7 +72,9 @@
       font-weight: map-get($map, "input-font-weight");
       line-height: 1.5rem;
       background: map-get($map, "input-background");
-      box-shadow: 0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color") inset;
+      box-shadow:
+        0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color") inset,
+        map-get($map, "input-box-shadow");
       border: 0;
       box-sizing: border-box;
       border-radius: map-get($map, "input-border-radius");
@@ -82,11 +88,11 @@
     .toggle-grp {
       margin-bottom: map-get($map, "input-margin-bottom");
     }
-    input[type="password"] {
+    input[type="password"]:not(:placeholder-shown) {
       letter-spacing: 1px;
     }
     input[type="file"] {
-      padding: 10px 19px 11px;
+      // padding: 10px 19px 11px;
     }
     textarea {
       padding: map-get($map, "textarea-padding");
@@ -111,7 +117,8 @@
       -webkit-text-fill-color: map-get($map, "input-color");
       -webkit-box-shadow:
         0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color") inset,
-        0 0 0 1000px map-get($map, "input-background") inset;
+        0 0 0 1000px map-get($map, "input-background") inset,
+        map-get($map, "input-box-shadow");
     }
     input:-webkit-autofill::first-line {
       font-family: map-get($map, "input-font-family");
@@ -134,7 +141,7 @@
     .input-button .button {
       width: auto !important;
       min-width: 0;
-      font-size: 12px;
+      font-size: 0.8em;
       line-height: 1.5rem;
       border-radius: map-get($map, "input-border-radius");
       padding: map-get($map, "input-padding");
@@ -360,12 +367,15 @@
     textarea:focus,
     .vs--open .vs__dropdown-toggle {
       outline: 0;
-      box-shadow: 0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset;
+      box-shadow:
+        0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset,
+        map-get($map, "input-box-shadow--active");
       background-color: map-get($map, "input-background--active");
       &:-webkit-autofill {
         -webkit-box-shadow:
           0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset,
-          0 0 0 1000px map-get($map, "input-background--active") inset;
+          0 0 0 1000px map-get($map, "input-background--active") inset,
+          map-get($map, "input-box-shadow--active");
       }
     }
     input.invalid,
@@ -373,7 +383,9 @@
     textarea.invalid,
     .vs__dropdown-toggle.invalid {
       color: map-get($map, "input-color--invalid");
-      box-shadow: 0 0 0 map-get($map, "input-border-width") $danger inset;
+      box-shadow:
+        0 0 0 map-get($map, "input-border-width") $danger inset,
+        map-get($map, "input-box-shadow--invalid");
       // doesnt work for dropdown/toggle
       background-color: map-get($map, "input-background--invalid");
       animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
@@ -383,7 +395,8 @@
         -webkit-text-fill-color: map-get($map, "input-color--invalid");
         -webkit-box-shadow:
           0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--invalid") inset,
-          0 0 0 1000px map-get($map, "input-background--invalid") inset;
+          0 0 0 1000px map-get($map, "input-background--invalid") inset,
+          map-get($map, "input-box-shadow--invalid");
       }
     }
     input[type="radio"].invalid + label,

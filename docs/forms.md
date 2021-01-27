@@ -38,7 +38,11 @@ Variable | Default value | Computed value
 `input-border-color`          | `#efefef`           |
 `input-border-color--active`  | `$primary`          | `hsl(259, 100%, 67%)`
 `input-border-color--invalid` | `$danger`           | `hsl(348, 86%, 61%)`
+`input-border-radius`         | `4px`               |
 `input-border-width`          | `2px`               |
+`input-box-shadow`            | ` `                 |
+`input-box-shadow--active`    | input-box-shadow    | ` `
+`input-box-shadow--invalid`   | input-background    | ` `
 `input-color`                 | `$text`             | `hsl(0, 0%, 7%)`
 `input-color--invalid`        | `$text`             | `hsl(0, 0%, 7%)`
 `input-font-family`           | `$body-font-family` | `Open Sans, sans-serif`
@@ -46,7 +50,6 @@ Variable | Default value | Computed value
 `input-font-weight`           | `inherit`           |
 `input-margin-bottom`         | `1.5rem`            |
 `input-padding`               | `13px 19px`         |
-`input-border-radius`         | `4px`               |
 `input-placeholder-color`     | `rgba($text, 0.5)`  | ..
 
 #### Label
@@ -55,6 +58,7 @@ Variable | Default value | Computed value
 - | - | -
 `label-color`            | `$text-light` | `hsl(0, 0%, 27%)`
 `label-font-size`        | `0.85rem` |
+`label-margin-bottom`    | `0.45rem` |
 
 #### Textarea
 

@@ -4,6 +4,7 @@ $body-font-family:     $family-primary !default;
 $body-font-size:       15px !default;
 $body-font-weight:     400 !default;
 $body-line-height:     1.5em !default;
+$body-letter-spacing:  0 !default;
 $link-text-decoration: underline !default;
 $link-outline:         none !default;
 
@@ -27,6 +28,7 @@ $link-outline:         none !default;
     font-family: $body-font-family;
     font-size: $body-font-size;
     font-weight: $body-font-weight;
+    letter-spacing: $body-letter-spacing;
     line-height: $body-line-height;
     overflow-y: scroll;
   }

@@ -53,6 +53,7 @@ $button-box-shadows:     (/*e.g. primary: 0 0 10px 0 rgba($primary, .5)*/) !defa
     cursor: pointer;
     transition: all 200ms ease;
     white-space: nowrap;
+    outline: 0;
   }
 
   /* Icon */
@@ -152,22 +153,16 @@ $button-box-shadows:     (/*e.g. primary: 0 0 10px 0 rgba($primary, .5)*/) !defa
         color: $color-invert;
         box-shadow: buttonBoxShadow($cssname, $name);
         &:hover,
-        &.is-hovered {
-          background-color: cherryDarken($color, 7%);
-          border-color: transparent;
-          color: $color-invert;
-        }
         &:focus,
+        &.is-hovered,
         &.is-focused {
+          background-color: cherryDarken($color, 8%);
           border-color: transparent;
           color: $color-invert;
-          // &:not(:active) {
-          //   box-shadow: $button-focus-box-shadow-size cherryRgba($color, 0.25);
-          // }
         }
         &:active,
         &.is-active {
-          background-color: cherryDarken($color, 7%);
+          background-color: cherryDarken($color, 8%);
           border-color: transparent;
           color: $color-invert;
         }
