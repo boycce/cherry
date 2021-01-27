@@ -207,14 +207,17 @@ $link-outline:         none !default;
     background: #5984FF;
     text-shadow: none;
     color: #fff;
+    -webkit-text-fill-color: #fff !important;
   }
   ::selection {
     background: #5984FF;
     text-shadow: none;
     color: #fff;
+    -webkit-text-fill-color: #fff !important;
   }
   ::-moz-selection {
     background: #5984FF;
     text-shadow: none;
     color: #fff;
+    -webkit-text-fill-color: #fff !important;
   }
