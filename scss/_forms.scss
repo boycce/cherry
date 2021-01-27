@@ -1,474 +1,472 @@
-/* ---- Variables -------------------- */
+@function formDefaults($form) {
+  // First, find variables that are referenced below
+  $form: map-merge((
+    "input-background":            #fdfdfd,
+    "input-border-color--active":  $primary,
+    "input-padding":               13px 19px,
+    "toggle-height":               1.8em,
+  ), $form);
 
-  // Error
-  $error-font-size:            0.85rem !default;
+  @return map-merge((
+    // Error
+    "error-font-size":             0.85rem,
+    // Input
+    "input-background":            map-get($form, "input-background"),
+    "input-background--active":    map-get($form, "input-background"),
+    "input-background--invalid":   map-get($form, "input-background"),
+    "input-border-color":          #efefef,
+    "input-border-color--active":  map-get($form, "input-border-color--active"),
+    "input-border-color--invalid": $danger,
+    "input-border-radius":         4px,
+    "input-border-width":          2px,
+    "input-color":                 $text,
+    "input-color--invalid":        $text,
+    "input-font-family":           $body-font-family,
+    "input-font-size":             0.95rem,
+    "input-font-weight":           inherit,
+    "input-margin-bottom":         1.5rem,
+    "input-padding":               map-get($form, "input-padding"),
+    "input-placeholder-color":     rgba($text, 0.5),
+    // Label
+    "label-color":                 $text-light,
+    "label-font-size":             0.85rem,
+    // Textarea
+    "textarea-min-height":         7em,
+    "textarea-padding":            map-get($form, "input-padding"),
+    // Variable inputs
+    "variable-color":              darken(map-get($form, "input-background"), 12%),
+    "variable-color--active":      map-get($form, "input-border-color--active"),
+    "checkbox-height":             20px, // determines width
+    "checkbox-inner-height":       10px, // determines width
+    "checkbox-padding-left":       12px,
+    "checkbox-padding-right":      16px,
+    "toggle-height":               map-get($form, "toggle-height"),
+    "toggle-width":                map-get($form, "toggle-height") * 1.8,
+  ), $form);
+}
 
-  // Input
-  $input-background:           #fdfdfd !default;
-  $input-background--active:   $input-background !default;
-  $input-background--invalid:  $input-background !default;
-  $input-border-color:         #efefef !default;
-  $input-border-color--active: $primary !default;
-  $input-border-radius:        4px !default;
-  $input-border-width:         2px !default;
-  $input-color:                $text !default;
-  $input-font-family:          $body-font-family !default;
-  $input-font-size:            0.95rem !default;
-  $input-font-weight:          inherit !default;
-  $input-margin-bottom:        1.5rem !default;
-  $input-padding:              13px 19px !default;
-  $input-placeholder-color:    rgba($text, 0.5) !default;
+@for $i from 1 through 2 {
+  $map: ();
+  $class: ".form-#{$i}";
+  @if $i == 1 { $map: formDefaults($form); $class: ".form"; }
+  @else if $i == 2 { $map: formDefaults(map-merge($form, $form-2)); }
 
-  // Label
-  $label-color:                $text-light !default;
-  $label-font-size:            0.85rem !default;
+  #{$class} {
 
-  // Textarea
-  $textarea-min-height:        7em !default;
-  $textarea-padding:           $input-padding !default;
+  /* ---- Main ------------------------- */
 
-  // Variable inputs
-  $variable-color:             darken($input-background, 12%) !default;
-  $variable-color--active:     $input-border-color--active !default;
-  $checkbox-height:            20px !default; // determines width
-  $checkbox-inner-height:      10px !default; // determines width
-  $checkbox-padding-left:      12px !default;
-  $checkbox-padding-right:     16px !default;
-  $toggle-height:              1.8em !default;
-  $toggle-width:               $toggle-height * 1.8 !default;
-
-/* ---- Main ------------------------- */
-
-  /*
-
-
-    1st split misc element / definiations
-    Augument current form elements with .form2 & .form3
-
-
-  */
-  input,
-  select,
-  textarea,
-  .input,
-  .vs__dropdown-toggle {
-    width: 100%;
-    padding: $input-padding;
-    font-family: $input-font-family;
-    color: $input-color;
-    font-size: $input-font-size;
-    font-weight: $input-font-weight;
-    line-height: 1.5rem;
-    background: $input-background;
-    box-shadow: 0 0 0 $input-border-width $input-border-color inset;
-    border: 0;
-    box-sizing: border-box;
-    border-radius: $input-border-radius;
-    vertical-align: top;
-    transition: background-color ease 0.2s, border-color ease 0.2s, box-shadow ease 0.2s;
-  }
-  .input,
-  .input-grp,
-  .radio-grp,
-  .checkbox-grp,
-  .toggle-grp {
-    margin-bottom: $input-margin-bottom;
-  }
-  input[type="password"] {
-    letter-spacing: 1px;
-  }
-  input[type="file"] {
-    padding: 10px 19px 11px;
-  }
-  textarea {
-    padding: $textarea-padding;
-    max-height: 40em;
-    min-height: $textarea-min-height;
-    resize: vertical;
-  }
-  .input-grp,
-  .radio-grp,
-  .checkbox-grp,
-  .toggle-grp {
-    text-align: left;
-    position: relative;
-  }
-
-  /* Input + button element  */
-
-  .input-button {
-    display: flex;
-  }
-  .input-button input {
-    flex: 1;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  .input-button .button {
-    width: auto !important;
-    min-width: 0;
-    font-size: 12px;
-    line-height: 1.5rem;
-    border-radius: $input-border-radius;
-    padding: $input-padding;
-    margin-left: -5px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  /* Global form error */
-
-  .form-error {
-    display: none;
-    color: $danger;
-  }
-  .toggle-grp .form-error,
-  .checkbox-grp .form-error,
-  .radio-grp .form-error,
-  .input-grp .form-error {
-    font-size: $error-font-size;
-  }
-  .form-error:empty {
-    margin: 0 !important;
-  }
-  .has-error .form-error {
-    display: block;
-  }
-
-/* ---- Labels ----------------------- */
-
-  label,
-  .label,
-  .label-right {
-    display: inline-block;
-    vertical-align: top;
-    font-size: $label-font-size;
-    line-height: 1.4em;
-    margin-bottom: 0.45em;
-    cursor: pointer;
-    user-select: none;
-  }
-  label,
-  .label {
-    /* matches util.errorElement  */
-    transition: opacity 0.15s ease, color 0.25s ease, text-decoration-color 0.25s ease;
-  }
-  label,
-  .label,
-  .label-color {
-    color: $label-color;
-    text-decoration-color: $label-color;
-  }
-  label.invalid-out {
-    //opacity: 0.2;
-  }
-  label.invalid-in {
-    //opacity: 1;
-    color: $danger;
-  }
-  .label-right,
-  a.label-right {
-    display: block;
-    float: right;
-    margin-right: 1px;
-  }
-  .label-bottom {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-
-  /* Floating labels */
-
-  .has-float-label input + label,
-  .has-float-label select + label,
-  .has-float-label textarea + label {
-    position: absolute;
-    left: 0;
-    top: 0;
-    cursor: text;
-    color: $label-color;
-    font-size: $label-font-size;
-    opacity: 0;
-    transform: translateY(3px);
-    transition: all 0.2s;
-  }
-  .has-float-label input:not(:placeholder-shown) + *,
-  .has-float-label select:not(:placeholder-shown) + *,
-  .has-float-label textarea:not(:placeholder-shown) + *,
-  .has-float-label input:-webkit-autofill + * {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  .has-float-label input::-moz-placeholder {
-    transition: all 0.2s;
-  }
-  .has-float-label input::-ms-input-placeholder {
-    transition: all 0.2s;
-  }
-  .has-float-label input::-webkit-input-placeholder {
-    transition: all 0.2s;
-  }
-
-/* ---- Radio/checkbox/toggle -------- */
-
-  .radio-grp,
-  .checkbox-grp {
-    $checkbox-width: $checkbox-height;
-    $checkbox-inner-width: $checkbox-inner-height;
-    input {
-      position: absolute;
-      left: -9999px;
+    input,
+    select,
+    textarea,
+    .input,
+    .vs__dropdown-toggle {
+      width: 100%;
+      padding: map-get($map, "input-padding");
+      font-family: map-get($map, "input-font-family");
+      color: map-get($map, "input-color");
+      font-size: map-get($map, "input-font-size");
+      font-weight: map-get($map, "input-font-weight");
+      line-height: 1.5rem;
+      background: map-get($map, "input-background");
+      box-shadow: 0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color") inset;
+      border: 0;
+      box-sizing: border-box;
+      border-radius: map-get($map, "input-border-radius");
+      vertical-align: top;
+      transition: background-color ease 0.2s, border-color ease 0.2s, box-shadow ease 0.2s;
     }
-    label {
+    .input,
+    .input-grp,
+    .radio-grp,
+    .checkbox-grp,
+    .toggle-grp {
+      margin-bottom: map-get($map, "input-margin-bottom");
+    }
+    input[type="password"] {
+      letter-spacing: 1px;
+    }
+    input[type="file"] {
+      padding: 10px 19px 11px;
+    }
+    textarea {
+      padding: map-get($map, "textarea-padding");
+      max-height: 40em;
+      min-height: map-get($map, "textarea-min-height");
+      resize: vertical;
+    }
+    .input-grp,
+    .radio-grp,
+    .checkbox-grp,
+    .toggle-grp {
+      text-align: left;
+      position: relative;
+    }
+
+  /* ---- Placeholder & autofill ------- */
+
+    ::-webkit-input-placeholder {
+      color: map-get($map, "input-placeholder-color");
+    }
+    input:-webkit-autofill {
+      -webkit-text-fill-color: map-get($map, "input-color");
+      -webkit-box-shadow:
+        0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color") inset,
+        0 0 0 1000px map-get($map, "input-background") inset;
+    }
+    input:-webkit-autofill::first-line {
+      font-family: map-get($map, "input-font-family");
+      font-size: map-get($map, "input-font-size");
+      font-weight: map-get($map, "input-font-weight");
+    }
+
+  /* ---- Elements --------------------- */
+
+    /* Input + button element  */
+
+    .input-button {
+      display: flex;
+    }
+    .input-button input {
+      flex: 1;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .input-button .button {
+      width: auto !important;
+      min-width: 0;
+      font-size: 12px;
+      line-height: 1.5rem;
+      border-radius: map-get($map, "input-border-radius");
+      padding: map-get($map, "input-padding");
+      margin-left: -5px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    /* Form error */
+
+    .form-error {
+      display: none;
+      color: $danger;
+    }
+    .toggle-grp .form-error,
+    .checkbox-grp .form-error,
+    .radio-grp .form-error,
+    .input-grp .form-error {
+      font-size: map-get($map, "error-font-size");
+    }
+    .form-error:empty {
+      margin: 0 !important;
+    }
+    .has-error .form-error,
+    &.has-error .form-error {
       display: block;
     }
-    .has-tooltip {
-      display: inline;
-      padding: 0;
-    }
-    input + label {
-      position: relative;
+
+  /* ---- Labels ----------------------- */
+
+    label,
+    .label,
+    .label-right {
       display: inline-block;
-      padding: $input-padding;
-      padding-left: $checkbox-width + $checkbox-padding-left; //0.8em;
-      padding-right: $checkbox-padding-right;
+      vertical-align: top;
+      font-size: map-get($map, "label-font-size");
+      line-height: 1.4em;
+      margin-bottom: 0.45em;
+      cursor: pointer;
       user-select: none;
-      margin-bottom: 0;
     }
-    input + label:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: $checkbox-width;
-      height: $checkbox-height;
-      margin-top: -($checkbox-height / 2);
-      background: $input-background;
-      border: 2px solid $variable-color;
-      border-radius: 3px;
-      box-sizing: border-box;
-      transition: all 0.2s ease;
+    label,
+    .label {
+      /* matches util.errorElement  */
+      transition: opacity 0.15s ease, color 0.25s ease, text-decoration-color 0.25s ease;
     }
-    input + label:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      width: $checkbox-inner-width;
-      height: $checkbox-inner-height;
-      margin-left: ($checkbox-width - $checkbox-inner-width) / 2;
-      margin-top: -($checkbox-inner-height / 2);
-      border-radius: 3px;
-      transition: all 0.2s ease;
+    label,
+    .label,
+    .label-color {
+      color: map-get($map, "label-color");
+      text-decoration-color: map-get($map, "label-color");
     }
-    input:checked + label:before {
-      border-color: $variable-color--active;
+    label.invalid-out {
+      //opacity: 0.2;
     }
-    input:checked + label:after {
-      background-color: $variable-color--active;
+    label.invalid-in {
+      //opacity: 1;
+      color: $danger;
     }
-  }
-  .radio-grp input + label:before,
-  .radio-grp input + label:after {
-    border-radius: 100% !important;
-  }
-  .toggle-grp {
-    input {
-      position: absolute;
-      left: -9999px;
-    }
-    label {
+    .label-right,
+    a.label-right {
       display: block;
+      float: right;
+      margin-right: 1px;
     }
-    input + label {
-      position: relative;
-      display: inline-block;
-      padding: $input-padding;
-      padding-left: $toggle-width + 0.8em;
-      padding-right: 1.2em;
-      margin-bottom: 0;
-      user-select: none;
+    .label-bottom {
+      position: absolute;
+      right: 0;
+      bottom: 0;
     }
-    input + label:before,
-    input + label:after {
-      content: "";
+
+    /* Floating labels */
+
+    .has-float-label input + label,
+    .has-float-label select + label,
+    .has-float-label textarea + label {
       position: absolute;
       left: 0;
-      top: 50%;
-      margin-top: -$toggle-height/2;
-      background: $variable-color;
-      border-radius: $toggle-height;
-      width: $toggle-width;
-      height: $toggle-height;
-      box-sizing: border-box;
-      transition: all 0.2s ease;
+      top: 0;
+      cursor: text;
+      color: map-get($map, "label-color");
+      font-size: map-get($map, "label-font-size");
+      opacity: 0;
+      transform: translateY(3px);
+      transition: transform 0.2s, opacity 0.2s;
     }
-    input + label:after {
-      width: $toggle-height;
-      border: 2px solid transparent;
-      border-color: transparent;
-      background-color: #fff;
-      background-clip: content-box;
+    .has-float-label input:not(:placeholder-shown) + *,
+    .has-float-label select:not(:placeholder-shown) + *,
+    .has-float-label textarea:not(:placeholder-shown) + *,
+    .has-float-label input:-webkit-autofill + * {
+      transform: translateY(0px);
+      opacity: 1;
     }
-    input:checked + label:before {
-      background-color: $variable-color--active;
+
+  /* ---- Select ----------------------- */
+
+    select,
+    .vs__dropdown-toggle {
+      background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%23c5cbd2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+      appearance: none;
+      background-repeat: no-repeat;
+      background-size: auto 7px;
+      background-position: right 17px center;
+      transition: all 200ms ease;
     }
-    input:checked + label:after {
-      left: $toggle-width - $toggle-height;
-    }
-  }
 
-/* ---- Input states ----------------- */
+  /* ---- Variable inputs -------------- */
 
-  input:active,
-  input:focus,
-  select:active,
-  select:focus,
-  textarea:active,
-  textarea:focus,
-  .vs--open .vs__dropdown-toggle {
-    outline: 0;
-    box-shadow: 0 0 0 $input-border-width $input-border-color--active inset;
-    background-color: $input-background--active;
-  }
-  input.invalid,
-  select.invalid,
-  textarea.invalid,
-  .vs__dropdown-toggle.invalid {
-    box-shadow: 0 0 0 $input-border-width $danger inset;
-    // doesnt work for dropdown/toggle
-    background-color: $input-background--invalid;
-    color: darken($danger, 20%);
-    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-  }
-  input[type="radio"].invalid + label,
-  input[type="checkbox"].invalid + label {
-    animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    color: #7b1a1a;
-  }
-  input[type="radio"].invalid + label:before,
-  input[type="checkbox"].invalid + label:before {
-    border-color: $danger;
-    background-color: $input-background--invalid;
-  }
-  textarea:disabled,
-  input:disabled {
-    background-color: #f7f7f7;
-    color: #a5a5a5;
-  }
-
-/* ---- Select ----------------------- */
-
-  select,
-  .vs__dropdown-toggle {
-    background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%23c5cbd2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
-    appearance: none;
-    background-repeat: no-repeat;
-    background-size: auto 7px;
-    background-position: right 17px center;
-    transition: all 200ms ease;
-  }
-
-
-  /* Placeholders */
-
-  ::-moz-placeholder {
-    color: $input-placeholder-color;
-  }
-  ::-ms-input-placeholder {
-    color: $input-placeholder-color;
-  }
-  ::-webkit-input-placeholder {
-    color: $input-placeholder-color;
-  }
-
-  /* Removing autofill colors & fonts */
-
-  input:-webkit-autofill {
-    -webkit-text-fill-color: $input-color;
-    -webkit-box-shadow: 0 0 0 $input-border-width $input-border-color inset, 0 0 0 30px $input-background inset;
-  }
-  input:active:-webkit-autofill,
-  input:focus:-webkit-autofill,
-  select:active:-webkit-autofill,
-  select:focus:-webkit-autofill,
-  textarea:active:-webkit-autofill,
-  textarea:focus:-webkit-autofill {
-    -webkit-box-shadow:
-      0 0 0 $input-border-width $input-border-color--active inset,
-      0 0 0 1000px $input-background inset;
-  }
-  input:-webkit-autofill::first-line {
-    font-family: $input-font-family;
-    font-size: $input-font-size;
-    font-weight: $input-font-weight;
-  }
-
-/* ---- Miscellaneous ---------------- */
-
-  /* Stop autofill background flash */
-
-  .onloading input,
-  .onloading select,
-  .onloading textarea,
-  .onloading .input,
-  .onloading .vs__dropdown-toggle {
-    transition: none;
-  }
-
-  /* Animations */
-
-  @keyframes shake {
-    30% {
-      transform: translate3d(-1px, 0, 0);
-    }
-    60% {
-      transform: translate3d(1px, 0, 0);
-    }
-    80% {
-      transform: translate3d(0px, 0, 0);
-    }
-  }
-
-  /* Prevent input zooming */
-
-  @media (max-width: 550px) {
-    .form-mobile {
-      input[type="color"],
-      input[type="date"],
-      input[type="datetime"],
-      input[type="datetime-local"],
-      input[type="email"],
-      input[type="month"],
-      input[type="number"],
-      input[type="password"],
-      input[type="search"],
-      input[type="tel"],
-      input[type="text"],
-      input[type="time"],
-      input[type="url"],
-      input[type="week"],
-      select,
-      textarea {
-        font-size: 16px;
-        letter-spacing: 0;
+    .radio-grp,
+    .checkbox-grp {
+      $checkbox-width: map-get($map, "checkbox-height");
+      $checkbox-inner-width: map-get($map, "checkbox-inner-height");
+      input {
+        position: absolute;
+        left: -9999px;
       }
-      ::-moz-placeholder {
-        font-size: 16px;
-        letter-spacing: 0;
+      label {
+        display: block;
       }
-      :-ms-input-placeholder {
-        font-size: 16px;
-        letter-spacing: 0;
+      .has-tooltip {
+        display: inline;
+        padding: 0;
       }
-      ::-webkit-input-placeholder {
-        font-size: 16px;
-        letter-spacing: 0;
+      input + label {
+        position: relative;
+        display: inline-block;
+        padding: map-get($map, "input-padding");
+        padding-left: $checkbox-width + map-get($map, "checkbox-padding-left"); //0.8em;
+        padding-right: map-get($map, "checkbox-padding-right");
+        user-select: none;
+        margin-bottom: 0;
+      }
+      input + label:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: $checkbox-width;
+        height: map-get($map, "checkbox-height");
+        margin-top: -(map-get($map, "checkbox-height") / 2);
+        background: map-get($map, "input-background");
+        border: 2px solid map-get($map, "variable-color");
+        border-radius: 3px;
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+      }
+      input + label:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: $checkbox-inner-width;
+        height: map-get($map, "checkbox-inner-height");
+        margin-left: ($checkbox-width - $checkbox-inner-width) / 2;
+        margin-top: -(map-get($map, "checkbox-inner-height") / 2);
+        border-radius: 3px;
+        transition: all 0.2s ease;
+      }
+      input:checked + label:before {
+        border-color: map-get($map, "variable-color--active");
+      }
+      input:checked + label:after {
+        background-color: map-get($map, "variable-color--active");
       }
     }
+    .radio-grp input + label:before,
+    .radio-grp input + label:after {
+      border-radius: 100% !important;
+    }
+    .toggle-grp {
+      input {
+        position: absolute;
+        left: -9999px;
+      }
+      label {
+        display: block;
+      }
+      input + label {
+        position: relative;
+        display: inline-block;
+        padding: map-get($map, "input-padding");
+        padding-left: map-get($map, "toggle-width") + 0.8em;
+        padding-right: 1.2em;
+        margin-bottom: 0;
+        user-select: none;
+      }
+      input + label:before,
+      input + label:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -(map-get($map, "toggle-height")/2);
+        background: map-get($map, "variable-color");
+        border-radius: map-get($map, "toggle-height");
+        width: map-get($map, "toggle-width");
+        height: map-get($map, "toggle-height");
+        box-sizing: border-box;
+        transition: all 0.2s ease;
+      }
+      input + label:after {
+        width: map-get($map, "toggle-height");
+        border: 2px solid transparent;
+        border-color: transparent;
+        background-color: #fff;
+        background-clip: content-box;
+      }
+      input:checked + label:before {
+        background-color: map-get($map, "variable-color--active");
+      }
+      input:checked + label:after {
+        left: map-get($map, "toggle-width") - map-get($map, "toggle-height");
+      }
+    }
+
+  /* ---- States ----------------------- */
+
+    input:active,
+    input:focus,
+    select:active,
+    select:focus,
+    textarea:active,
+    textarea:focus,
+    .vs--open .vs__dropdown-toggle {
+      outline: 0;
+      box-shadow: 0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset;
+      background-color: map-get($map, "input-background--active");
+      &:-webkit-autofill {
+        -webkit-box-shadow:
+          0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset,
+          0 0 0 1000px map-get($map, "input-background--active") inset;
+      }
+    }
+    input.invalid,
+    select.invalid,
+    textarea.invalid,
+    .vs__dropdown-toggle.invalid {
+      color: map-get($map, "input-color--invalid");
+      box-shadow: 0 0 0 map-get($map, "input-border-width") $danger inset;
+      // doesnt work for dropdown/toggle
+      background-color: map-get($map, "input-background--invalid");
+      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      &:-webkit-autofill {
+        -webkit-text-fill-color: map-get($map, "input-color--invalid");
+        -webkit-box-shadow:
+          0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--invalid") inset,
+          0 0 0 1000px map-get($map, "input-background--invalid") inset;
+      }
+    }
+    input[type="radio"].invalid + label,
+    input[type="checkbox"].invalid + label {
+      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      color: #7b1a1a;
+    }
+    input[type="radio"].invalid + label:before,
+    input[type="checkbox"].invalid + label:before {
+      border-color: $danger;
+      background-color: map-get($map, "input-background--invalid");
+    }
+    textarea:disabled,
+    input:disabled {
+      background-color: #f7f7f7;
+      color: #a5a5a5;
+    }
+
+  /* ---- Miscellaneous ---------------- */
+
+    /* Stop autofill background flash */
+
+    .onloading input,
+    .onloading select,
+    .onloading textarea,
+    .onloading .input,
+    .onloading .vs__dropdown-toggle {
+      transition: none;
+    }
+
+    /* Animations */
+
+    @keyframes shake {
+      30% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      60% {
+        transform: translate3d(1px, 0, 0);
+      }
+      80% {
+        transform: translate3d(0px, 0, 0);
+      }
+    }
+
+    /* Prevent input zooming */
+
+    @media (max-width: 550px) {
+      .form-mobile {
+        input[type="color"],
+        input[type="date"],
+        input[type="datetime"],
+        input[type="datetime-local"],
+        input[type="email"],
+        input[type="month"],
+        input[type="number"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="text"],
+        input[type="time"],
+        input[type="url"],
+        input[type="week"],
+        select,
+        textarea {
+          font-size: 16px;
+          letter-spacing: 0;
+        }
+        ::-moz-placeholder {
+          font-size: 16px;
+          letter-spacing: 0;
+        }
+        :-ms-input-placeholder {
+          font-size: 16px;
+          letter-spacing: 0;
+        }
+        ::-webkit-input-placeholder {
+          font-size: 16px;
+          letter-spacing: 0;
+        }
+      }
+    }
+
   }
+}
