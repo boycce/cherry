@@ -1,31 +1,32 @@
-$button-background:      $primary !default;
-$button-border-radius:   5px !default;
-$button-font-family:     $body-font-family !default;
-$button-font-size:       14px !default;
-$button-font-weight:     600 !default;
-$button-padding:         12px 31px !default;
-$button-min-height:      0 !default;
-$button-icon-size:       1.3em !default;
-$button-icon-margin:     0.4em !default;
-$button-colors:          $colors !default;
-$button-box-shadow:      0 0 10px 0px rgba(0, 0, 0, 0.05) !default;
-$buttons-margin-right:   1rem !default;
-$buttons-margin-bottom:  1.5rem !default;
+$button-background-color: $primary !default;
+$button-border-radius:    5px !default;
+$button-font-family:      $body-font-family !default;
+$button-font-size:        14px !default;
+$button-font-weight:      600 !default;
+$button-padding:          12px 31px !default;
+$button-min-height:       0 !default;
+$button-icon-size:        1.3em !default;
+$button-icon-margin:      0.4em !default;
+$button-colors:           $colors !default;
+$button-box-shadow:       0 0 10px 0px rgba(0, 0, 0, 0.05) !default;
+$buttons-margin-right:    1rem !default;
+$buttons-margin-bottom:   1.5rem !default;
 
-// Custom button box-shadow
-$button-box-shadows:     (/*e.g. primary: 0 0 10px 0 rgba($primary, .5)*/) !default;
+// Custom button overrides
+$buttons: (
+  /*e.g. primary-box-shadow: 0 0 #000 */
+) !default;
 
 @mixin loader($color) {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="#{encodecolor($color)}" stroke-width="2"/></svg>')
 }
 
-@function buttonBoxShadow($cssname, $name) {
-  $box-shadows: map-merge((button: $button-box-shadow), $button-box-shadows);
-  @if ($cssname == '.button') {
-    @return map-get($box-shadows, button);
+@function buttonBoxShadow($name, $default) {
+  @if (map-get($buttons, "#{$name}-box-shadow")) {
+    @return map-get($buttons, "#{$name}-box-shadow");
   }
   @else {
-    @return map-get($box-shadows, $name);
+    @return $default;
   }
 }
 
@@ -46,6 +47,7 @@ $button-box-shadows:     (/*e.g. primary: 0 0 10px 0 rgba($primary, .5)*/) !defa
     text-align: center;
     text-decoration: none;
     color: #fff;
+    background-size: 200% auto; /* 200% for gradients */
     border-radius: $button-border-radius;
     border: 0;
     box-sizing: border-box;
@@ -147,28 +149,27 @@ $button-box-shadows:     (/*e.g. primary: 0 0 10px 0 rgba($primary, .5)*/) !defa
     }
 
     @each $cssname in $cssnames {
+      $background-color: $color;
+      $background-color--hover: cherryDarken($background-color, 8%);
       #{$cssname} {
-        background-color: $color;
+        background-color: $background-color;
         border-color: transparent;
         color: $color-invert;
-        box-shadow: buttonBoxShadow($cssname, $name);
+        box-shadow: buttonBoxShadow($name, $button-box-shadow);
         &:hover,
         &:focus,
-        &.is-hovered,
-        &.is-focused {
-          background-color: cherryDarken($color, 8%);
-          border-color: transparent;
-          color: $color-invert;
-        }
         &:active,
+        &.is-hovered,
+        &.is-focused,
         &.is-active {
-          background-color: cherryDarken($color, 8%);
+          background-color: $background-color--hover;
           border-color: transparent;
           color: $color-invert;
+          background-position: right center;
         }
         &[disabled],
         fieldset[disabled] & {
-          background-color: $color;
+          background-color: $background-color;
           border-color: transparent;
           box-shadow: none;
         }
@@ -188,7 +189,7 @@ $button-box-shadows:     (/*e.g. primary: 0 0 10px 0 rgba($primary, .5)*/) !defa
           }
         }
         &.is-loading {
-          background-color: $color;
+          background-color: $background-color;
           &::after {
             @include loader($color-invert);
           }

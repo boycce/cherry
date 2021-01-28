@@ -36,5 +36,5 @@ $colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "
 $shades: mergeColorMaps(("black-light": $black-light, "black-lighter": $black-lighter, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "grey-lightest": $grey-lightest, "white-dark": $white-dark, "white-darker": $white-darker), $custom-shades) !default;
 
 // Forms
-$form:  () !default;
+$form:   () !default;
 $form-2: () !default;
