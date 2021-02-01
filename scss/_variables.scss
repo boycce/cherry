@@ -1,15 +1,17 @@
 @import "functions.scss";
 
-// Initial colors
+// Base colors
 $black:            hsl(0, 0%, 0%) !default;
 $black-light:      hsl(0, 0%, 7%) !default;
 $black-lighter:    hsl(0, 0%, 13%) !default;
+$black-lightest:   hsl(0, 0%, 17%) !default;
 
 $grey:             hsl(0, 0%, 27%) !default;
 $grey-light:       hsl(0, 0%, 47%) !default;
 $grey-lighter:     hsl(0, 0%, 73%) !default;
-$grey-lightest:    hsl(0, 0%, 93%) !default;
+$grey-lightest:    hsl(0, 0%, 91%) !default;
 
+$white-darkest:    hsl(0, 0%, 94%) !default;
 $white-darker:     hsl(0, 0%, 96%) !default;
 $white-dark:       hsl(0, 0%, 98%) !default;
 $white:            hsl(0, 0%, 100%) !default;
@@ -24,12 +26,7 @@ $violet:           hsl(259, 100%, 67%) !default;
 $purple:           hsl(271, 100%, 71%) !default;
 $red:              hsl(348, 86%, 61%) !default;
 
-// Initial Fonts
-$family-primary:   Open Sans, sans-serif !default;
-$family-secondary: Open Sans, sans-serif !default;
-$family-code:      monospace !default
-
-// Derived app colors
+// App colors
 $primary:          $violet !default;
 $secondary:        $blue !default;
 $success:          $green !default;

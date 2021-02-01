@@ -16,10 +16,12 @@ Variable | Default value
 `$black`            | `hsl(0, 0%, 0%)`
 `$black-light`      | `hsl(0, 0%, 7%)`
 `$black-lighter`    | `hsl(0, 0%, 13%)`
+`$black-lightest`   | `hsl(0, 0%, 17%)`
 `$grey`             | `hsl(0, 0%, 27%)`
 `$grey-light`       | `hsl(0, 0%, 47%)`
 `$grey-lighter`     | `hsl(0, 0%, 73%)`
-`$grey-lightest`    | `hsl(0, 0%, 93%)`
+`$grey-lightest`    | `hsl(0, 0%, 91%)`
+`$white-darkest`    | `hsl(0, 0%, 94%)`
 `$white-darker`     | `hsl(0, 0%, 96%)`
 `$white-dark`       | `hsl(0, 0%, 98%)`
 `$white`            | `hsl(0, 0%, 100%)`

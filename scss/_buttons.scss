@@ -1,85 +1,116 @@
-$button-background-color: $primary !default;
-$button-border-radius:    5px !default;
-$button-font-family:      $body-font-family !default;
-$button-font-size:        14px !default;
-$button-font-weight:      600 !default;
-$button-padding:          12px 31px !default;
-$button-min-height:       0 !default;
-$button-icon-size:        1.3em !default;
-$button-icon-margin:      0.4em !default;
-$button-colors:           $colors !default;
-$button-box-shadow:       0 0 10px 0px rgba(0, 0, 0, 0.05) !default;
-$buttons-margin-right:    1rem !default;
-$buttons-margin-bottom:   1.5rem !default;
+$btn-background-color:   $primary !default;
+$btn-background-image:   null !default;
+$btn-border-color:       null !default;
+$btn-border-radius:      5px !default;
+$btn-border-width:       2px !default;
+$btn-box-shadow:         none !default;
+$btn-box-shadow--active: $btn-box-shadow !default;
+$btn-font-family:        $body-font-family !default;
+$btn-font-size:          14px !default;
+$btn-font-weight:        600 !default;
+$btn-icon-size:          1.3em !default;
+$btn-icon-margin:        0.4em !default;
+$btn-padding:            12px 31px !default;
+$btn-min-height:         0 !default;
+$btns-margin-right:      1rem !default;
+$btns-margin-bottom:     1.5rem !default;
 
-// Custom button overrides
-$buttons: (
-  /*e.g. primary-box-shadow: 0 0 #000 */
-) !default;
+// Add default color to loop over
+$btn-app-colors: mergeColorMaps($app-colors, (
+  "default": ($btn-background-color, $btn-background-image)
+));
 
 @mixin loader($color) {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="#{encodecolor($color)}" stroke-width="2"/></svg>')
 }
 
-@function buttonBoxShadow($name, $default) {
-  @if (map-get($buttons, "#{$name}-box-shadow")) {
-    @return map-get($buttons, "#{$name}-box-shadow");
+@function calcBoxShadow($border-color: null) {
+  // Pass $border-color to add border into the box-shadow
+  $border-width: $btn-border-width;
+  $border-shadow: null;
+  // Default border width
+  @if ($border-width <= 0px) {
+    $border-width: 2px;
+  }
+  // Get values
+  @if ($border-color and $btn-box-shadow != none) {
+    @return 0 0 0 $border-width $border-color inset, $btn-box-shadow;
+  }
+  @else if ($border-color) {
+    @return 0 0 0 $border-width $border-color inset;
+  }
+  @else if ($btn-box-shadow != none) {
+    @return $btn-box-shadow;
   }
   @else {
-    @return $default;
+    @return none;
   }
 }
 
 /* ---- Main ------------------------- */
 
-  .button {
+  .btn {
     position: relative;
     display: inline-flex;
-    -webkit-appearance: none;
     align-items: center;
-    padding: $button-padding;
-    font-family: $button-font-family;
+    padding: $btn-padding;
+    font-family: $btn-font-family;
     font-style: normal;
-    font-weight: $button-font-weight;
-    font-size: $button-font-size;
-    min-height: $button-min-height;
+    font-weight: $btn-font-weight;
+    font-size: $btn-font-size;
+    min-height: $btn-min-height;
     line-height: 1.5em;
     text-align: center;
     text-decoration: none;
-    color: #fff;
     background-size: 200% auto; /* 200% for gradients */
-    border-radius: $button-border-radius;
+    border-radius: $btn-border-radius;
     border: 0;
+    outline: 0;
     box-sizing: border-box;
-    box-shadow: $button-box-shadow;
     cursor: pointer;
     transition: all 200ms ease;
     white-space: nowrap;
-    outline: 0;
+    -webkit-appearance: none;
   }
 
   /* Icon */
 
-  .button .icon {
+  .btn .icon {
     align-items: center;
     display: inline-flex;
     justify-content: center;
-    height: $button-icon-size;
-    width: $button-icon-size;
+    height: $btn-icon-size;
+    width: $btn-icon-size;
     transition: opacity 200ms ease;
     &:first-child:not(:last-child) {
       margin-left: calc(-0.2em - 1px);
-      margin-right: $button-icon-margin;
+      margin-right: $btn-icon-margin;
     }
     &:last-child:not(:first-child) {
       margin-right: calc(-0.2em - 1px);
-      margin-left: $button-icon-margin;
+      margin-left: $btn-icon-margin;
     }
+  }
+
+  /* Multiple buttons */
+
+  .btns {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .btns .btn {
+    margin-right: $btns-margin-right;
+    margin-bottom: $btns-margin-bottom;
+  }
+  .btns .btn:last-child {
+    margin-right: 0;
   }
 
   /* Loading */
 
-  .button::after {
+  .btn::after {
     content: "";
     display: block;
     position: absolute;
@@ -98,19 +129,19 @@ $buttons: (
     z-index: 2;
     @include loader(#fff);
   }
-  .button.is-loading,
-  .button.is-loading:hover,
-  .button.is-loading:focus {
+  .btn.btn-loading,
+  .btn.btn-loading:hover,
+  .btn.btn-loading:focus {
     cursor: default;
     color: transparent !important;
   }
-  .button.is-loading .icon {
+  .btn.btn-loading .icon {
     opacity: 0;
   }
-  .button.is-loading svg.icon {
+  .btn.btn-loading svg.icon {
     fill: transparent !important;
   }
-  .button.is-loading::after {
+  .btn.btn-loading::after {
     opacity: 1;
   }
   @keyframes loaderOne {
@@ -122,161 +153,138 @@ $buttons: (
     }
   }
 
-  /* Multiple buttons */
-
-  .buttons {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  .buttons .button {
-    margin-right: $buttons-margin-right;
-    margin-bottom: $buttons-margin-bottom;
-  }
-  .buttons .button:last-child {
-    margin-right: 0;
-  }
-
   /* Button styles */
 
-  @each $name, $pair in $button-colors {
-    $color: nth($pair, 1);
-    $color-invert: nth($pair, 2);
-    $cssnames: '.button.is-#{$name}';
-    @if $name == 'primary' {
-      $cssnames: '.button', '.button.is-primary';
+  @each $name, $value in $btn-app-colors {
+    $cssname: '.btn';
+    $color: nth($value, 1);
+    $color-invert: nth($value, 2);
+    $background-image: nth($value, 5);
+    $border-color: null;
+
+    @if ($background-image == null) {
+      $background-image: none;
+    }
+    @if ($name == 'default') {
+      $border-color: $btn-border-color;
+    }
+    @if $name != 'default' {
+      $cssname: '.btn.btn-#{$name}';
     }
 
-    @each $cssname in $cssnames {
-      $background-color: $color;
-      $background-color--hover: cherryDarken($background-color, 8%);
-      #{$cssname} {
-        background-color: $background-color;
-        border-color: transparent;
+    #{$cssname} {
+      color: $color-invert;
+      background-color: $color;
+      box-shadow: calcBoxShadow($border-color);
+      background-image: $background-image;
+      &:hover,
+      &:focus,
+      &:active,
+      &.btn-hovered,
+      &.btn-focused,
+      &.btn-active {
         color: $color-invert;
-        box-shadow: buttonBoxShadow($name, $button-box-shadow);
+        background-color: cherryDarken($color, 8%);
+        background-position: right center;
+        box-shadow: calcBoxShadow($border-color);
+      }
+      &[disabled],
+      fieldset[disabled] & {
+        opacity: 0.8;
+        background-color: $color;
+        cursor: default;
+      }
+      &.btn-loading {
+        background-color: $color;
+        background-position: left center;
+        &::after {
+          @include loader($color-invert);
+        }
+      }
+      &.btn-inverted {
+        color: $color;
+        background-color: $color-invert;
+        background-image: none;
+        box-shadow: calcBoxShadow();
+        &::after {
+          @include loader($color);
+        }
         &:hover,
         &:focus,
         &:active,
-        &.is-hovered,
-        &.is-focused,
-        &.is-active {
-          background-color: $background-color--hover;
-          border-color: transparent;
-          color: $color-invert;
-          background-position: right center;
+        &.btn-hovered,
+        &.btn-focused,
+        &.btn-active {
+          background-color: cherryDarken($color-invert, 5%);
         }
         &[disabled],
-        fieldset[disabled] & {
-          background-color: $background-color;
-          border-color: transparent;
-          box-shadow: none;
-        }
-        &.is-inverted {
+        fieldset[disabled] &,
+        &.btn-loading {
+          color: $color;
           background-color: $color-invert;
-          color: $color;
-          &:hover,
-          &.is-hovered {
-            background-color: cherryDarken($color-invert, 5%);
-          }
-          &[disabled],
-          fieldset[disabled] & {
-            background-color: $color-invert;
-            border-color: transparent;
-            box-shadow: none;
-            color: $color;
-          }
         }
-        &.is-loading {
-          background-color: $background-color;
-          &::after {
-            @include loader($color-invert);
-          }
+      }
+      &.btn-outlined {
+        // Use $color if default `border-color` not set
+        $border-color-outlined: $border-color;
+        @if ($border-color == null) {
+          $border-color-outlined: $color;
         }
-        &.is-outlined {
-          background-color: transparent;
-          box-shadow: none;
-          border-color: $color;
-          color: $color;
-          &:hover,
-          &.is-hovered,
-          &:focus,
-          &.is-focused {
-            background-color: $color;
-            border-color: $color;
-            color: $color-invert;
-          }
-          &.is-loading {
-            background-color: $color;
-            &::after {
-              @include loader($color);
-            }
-            &:hover,
-            &.is-hovered,
-            &:focus,
-            &.is-focused {
-              &::after {
-                border-color: transparent transparent $color-invert $color-invert !important;
-              }
-            }
-          }
-          &[disabled],
-          fieldset[disabled] & {
-            background-color: transparent;
-            border-color: $color;
-            box-shadow: none;
-            color: $color;
-          }
+        color: $color;
+        background-color: transparent;
+        background-image: none;
+        box-shadow: calcBoxShadow($border-color-outlined);
+        &::after {
+          @include loader($color);
         }
-        &.is-inverted.is-outlined {
-          background-color: transparent;
-          border-color: $color-invert;
+        &:hover,
+        &:focus,
+        &:active,
+        &.btn-hovered,
+        &.btn-focused,
+        &.btn-active {
           color: $color-invert;
-          &:hover,
-          &.is-hovered,
-          &:focus,
-          &.is-focused {
-            background-color: $color-invert;
-            color: $color;
+          background-color: $color;
+          background-image: $background-image;
+          box-shadow: calcBoxShadow(transparent);
+        }
+        &[disabled],
+        fieldset[disabled] &,
+        &.btn-loading {
+          color: $color;
+          background-color: transparent;
+          background-image: none;
+          box-shadow: calcBoxShadow($border-color-outlined);
+        }
+      }
+      // If light and dark colors are provided
+      @if length($value) >= 4 and nth($value, 4) {
+        $color-light: nth($value, 3);
+        $color-dark: nth($value, 4);
+        &.btn-light {
+          color: $color-dark;
+          background-color: $color-light;
+          background-image: none;
+          box-shadow: calcBoxShadow();
+          &::after {
+            @include loader($color-dark);
           }
-          &.is-loading {
-            &:hover,
-            &.is-hovered,
-            &:focus,
-            &.is-focused {
-              &::after {
-                border-color: transparent transparent $color $color !important;
-              }
-            }
+          &:hover,
+          &:focus,
+          &:active,
+          &.btn-hovered,
+          &.btn-focused,
+          &.btn-active {
+            background-color: cherryDarken($color-light, 4%);
+            color: $color-dark;
           }
           &[disabled],
-          fieldset[disabled] & {
-            background-color: transparent;
-            border-color: $color-invert;
-            box-shadow: none;
-            color: $color-invert;
-          }
-        }
-        // If light and dark colors are provided
-        @if length($pair) >= 4 {
-          $color-light: nth($pair, 3);
-          $color-dark: nth($pair, 4);
-          &.is-light {
-            background-color: $color-light;
+          fieldset[disabled] &,
+          &.btn-loading {
             color: $color-dark;
-            &:hover,
-            &.is-hovered {
-              background-color: cherryDarken($color-light, 2.5%);
-              border-color: transparent;
-              color: $color-dark;
-            }
-            &:active,
-            &.is-active {
-              background-color: cherryDarken($color-light, 5%);
-              border-color: transparent;
-              color: $color-dark;
-            }
+            background-color: $color-light;
+            background-image: none;
+            box-shadow: calcBoxShadow();
           }
         }
       }

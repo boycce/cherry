@@ -1,4 +1,14 @@
-@import "functions.scss";
+// Base color variations
+$orange-invert:    findColorInvert($orange) !default;
+$yellow-invert:    findColorInvert($yellow) !default;
+$green-invert:     findColorInvert($green) !default;
+$turquoise-invert: findColorInvert($turquoise) !default;
+$cyan-invert:      findColorInvert($cyan) !default;
+$blue-invert:      findColorInvert($blue) !default;
+$purple-invert:    findColorInvert($purple) !default;
+$red-invert:       findColorInvert($red) !default;
+
+// App color variations
 $primary-invert:   findColorInvert($primary) !default;
 $primary-light:    findLightColor($primary) !default;
 $primary-dark:     findDarkColor($primary) !default;
@@ -18,23 +28,38 @@ $danger-invert:    findColorInvert($danger) !default;
 $danger-light:     findLightColor($danger) !default;
 $danger-dark:      findDarkColor($danger) !default;
 
-$orange-invert:    findColorInvert($orange) !default;
-$yellow-invert:    findColorInvert($yellow) !default;
-$green-invert:     findColorInvert($green) !default;
-$turquoise-invert: findColorInvert($turquoise) !default;
-$cyan-invert:      findColorInvert($cyan) !default;
-$blue-invert:      findColorInvert($blue) !default;
-$purple-invert:    findColorInvert($purple) !default;
-$red-invert:       findColorInvert($red) !default;
-
 // Lists and maps
-$custom-colors:    null !default;
-$custom-shades:    null !default;
+$custom-gradients: ("grad1": (160deg, $primary, darken($primary, 10%), darken($primary, 15%))) !default;
+$custom-colors: (/* E.g. "{color name}": (#000, #fff), ... */) !default;
+$forms: (/* E.g. ("input-background": #000), ... */) !default;
 
-$colors: mergeColorMaps(("white": ($white, $black), "black": ($black, $white), "primary": ($primary, $primary-invert, $primary-light, $primary-dark), "secondary": ($secondary, $secondary-invert, $secondary-light, $secondary-dark), "info": ($info, $info-invert, $info-light, $info-dark), "success": ($success, $success-invert, $success-light, $success-dark), "warning": ($warning, $warning-invert, $warning-light, $warning-dark), "danger": ($danger, $danger-invert, $danger-light, $danger-dark)), $custom-colors) !default;
+// Convert gradients into colors.
+@each $name, $gradient in $custom-gradients {
+  // $gradient is a non-bracketed list which is confusing when debugging
+  $value: getColorVariations([getFirstColor($gradient), $gradient]);
+  $custom-colors: map-merge($custom-colors, ($name: $value));
+}
 
-$shades: mergeColorMaps(("black-light": $black-light, "black-lighter": $black-lighter, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "grey-lightest": $grey-lightest, "white-dark": $white-dark, "white-darker": $white-darker), $custom-shades) !default;
+$app-colors: mergeColorMaps((
+  "white": ($white, $black, null, null, null),
+  "black": ($black, $white, null, null, null),
+  "primary": ($primary, $primary-invert, $primary-light, $primary-dark, null),
+  "secondary": ($secondary, $secondary-invert, $secondary-light, $secondary-dark, null),
+  "info": ($info, $info-invert, $info-light, $info-dark, null),
+  "success": ($success, $success-invert, $success-light, $success-dark, null),
+  "warning": ($warning, $warning-invert, $warning-light, $warning-dark, null),
+  "danger": ($danger, $danger-invert, $danger-light, $danger-dark, null)
+), $custom-colors) !default;
 
-// Forms
-$form:   () !default;
-$form-2: () !default;
+$shades: (
+  "black-light": $black-light,
+  "black-lighter": $black-lighter,
+  "black-lightest": $black-lightest,
+  "grey": $grey,
+  "grey-light": $grey-light,
+  "grey-lighter": $grey-lighter,
+  "grey-lightest": $grey-lightest,
+  "white-dark": $white-dark,
+  "white-darker": $white-darker,
+  "white-darkest": $white-darkest
+) !default;

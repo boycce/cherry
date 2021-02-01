@@ -7,18 +7,21 @@ nav_order: 4
 
 ### Variables
 
-To customise these variables you can do so via the following SASS maps:
+You can customise the form values below by appending custom maps to `$forms`. This allows
+you to easly to define multiple form styles.
 
 ```sass
-$form: (
-  "input-background": #fff,
-  //..
-);
-
-// You can also style a second set of form elements which will be avalialble under the class `.form-2`
-$form-2: (
-  "input-background": #000,
-  //..
+$forms: (
+  (
+    // `.form`
+    "input-background": #fff,
+    "input-border-radius": 5px,
+    //..
+  ), (
+    // `.form-2`
+    "input-background": #000,
+    //..
+  ),
 );
 ```
 

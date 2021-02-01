@@ -49,11 +49,11 @@
   ), $form);
 }
 
-@for $i from 1 through 2 {
-  $map: ();
+@if (length($forms) == 0) { $forms: (()); }
+@for $i from 1 through length($forms) {
+  $map: formDefaults(nth($forms, $i));
   $class: ".form-#{$i}";
-  @if $i == 1 { $map: formDefaults($form); $class: ".form"; }
-  @else if $i == 2 { $map: formDefaults($form-2); }
+  @if $i == 1 { $class: ".form"; }
 
   #{$class} {
 
@@ -130,15 +130,15 @@
 
     /* Input + button element  */
 
-    .input-button {
+    .input-btn {
       display: flex;
     }
-    .input-button input {
+    .input-btn input {
       flex: 1;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
     }
-    .input-button .button {
+    .input-btn .btn {
       width: auto !important;
       min-width: 0;
       font-size: 0.8em;
