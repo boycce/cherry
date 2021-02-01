@@ -33,7 +33,7 @@ $under-width:  3px !default;
 /* ---- Colors & Gradients ----------- */
 
   @each $name, $color in map-merge($shades, $app-colors) {
-    @if (type-of($color) == 'map') {
+    @if (type-of($color) == 'map' or type-of($color) == 'list') {
       $color-invert: nth($color, 2);
       $color: nth($color, 1);
     }
@@ -58,7 +58,7 @@ $under-width:  3px !default;
   }
 
   @each $name, $gradient in $custom-gradients {
-    .#{$name} {
+    .bg-#{$name} {
       background-image: linear-gradient($gradient);
     }
   }
