@@ -1,6 +1,7 @@
-$border-color: #f5f5f5 !default;
-$under-color:  $text !default;
-$under-width:  3px !default;
+$border-color:      #f5f5f5 !default;
+$under-color:        $text !default;
+$under-width:        3px !default;
+$border-radius-step: 2px !default;
 
 /* ---- Borders ---------------------- */
 
@@ -27,6 +28,52 @@ $under-width:  3px !default;
     .by-#{$i} {
       border-top: #{$i}px solid $border-color;
       border-bottom: #{$i}px solid $border-color;
+    }
+  }
+
+  /* ---- Border radius -------------- */
+
+  @each $i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 'full'] {
+    $size: null;
+    @if ($i == 'full') {
+      $size: 999px;
+    }
+    @else {
+      $size: $border-radius-step * $i;
+    }
+    .rounded-#{$i} {
+      border-radius: $size;
+    }
+    .rounded-l-#{$i} {
+      border-top-left-radius: $size;
+      border-bottom-left-radius: $size;
+    }
+    .rounded-r-#{$i} {
+      border-top-right-radius: $size;
+      border-bottom-right-radius: $size;
+    }
+    .rounded-t-#{$i} {
+      border-top-left-radius: $size;
+      border-top-right-radius: $size;
+    }
+    .rounded-b-#{$i} {
+      border-bottom-left-radius: $size;
+      border-bottom-right-radius: $size;
+    }
+    .rounded-tl-#{$i} {
+      border-top-left-radius: $size;
+    }
+    .rounded-tr-#{$i} {
+      border-top-right-radius: $size;
+    }
+    .rounded-bl-#{$i} {
+      border-bottom-left-radius: $size;
+    }
+    .rounded-br-#{$i} {
+      border-bottom-right-radius: $size;
+    }
+    .rounded-br-#{$i} {
+      border-bottom-right-radius: $size;
     }
   }
 

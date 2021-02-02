@@ -62,6 +62,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     line-height: 1.5em;
     text-align: center;
     text-decoration: none;
+    justify-content: center;
     background-size: 200% auto; /* 200% for gradients */
     border-radius: $btn-border-radius;
     border: 0;
@@ -71,6 +72,10 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     transition: all 200ms ease;
     white-space: nowrap;
     -webkit-appearance: none;
+  }
+  .btn-full {
+    display: flex;
+    width: 100%;
   }
 
   /* Icon */
