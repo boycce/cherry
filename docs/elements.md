@@ -33,3 +33,30 @@ You can add additional button colors which are avaliable via .btn-{name}
 `$custom-colors`          | `e.g. ("{name}": (#000, #fff), ...)` |
 You can add additional button color gradients which are avaliable via .btn-{name}
 `$custom-gradients`       | `e.g. ("{name}": (160deg, #555, #333, #000), ...) ` |
+
+#### Tables
+
+Variable | Default value | Computed value
+- | - | -
+`$table-color`                       | `$text` | `hsl(0, 0%, 7%)`
+`$table-background-color`            | `#fff` |
+ |  |
+`$table-cell-border`                 | `1px solid $grey-lightest` | `1px solid hsl(0, 0%, 91%)`
+`$table-cell-border-width`           | `0 0 1px` |
+`$table-cell-padding`                | `0.6em 0.9em` |
+`$table-cell-heading-color`          | `$text-strong` | `hsl(0, 0%, 0%)`
+ |  |
+`$table-head-cell-border-width`      | `0 0 1px` |
+`$table-head-cell-color`             | `$text-strong` | `hsl(0, 0%, 0%)`
+`$table-foot-cell-border-width`      | `1px 0 0` |
+`$table-foot-cell-color`             | `$text-strong` | `hsl(0, 0%, 0%)`
+ |  |
+`$table-head-background-color`       | `transparent` |
+`$table-body-background-color`       | `transparent` |
+`$table-foot-background-color`       | `transparent` |
+ |  |
+`$table-row-hover-background-color`  | `darken($table-background-color, 8%)` | ..
+`$table-row-active-background-color` | `$primary` | `hsl(259, 100%, 67%)`
+`$table-row-active-color`            | `$primary-invert` | ..
+`$table-striped-row-even-background-color` | `#fafafa` |
+`$table-striped-row-even-hover-background-color` | `darken($table-striped-row-even-background-color, 8%)` | ..

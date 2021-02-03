@@ -1,7 +1,7 @@
 $spacer: 10px !default;
 $md:     0.8 !default;
 $sm:     0.65 !default;
-$sizes:  0.5 1 1.5 2 3 4 5 6 7 8 9 10 11 12 13 14 !default;
+$sizes:  0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 10 11 12 13 14 !default;
 // Special naming for 0.5 and 1.5 sizes: "mb-05" "mb-15"
 
 /* ---- Main ------------------------- */
@@ -10,8 +10,9 @@ $sizes:  0.5 1 1.5 2 3 4 5 6 7 8 9 10 11 12 13 14 !default;
     @media (max-width: 580px) {
       @each $i in $sizes {
         $ii: $i;
-        @if $i == 0.5 { $ii: '05'; }
-        @if $i == 1.5 { $ii: '15'; }
+        @if $i == 0.5 { $ii: '0-5'; }
+        @if $i == 1.5 { $ii: '1-5'; }
+        @if $i == 2.5 { $ii: '2-5'; }
 
         .#{$t}-#{$ii} {
           #{$type}: $spacer * $i * $sm !important;
@@ -37,8 +38,9 @@ $sizes:  0.5 1 1.5 2 3 4 5 6 7 8 9 10 11 12 13 14 !default;
     @media (min-width: 581px) and (max-width: 770px) {
       @each $i in $sizes {
         $ii: $i;
-        @if $i == 0.5 { $ii: '05'; }
-        @if $i == 1.5 { $ii: '15'; }
+        @if $i == 0.5 { $ii: '0-5'; }
+        @if $i == 1.5 { $ii: '1-5'; }
+        @if $i == 2.5 { $ii: '2-5'; }
 
         .#{$t}-#{$ii} {
           #{$type}: $spacer * $i * $md !important;
@@ -62,8 +64,9 @@ $sizes:  0.5 1 1.5 2 3 4 5 6 7 8 9 10 11 12 13 14 !default;
       }
       @each $i in $sizes {
         $ii: $i;
-        @if $i == 0.5 { $ii: '05'; }
-        @if $i == 1.5 { $ii: '15'; }
+        @if $i == 0.5 { $ii: '0-5'; }
+        @if $i == 1.5 { $ii: '1-5'; }
+        @if $i == 2.5 { $ii: '2-5'; }
 
         .sm-md.#{$t}-#{$ii} {
           #{$type}: $spacer * $i * $sm !important;
@@ -89,8 +92,9 @@ $sizes:  0.5 1 1.5 2 3 4 5 6 7 8 9 10 11 12 13 14 !default;
     @media (min-width: 771px) {
       @each $i in $sizes {
         $ii: $i;
-        @if $i == 0.5 { $ii: '05'; }
-        @if $i == 1.5 { $ii: '15'; }
+        @if $i == 0.5 { $ii: '0-5'; }
+        @if $i == 1.5 { $ii: '1-5'; }
+        @if $i == 2.5 { $ii: '2-5'; }
 
         .#{$t}-#{$ii} {
           #{$type}: $spacer * $i !important;

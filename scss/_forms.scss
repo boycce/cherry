@@ -27,6 +27,7 @@
     "input-font-family":           $body-font-family,
     "input-font-size":             0.95rem,
     "input-font-weight":           inherit,
+    "input-icon-width":            18px,
     "input-margin-bottom":         1.5rem,
     "input-padding":               map-get($form, "input-padding"),
     "input-placeholder-color":     rgba($text, 0.5),
@@ -161,12 +162,13 @@
     .radio-grp .form-error,
     .input-grp .form-error {
       font-size: map-get($map, "error-font-size");
+      line-height: 1.4em;
     }
     .form-error:empty {
       margin: 0 !important;
     }
-    .has-error .form-error,
-    &.has-error .form-error {
+    .is-invalid .form-error,
+    &.is-invalid .form-error {
       display: block;
     }
 
@@ -190,7 +192,7 @@
     }
     label,
     .label,
-    .label-color {
+    .text-label {
       color: map-get($map, "label-color");
       text-decoration-color: map-get($map, "label-color");
     }
@@ -234,6 +236,60 @@
     .has-float-label input:-webkit-autofill + * {
       transform: translateY(0px);
       opacity: 1;
+    }
+
+  /* ---- Icons ------------------------ */
+
+    $ip: map-get($map, "input-padding");
+    $ip-left: null;
+    $ip-right: null;
+
+    @if length($ip) > 3 {
+      $ip-left: nth($ip, 4);
+      $ip-right: nth($ip, 2);
+    }
+    @else if length($ip) > 1 {
+      $ip-left: nth($ip, 2);
+      $ip-right: nth($ip, 2);
+    }
+    @else {
+      $ip-left: $ip;
+      $ip-right: $ip;
+    }
+    .icon-left,
+    .icon-right {
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      width: map-get($map, "input-icon-width");
+      pointer-events: none;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+    }
+    .has-icon-left {
+      position: relative;
+      input,
+      select,
+      .input,
+      .vs__dropdown-toggle {
+        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.8em);
+      }
+      .icon-left {
+        left: calc(#{$ip-left} - 2px);
+      }
+    }
+    .has-icon-right {
+      position: relative;
+      input,
+      select,
+      .input,
+      .vs__dropdown-toggle {
+        padding-right: calc(#{$ip-right} - 2px + #{map-get($map, "input-icon-width")} + 0.4em);
+      }
+      .icon-right {
+        right: calc(#{$ip-right} - 2px);
+      }
     }
 
   /* ---- Select ----------------------- */
@@ -378,10 +434,14 @@
           map-get($map, "input-box-shadow--active");
       }
     }
-    input.invalid,
-    select.invalid,
-    textarea.invalid,
-    .vs__dropdown-toggle.invalid {
+    input.is-invalid,
+    select.is-invalid,
+    textarea.is-invalid,
+    .vs__dropdown-toggle.is-invalid,
+    .input-grp.is-invalid input,
+    .input-grp.is-invalid select,
+    .input-grp.is-invalid textarea,
+    .input-grp.is-invalid .vs__dropdown-toggle {
       color: map-get($map, "input-color--invalid");
       box-shadow:
         0 0 0 map-get($map, "input-border-width") $danger inset,
@@ -399,15 +459,18 @@
           map-get($map, "input-box-shadow--invalid");
       }
     }
-    input[type="radio"].invalid + label,
-    input[type="checkbox"].invalid + label {
+
+    input[type="radio"].is-invalid + label,
+    input[type="checkbox"].is-invalid + label,
+    input[type="radio"].is-invalid + label,
+    input[type="checkbox"].is-invalid + label {
       animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       color: #7b1a1a;
     }
-    input[type="radio"].invalid + label:before,
-    input[type="checkbox"].invalid + label:before {
+    input[type="radio"].is-invalid + label:before,
+    input[type="checkbox"].is-invalid + label:before {
       border-color: $danger;
       background-color: map-get($map, "input-background--invalid");
     }

@@ -73,7 +73,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     white-space: nowrap;
     -webkit-appearance: none;
   }
-  .btn-full {
+  .is-full {
     display: flex;
     width: 100%;
   }
@@ -134,19 +134,19 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     z-index: 2;
     @include loader(#fff);
   }
-  .btn.btn-loading,
-  .btn.btn-loading:hover,
-  .btn.btn-loading:focus {
+  .btn.is-loading,
+  .btn.is-loading:hover,
+  .btn.is-loading:focus {
     cursor: default;
     color: transparent !important;
   }
-  .btn.btn-loading .icon {
+  .btn.is-loading .icon {
     opacity: 0;
   }
-  .btn.btn-loading svg.icon {
+  .btn.is-loading svg.icon {
     fill: transparent !important;
   }
-  .btn.btn-loading::after {
+  .btn.is-loading::after {
     opacity: 1;
   }
   @keyframes loaderOne {
@@ -174,7 +174,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
       $border-color: $btn-border-color;
     }
     @if $name != 'default' {
-      $cssname: '.btn.btn-#{$name}';
+      $cssname: '.btn.is-#{$name}';
     }
 
     #{$cssname} {
@@ -185,9 +185,9 @@ $btn-app-colors: mergeColorMaps($app-colors, (
       &:hover,
       &:focus,
       &:active,
-      &.btn-hovered,
-      &.btn-focused,
-      &.btn-active {
+      &.is-hovered,
+      &.is-focused,
+      &.is-active {
         color: $color-invert;
         background-color: cherryDarken($color, 8%);
         background-position: right center;
@@ -199,14 +199,14 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         background-color: $color;
         cursor: default;
       }
-      &.btn-loading {
+      &.is-loading {
         background-color: $color;
         background-position: left center;
         &::after {
           @include loader($color-invert);
         }
       }
-      &.btn-inverted {
+      &.is-inverted {
         color: $color;
         background-color: $color-invert;
         background-image: none;
@@ -217,19 +217,19 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         &:hover,
         &:focus,
         &:active,
-        &.btn-hovered,
-        &.btn-focused,
-        &.btn-active {
+        &.is-hovered,
+        &.is-focused,
+        &.is-active {
           background-color: cherryDarken($color-invert, 5%);
         }
         &[disabled],
         fieldset[disabled] &,
-        &.btn-loading {
+        &.is-loading {
           color: $color;
           background-color: $color-invert;
         }
       }
-      &.btn-outlined {
+      &.is-outlined {
         // Use $color if default `border-color` not set
         $border-color-outlined: $border-color;
         @if ($border-color == null) {
@@ -245,9 +245,9 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         &:hover,
         &:focus,
         &:active,
-        &.btn-hovered,
-        &.btn-focused,
-        &.btn-active {
+        &.is-hovered,
+        &.is-focused,
+        &.is-active {
           color: $color-invert;
           background-color: $color;
           background-image: $background-image;
@@ -255,7 +255,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         }
         &[disabled],
         fieldset[disabled] &,
-        &.btn-loading {
+        &.is-loading {
           color: $color;
           background-color: transparent;
           background-image: none;
@@ -266,7 +266,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
       @if length($value) >= 4 and nth($value, 4) {
         $color-light: nth($value, 3);
         $color-dark: nth($value, 4);
-        &.btn-light {
+        &.is-light {
           color: $color-dark;
           background-color: $color-light;
           background-image: none;
@@ -277,15 +277,15 @@ $btn-app-colors: mergeColorMaps($app-colors, (
           &:hover,
           &:focus,
           &:active,
-          &.btn-hovered,
-          &.btn-focused,
-          &.btn-active {
+          &.is-hovered,
+          &.is-focused,
+          &.is-active {
             background-color: cherryDarken($color-light, 4%);
             color: $color-dark;
           }
           &[disabled],
           fieldset[disabled] &,
-          &.btn-loading {
+          &.is-loading {
             color: $color-dark;
             background-color: $color-light;
             background-image: none;

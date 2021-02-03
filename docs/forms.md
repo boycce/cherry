@@ -51,6 +51,7 @@ Variable | Default value | Computed value
 `input-font-family`           | `$body-font-family` | `Open Sans, sans-serif`
 `input-font-size`             | `0.95rem`           |
 `input-font-weight`           | `inherit`           |
+`input-icon-width`            | `18px`              |
 `input-margin-bottom`         | `1.5rem`            |
 `input-padding`               | `13px 19px`         |
 `input-placeholder-color`     | `rgba($text, 0.5)`  | ..
