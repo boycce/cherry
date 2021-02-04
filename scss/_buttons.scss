@@ -73,7 +73,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     white-space: nowrap;
     -webkit-appearance: none;
   }
-  .is-full {
+  .btn.is-full {
     display: flex;
     width: 100%;
   }

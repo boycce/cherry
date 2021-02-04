@@ -378,6 +378,7 @@
       input + label {
         position: relative;
         display: inline-block;
+        min-height: 1em;
         padding: map-get($map, "input-padding");
         padding-left: map-get($map, "toggle-width") + 0.8em;
         padding-right: 1.2em;
@@ -410,6 +411,12 @@
       }
       input:checked + label:after {
         left: map-get($map, "toggle-width") - map-get($map, "toggle-height");
+      }
+      &.has-no-label input + label {
+        padding-left: map-get($map, "toggle-width");
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
 

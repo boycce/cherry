@@ -187,10 +187,8 @@
   $table-foot-background-color: transparent !default;
 
   $table-row-hover-background-color: darken($table-background-color, 8%) !default;
-
   $table-row-active-background-color: $primary !default;
   $table-row-active-color: $primary-invert !default;
-
   $table-striped-row-even-background-color: #fafafa !default;
   $table-striped-row-even-hover-background-color: darken($table-striped-row-even-background-color, 8%) !default;
 
@@ -306,7 +304,7 @@
         }
       }
     }
-    &.is-fullwidth {
+    &.is-full {
       width: 100%;
     }
     &.is-hoverable {

@@ -119,50 +119,55 @@ $family-code:          monospace !default
     margin: 0;
     padding: 0;
   }
+
+/* ---- Table ------------------------ */
+
   table,
   .table {
     border-collapse: collapse;
     border-spacing: 0;
     font-size: inherit;
-    .thead {
-      display: table-header-group;
-      vertical-align: middle;
-      border-color: inherit;
-    }
-    .tbody {
-      display: table-row-group;
-      vertical-align: middle;
-      border-color: inherit;
-    }
-    .tfoot {
-      display: table-footer-group;
-      vertical-align: middle;
-      border-color: inherit;
-    }
-    th,
-    .th {
-      padding: 0;
-      display: table-cell;
-      vertical-align: inherit;
-      font-weight: bold;
-      text-align: -internal-center;
-    }
-    td,
-    .td {
-      display: table-cell;
-      vertical-align: inherit;
-    }
-    td:not([align]),
-    th:not([align]),
-    .td:not([align]),
-    .th:not([align]) {
-      text-align: inherit;
-    }
-    .tr {
-      display: table-row;
-      vertical-align: inherit;
-      border-color: inherit;
-    }
+  }
+  .thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  .tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  .tfoot {
+    display: table-footer-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  .tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
+  th,
+  .th {
+    padding: 0;
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+  }
+  td,
+  .td {
+    display: table-cell;
+    vertical-align: inherit;
+  }
+  .td,
+  .th {
+    text-align: inherit;
+  }
+  td:not([align]),
+  th:not([align]) {
+    text-align: inherit;
   }
 
 /* ---- Forms ------------------------ */
