@@ -168,7 +168,8 @@
       margin: 0 !important;
     }
     .is-invalid .form-error,
-    &.is-invalid .form-error {
+    &.is-invalid .form-error,
+    .form-error.form-error-show {
       display: block;
     }
 
