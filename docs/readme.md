@@ -1,6 +1,6 @@
 ![](./assets/imgs/cherry.jpg)
 
-[![NPM](https://img.shields.io/npm/v/cherry.svg)](https://www.npmjs.com/package/cherry) [![Build Status](https://travis-ci.org/boycce/cherry.svg?branch=master)](https://travis-ci.org/boycce/cherry)
+[![NPM](https://img.shields.io/npm/v/cherry.svg)](https://www.npmjs.com/package/cherry) [![Build Status](https://travis-ci.com/boycce/cherry.svg?branch=master)](https://travis-ci.com/boycce/cherry)
 
 ## Install
 
