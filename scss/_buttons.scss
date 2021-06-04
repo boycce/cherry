@@ -5,6 +5,7 @@ $btn-border-radius:      5px !default;
 $btn-border-width:       2px !default;
 $btn-box-shadow:         none !default;
 $btn-box-shadow--active: $btn-box-shadow !default;
+$btn-disabled-opacity:   0.5 !default;
 $btn-font-family:        $body-font-family !default;
 $btn-font-size:          14px !default;
 $btn-font-weight:        600 !default;
@@ -195,7 +196,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
       }
       &[disabled],
       fieldset[disabled] & {
-        opacity: 0.8;
+        opacity: $btn-disabled-opacity;
         background-color: $color;
         cursor: default;
       }

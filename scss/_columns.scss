@@ -1,16 +1,24 @@
+$column-breakpoint-l: 1000px !default;
+$column-breakpoint-m: 770px !default;
+$column-breakpoint-s: 590px !default;
+$column-breakpoint-xs: 470px !default;
+$column-padding-multipler: 1rem !default;
+
 /* ---- Columns ---------------------- */
 
   .cols {
-    margin-right: -16px;
-    margin-left: -16px;
+    margin-right: $column-padding-multipler * -1;
+    margin-left: $column-padding-multipler * -1;
     display: flex;
     flex-wrap: wrap;
   }
-  .col,
-  .col-1,
-  .col-1-5, // 8 columns
-  .col-2,  // 6 columns
-  .col-2-5, // ..
+  .col-none,    // flex none
+  .col-initial, // flex initial/0
+  .col,         // flex 1
+  .col-1,       // 12 columns
+  .col-1-5,     // 8 columns
+  .col-2,       // 6 columns
+  .col-2-5,     // 2.08 columns
   .col-3,
   .col-4,
   .col-5,
@@ -24,8 +32,8 @@
     flex: none;
     position: relative;
     min-height: 1px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: $column-padding-multipler;
+    padding-right: $column-padding-multipler;
   }
   .col-12 {
     width: 100%;
@@ -72,15 +80,17 @@
   .col {
     flex: 1;
   }
-  @media (max-width: 1000px) {
-    .col-15,
+  .col-initial {
+    flex: 0;
+  }
+  @media (max-width: $column-breakpoint-l) {
+    .col-1,
+    .col-1-5,
     .col-2 {
       width: 33.33333333%;
     }
   }
-  @media (max-width: 770px) {
-    .col,
-    .col-1-5,
+  @media (max-width: $column-breakpoint-m) {
     .col-5,
     .col-6,
     .col-7,
@@ -92,6 +102,7 @@
       width: 100%;
     }
     .col-1,
+    .col-1-5,
     .col-2,
     .col-2-5,
     .col-3,
@@ -99,31 +110,32 @@
       width: 50%;
     }
   }
-  @media (max-width: 590px) {
+  @media (max-width: $column-breakpoint-s) {
     .col-3,
     .col-4 {
       width: 100%;
     }
   }
-  @media (max-width: 470px) {
+  @media (max-width: $column-breakpoint-xs) {
     .col-1,
+    .col-1-5,
     .col-2,
     .col-2-5 {
       width: 100%;
     }
   }
 
-  /* Column gap */
+  /* Gutters */
 
   @each $i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] {
-    .gap-#{$i} {
-      margin-right: #{$i * -4px};
-      margin-left: #{$i * -4px};
+    .gutters-#{$i} {
+      margin-right: -#{$column-padding-multipler / 3 * $i};
+      margin-left: -#{$column-padding-multipler / 3 * $i};
     }
-    .gap-#{$i} > .col,
-    .gap-#{$i} > [class*="col-"] {
-      padding-right: #{$i * 4px};
-      padding-left: #{$i * 4px};
+    .gutters-#{$i} > .col,
+    .gutters-#{$i} > [class*="col-"] {
+      padding-right: #{$column-padding-multipler / 3 * $i};
+      padding-left: #{$column-padding-multipler / 3 * $i};
     }
   }
 

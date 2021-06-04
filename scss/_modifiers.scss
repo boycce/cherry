@@ -2,6 +2,7 @@ $border-color:      #f5f5f5 !default;
 $under-color:        $text !default;
 $under-width:        3px !default;
 $border-radius-step: 2px !default;
+$gap-multipler:      0.25rem !default;
 
 /* ---- Borders ---------------------- */
 
@@ -93,6 +94,13 @@ $border-radius-step: 2px !default;
       color: $color;
       fill: $color;
     }
+    @if ($name == 'text') {
+      .text {
+        color: $color;
+        text-decoration-color: $color;
+        fill: $color;
+      }
+    }
     @if (variable-exists(color-invert)) {
       .text-#{$name}-invert {
         color: $color-invert;
@@ -102,6 +110,13 @@ $border-radius-step: 2px !default;
       .bg-#{$name}-invert {
         color: $color-invert;
         fill: $color-invert;
+      }
+      @if ($name == 'text') {
+        .text-invert {
+          color: $color-invert;
+          text-decoration-color: $color-invert;
+          fill: $color-invert;
+        }
       }
     }
   }
@@ -172,6 +187,200 @@ $border-radius-step: 2px !default;
     display: none;
   }
 
+/* ---- Flex ------------------------- */
+
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-auto {
+    flex: auto;
+  }
+  .flex-initial {
+    flex: initial; /* can shrink, but not grow i.e flex: 0 */
+  }
+  .flex-none {
+    flex: none; /* can't shrink or grow */
+  }
+
+  /* Direction */
+
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-col-reverse {
+    flex-direction: column-reverse;
+  }
+  .flex-row {
+    flex-direction: row;
+  }
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  /* Wrap */
+
+  .flex-nowrap {
+    flex-wrap: nowrap;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+
+  /* Grow / shrink */
+
+  .flex-grow {
+    flex-grow: 1;
+  }
+  .flex-grow-0 {
+    flex-grow: 0;
+  }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
+
+  /* Order */
+
+  @each $i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] {
+    .order-#{$i} {
+      order: #{$i};
+    }
+  }
+  .order-first {
+    order: -9999;
+  }
+  .order-last {
+    order: 9999;
+  }
+  .order-none {
+    order: 0;
+  }
+
+  /* Gap */
+
+  @each $i in [0, 0.5, 1, 1.5, 2, 3, 4, 5, 6, 7, 8, 9] {
+    $ii: $i;
+    @if $i == 0.5 { $ii: '0-5'; }
+    @if $i == 1.5 { $ii: '1-5'; }
+    .gap-#{$ii} {
+      gap: #{$gap-multipler * $i};
+    }
+    .column-gap-#{$ii} {
+      column-gap: #{$gap-multipler * $i};
+    }
+    .row-gap-#{$ii} {
+      row-gap: #{$gap-multipler * $i};
+    }
+  }
+
+  /* Justify */
+
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .justify-space-around {
+    justify-content: space-around;
+  }
+  .justify-space-between {
+    justify-content: space-between;
+  }
+  .justify-space-evenly {
+    justify-content: space-evenly;
+  }
+  .justify-start {
+    justify-content: flex-start;
+  }
+
+  .justify-items-center {
+    justify-items: center;
+  }
+  .justify-items-end {
+    justify-items: flex-end;
+  }
+  .justify-items-start {
+    justify-items: flex-start;
+  }
+  .justify-items-stretch {
+    justify-items: stretch;
+  }
+
+  .justify-self-auto {
+    justify-self: auto;
+  }
+  .justify-self-center {
+    justify-self: center;
+  }
+  .justify-self-end {
+    justify-self: flex-end;
+  }
+  .justify-self-start {
+    justify-self: flex-start;
+  }
+  .justify-self-stretch {
+    justify-self: stretch;
+  }
+
+  /* Align */
+
+  .align-center {
+    align-content: center;
+  }
+  .align-end {
+    align-content: flex-end;
+  }
+  .align-space-around {
+    align-content: space-around;
+  }
+  .align-space-between {
+    align-content: space-between;
+  }
+  .align-space-evenly {
+    align-content: space-evenly;
+  }
+  .align-start {
+    align-content: flex-start;
+  }
+
+  .align-items-baseline {
+    align-items: baseline;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+  .align-items-end {
+    align-items: flex-end;
+  }
+  .align-items-start {
+    align-items: flex-start;
+  }
+  .align-items-stretch {
+    align-items: stretch;
+  }
+
+  .align-self-auto {
+    align-self: auto;
+  }
+  .align-self-center {
+    align-self: center;
+  }
+  .align-self-end {
+    align-self: flex-end;
+  }
+  .align-self-start {
+    align-self: flex-start;
+  }
+  .align-self-stretch {
+    align-self: stretch;
+  }
+
 /* ---- text weight ------------------ */
 
   @each $i in [300, 400, 500, 600, 700, 800, 900] {
@@ -224,15 +433,6 @@ $border-radius-step: 2px !default;
   }
   .text-center {
     text-align: center;
-  }
-  .flex-1 {
-    flex: 1;
-  }
-  .align-self-center {
-    align-self: center;
-  }
-  .justify-center {
-    justify-content: center;
   }
   .relative {
     position: relative;

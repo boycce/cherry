@@ -379,7 +379,7 @@
       input + label {
         position: relative;
         display: inline-block;
-        min-height: 1em;
+        min-height: map-get($map, "toggle-height"); //1em;height:
         padding: map-get($map, "input-padding");
         padding-left: map-get($map, "toggle-width") + 0.8em;
         padding-right: 1.2em;
