@@ -37,7 +37,7 @@ $link--focus-invert:  findColorInvert($link--focus) !default;
 
 // Lists and maps
 $custom-gradients: ("grad1": (160deg, $primary, darken($primary, 10%), darken($primary, 15%))) !default;
-$custom-colors: (/* E.g. "{color name}": (#000, #fff), ... */) !default;
+$custom-colors: (/* E.g. "COLOR_NAME": (#000, #fff), ... */) !default;
 $forms: (/* E.g. ("input-background": #000), ... */) !default;
 
 // Convert gradients into colors.

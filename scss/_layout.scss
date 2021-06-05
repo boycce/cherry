@@ -12,7 +12,7 @@ $wrapper-padding: 45px !default;
     padding-left: $wrapper-padding;
     padding-right: $wrapper-padding;
   }
-  @media only screen and (max-width: 550px) {
+  @media (max-width: 550px) {
     .wrapper {
       padding-left: $wrapper-padding * 0.7;//30px
       padding-right: $wrapper-padding * 0.7;
@@ -179,7 +179,7 @@ $wrapper-padding: 45px !default;
     width: 333px;
     margin: 0;
   }
-  @media only screen and (max-width: 800px) {
+  @media (max-width: 800px) {
     .card-columns {
       width: auto !important;
       height: auto !important;
@@ -194,7 +194,7 @@ $wrapper-padding: 45px !default;
       margin: 0 auto 1.5em;
     }
   }
-  @media only screen and (max-width: 590px) {
+  @media (max-width: 590px) {
     .card {
       margin: 0px 0px 1.5em;
     }

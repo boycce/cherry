@@ -1,3 +1,6 @@
+$family-primary:       Open Sans, sans-serif !default;
+$family-secondary:     Open Sans, sans-serif !default;
+$family-code:          monospace !default
 $body-background:      #fff !default;
 $body-color:           $text !default;
 $body-font-family:     $family-primary !default;
@@ -7,9 +10,6 @@ $body-line-height:     1.5em !default;
 $body-letter-spacing:  0 !default;
 $link-text-decoration: underline !default;
 $link-outline:         none !default;
-$family-primary:       Open Sans, sans-serif !default;
-$family-secondary:     Open Sans, sans-serif !default;
-$family-code:          monospace !default
 
 /* ---- Main ------------------------- */
 
@@ -20,7 +20,7 @@ $family-code:          monospace !default
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  @media only screen and (max-width: 1090px) {
+  @media (max-width: 1090px) {
     html {
       font-size: $body-font-size - 1px;
     }

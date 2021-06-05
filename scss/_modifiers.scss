@@ -391,6 +391,9 @@ $gap-multipler:      0.25rem !default;
 
 /* ---- Helpers ---------------------- */
 
+  .relative {
+    position: relative;
+  }
   .left {
     float: left;
   }
@@ -433,9 +436,6 @@ $gap-multipler:      0.25rem !default;
   }
   .text-center {
     text-align: center;
-  }
-  .relative {
-    position: relative;
   }
 
 /* ---- Underline -------------------- */

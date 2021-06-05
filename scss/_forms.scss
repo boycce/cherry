@@ -49,10 +49,17 @@
     "toggle-width":                map-get($form, "toggle-height") * 1.8,
   ), $form);
 }
+@function empty-map($x: x) {
+  @return map-remove(($x:$x), $x);
+}
 
-@if (length($forms) == 0) { $forms: (()); }
+@if (length($forms) == 0) {
+  $forms: append($forms, empty-map());
+}
 @for $i from 1 through length($forms) {
-  $map: formDefaults(nth($forms, $i));
+  $form: nth($forms, $i);
+  @if type-of($form) != map { $form: empty-map(); }
+  $map: formDefaults($form);
   $class: ".form-#{$i}";
   @if $i == 1 { $class: ".form"; }
 

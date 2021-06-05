@@ -1,7 +1,7 @@
-$column-breakpoint-l: 1000px !default;
-$column-breakpoint-m: 770px !default;
-$column-breakpoint-s: 590px !default;
-$column-breakpoint-xs: 470px !default;
+$column-breakpoint-l: 1023px !default; /*desktop*/
+$column-breakpoint-m: 768px !default; /*tablet*/
+$column-breakpoint-s: 590px !default; /*mobile*/
+$column-breakpoint-xs: 590px !default;
 $column-padding-multipler: 1rem !default;
 
 /* ---- Columns ---------------------- */
@@ -83,57 +83,89 @@ $column-padding-multipler: 1rem !default;
   .col-initial {
     flex: 0;
   }
-  @media (max-width: $column-breakpoint-l) {
-    .col-1,
-    .col-1-5,
-    .col-2 {
-      width: 33.33333333%;
+  @mixin col-l($isnot) {
+    #{$isnot} {
+      .col-1,
+      .col-1-5,
+      .col-2 {
+        width: 33.33333333%;
+      }
     }
   }
-  @media (max-width: $column-breakpoint-m) {
-    .col-5,
-    .col-6,
-    .col-7,
-    .col-8,
-    .col-9,
-    .col-10,
-    .col-11,
-    .col-12 {
-      width: 100%;
-    }
-    .col-1,
-    .col-1-5,
-    .col-2,
-    .col-2-5,
-    .col-3,
-    .col-4 {
-      width: 50%;
-    }
-  }
-  @media (max-width: $column-breakpoint-s) {
-    .col-3,
-    .col-4 {
-      width: 100%;
+  @mixin col-m($isnot) {
+    #{$isnot} {
+      .col-5,
+      .col-6,
+      .col-7,
+      .col-8,
+      .col-9,
+      .col-10,
+      .col-11,
+      .col-12 {
+        width: 100%;
+      }
+      .col-1,
+      .col-1-5,
+      .col-2,
+      .col-2-5,
+      .col-3,
+      .col-4 {
+        width: 50%;
+      }
     }
   }
-  @media (max-width: $column-breakpoint-xs) {
-    .col-1,
-    .col-1-5,
-    .col-2,
-    .col-2-5 {
-      width: 100%;
+  @mixin col-s($isnot) {
+    #{$isnot} {
+      .col-3,
+      .col-4 {
+        width: 100%;
+      }
     }
+  }
+  @mixin col-xs($isnot) {
+    #{$isnot} {
+      .col-1,
+      .col-1-5,
+      .col-2,
+      .col-2-5 {
+        width: 100%;
+      }
+    }
+  }
+  @media screen and (max-width: $column-breakpoint-l) {
+    @include col-l('.cols:not(.is-l), .cols:not(.is-m), .cols:not(.is-s), .cols:not(.is-xs)');
+  }
+  @media print and (max-width: $column-breakpoint-l) {
+    @include col-l('.cols:not(.is-l-print), .cols:not(.is-m-print), .cols:not(.is-s-print), .cols:not(.is-xs-print)');
+  }
+  @media screen and (max-width: $column-breakpoint-m) {
+    @include col-m('.cols:not(.is-m), .cols:not(.is-s), .cols:not(.is-xs)');
+  }
+  @media print and (max-width: $column-breakpoint-m) {
+    @include col-m('.cols:not(.is-m-print), .cols:not(.is-s-print), .cols:not(.is-xs-print)');
+  }
+  @media screen and (max-width: $column-breakpoint-s) {
+    @include col-s('.cols:not(.is-s), .cols:not(.is-xs)');
+  }
+  @media print and (max-width: $column-breakpoint-s) {
+    @include col-s('.cols:not(.is-s-print), .cols:not(.is-xs-print)');
+  }
+  @media screen and (max-width: $column-breakpoint-xs) {
+    @include col-xs('.cols:not(.is-xs)');
+  }
+  @media print and (max-width: $column-breakpoint-xs) {
+    @include col-xs('.cols:not(.is-xs-print)');
   }
 
   /* Gutters */
 
   @each $i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] {
-    .gutters-#{$i} {
+    .col-gap-#{$i} {
       margin-right: -#{$column-padding-multipler / 3 * $i};
       margin-left: -#{$column-padding-multipler / 3 * $i};
     }
-    .gutters-#{$i} > .col,
-    .gutters-#{$i} > [class*="col-"] {
+    .col-gap-#{$i} > .col,
+    .col-gap-#{$i} > [class*="col-"] {
       padding-right: #{$column-padding-multipler / 3 * $i};
       padding-left: #{$column-padding-multipler / 3 * $i};
     }
@@ -150,12 +182,12 @@ $column-padding-multipler: 1rem !default;
     margin: 0px;
     display: inline;
   }
-  @media only screen and (max-width: 880px) {
+  @media (max-width: 880px) {
     .text3 {
       column-count: 2;
     }
   }
-  @media only screen and (max-width: 680px) {
+  @media (max-width: 680px) {
     .text3 {
       column-count: 1;
     }
@@ -167,13 +199,13 @@ $column-padding-multipler: 1rem !default;
   .typo-narrow ul {
     width: 70%;
   }
-  @media only screen and (max-width: 1000px) {
+  @media (max-width: 1000px) {
     .typo-narrow p,
     .typo-narrow ul {
       width: 88%;
     }
   }
-  @media only screen and (max-width: 550px) {
+  @media (max-width: 550px) {
     .typo-narrow p,
     .typo-narrow ul {
       width: 100%;
