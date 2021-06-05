@@ -189,6 +189,9 @@ $gap-multipler:      0.25rem !default;
 
 /* ---- Flex ------------------------- */
 
+  .flex-0 {
+    flex: 0;
+  }
   .flex-1 {
     flex: 1;
   }
@@ -204,10 +207,10 @@ $gap-multipler:      0.25rem !default;
 
   /* Direction */
 
-  .flex-col {
+  .flex-column {
     flex-direction: column;
   }
-  .flex-col-reverse {
+  .flex-column-reverse {
     flex-direction: column-reverse;
   }
   .flex-row {
