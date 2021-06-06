@@ -7,16 +7,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (max-width: 1090px) {
-  html {
-    font-size: 14px;
-  }
-}
-
 body {
-  background-color: #fff;
+  background-color: transparent;
   color: #121212;
-  font-family: Open Sans, sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 1em;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5em;
@@ -313,7 +308,7 @@ textarea {
   display: inline-flex;
   align-items: center;
   padding: 12px 31px;
-  font-family: Open Sans, sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -2896,7 +2891,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .vs__dropdown-toggle {
   width: 100%;
   padding: 13px 19px;
-  font-family: Open Sans, sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   color: #121212;
   font-size: 0.95rem;
   font-weight: inherit;
@@ -2955,7 +2950,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .form input:-webkit-autofill::first-line {
-  font-family: Open Sans, sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 0.95rem;
   font-weight: inherit;
 }
@@ -5491,6 +5486,10 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 /* ---- Flex ------------------------- */
+.flex-0 {
+  flex: 0;
+}
+
 .flex-1 {
   flex: 1;
 }
@@ -5510,11 +5509,11 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 /* Direction */
-.flex-col {
+.flex-column {
   flex-direction: column;
 }
 
-.flex-col-reverse {
+.flex-column-reverse {
   flex-direction: column-reverse;
 }
 
@@ -6364,6 +6363,25 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .px-14 {
     padding-right: 91px !important;
   }
+  .p-15 {
+    padding: 97.5px !important;
+  }
+  .pt-15,
+  .py-15 {
+    padding-top: 97.5px !important;
+  }
+  .pb-15,
+  .py-15 {
+    padding-bottom: 97.5px !important;
+  }
+  .pl-15,
+  .px-15 {
+    padding-left: 97.5px !important;
+  }
+  .pr-15,
+  .px-15 {
+    padding-right: 97.5px !important;
+  }
 }
 
 @media (min-width: 581px) and (max-width: 770px) {
@@ -6690,6 +6708,25 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .px-14 {
     padding-right: 112px !important;
   }
+  .p-15 {
+    padding: 120px !important;
+  }
+  .pt-15,
+  .py-15 {
+    padding-top: 120px !important;
+  }
+  .pb-15,
+  .py-15 {
+    padding-bottom: 120px !important;
+  }
+  .pl-15,
+  .px-15 {
+    padding-left: 120px !important;
+  }
+  .pr-15,
+  .px-15 {
+    padding-right: 120px !important;
+  }
   .sm-md.p-0-5 {
     padding: 3.25px !important;
   }
@@ -7012,6 +7049,25 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm-md.pr-14,
   .sm-md.px-14 {
     padding-right: 91px !important;
+  }
+  .sm-md.p-15 {
+    padding: 97.5px !important;
+  }
+  .sm-md.pt-15,
+  .sm-md.py-15 {
+    padding-top: 97.5px !important;
+  }
+  .sm-md.pb-15,
+  .sm-md.py-15 {
+    padding-bottom: 97.5px !important;
+  }
+  .sm-md.pl-15,
+  .sm-md.px-15 {
+    padding-left: 97.5px !important;
+  }
+  .sm-md.pr-15,
+  .sm-md.px-15 {
+    padding-right: 97.5px !important;
   }
 }
 
@@ -7338,6 +7394,25 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .pr-14,
   .px-14 {
     padding-right: 140px !important;
+  }
+  .p-15 {
+    padding: 150px !important;
+  }
+  .pt-15,
+  .py-15 {
+    padding-top: 150px !important;
+  }
+  .pb-15,
+  .py-15 {
+    padding-bottom: 150px !important;
+  }
+  .pl-15,
+  .px-15 {
+    padding-left: 150px !important;
+  }
+  .pr-15,
+  .px-15 {
+    padding-right: 150px !important;
   }
 }
 
@@ -7687,6 +7762,25 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .mx-14 {
     margin-right: 91px !important;
   }
+  .m-15 {
+    margin: 97.5px !important;
+  }
+  .mt-15,
+  .my-15 {
+    margin-top: 97.5px !important;
+  }
+  .mb-15,
+  .my-15 {
+    margin-bottom: 97.5px !important;
+  }
+  .ml-15,
+  .mx-15 {
+    margin-left: 97.5px !important;
+  }
+  .mr-15,
+  .mx-15 {
+    margin-right: 97.5px !important;
+  }
 }
 
 @media (min-width: 581px) and (max-width: 770px) {
@@ -8013,6 +8107,25 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .mx-14 {
     margin-right: 112px !important;
   }
+  .m-15 {
+    margin: 120px !important;
+  }
+  .mt-15,
+  .my-15 {
+    margin-top: 120px !important;
+  }
+  .mb-15,
+  .my-15 {
+    margin-bottom: 120px !important;
+  }
+  .ml-15,
+  .mx-15 {
+    margin-left: 120px !important;
+  }
+  .mr-15,
+  .mx-15 {
+    margin-right: 120px !important;
+  }
   .sm-md.m-0-5 {
     margin: 3.25px !important;
   }
@@ -8335,6 +8448,25 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm-md.mr-14,
   .sm-md.mx-14 {
     margin-right: 91px !important;
+  }
+  .sm-md.m-15 {
+    margin: 97.5px !important;
+  }
+  .sm-md.mt-15,
+  .sm-md.my-15 {
+    margin-top: 97.5px !important;
+  }
+  .sm-md.mb-15,
+  .sm-md.my-15 {
+    margin-bottom: 97.5px !important;
+  }
+  .sm-md.ml-15,
+  .sm-md.mx-15 {
+    margin-left: 97.5px !important;
+  }
+  .sm-md.mr-15,
+  .sm-md.mx-15 {
+    margin-right: 97.5px !important;
   }
 }
 
@@ -8661,6 +8793,25 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .mr-14,
   .mx-14 {
     margin-right: 140px !important;
+  }
+  .m-15 {
+    margin: 150px !important;
+  }
+  .mt-15,
+  .my-15 {
+    margin-top: 150px !important;
+  }
+  .mb-15,
+  .my-15 {
+    margin-bottom: 150px !important;
+  }
+  .ml-15,
+  .mx-15 {
+    margin-left: 150px !important;
+  }
+  .mr-15,
+  .mx-15 {
+    margin-right: 150px !important;
   }
 }
 

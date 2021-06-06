@@ -1,34 +1,33 @@
-$family-primary:       Open Sans, sans-serif !default;
-$family-secondary:     Open Sans, sans-serif !default;
-$family-code:          monospace !default
-$body-background:      #fff !default;
+$family-primary:       BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+                       "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-secondary:     BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+                      "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+$family-mono:          monospace !default
+$body-background:      transparent !default;
 $body-color:           $text !default;
 $body-font-family:     $family-primary !default;
-$body-font-size:       15px !default;
+$body-font-size:       1em !default;
 $body-font-weight:     400 !default;
-$body-line-height:     1.5em !default;
 $body-letter-spacing:  0 !default;
+$body-line-height:     1.5em !default;
+$doc-font-size:        15px !default;
 $link-text-decoration: underline !default;
 $link-outline:         none !default;
 
 /* ---- Main ------------------------- */
 
   html {
-    font-size: $body-font-size;
+    font-size: $doc-font-size;
     -webkit-text-size-adjust: 100%;
     -webkit-backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  @media (max-width: 1090px) {
-    html {
-      font-size: $body-font-size - 1px;
-    }
-  }
   body {
     background-color: $body-background;
     color: $body-color;
     font-family: $body-font-family;
+    font-size: $body-font-size;
     font-weight: $body-font-weight;
     letter-spacing: $body-letter-spacing;
     line-height: $body-line-height;
