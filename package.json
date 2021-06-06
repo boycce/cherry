@@ -1,7 +1,7 @@
 {
   "name": "cherry",
   "description": "Minimal and comprehensible CSS framework",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "author": "Ricky Boyce <boycce@gmail.com>",
   "repository": "github:boycce/cherry",
   "homepage": "https://boycce.github.io/cherry/",
@@ -23,7 +23,7 @@
     "build-cleancss": "cleancss -o css/cherry.min.css css/cherry.css",
     "build-clean": "rimraf css",
     "build-sass": "node-sass --output-style expanded --source-map true cherry.scss css/cherry.css",
-    "start": "npm run build-sass -- --watch",
+    "dev": "npm run build-sass -- --watch",
     "docs": "cd docs && bundle exec jekyll serve --livereload --livereload-port 4001"
   },
   "devDependencies": {
