@@ -34,6 +34,7 @@ $column-padding-multipler: 1rem !default;
     min-height: 1px;
     padding-left: $column-padding-multipler;
     padding-right: $column-padding-multipler;
+    box-sizing: border-box;
   }
   .col-12 {
     width: 100%;
