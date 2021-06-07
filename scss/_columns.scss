@@ -2,13 +2,13 @@ $breakpoint-l: 1023px !default; /*desktop*/
 $breakpoint-m: 768px !default; /*tablet*/
 $breakpoint-s: 590px !default; /*mobile*/
 $breakpoint-xs: 590px !default;
-$col-gap-multiplier: 0.66rem !default; // 10px
+$columns-multiplier: 0.5rem !default; // 7.5px
 
 /* ---- Columns ---------------------- */
 
   .cols {
-    margin-right: $col-gap-multiplier * -1;
-    margin-left: $col-gap-multiplier * -1;
+    margin-right: $columns-multiplier * -1;
+    margin-left: $columns-multiplier * -1;
     display: flex;
     flex-wrap: wrap;
   }
@@ -32,8 +32,8 @@ $col-gap-multiplier: 0.66rem !default; // 10px
     flex: none;
     position: relative;
     min-height: 1px;
-    padding-left: $col-gap-multiplier;
-    padding-right: $col-gap-multiplier;
+    padding-left: $columns-multiplier;
+    padding-right: $columns-multiplier;
     box-sizing: border-box;
   }
   .col-12 {
@@ -166,13 +166,13 @@ $col-gap-multiplier: 0.66rem !default; // 10px
     @if $i == 1.5 { $ii: '1-5'; }
     @if $i == 2.5 { $ii: '2-5'; }
     .cols-gap-#{$ii} {
-      margin-right: -#{$col-gap-multiplier * $i};
-      margin-left: -#{$col-gap-multiplier * $i};
+      margin-right: -#{$columns-multiplier * $i};
+      margin-left: -#{$columns-multiplier * $i};
     }
     .cols-gap-#{$ii} > .col,
     .cols-gap-#{$ii} > [class*="col-"] {
-      padding-right: #{$col-gap-multiplier * $i};
-      padding-left: #{$col-gap-multiplier * $i};
+      padding-right: #{$columns-multiplier * $i};
+      padding-left: #{$columns-multiplier * $i};
     }
   }
 
