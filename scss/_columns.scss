@@ -165,14 +165,14 @@ $col-gap-multiplier: 0.66rem !default; // 10px
     @if $i == 0.5 { $ii: '0-5'; }
     @if $i == 1.5 { $ii: '1-5'; }
     @if $i == 2.5 { $ii: '2-5'; }
-    .col-gap-#{$ii} {
-      margin-right: -#{$col-gap-multiplier / 3 * $i};
-      margin-left: -#{$col-gap-multiplier / 3 * $i};
+    .cols-gap-#{$ii} {
+      margin-right: -#{$col-gap-multiplier * $i};
+      margin-left: -#{$col-gap-multiplier * $i};
     }
-    .col-gap-#{$ii} > .col,
-    .col-gap-#{$ii} > [class*="col-"] {
-      padding-right: #{$col-gap-multiplier / 3 * $i};
-      padding-left: #{$col-gap-multiplier / 3 * $i};
+    .cols-gap-#{$ii} > .col,
+    .cols-gap-#{$ii} > [class*="col-"] {
+      padding-right: #{$col-gap-multiplier * $i};
+      padding-left: #{$col-gap-multiplier * $i};
     }
   }
 
