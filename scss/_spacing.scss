@@ -1,4 +1,4 @@
-$spacer: 10px !default;
+$space-multiplier: 0.66rem !default;
 $md:     0.8 !default;
 $sm:     0.65 !default;
 $sizes:  0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 10 11 12 13 14 15 !default;
@@ -14,23 +14,23 @@ $sizes:  0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 10 11 12 13 14 15 !default;
         @if $i == 2.5 { $ii: '2-5'; }
 
         .#{$t}-#{$ii} {
-          #{$type}: $spacer * $i * $sm !important;
+          #{$type}: $space-multiplier * $i * $sm !important;
         }
         .#{$t}t-#{$ii},
         .#{$t}y-#{$ii} {
-          #{$type}-top: $spacer * $i * $sm !important;
+          #{$type}-top: $space-multiplier * $i * $sm !important;
         }
         .#{$t}b-#{$ii},
         .#{$t}y-#{$ii} {
-          #{$type}-bottom: $spacer * $i * $sm !important;
+          #{$type}-bottom: $space-multiplier * $i * $sm !important;
         }
         .#{$t}l-#{$ii},
         .#{$t}x-#{$ii} {
-          #{$type}-left: $spacer * $i * $sm !important;
+          #{$type}-left: $space-multiplier * $i * $sm !important;
         }
         .#{$t}r-#{$ii},
         .#{$t}x-#{$ii} {
-          #{$type}-right: $spacer * $i * $sm !important;
+          #{$type}-right: $space-multiplier * $i * $sm !important;
         }
       }
     }
@@ -40,25 +40,24 @@ $sizes:  0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 10 11 12 13 14 15 !default;
         @if $i == 0.5 { $ii: '0-5'; }
         @if $i == 1.5 { $ii: '1-5'; }
         @if $i == 2.5 { $ii: '2-5'; }
-
         .#{$t}-#{$ii} {
-          #{$type}: $spacer * $i * $md !important;
+          #{$type}: $space-multiplier * $i * $md !important;
         }
         .#{$t}t-#{$ii},
         .#{$t}y-#{$ii} {
-          #{$type}-top: $spacer * $i * $md !important;
+          #{$type}-top: $space-multiplier * $i * $md !important;
         }
         .#{$t}b-#{$ii},
         .#{$t}y-#{$ii} {
-          #{$type}-bottom: $spacer * $i * $md !important;
+          #{$type}-bottom: $space-multiplier * $i * $md !important;
         }
         .#{$t}l-#{$ii},
         .#{$t}x-#{$ii} {
-          #{$type}-left: $spacer * $i * $md !important;
+          #{$type}-left: $space-multiplier * $i * $md !important;
         }
         .#{$t}r-#{$ii},
         .#{$t}x-#{$ii} {
-          #{$type}-right: $spacer * $i * $md !important;
+          #{$type}-right: $space-multiplier * $i * $md !important;
         }
       }
       @each $i in $sizes {
@@ -68,23 +67,23 @@ $sizes:  0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 10 11 12 13 14 15 !default;
         @if $i == 2.5 { $ii: '2-5'; }
 
         .sm-md.#{$t}-#{$ii} {
-          #{$type}: $spacer * $i * $sm !important;
+          #{$type}: $space-multiplier * $i * $sm !important;
         }
         .sm-md.#{$t}t-#{$ii},
         .sm-md.#{$t}y-#{$ii} {
-          #{$type}-top: $spacer * $i * $sm !important;
+          #{$type}-top: $space-multiplier * $i * $sm !important;
         }
         .sm-md.#{$t}b-#{$ii},
         .sm-md.#{$t}y-#{$ii} {
-          #{$type}-bottom: $spacer * $i * $sm !important;
+          #{$type}-bottom: $space-multiplier * $i * $sm !important;
         }
         .sm-md.#{$t}l-#{$ii},
         .sm-md.#{$t}x-#{$ii} {
-          #{$type}-left: $spacer * $i * $sm !important;
+          #{$type}-left: $space-multiplier * $i * $sm !important;
         }
         .sm-md.#{$t}r-#{$ii},
         .sm-md.#{$t}x-#{$ii} {
-          #{$type}-right: $spacer * $i * $sm !important;
+          #{$type}-right: $space-multiplier * $i * $sm !important;
         }
       }
     }
@@ -96,23 +95,23 @@ $sizes:  0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 10 11 12 13 14 15 !default;
         @if $i == 2.5 { $ii: '2-5'; }
 
         .#{$t}-#{$ii} {
-          #{$type}: $spacer * $i !important;
+          #{$type}: $space-multiplier * $i !important;
         }
         .#{$t}t-#{$ii},
         .#{$t}y-#{$ii} {
-          #{$type}-top: $spacer * $i !important;
+          #{$type}-top: $space-multiplier * $i !important;
         }
         .#{$t}b-#{$ii},
         .#{$t}y-#{$ii} {
-          #{$type}-bottom: $spacer * $i !important;
+          #{$type}-bottom: $space-multiplier * $i !important;
         }
         .#{$t}l-#{$ii},
         .#{$t}x-#{$ii} {
-          #{$type}-left: $spacer * $i !important;
+          #{$type}-left: $space-multiplier * $i !important;
         }
         .#{$t}r-#{$ii},
         .#{$t}x-#{$ii} {
-          #{$type}-right: $spacer * $i !important;
+          #{$type}-right: $space-multiplier * $i !important;
         }
       }
     }

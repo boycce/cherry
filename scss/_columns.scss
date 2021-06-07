@@ -2,13 +2,13 @@ $breakpoint-l: 1023px !default; /*desktop*/
 $breakpoint-m: 768px !default; /*tablet*/
 $breakpoint-s: 590px !default; /*mobile*/
 $breakpoint-xs: 590px !default;
-$column-padding-multipler: 1rem !default;
+$col-gap-multiplier: 0.66rem !default; // 10px
 
 /* ---- Columns ---------------------- */
 
   .cols {
-    margin-right: $column-padding-multipler * -1;
-    margin-left: $column-padding-multipler * -1;
+    margin-right: $col-gap-multiplier * -1;
+    margin-left: $col-gap-multiplier * -1;
     display: flex;
     flex-wrap: wrap;
   }
@@ -32,8 +32,8 @@ $column-padding-multipler: 1rem !default;
     flex: none;
     position: relative;
     min-height: 1px;
-    padding-left: $column-padding-multipler;
-    padding-right: $column-padding-multipler;
+    padding-left: $col-gap-multiplier;
+    padding-right: $col-gap-multiplier;
     box-sizing: border-box;
   }
   .col-12 {
@@ -160,15 +160,19 @@ $column-padding-multipler: 1rem !default;
 
   /* Gutters */
 
-  @each $i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] {
-    .col-gap-#{$i} {
-      margin-right: -#{$column-padding-multipler / 3 * $i};
-      margin-left: -#{$column-padding-multipler / 3 * $i};
+  @each $i in [0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9] {
+    $ii: $i;
+    @if $i == 0.5 { $ii: '0-5'; }
+    @if $i == 1.5 { $ii: '1-5'; }
+    @if $i == 2.5 { $ii: '2-5'; }
+    .col-gap-#{$ii} {
+      margin-right: -#{$col-gap-multiplier / 3 * $i};
+      margin-left: -#{$col-gap-multiplier / 3 * $i};
     }
-    .col-gap-#{$i} > .col,
-    .col-gap-#{$i} > [class*="col-"] {
-      padding-right: #{$column-padding-multipler / 3 * $i};
-      padding-left: #{$column-padding-multipler / 3 * $i};
+    .col-gap-#{$ii} > .col,
+    .col-gap-#{$ii} > [class*="col-"] {
+      padding-right: #{$col-gap-multiplier / 3 * $i};
+      padding-left: #{$col-gap-multiplier / 3 * $i};
     }
   }
 
