@@ -25,7 +25,7 @@
     "input-color":                 $text,
     "input-color--invalid":        $text,
     "input-font-family":           $body-font-family,
-    "input-font-size":             0.95rem,
+    "input-font-size":             16px, // 0.95rem,
     "input-font-weight":           inherit,
     "input-icon-width":            18px,
     "input-margin-bottom":         1.5rem,
@@ -52,7 +52,10 @@
 @function empty-map($x: x) {
   @return map-remove(($x:$x), $x);
 }
-
+// Note that in SASS, a list with a single map == a map
+@if type-of($forms) == 'map' {
+  $forms: append((), $forms);
+}
 @if (length($forms) == 0) {
   $forms: append($forms, empty-map());
 }
@@ -88,6 +91,7 @@
       border-radius: map-get($map, "input-border-radius");
       vertical-align: top;
       transition: background-color ease 0.2s, border-color ease 0.2s, box-shadow ease 0.2s;
+      -webkit-appearance: none;
     }
     .input,
     .input-grp,

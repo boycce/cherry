@@ -42,7 +42,7 @@ $link--hover:      $blue !default;
 $link--focus:      $blue !default;
 
 // Breakpoints
-$breakpoint-l: 1023px !default; /*desktop*/
-$breakpoint-m: 768px !default; /*tablet*/
-$breakpoint-s: 590px !default; /*mobile*/
-$breakpoint-xs: 590px !default; /*mobile*/
+$breakpoint-lg: 1023px !default; /*desktop*/
+$breakpoint-md: 768px !default; /*tablet*/
+$breakpoint-sm: 590px !default; /*mobile*/
+$breakpoint-xs: 589px !default; /*mobile*/

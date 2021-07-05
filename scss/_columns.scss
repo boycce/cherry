@@ -1,14 +1,15 @@
-$breakpoint-l: 1023px !default; /*desktop*/
-$breakpoint-m: 768px !default; /*tablet*/
-$breakpoint-s: 590px !default; /*mobile*/
-$breakpoint-xs: 590px !default;
-$columns-multiplier: 0.5rem !default; // 7.5px
+$gap-sizes: 0 0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 !default;
+$col-gap-multiplier: 0.5rem !default;        // i.e. 7.5px
+$col-gap-multiplier-lg: false !default;
+$col-gap-multiplier-md: false !default;
+$col-gap-multiplier-sm: false !default;
+$col-gap-multiplier-xs: false !default;
 
 /* ---- Columns ---------------------- */
 
   .cols {
-    margin-right: $columns-multiplier * -1;
-    margin-left: $columns-multiplier * -1;
+    margin-right: $col-gap-multiplier * -1;
+    margin-left: $col-gap-multiplier * -1;
     display: flex;
     flex-wrap: wrap;
   }
@@ -32,60 +33,28 @@ $columns-multiplier: 0.5rem !default; // 7.5px
     flex: none;
     position: relative;
     min-height: 1px;
-    padding-left: $columns-multiplier;
-    padding-right: $columns-multiplier;
+    padding-left: $col-gap-multiplier;
+    padding-right: $col-gap-multiplier;
     box-sizing: border-box;
   }
-  .col-12 {
-    width: 100%;
+  @mixin sizes($pre, $post) {
+    #{$pre}12#{$post}  { width: 100%; }
+    #{$pre}11#{$post}  { width: 91.6666667%; }
+    #{$pre}10#{$post}  { width: 83.33333333%; }
+    #{$pre}9#{$post}   { width: 75%; }
+    #{$pre}8#{$post}   { width: 66.66666667%; }
+    #{$pre}7#{$post}   { width: 58.33333333%; }
+    #{$pre}6#{$post}   { width: 50%; }
+    #{$pre}5#{$post}   { width: 41.66666667%; }
+    #{$pre}4#{$post}   { width: 33.33333333%; }
+    #{$pre}3#{$post}   { width: 25%; }
+    #{$pre}2-5#{$post} { width: 20%; }
+    #{$pre}2#{$post}   { width: 16.66666667%; }
+    #{$pre}1-5#{$post} { width: 12.5%; } // 8 columns
+    #{$pre}1#{$post}   { width: 8.333333333%; }
   }
-  .col-11 {
-    width: 91.6666667%;
-  }
-  .col-10 {
-    width: 83.33333333%;
-  }
-  .col-9 {
-    width: 75%;
-  }
-  .col-8 {
-    width: 66.66666667%;
-  }
-  .col-7 {
-    width: 58.33333333%;
-  }
-  .col-6 {
-    width: 50%;
-  }
-  .col-5 {
-    width: 41.66666667%;
-  }
-  .col-4 {
-    width: 33.33333333%;
-  }
-  .col-3 {
-    width: 25%;
-  }
-  .col-2-5 {
-    width: 20%;
-  }
-  .col-2 {
-    width: 16.66666667%;
-  }
-  .col-1 {
-    width: 8.333333333%;
-  }
-  .col-1-5 {
-    width: 12.5%; // 8 columns
-  }
-  .col {
-    flex: 1;
-  }
-  .col-initial {
-    flex: 0;
-  }
-  @mixin col-l($isnot) {
-    #{$isnot} {
+  @mixin cols-responsive-lg($class) {
+    #{$class} {
       .col-1,
       .col-1-5,
       .col-2 {
@@ -93,8 +62,8 @@ $columns-multiplier: 0.5rem !default; // 7.5px
       }
     }
   }
-  @mixin col-m($isnot) {
-    #{$isnot} {
+  @mixin cols-responsive-md($class) {
+    #{$class} {
       .col-5,
       .col-6,
       .col-7,
@@ -115,16 +84,16 @@ $columns-multiplier: 0.5rem !default; // 7.5px
       }
     }
   }
-  @mixin col-s($isnot) {
-    #{$isnot} {
+  @mixin cols-responsive-sm($class) {
+    #{$class} {
       .col-3,
       .col-4 {
         width: 100%;
       }
     }
   }
-  @mixin col-xs($isnot) {
-    #{$isnot} {
+  @mixin cols-responsive-xs($class) {
+    #{$class} {
       .col-1,
       .col-1-5,
       .col-2,
@@ -133,46 +102,80 @@ $columns-multiplier: 0.5rem !default; // 7.5px
       }
     }
   }
-  @media screen and (max-width: $breakpoint-l) {
-    @include col-l('.cols:not(.is-l), .cols:not(.is-m), .cols:not(.is-s), .cols:not(.is-xs)');
+
+  @include sizes('.col-', '');
+  @include sizes('.print\:col-', '');
+  .col { flex: 1; }
+  .col-initial { flex: 0; }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    @include cols-responsive-lg('.cols-responsive');
+    @include sizes('.lg\:cols-', ' > [class*="col"]');
+    @include sizes('.lg\:print\:cols-', ' > [class*="col"]');
+    @include sizes('.cols > [class*="lg\:col-', '"]');
+    @include sizes('.cols > [class*="lg\:print\:col-', '"]');
   }
-  @media print and (max-width: $breakpoint-l) {
-    @include col-l('.cols:not(.is-l-print), .cols:not(.is-m-print), .cols:not(.is-s-print), .cols:not(.is-xs-print)');
+  @media screen and (max-width: $breakpoint-md) {
+    @include cols-responsive-md('.cols-responsive');
+    @include sizes('.md\:cols-', ' > [class*="col"]');
+    @include sizes('.md\:print\:cols-', ' > [class*="col"]');
+    @include sizes('.cols > [class*="md\:col-', '"]');
+    @include sizes('.cols > [class*="md\:print\:col-', '"]');
   }
-  @media screen and (max-width: $breakpoint-m) {
-    @include col-m('.cols:not(.is-m), .cols:not(.is-s), .cols:not(.is-xs)');
-  }
-  @media print and (max-width: $breakpoint-m) {
-    @include col-m('.cols:not(.is-m-print), .cols:not(.is-s-print), .cols:not(.is-xs-print)');
-  }
-  @media screen and (max-width: $breakpoint-s) {
-    @include col-s('.cols:not(.is-s), .cols:not(.is-xs)');
-  }
-  @media print and (max-width: $breakpoint-s) {
-    @include col-s('.cols:not(.is-s-print), .cols:not(.is-xs-print)');
+  @media screen and (max-width: $breakpoint-sm) {
+    @include cols-responsive-sm('.cols-responsive');
+    @include sizes('.sm\:cols-', ' > [class*="col"]');
+    @include sizes('.sm\:print\:cols-', ' > [class*="col"]');
+    @include sizes('.cols > [class*="sm\:col-', '"]');
+    @include sizes('.cols > [class*="sm\:print\:col-', '"]');
   }
   @media screen and (max-width: $breakpoint-xs) {
-    @include col-xs('.cols:not(.is-xs)');
-  }
-  @media print and (max-width: $breakpoint-xs) {
-    @include col-xs('.cols:not(.is-xs-print)');
+    @include cols-responsive-xs('.cols-responsive');
+    @include sizes('.xs\:cols-', ' > [class*="col"]');
+    @include sizes('.xs\:print\:cols-', ' > [class*="col"]');
+    @include sizes('.cols > [class*="xs\:col-', '"]');
+    @include sizes('.cols > [class*="xs\:print\:col-', '"]');
   }
 
   /* Gutters */
 
-  @each $i in [0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9] {
-    $ii: $i;
-    @if $i == 0.5 { $ii: '0-5'; }
-    @if $i == 1.5 { $ii: '1-5'; }
-    @if $i == 2.5 { $ii: '2-5'; }
-    .cols-gap-#{$ii} {
-      margin-right: -#{$columns-multiplier * $i};
-      margin-left: -#{$columns-multiplier * $i};
+  @mixin gutters($multipler) {
+    @each $i in $gap-sizes {
+      $ii: $i;
+      @if $i == 0.5 { $ii: '0-5'; }
+      @if $i == 1.5 { $ii: '1-5'; }
+      @if $i == 2.5 { $ii: '2-5'; }
+      .cols-gap-#{$ii} {
+        margin-right: -#{$col-gap-multiplier * $i * $multipler};
+        margin-left: -#{$col-gap-multiplier * $i * $multipler};
+      }
+      .cols-gap-#{$ii} > .col,
+      .cols-gap-#{$ii} > [class*="col-"] {
+        padding-right: #{$col-gap-multiplier * $i * $multipler};
+        padding-left: #{$col-gap-multiplier * $i * $multipler};
+      }
     }
-    .cols-gap-#{$ii} > .col,
-    .cols-gap-#{$ii} > [class*="col-"] {
-      padding-right: #{$columns-multiplier * $i};
-      padding-left: #{$columns-multiplier * $i};
+  }
+
+  @include gutters(1.0);
+  @if ($col-gap-multiplier-lg != false) {
+    @media screen and (max-width: $breakpoint-lg) {
+      @include gutters($col-gap-multiplier-lg);
+    }
+  }
+  @if ($col-gap-multiplier-md != false) {
+    @media screen and (max-width: $breakpoint-md) {
+      @include gutters($col-gap-multiplier-md);
+    }
+  }
+  @if ($col-gap-multiplier-sm != false) {
+    @media screen and (max-width: $breakpoint-sm) {
+      @include gutters($col-gap-multiplier-sm);
+    }
+  }
+  @if ($col-gap-multiplier-xs != false) {
+    @media screen and (max-width: $breakpoint-xs) {
+      @include gutters($col-gap-multiplier-xs);
     }
   }
 

@@ -7,10 +7,11 @@ $btn-box-shadow:         none !default;
 $btn-box-shadow--active: $btn-box-shadow !default;
 $btn-disabled-opacity:   0.5 !default;
 $btn-font-family:        $body-font-family !default;
-$btn-font-size:          14px !default;
+$btn-font-size:          1rem !default;
 $btn-font-weight:        600 !default;
 $btn-icon-size:          1.3em !default;
 $btn-icon-margin:        0.4em !default;
+$btn-line-height:        1.5em !default;
 $btn-padding:            12px 31px !default;
 $btn-min-height:         0 !default;
 $btns-margin-right:      1rem !default;
@@ -60,7 +61,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     font-weight: $btn-font-weight;
     font-size: $btn-font-size;
     min-height: $btn-min-height;
-    line-height: 1.5em;
+    line-height: $btn-line-height;
     text-align: center;
     text-decoration: none;
     justify-content: center;
@@ -74,7 +75,8 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     white-space: nowrap;
     -webkit-appearance: none;
   }
-  .btn.is-full {
+  .btn.is-full,
+  .btn.is-fullwidth, {
     display: flex;
     width: 100%;
   }

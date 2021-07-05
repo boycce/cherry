@@ -1,139 +1,56 @@
-$md:     0.8 !default;
-$sm:     0.65 !default;
-$sizes:  0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 10 11 12 13 14 !default;
-$spacing-multiplier: 0.5rem !default; // 7.5px
+$sizes: 0 0.5 1 1.5 2 2.5 3 4 5 6 7 8 9 10 11 12 13 14 !default;
+$spacing-multiplier: 0.5rem !default;   // i.e. 7.5px
+$spacing-multiplier-lg: false !default;
+$spacing-multiplier-md: false !default;
+$spacing-multiplier-sm: false !default;
+$spacing-multiplier-xs: false !default;
+
+$spacing-breakpoints: (
+  (lg, $breakpoint-lg, $spacing-multiplier-lg),
+  (md, $breakpoint-md, $spacing-multiplier-md),
+  (sm, $breakpoint-sm, $spacing-multiplier-sm),
+  (xs, $breakpoint-xs, $spacing-multiplier-xs)
+);
 
 /* ---- Main ------------------------- */
 
+  @mixin spacing($t, $type, $multipler, $prefix) {
+    @each $i in $sizes {
+      $ii: $i;
+      @if $i == 0.5 { $ii: '0-5'; }
+      @if $i == 1.5 { $ii: '1-5'; }
+      @if $i == 2.5 { $ii: '2-5'; }
+      .#{$prefix}#{$t}-#{$ii} {
+        #{$type}: $spacing-multiplier * $i * $multipler !important;
+      }
+      .#{$prefix}#{$t}t-#{$ii},
+      .#{$prefix}#{$t}y-#{$ii} {
+        #{$type}-top: $spacing-multiplier * $i * $multipler !important;
+      }
+      .#{$prefix}#{$t}b-#{$ii},
+      .#{$prefix}#{$t}y-#{$ii} {
+        #{$type}-bottom: $spacing-multiplier * $i * $multipler !important;
+      }
+      .#{$prefix}#{$t}l-#{$ii},
+      .#{$prefix}#{$t}x-#{$ii} {
+        #{$type}-left: $spacing-multiplier * $i * $multipler !important;
+      }
+      .#{$prefix}#{$t}r-#{$ii},
+      .#{$prefix}#{$t}x-#{$ii} {
+        #{$type}-right: $spacing-multiplier * $i * $multipler !important;
+      }
+    }
+  }
+
   @each $type, $t in (padding, p), (margin, m) {
-    @media (max-width: 580px) {
-      @each $i in $sizes {
-        $ii: $i;
-        @if $i == 0.5 { $ii: '0-5'; }
-        @if $i == 1.5 { $ii: '1-5'; }
-        @if $i == 2.5 { $ii: '2-5'; }
+    @include spacing($t, $type, 1.0, '');
+  }
 
-        .#{$t}-#{$ii} {
-          #{$type}: $spacing-multiplier * $i * $sm !important;
-        }
-        .#{$t}t-#{$ii},
-        .#{$t}y-#{$ii} {
-          #{$type}-top: $spacing-multiplier * $i * $sm !important;
-        }
-        .#{$t}b-#{$ii},
-        .#{$t}y-#{$ii} {
-          #{$type}-bottom: $spacing-multiplier * $i * $sm !important;
-        }
-        .#{$t}l-#{$ii},
-        .#{$t}x-#{$ii} {
-          #{$type}-left: $spacing-multiplier * $i * $sm !important;
-        }
-        .#{$t}r-#{$ii},
-        .#{$t}x-#{$ii} {
-          #{$type}-right: $spacing-multiplier * $i * $sm !important;
-        }
-      }
-    }
-    @media (min-width: 581px) and (max-width: 770px) {
-      @each $i in $sizes {
-        $ii: $i;
-        @if $i == 0.5 { $ii: '0-5'; }
-        @if $i == 1.5 { $ii: '1-5'; }
-        @if $i == 2.5 { $ii: '2-5'; }
-        .#{$t}-#{$ii} {
-          #{$type}: $spacing-multiplier * $i * $md !important;
-        }
-        .#{$t}t-#{$ii},
-        .#{$t}y-#{$ii} {
-          #{$type}-top: $spacing-multiplier * $i * $md !important;
-        }
-        .#{$t}b-#{$ii},
-        .#{$t}y-#{$ii} {
-          #{$type}-bottom: $spacing-multiplier * $i * $md !important;
-        }
-        .#{$t}l-#{$ii},
-        .#{$t}x-#{$ii} {
-          #{$type}-left: $spacing-multiplier * $i * $md !important;
-        }
-        .#{$t}r-#{$ii},
-        .#{$t}x-#{$ii} {
-          #{$type}-right: $spacing-multiplier * $i * $md !important;
-        }
-      }
-      @each $i in $sizes {
-        $ii: $i;
-        @if $i == 0.5 { $ii: '0-5'; }
-        @if $i == 1.5 { $ii: '1-5'; }
-        @if $i == 2.5 { $ii: '2-5'; }
-
-        .sm-md.#{$t}-#{$ii} {
-          #{$type}: $spacing-multiplier * $i * $sm !important;
-        }
-        .sm-md.#{$t}t-#{$ii},
-        .sm-md.#{$t}y-#{$ii} {
-          #{$type}-top: $spacing-multiplier * $i * $sm !important;
-        }
-        .sm-md.#{$t}b-#{$ii},
-        .sm-md.#{$t}y-#{$ii} {
-          #{$type}-bottom: $spacing-multiplier * $i * $sm !important;
-        }
-        .sm-md.#{$t}l-#{$ii},
-        .sm-md.#{$t}x-#{$ii} {
-          #{$type}-left: $spacing-multiplier * $i * $sm !important;
-        }
-        .sm-md.#{$t}r-#{$ii},
-        .sm-md.#{$t}x-#{$ii} {
-          #{$type}-right: $spacing-multiplier * $i * $sm !important;
-        }
-      }
-    }
-    @media (min-width: 771px) {
-      @each $i in $sizes {
-        $ii: $i;
-        @if $i == 0.5 { $ii: '0-5'; }
-        @if $i == 1.5 { $ii: '1-5'; }
-        @if $i == 2.5 { $ii: '2-5'; }
-
-        .#{$t}-#{$ii} {
-          #{$type}: $spacing-multiplier * $i !important;
-        }
-        .#{$t}t-#{$ii},
-        .#{$t}y-#{$ii} {
-          #{$type}-top: $spacing-multiplier * $i !important;
-        }
-        .#{$t}b-#{$ii},
-        .#{$t}y-#{$ii} {
-          #{$type}-bottom: $spacing-multiplier * $i !important;
-        }
-        .#{$t}l-#{$ii},
-        .#{$t}x-#{$ii} {
-          #{$type}-left: $spacing-multiplier * $i !important;
-        }
-        .#{$t}r-#{$ii},
-        .#{$t}x-#{$ii} {
-          #{$type}-right: $spacing-multiplier * $i !important;
-        }
-      }
-    }
-    @media (min-width: 0px) {
-      .#{$t}-0 {
-        #{$type}: 0 !important;
-      }
-      .#{$t}t-0,
-      .#{$t}y-0 {
-        #{$type}-top: 0 !important;
-      }
-      .#{$t}b-0,
-      .#{$t}y-0 {
-        #{$type}-bottom: 0 !important;
-      }
-      .#{$t}l-0,
-      .#{$t}x-0 {
-        #{$type}-left: 0 !important;
-      }
-      .#{$t}r-0,
-      .#{$t}x-0 {
-        #{$type}-right: 0 !important;
+  @each $size, $width, $multiplier in $spacing-breakpoints {
+    @media screen and (max-width: $width) {
+      @each $type, $t in (padding, p), (margin, m) {
+        @if ($multiplier != false) { @include spacing($t, $type, $multiplier, ''); }
+        @include spacing($t, $type, 1.0, $size + "\:");
       }
     }
   }
