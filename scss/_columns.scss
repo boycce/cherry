@@ -8,8 +8,8 @@ $col-gap-multiplier-xs: false !default;
 /* ---- Columns ---------------------- */
 
   .cols {
-    margin-right: $col-gap-multiplier * -1;
-    margin-left: $col-gap-multiplier * -1;
+    margin-right: $col-gap-multiplier * 1.5 * -1;
+    margin-left: $col-gap-multiplier * 1.5 * -1;
     display: flex;
     flex-wrap: wrap;
   }
@@ -33,8 +33,8 @@ $col-gap-multiplier-xs: false !default;
     flex: none;
     position: relative;
     min-height: 1px;
-    padding-left: $col-gap-multiplier;
-    padding-right: $col-gap-multiplier;
+    padding-left: $col-gap-multiplier * 1.5;
+    padding-right: $col-gap-multiplier * 1.5;
     box-sizing: border-box;
   }
   @mixin sizes($pre, $post) {
@@ -137,46 +137,42 @@ $col-gap-multiplier-xs: false !default;
     @include sizes('.cols > [class*="xs\:print\:col-', '"]');
   }
 
-  /* Gutters */
+  /* cols-gap */
 
-  @mixin gutters($multipler) {
+  @mixin cols-gap($prefix, $multipler) {
     @each $i in $gap-sizes {
       $ii: $i;
       @if $i == 0.5 { $ii: '0-5'; }
       @if $i == 1.5 { $ii: '1-5'; }
       @if $i == 2.5 { $ii: '2-5'; }
-      .cols-gap-#{$ii} {
+      .#{$prefix}cols-gap-#{$ii} {
         margin-right: -#{$col-gap-multiplier * $i * $multipler};
         margin-left: -#{$col-gap-multiplier * $i * $multipler};
       }
-      .cols-gap-#{$ii} > .col,
-      .cols-gap-#{$ii} > [class*="col-"] {
+      .#{$prefix}cols-gap-#{$ii} > .col,
+      .#{$prefix}cols-gap-#{$ii} > [class*="col-"] {
         padding-right: #{$col-gap-multiplier * $i * $multipler};
         padding-left: #{$col-gap-multiplier * $i * $multipler};
       }
     }
   }
 
-  @include gutters(1.0);
-  @if ($col-gap-multiplier-lg != false) {
-    @media screen and (max-width: $breakpoint-lg) {
-      @include gutters($col-gap-multiplier-lg);
-    }
+  @include cols-gap('', 1.0);
+  @media screen and (max-width: $breakpoint-lg) {
+    @if ($col-gap-multiplier-lg != false) { @include cols-gap('', $col-gap-multiplier-lg); }
+    @include cols-gap('lg\:', 1.0);
   }
-  @if ($col-gap-multiplier-md != false) {
-    @media screen and (max-width: $breakpoint-md) {
-      @include gutters($col-gap-multiplier-md);
-    }
+  @media screen and (max-width: $breakpoint-md) {
+    @if ($col-gap-multiplier-md != false) { @include cols-gap('', $col-gap-multiplier-md); }
+    @include cols-gap('md\:', 1.0);
   }
-  @if ($col-gap-multiplier-sm != false) {
-    @media screen and (max-width: $breakpoint-sm) {
-      @include gutters($col-gap-multiplier-sm);
-    }
+  @media screen and (max-width: $breakpoint-sm) {
+    @if ($col-gap-multiplier-sm != false) { @include cols-gap('', $col-gap-multiplier-sm); }
+    @include cols-gap('sm\:', 1.0);
   }
-  @if ($col-gap-multiplier-xs != false) {
-    @media screen and (max-width: $breakpoint-xs) {
-      @include gutters($col-gap-multiplier-xs);
-    }
+  @media screen and (max-width: $breakpoint-xs) {
+    @if ($col-gap-multiplier-xs != false) { @include cols-gap('', $col-gap-multiplier-xs); }
+    @include cols-gap('xs\:', 1.0);
   }
 
 /* ---- Text columns ----------------- */

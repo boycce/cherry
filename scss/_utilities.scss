@@ -289,6 +289,7 @@ $breakpoints: (
     @if $i == 1.5 { $ii: '1-5'; }
     @if $i == 2.5 { $ii: '2-5'; }
     .gap-#{$ii} {
+      // Not used for cols, please see col-gap-*
       gap: #{$utilities-multiplier * $i} !important;
     }
     .column-gap-#{$ii} {
@@ -413,17 +414,19 @@ $breakpoints: (
 
 /* ---- Text Overflow ---------------- */
 
-  @each $i in ['ellipsis', 'clip'] {
+  @each $i in [ellipsis, clip] {
     .overflow-#{$i}
     .text-overflow-#{$i} {
       text-overflow: $i !important;
     }
   }
-  .truncate {
+  .truncate,
+  .text-truncate {
     text-overflow: ellipsis;
     overflow: hidden;
   }
-  .truncate1 {
+  .truncate1,
+  .text-truncate1 {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -431,7 +434,7 @@ $breakpoints: (
 
 /* ---- Vertical align --------------- */
 
-  @each $i in ['baseline', 'top', 'middle', 'bottom', 'text-top', 'text-bottom'] {
+  @each $i in [baseline, top, middle, bottom, sub, text-top, text-bottom] {
     .align-#{$i},
     .vertical-align-#{$i} {
       vertical-align: $i !important;
