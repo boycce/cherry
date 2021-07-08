@@ -1,7 +1,7 @@
 {
   "name": "cherry",
   "description": "Minimal and comprehensible CSS framework",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "author": "Ricky Boyce <boycce@gmail.com>",
   "repository": "github:boycce/cherry",
   "homepage": "https://boycce.github.io/cherry/",
