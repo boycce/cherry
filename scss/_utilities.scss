@@ -198,9 +198,9 @@ $breakpoints: (
 
   @each $key, $width in $breakpoints {
     @if ($width) {
-      @media screen and (max-width: $width) { @include display($key + "\\:"); }
+      @media screen and (max-width: $width) { @include display($key + '\\:'); }
     } @else {
-      @include display("");
+      @include display('');
     }
   }
 

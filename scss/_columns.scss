@@ -104,37 +104,37 @@ $col-gap-multiplier-xs: false !default;
   }
 
   @include sizes('.col-', '');
-  @include sizes('.print\:col-', '');
+  @include sizes('.print\\:col-', '');
   .col { flex: 1; }
   .col-initial { flex: 0; }
 
   @media screen and (max-width: $breakpoint-lg) {
     @include cols-responsive-lg('.cols-responsive');
-    @include sizes('.lg\:cols-', ' > [class*="col"]');
-    @include sizes('.lg\:print\:cols-', ' > [class*="col"]');
-    @include sizes('.cols > [class*="lg\:col-', '"]');
-    @include sizes('.cols > [class*="lg\:print\:col-', '"]');
+    @include sizes('.lg\\:cols-', ' > [class*="col"]');
+    @include sizes('.lg\\:print\\:cols-', ' > [class*="col"]');
+    @include sizes('.cols > [class*="lg\\:col-', '"]');
+    @include sizes('.cols > [class*="lg\\:print\\:col-', '"]');
   }
   @media screen and (max-width: $breakpoint-md) {
     @include cols-responsive-md('.cols-responsive');
-    @include sizes('.md\:cols-', ' > [class*="col"]');
-    @include sizes('.md\:print\:cols-', ' > [class*="col"]');
-    @include sizes('.cols > [class*="md\:col-', '"]');
-    @include sizes('.cols > [class*="md\:print\:col-', '"]');
+    @include sizes('.md\\:cols-', ' > [class*="col"]');
+    @include sizes('.md\\:print\\:cols-', ' > [class*="col"]');
+    @include sizes('.cols > [class*="md\\:col-', '"]');
+    @include sizes('.cols > [class*="md\\:print\\:col-', '"]');
   }
   @media screen and (max-width: $breakpoint-sm) {
     @include cols-responsive-sm('.cols-responsive');
-    @include sizes('.sm\:cols-', ' > [class*="col"]');
-    @include sizes('.sm\:print\:cols-', ' > [class*="col"]');
-    @include sizes('.cols > [class*="sm\:col-', '"]');
-    @include sizes('.cols > [class*="sm\:print\:col-', '"]');
+    @include sizes('.sm\\:cols-', ' > [class*="col"]');
+    @include sizes('.sm\\:print\\:cols-', ' > [class*="col"]');
+    @include sizes('.cols > [class*="sm\\:col-', '"]');
+    @include sizes('.cols > [class*="sm\\:print\\:col-', '"]');
   }
   @media screen and (max-width: $breakpoint-xs) {
     @include cols-responsive-xs('.cols-responsive');
-    @include sizes('.xs\:cols-', ' > [class*="col"]');
-    @include sizes('.xs\:print\:cols-', ' > [class*="col"]');
-    @include sizes('.cols > [class*="xs\:col-', '"]');
-    @include sizes('.cols > [class*="xs\:print\:col-', '"]');
+    @include sizes('.xs\\:cols-', ' > [class*="col"]');
+    @include sizes('.xs\\:print\\:cols-', ' > [class*="col"]');
+    @include sizes('.cols > [class*="xs\\:col-', '"]');
+    @include sizes('.cols > [class*="xs\\:print\\:col-', '"]');
   }
 
   /* cols-gap */
@@ -163,19 +163,19 @@ $col-gap-multiplier-xs: false !default;
   @include cols-gap('', 1.0);
   @media screen and (max-width: $breakpoint-lg) {
     @if ($col-gap-multiplier-lg != false) { @include cols-gap('', $col-gap-multiplier-lg); }
-    @include cols-gap('lg\:', 1.0);
+    @include cols-gap('lg\\:', 1.0);
   }
   @media screen and (max-width: $breakpoint-md) {
     @if ($col-gap-multiplier-md != false) { @include cols-gap('', $col-gap-multiplier-md); }
-    @include cols-gap('md\:', 1.0);
+    @include cols-gap('md\\:', 1.0);
   }
   @media screen and (max-width: $breakpoint-sm) {
     @if ($col-gap-multiplier-sm != false) { @include cols-gap('', $col-gap-multiplier-sm); }
-    @include cols-gap('sm\:', 1.0);
+    @include cols-gap('sm\\:', 1.0);
   }
   @media screen and (max-width: $breakpoint-xs) {
     @if ($col-gap-multiplier-xs != false) { @include cols-gap('', $col-gap-multiplier-xs); }
-    @include cols-gap('xs\:', 1.0);
+    @include cols-gap('xs\\:', 1.0);
   }
 
 /* ---- Text columns ----------------- */
