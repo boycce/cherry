@@ -74,6 +74,11 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     transition: all 200ms ease;
     white-space: nowrap;
     -webkit-appearance: none;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
   }
   .btn.is-full,
   .btn.is-fullwidth, {
