@@ -331,6 +331,11 @@ textarea {
   transition: all 200ms ease;
   white-space: nowrap;
   -webkit-appearance: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+      user-select: none;
 }
 
 .btn.is-full,
@@ -5237,7 +5242,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   width: 100%;
 }
 
-.modal .table .td {
+.modal .table .table-column {
   padding: 0 1rem;
 }
 
