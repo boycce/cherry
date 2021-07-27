@@ -1,0 +1,537 @@
+<div class="styleguide px-4 pt-2 pb-5">
+  <style type="text/css">
+    .styleguide {
+      color: #111;
+      margin: 0 auto;
+      max-width: 1100px;
+      text-align: left;
+    }
+    .styleguide > h1,
+    .styleguide > h2,
+    .styleguide > h3,
+    .styleguide > h4 {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+    .styleguide > h1,
+    .styleguide > h2 {
+      margin-top: 1em;
+    }
+    .styleguide .example-box,
+    .styleguide .example-box2 {
+      padding: 0.1em;
+      margin-bottom: 1em;
+      text-align: center;
+      background: #445;
+      color: #fff;
+      font: inherit;
+      border-radius: 5px;
+    }
+    .styleguide .example-box2 {
+      background: #eee;
+      color: #333;
+    }
+    .styleguide .content {
+      border-left: 5px solid #eee;
+    }
+  </style>
+
+  <h1>Style Guide</h1>
+
+  <h2>Buttons</h2>
+
+  <h4>Colors</h4>
+  <div class="btns">
+    <div class="btn is-primary">is-primary</div>
+    <div class="btn is-secondary">is-secondary</div>
+    <div class="btn is-success" disabled>is-success disabled</div>
+    <button class="btn is-warning">is-warning</button>
+    <a href="#" class="btn is-info">is-info</a>
+    <div class="btn is-danger">is-danger</div>
+    <div class="btn is-loading">is-loading</div>
+    <div class="btn is-grad1">is-grad1</div>
+  </div>
+
+  <h4>Colors inverted</h4>
+  <div class="btns">
+    <div class="btn is-primary is-inverted">is-primary</div>
+    <div class="btn is-secondary is-inverted">is-secondary</div>
+    <div class="btn is-success is-inverted" disabled>is-success</div>
+    <button class="btn is-warning is-inverted">is-warning</button>
+    <a href="#" class="btn is-info is-inverted">is-info</a>
+    <div class="btn is-danger is-inverted">is-danger</div>
+    <div class="btn is-loading is-inverted">is-loading</div>
+    <div class="btn is-grad1 is-inverted">is-grad1</div>
+  </div>
+
+  <h4>Colors outlined</h4>
+  <div class="btns">
+    <div class="btn is-primary is-outlined">is-primary</div>
+    <div class="btn is-secondary is-outlined">is-secondary</div>
+    <div class="btn is-success is-outlined" disabled>is-success</div>
+    <button class="btn is-warning is-outlined">is-warning</button>
+    <a href="#" class="btn is-info is-outlined">is-info</a>
+    <div class="btn is-danger is-outlined">is-danger</div>
+    <div class="btn is-loading is-outlined">is-loading</div>
+    <div class="btn is-grad1 is-outlined">is-grad1</div>
+  </div>
+
+  <h4>Colors light</h4>
+  <div class="btns">
+    <div class="btn is-primary is-light">is-primary</div>
+    <div class="btn is-secondary is-light">is-secondary</div>
+    <div class="btn is-success is-light" disabled>is-success</div>
+    <button class="btn is-warning is-light">is-warning</button>
+    <a href="#" class="btn is-info is-light">is-info</a>
+    <div class="btn is-danger is-light">is-danger</div>
+    <div class="btn is-loading is-light">is-loading</div>
+    <div class="btn is-grad1 is-light">is-grad1</div>
+  </div>
+
+  <h4>Shades</h4>
+  <div class="btns">
+    <div class="btn is-white">is-white</div>
+    <div class="btn is-black">is-black</div>
+  </div>
+
+  <h4>Grouping</h4>
+  <div class="btns" style={{ 'maxWidth': '300px' }}>
+    <div class="btn">Button</div>
+    <div class="btn">Button</div>
+    <div class="btn">Button</div>
+  </div>
+
+  <h4>Icon</h4>
+  <div class="btns">
+    <div class="btn">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
+        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+      </svg>
+      <span>Button</span>
+    </div>
+    <div class="btn is-loading">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
+        <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+      </svg>
+      <span>Button</span>
+    </div>
+  </div>
+
+  <h2>Form</h2>
+
+  <h4>Input</h4>
+  <form class="form">
+    <div class="cols">
+      <div class="col-3">
+        <div class="input-grp">
+          <label for="input1">Label</label>
+          <input id="input1" placeholder="Your input here.." />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-grp">
+          <a href="#" class="label-right text-label">Extra info here</a>
+          <label for="input2">Label</label>
+          <input id="input2" placeholder="Your input here.." />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-grp">
+          <label for="input22">Label</label>
+          <div class="has-icon-left">
+            <input id="input22" type="text" placeholder="Input with a icon"/>
+            <div class="icon-left">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.50034 0C3.83476 0 0.0380795 3.79668 0.000301602 8.44337C-0.0185874 10.71 0.850305 12.8634 2.45587 14.4689C4.04254 16.0934 6.17699 16.9812 8.44367 17.0001H8.50034C13.1659 17.0001 16.9626 13.2034 17.0004 8.5567C17.0381 3.87224 13.2415 0.0377779 8.50034 0ZM12.7692 12.7689C12.6559 12.8823 12.5237 12.9389 12.3726 12.9389C12.2404 12.9389 12.1081 12.9012 11.9948 12.7878L10.4459 11.2767C9.78479 11.7867 8.95367 12.07 8.10367 12.07C7.06478 12.07 6.08255 11.6545 5.34588 10.9178C3.81587 9.4067 3.81587 6.93225 5.34588 5.40224C6.08255 4.64669 7.06478 4.25002 8.10367 4.25002C9.14256 4.25002 10.1248 4.66557 10.8615 5.40224C12.2404 6.78114 12.3726 8.97226 11.2203 10.5023L12.7692 11.9945C12.977 12.2023 12.977 12.5612 12.7692 12.7689Z" fill="#445">
+                </path>
+                <path d="M8.1036 5.3645C7.34804 5.3645 6.64915 5.66672 6.12025 6.19562C5.02469 7.29118 5.02469 9.06674 6.12025 10.1623C6.64915 10.7101 7.34804 10.9934 8.1036 10.9934C8.85915 10.9934 9.55805 10.6912 10.0869 10.1623C11.1825 9.06674 11.1825 7.27229 10.0869 6.19562C9.55805 5.64784 8.85915 5.3645 8.1036 5.3645Z" fill="#445">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-grp">
+          <label for="input22">Label</label>
+          <div class="has-icon-left has-icon-right">
+            <input id="input22" type="text" placeholder="Input with a left & right icon"/>
+            <div class="icon-left">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.50034 0C3.83476 0 0.0380795 3.79668 0.000301602 8.44337C-0.0185874 10.71 0.850305 12.8634 2.45587 14.4689C4.04254 16.0934 6.17699 16.9812 8.44367 17.0001H8.50034C13.1659 17.0001 16.9626 13.2034 17.0004 8.5567C17.0381 3.87224 13.2415 0.0377779 8.50034 0ZM12.7692 12.7689C12.6559 12.8823 12.5237 12.9389 12.3726 12.9389C12.2404 12.9389 12.1081 12.9012 11.9948 12.7878L10.4459 11.2767C9.78479 11.7867 8.95367 12.07 8.10367 12.07C7.06478 12.07 6.08255 11.6545 5.34588 10.9178C3.81587 9.4067 3.81587 6.93225 5.34588 5.40224C6.08255 4.64669 7.06478 4.25002 8.10367 4.25002C9.14256 4.25002 10.1248 4.66557 10.8615 5.40224C12.2404 6.78114 12.3726 8.97226 11.2203 10.5023L12.7692 11.9945C12.977 12.2023 12.977 12.5612 12.7692 12.7689Z" fill="#445">
+                </path>
+                <path d="M8.1036 5.3645C7.34804 5.3645 6.64915 5.66672 6.12025 6.19562C5.02469 7.29118 5.02469 9.06674 6.12025 10.1623C6.64915 10.7101 7.34804 10.9934 8.1036 10.9934C8.85915 10.9934 9.55805 10.6912 10.0869 10.1623C11.1825 9.06674 11.1825 7.27229 10.0869 6.19562C9.55805 5.64784 8.85915 5.3645 8.1036 5.3645Z" fill="#445">
+                </path>
+              </svg>
+            </div>
+            <div class="icon-right">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.50034 0C3.83476 0 0.0380795 3.79668 0.000301602 8.44337C-0.0185874 10.71 0.850305 12.8634 2.45587 14.4689C4.04254 16.0934 6.17699 16.9812 8.44367 17.0001H8.50034C13.1659 17.0001 16.9626 13.2034 17.0004 8.5567C17.0381 3.87224 13.2415 0.0377779 8.50034 0ZM12.7692 12.7689C12.6559 12.8823 12.5237 12.9389 12.3726 12.9389C12.2404 12.9389 12.1081 12.9012 11.9948 12.7878L10.4459 11.2767C9.78479 11.7867 8.95367 12.07 8.10367 12.07C7.06478 12.07 6.08255 11.6545 5.34588 10.9178C3.81587 9.4067 3.81587 6.93225 5.34588 5.40224C6.08255 4.64669 7.06478 4.25002 8.10367 4.25002C9.14256 4.25002 10.1248 4.66557 10.8615 5.40224C12.2404 6.78114 12.3726 8.97226 11.2203 10.5023L12.7692 11.9945C12.977 12.2023 12.977 12.5612 12.7692 12.7689Z" fill="#445">
+                </path>
+                <path d="M8.1036 5.3645C7.34804 5.3645 6.64915 5.66672 6.12025 6.19562C5.02469 7.29118 5.02469 9.06674 6.12025 10.1623C6.64915 10.7101 7.34804 10.9934 8.1036 10.9934C8.85915 10.9934 9.55805 10.6912 10.0869 10.1623C11.1825 9.06674 11.1825 7.27229 10.0869 6.19562C9.55805 5.64784 8.85915 5.3645 8.1036 5.3645Z" fill="#445">
+                </path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-grp">
+          <label for="input3">Label</label>
+          <input id="input3" disabled="disabled" placeholder="Disabled" />
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-grp">
+          <label for="input4">Label</label>
+          <div class="input-btn">
+            <input id="input4" placeholder="Input with a button.." />
+            <div class="btn">Button</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-grp">
+          <label for="input5">Label</label>
+          <select id="input5" placeholder="Select a country">
+            <option>New Zealand</option>
+            <option>United States of America</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-grp has-float-label">
+          <div class="label">&nbsp;</div>
+          <!-- {/* input must have a placeholder, e.g. placeholder=" " */} -->
+          <input id="input22" placeholder="Floating label here.." />
+          <label for="input22">Floating label here..</label>
+        </div>
+      </div>
+      <div class="col-3">
+        <label for="input6">Label</label>
+        <div class="checkbox-grp">
+          <input id="input6" name="check1" type="checkbox" defaultChecked />
+          <label for="input6">Checkbox 1</label>
+          <input id="input7" name="check2" type="checkbox" />
+          <label for="input7">Checkbox 2</label>
+        </div>
+      </div>
+      <div class="col-3">
+        <label for="input8">Label</label>
+        <div class="radio-grp">
+          <input id="input8" name="radio1"  type="radio" defaultChecked />
+          <label for="input8">Radio 1</label>
+          <input id="input9" name="radio1" type="radio" />
+          <label for="input9">Radio 2</label>
+        </div>
+      </div>
+      <div class="col-3">
+        <label for="input10">Label</label>
+        <div class="toggle-grp">
+          <input id="input10" type="checkbox" defaultChecked />
+          <label for="input10">Toggle</label>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <h4>Textarea</h4>
+  <form class="form">
+    <div class="cols">
+      <div class="col-3">
+        <div class="input-grp">
+          <label for="textarea1">Label</label>
+          <textarea id="textarea1" placeholder="Your input here.."></textarea>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <h4>Errors</h4>
+  <form class="form is-invalid">
+    <div class="cols">
+      <div class="col-3">
+        <div class="input-grp is-invalid">
+          <label for="errors1">Label</label>
+          <input id="errors1" placeholder="Bad input.." />
+          <div class="form-error mt-0-5">Specific error here..</div>
+        </div>
+        <div class="form-error mb-2">Or global error here..</div>
+      </div>
+    </div>
+  </form>
+
+  <h4 class="hidden">Form styling variation</h4>
+  <form class="hidden form-2">
+    <div class="cols">
+      <div class="col-3">
+        <div class="input-grp">
+          <label for="styling1">Label</label>
+          <input id="styling1" placeholder="Your input here.." />
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <h2>Columns</h2>
+
+  <h4>Sizes</h4>
+  <div class="cols">
+    <div class="col-1"><div class="example-box">col-1</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-2"><div class="example-box">col-2</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-3"><div class="example-box">col-3</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-4"><div class="example-box">col-4</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-5"><div class="example-box">col-5</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-6"><div class="example-box">col-6</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-7"><div class="example-box">col-7</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-8"><div class="example-box">col-8</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-9"><div class="example-box">col-9</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-10"><div class="example-box">col-10</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-11"><div class="example-box">col-11</div></div>
+    <div class="col"><div class="example-box2">col</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-12"><div class="example-box">col-12</div></div>
+  </div>
+
+  <h4>Responsive Columns</h4>
+  <div class="cols cols-4 lg:cols-6">
+    <div class="col-5 lg:col-7"><div class="example-box">col-5, lg:cols-7</div></div>
+    <div class="col"><div class="example-box2">col-4, lg:cols-6</div></div>
+  </div>
+  <div class="cols cols-4 lg:cols-6 md:cols-8">
+    <div class="col-5 lg:col-7 md:col-9"><div class="example-box">col-5, lg:cols-7, md:cols-9</div></div>
+    <div class="col"><div class="example-box2">cols-4, lg:cols-6, md:cols-8</div></div>
+  </div>
+
+  <h4>Gaps (1-9)</h4>
+  <div class="cols gap-1">
+    <div class="col-3"><div class="example-box">gap-1</div></div>
+    <div class="col"><div class="example-box2">&nbsp;</div></div>
+  </div>
+  <div class="cols gap-2">
+    <div class="col-3"><div class="example-box">gap-2</div></div>
+    <div class="col"><div class="example-box2">&nbsp;</div></div>
+  </div>
+  <div class="cols gap-3">
+    <div class="col-3"><div class="example-box">gap-3</div></div>
+    <div class="col"><div class="example-box2">&nbsp;</div></div>
+  </div>
+  <div class="cols">
+    <div class="col-3"><div class="example-box">gap-4 (default)</div></div>
+    <div class="col"><div class="example-box2">&nbsp;</div></div>
+  </div>
+  <div class="mb-4">etc..</div>
+
+  <h2>Content</h2>
+
+  <div class="content px-3 mb-4">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <p>Paragraph with some <b>bold</b> text. Here is a <a href="#">link</a>.</p>
+    <small>Small block with some text</small>
+    <code>Code block with some text</code>
+    <q>Quote with some <b>bold</b> text</q>
+    <ol>
+      <li>Ordered list item 1</li>
+      <li>Ordered list item 2 with <a href="#">link</a></li>
+      <li>Ordered list item 3</li>
+    </ol>
+    <ul>
+      <li>Un-ordered list item 1</li>
+      <li>Un-ordered list item 2</li>
+      <li>Un-ordered list item 3</li>
+    </ul>
+  </div>
+
+  <h2>Tables</h2>
+
+  <h4>Native elements</h4>
+  <div style="overflow-x: auto;">
+    <table class="table mb-2-5">
+      <thead>
+        <tr>
+          <th><abbr title="Position">Pos</abbr></th>
+          <th>Team</th>
+          <th><abbr title="Played">Pld</abbr></th>
+          <th><abbr title="Won">W</abbr></th>
+          <th><abbr title="Drawn">D</abbr></th>
+          <th><abbr title="Lost">L</abbr></th>
+          <th><abbr title="Goals for">GF</abbr></th>
+          <th><abbr title="Goals against">GA</abbr></th>
+          <th><abbr title="Goal difference">GD</abbr></th>
+          <th><abbr title="Points">Pts</abbr></th>
+          <th>Qualification or relegation</th>
+        </tr>
+      </thead>
+      <tfoot>
+         <tr>
+           <th><abbr title="Position">Pos</abbr></th>
+           <th>Team</th>
+           <th><abbr title="Played">Pld</abbr></th>
+           <th><abbr title="Won">W</abbr></th>
+           <th><abbr title="Drawn">D</abbr></th>
+           <th><abbr title="Lost">L</abbr></th>
+           <th><abbr title="Goals for">GF</abbr></th>
+           <th><abbr title="Goals against">GA</abbr></th>
+           <th><abbr title="Goal difference">GD</abbr></th>
+           <th><abbr title="Points">Pts</abbr></th>
+           <th>Qualification or relegation</th>
+         </tr>
+       </tfoot>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>
+            <a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">
+              Leicester City<strong> (C)</strong>
+            </a>
+          </td>
+          <td>38</td>
+          <td>23</td>
+          <td>12</td>
+          <td>3</td>
+          <td>68</td>
+          <td>36</td>
+          <td>+32</td>
+          <td>81</td>
+          <td>
+            <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage">
+              Champions League group stage
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>
+            <a href="https://en.wikipedia.org/wiki/Arsenal_F.C." title="Arsenal F.C.">Arsenal</a>
+          </td>
+          <td>38</td>
+          <td>20</td>
+          <td>11</td>
+          <td>7</td>
+          <td>65</td>
+          <td>36</td>
+          <td>+29</td>
+          <td>71</td>
+          <td>
+            <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage">
+              Champions League group stage
+            </a>
+          </td>
+        </tr>
+        <tr class="is-selected">
+          <th>3</th>
+          <td>
+            <a href="https://en.wikipedia.org/wiki/Manchester_City_F.C." title="Manchester City F.C.">
+              Manchester City
+            </a>
+          </td>
+          <td>38</td>
+          <td>19</td>
+          <td>9</td>
+          <td>10</td>
+          <td>71</td>
+          <td>41</td>
+          <td>+30</td>
+          <td>66</td>
+          <td>
+            <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Play-off_round">
+              Champions League play-off round
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Pseudo elements</h4>
+  <div style="overflow-x: auto;">
+    <div class="table">
+      <div class="tr">
+        <div class="th"><abbr title="Position">Pos</abbr></div>
+        <div class="th">Team</div>
+        <div class="th"><abbr title="Played">Pld</abbr></div>
+        <div class="th"><abbr title="Won">W</abbr></div>
+        <div class="th"><abbr title="Drawn">D</abbr></div>
+        <div class="th"><abbr title="Lost">L</abbr></div>
+        <div class="th"><abbr title="Goals for">GF</abbr></div>
+        <div class="th"><abbr title="Goals against">GA</abbr></div>
+        <div class="th"><abbr title="Goal difference">GD</abbr></div>
+        <div class="th"><abbr title="Points">Pts</abbr></div>
+        <div class="th">Qualification or relegation</div>
+      </div>
+      <a href="#" class="tr">
+        <span class="th">1</span>
+        <span class="td">Leicester City <strong>(C)</strong></span>
+        <span class="td">38</span>
+        <span class="td">23</span>
+        <span class="td">12</span>
+        <span class="td">3</span>
+        <span class="td">68</span>
+        <span class="td">36</span>
+        <span class="td">+32</span>
+        <span class="td">81</span>
+        <span class="td">Champions League group stage</span>
+      </a>
+      <a href="#" class="tr">
+        <span class="th">2</span>
+        <span class="td">Arsenal</span>
+        <span class="td">38</span>
+        <span class="td">20</span>
+        <span class="td">11</span>
+        <span class="td">7</span>
+        <span class="td">65</span>
+        <span class="td">36</span>
+        <span class="td">+29</span>
+        <span class="td">71</span>
+        <span class="td">Champions League group stage</span>
+      </a>
+      <a href="#" class="tr is-selected">
+        <span class="th">3</span>
+        <span class="td">Manchester City</span>
+        <span class="td">38</span>
+        <span class="td">19</span>
+        <span class="td">9</span>
+        <span class="td">10</span>
+        <span class="td">71</span>
+        <span class="td">41</span>
+        <span class="td">+30</span>
+        <span class="td">66</span>
+        <span class="td">Champions League play-off round</span>
+      </a>
+    </div>
+  </div>
+</div>

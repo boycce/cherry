@@ -77,3 +77,15 @@ $shades: (
   "white-darker": $white-darker,
   "white-darkest": $white-darkest
 ) !default;
+
+// Typography
+$size-small: $size-1 !default
+$size-normal: $size-3 !default
+$size-medium: $size-4 !default
+$size-large: $size-5 !default
+
+$family-primary: $family-sans-serif !default;
+$family-secondary: $family-sans-serif !default;
+$family-code:  $family-monospace !default;
+
+$font-sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;

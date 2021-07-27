@@ -4,7 +4,7 @@ node_modules
 package-lock.json
 
 # User files
-resources
+# resources
 
 # Thumbnail and view configuration files
 ._*

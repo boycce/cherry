@@ -10,73 +10,76 @@
     z-index: 20;
     transition: all 0s 0.3s linear;
     text-align: center;
-  }
-  .modal .overlay {
-    background-color: rgba(255, 255, 255, 0.93);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.001;
-    transition: all 0.3s ease;
-  }
-  .modal .table {
-    width: 100%;
-  }
-  .modal .table .table-column {
-    padding: 0 1rem;
-  }
-  .modal .table > div {}
-  .modal .modal-body-wrapper {
-    position: relative;
-    max-width: 923px;
-    margin: 0 auto 100px;
-    border-radius: 6px;
-    opacity: 0.001;
-    transform: scale(0.96);
-    transition: all 0.2s ease;
-  }
-  .modal .modal-header,
-  .modal .modal-body {
-    // padding: 14px 60px;
-    background-color: rgba(255, 255, 255, 0);
-  }
-  .modal .modal-header {
-    text-align: center;
-    position: relative;
-    margin-bottom: 0;
-  }
-  .modal .modal-header .x1 {
-    top: 0.9rem;
-    right: 0.9rem;
-    &:hover {}
-  }
-  .modal .modal-body {
-    margin: 0;
-    min-height: 0;
-  }
-  @media (max-width: 550px) {
-    .modal .modal-body-wrapper {
-      margin-bottom: 1rem;
+    .modal-wrapper {
+      display: flex;
+      padding: 1rem;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      .modal-overlay {
+        background-color: rgba(0, 0, 0, 0.08);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.001;
+        transition: all 0.3s ease;
+      }
+      .modal-box {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 2em;
+        border-radius: 6px;
+        opacity: 0.001;
+        background-color: #fff;
+        box-shadow: 0 0 18px 0px #00000012;
+        transform: scale(0.96);
+        transition: all 0.2s ease;
+      }
+    }
+    .modal-header {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0);
+      margin: 0;
+      .x1 {
+        top: 0.9rem;
+        right: 0.9rem;
+        &:hover {}
+      }
+    }
+    .modal-body {
+      background-color: rgba(255, 255, 255, 0);
+      margin: 0;
+    }
+
+    /* Active */
+
+    &.is-active {
+      left: 0;
+      transition: all 0s 0s linear;
+      .modal-overlay {
+        opacity: 0.999;
+        transition: all 0.2s ease;
+      }
+      .modal-box {
+        opacity: 0.999;
+        transform: translateY(0);
+        transition: all 0.3s ease;
+      }
+    }
+
+    /* Styles */
+
+    &.modal-white {
+      .modal-overlay {
+        background-color: rgba(255, 255, 255, 0.86);
+      }
+      .modal-box {
+        background-color: #fff;
+        border: 2px solid #111;
+        box-shadow: 0 0 18px 0px #00000012;
+      }
     }
   }
-
-  /* Modal active */
-
-  .modal.active {
-    left: 0;
-    transition: all 0s 0s linear;
-  }
-  .modal.active .overlay {
-    opacity: 0.999;
-    transition: all 0.2s ease;
-  }
-  .modal.active .modal-body-wrapper {
-    opacity: 0.999;
-    transform: translateY(0);
-    transition: all 0.3s ease;
-  }
-
-  /* Modal types */
-  /* ... */

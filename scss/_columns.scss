@@ -13,8 +13,8 @@ $col-gap-multiplier-xs: false !default;
     display: flex;
     flex-wrap: wrap;
   }
-  .col-none,    // flex none
   .col-initial, // flex initial/0
+  .col-none,    // flex none
   .col,         // flex 1
   .col-1,       // 12 columns
   .col-1-5,     // 8 columns
@@ -30,34 +30,40 @@ $col-gap-multiplier-xs: false !default;
   .col-10,
   .col-11,
   .col-12 {
+    display: block;
     flex: none;
-    position: relative;
     min-height: 1px;
     padding-left: $col-gap-multiplier * 1.5;
     padding-right: $col-gap-multiplier * 1.5;
     box-sizing: border-box;
   }
-  @mixin sizes($pre, $post) {
-    #{$pre}12#{$post}  { width: 100%; }
-    #{$pre}11#{$post}  { width: 91.6666667%; }
-    #{$pre}10#{$post}  { width: 83.33333333%; }
-    #{$pre}9#{$post}   { width: 75%; }
-    #{$pre}8#{$post}   { width: 66.66666667%; }
-    #{$pre}7#{$post}   { width: 58.33333333%; }
-    #{$pre}6#{$post}   { width: 50%; }
-    #{$pre}5#{$post}   { width: 41.66666667%; }
-    #{$pre}4#{$post}   { width: 33.33333333%; }
-    #{$pre}3#{$post}   { width: 25%; }
-    #{$pre}2-5#{$post} { width: 20%; }
-    #{$pre}2#{$post}   { width: 16.66666667%; }
-    #{$pre}1-5#{$post} { width: 12.5%; } // 8 columns
-    #{$pre}1#{$post}   { width: 8.333333333%; }
+  @mixin col-sizes($flex1, $selector) {
+    @if $flex1 {
+      #{(strReplace($selector, '{x}', ''))}       { flex: 1; }
+    }
+    #{(strReplace($selector, '{x}', '-initial'))} { flex: 0; }
+    #{(strReplace($selector, '{x}', '-none'))}    { flex: none; }
+    #{(strReplace($selector, '{x}', '-1'))}       { flex: none; width: 8.333333333%; }
+    #{(strReplace($selector, '{x}', '-1-5'))}     { flex: none; width: 12.5%; } // 8 columns
+    #{(strReplace($selector, '{x}', '-2'))}       { flex: none; width: 16.66666667%; }
+    #{(strReplace($selector, '{x}', '-2-5'))}     { flex: none; width: 20%; }
+    #{(strReplace($selector, '{x}', '-3'))}       { flex: none; width: 25%; }
+    #{(strReplace($selector, '{x}', '-4'))}       { flex: none; width: 33.33333333%; }
+    #{(strReplace($selector, '{x}', '-5'))}       { flex: none; width: 41.66666667%; }
+    #{(strReplace($selector, '{x}', '-6'))}       { flex: none; width: 50%; }
+    #{(strReplace($selector, '{x}', '-7'))}       { flex: none; width: 58.33333333%; }
+    #{(strReplace($selector, '{x}', '-8'))}       { flex: none; width: 66.66666667%; }
+    #{(strReplace($selector, '{x}', '-9'))}       { flex: none; width: 75%; }
+    #{(strReplace($selector, '{x}', '-10'))}      { flex: none; width: 83.33333333%; }
+    #{(strReplace($selector, '{x}', '-11'))}      { flex: none; width: 91.6666667%; }
+    #{(strReplace($selector, '{x}', '-12'))}      { flex: none; width: 100%; }
   }
   @mixin cols-responsive-lg($class) {
     #{$class} {
       .col-1,
       .col-1-5,
       .col-2 {
+        flex: none;
         width: 33.33333333%;
       }
     }
@@ -72,6 +78,7 @@ $col-gap-multiplier-xs: false !default;
       .col-10,
       .col-11,
       .col-12 {
+        flex: none;
         width: 100%;
       }
       .col-1,
@@ -80,6 +87,7 @@ $col-gap-multiplier-xs: false !default;
       .col-2-5,
       .col-3,
       .col-4 {
+        flex: none;
         width: 50%;
       }
     }
@@ -88,6 +96,7 @@ $col-gap-multiplier-xs: false !default;
     #{$class} {
       .col-3,
       .col-4 {
+        flex: none;
         width: 100%;
       }
     }
@@ -98,43 +107,40 @@ $col-gap-multiplier-xs: false !default;
       .col-1-5,
       .col-2,
       .col-2-5 {
+        flex: none;
         width: 100%;
       }
     }
   }
 
-  @include sizes('.col-', '');
-  @include sizes('.print\\:col-', '');
-  .col { flex: 1; }
-  .col-initial { flex: 0; }
+  // https://www.w3.org/TR/selectors/#attribute-representation
+  // https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
+  //
+  // 1. Prevent the user from using .col without .cols* so that responsive selectors work:
+  //    e.g. `[class^="cols"] > ..`
+  .col, .width { flex: 1; }
+  @include col-sizes(false, '.cols{x} > [class^="col"]');
+  @include col-sizes(false, '[class^="cols"] > .col{x}, .col{x}, .width{x}');
 
   @media screen and (max-width: $breakpoint-lg) {
     @include cols-responsive-lg('.cols-responsive');
-    @include sizes('.lg\\:cols-', ' > [class*="col"]');
-    @include sizes('.lg\\:print\\:cols-', ' > [class*="col"]');
-    @include sizes('.cols > [class*="lg\\:col-', '"]');
-    @include sizes('.cols > [class*="lg\\:print\\:col-', '"]');
+    @include col-sizes(false, '.lg\\:cols{x} > [class^="col"]');
+    @include col-sizes(true,  '[class^="cols"] > .lg\\:col{x}, .lg\\:col{x}, .lg\\:width{x}');
   }
   @media screen and (max-width: $breakpoint-md) {
     @include cols-responsive-md('.cols-responsive');
-    @include sizes('.md\\:cols-', ' > [class*="col"]');
-    @include sizes('.md\\:print\\:cols-', ' > [class*="col"]');
-    @include sizes('.cols > [class*="md\\:col-', '"]');
-    @include sizes('.cols > [class*="md\\:print\\:col-', '"]');
+    @include col-sizes(false, '.md\\:cols{x} > [class^="col"]');
+    @include col-sizes(true,  '[class^="cols"] > .md\\:col{x}, .md\\:col{x}, .md\\:width{x}');
   }
   @media screen and (max-width: $breakpoint-sm) {
     @include cols-responsive-sm('.cols-responsive');
-    @include sizes('.sm\\:cols-', ' > [class*="col"]');
-    @include sizes('.sm\\:print\\:cols-', ' > [class*="col"]');
-    @include sizes('.cols > [class*="sm\\:col-', '"]');
-    @include sizes('.cols > [class*="sm\\:print\\:col-', '"]');
+    @include col-sizes(false, '.sm\\:cols{x} > [class^="col"]');
+    @include col-sizes(true,  '[class^="cols"] > .sm\\:col{x}, .sm\\:col{x}, .sm\\:width{x}');
   }
   @media screen and (max-width: $breakpoint-xs) {
     @include cols-responsive-xs('.cols-responsive');
-    @include sizes('.xs\\:cols-', ' > [class*="col"]');
-    @include sizes('.xs\\:print\\:cols-', ' > [class*="col"]');
-    @include sizes('.cols > [class*="xs\\:col-', '"]');
-    @include sizes('.cols > [class*="xs\\:print\\:col-', '"]');
+    @include col-sizes(false, '.xs\\:cols{x} > [class^="col"]');
+    @include col-sizes(true,  '[class^="cols"] > .xs\\:col{x}, .xs\\:col{x}, .xs\\:width{x}');
   }
 
   /* cols-gap */

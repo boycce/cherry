@@ -42,7 +42,25 @@ $link--hover:      $blue !default;
 $link--focus:      $blue !default;
 
 // Breakpoints
-$breakpoint-lg: 1023px !default; /*desktop*/
-$breakpoint-md: 768px !default; /*tablet*/
-$breakpoint-sm: 590px !default; /*mobile*/
-$breakpoint-xs: 589px !default; /*mobile*/
+$breakpoint-lg:    1023px !default; /*desktop*/
+$breakpoint-md:    768px !default; /*tablet*/
+$breakpoint-sm:    590px !default; /*mobile*/
+$breakpoint-xs:    589px !default; /*mobile*/
+
+// Typography
+$family-monospace: monospace !default;
+$family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
+
+$size-1: 0.8rem !default;
+$size-2: 0.9rem !default;
+$size-3: 1.0rem!default;
+$size-4: 1.2rem !default;
+$size-5: 1.4rem !default;
+$size-6: 1.6rem !default;
+$size-7: 1.8rem !default;
+
+$weight-light: 300 !default;
+$weight-normal: 400 !default;
+$weight-medium: 500 !default;
+$weight-semibold: 600 !default;
+$weight-bold: 700 !default;

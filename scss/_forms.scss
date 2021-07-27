@@ -22,6 +22,7 @@
     "input-box-shadow":            map-get($form, "input-box-shadow"),
     "input-box-shadow--active":    map-get($form, "input-box-shadow"),
     "input-box-shadow--invalid":   map-get($form, "input-box-shadow"),
+    "input-btn-font-size":         0.9rem,
     "input-color":                 $text,
     "input-color--invalid":        $text,
     "input-font-family":           $body-font-family,
@@ -30,7 +31,7 @@
     "input-icon-width":            18px,
     "input-margin-bottom":         1.5rem,
     "input-padding":               map-get($form, "input-padding"),
-    "input-placeholder-color":     rgba($text, 0.5),
+    "input-placeholder-color":     rgba($text, 0.4),
     // Label
     "label-color":                 $text-light,
     "label-font-size":             0.85rem,
@@ -153,7 +154,7 @@
     .input-btn .btn {
       width: auto !important;
       min-width: 0;
-      font-size: 0.8em;
+      font-size: map-get($map, "input-btn-font-size");
       line-height: 1.5rem;
       border-radius: map-get($map, "input-border-radius");
       padding: map-get($map, "input-padding");
@@ -189,8 +190,9 @@
     label,
     .label,
     .label-right {
-      display: inline-block;
-      vertical-align: top;
+      // display: inline-block;
+      // vertical-align: top;
+      display: block;
       font-size: map-get($map, "label-font-size");
       line-height: 1.4em;
       margin-bottom: 0.45em;
@@ -341,6 +343,7 @@
         padding-right: map-get($map, "checkbox-padding-right");
         user-select: none;
         margin-bottom: 0;
+        vertical-align: sub;
       }
       input + label:before {
         content: "";
@@ -396,6 +399,7 @@
         padding-right: 1.2em;
         margin-bottom: 0;
         user-select: none;
+        vertical-align: sub;
       }
       input + label:before,
       input + label:after {

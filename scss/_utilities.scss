@@ -17,6 +17,8 @@ $breakpoints: (
     .b-#{$i} {
       border: #{$i}px solid $border-color !important;
     }
+  }
+  @each $i in [1, 2, 3, 4, 5] {
     .bl-#{$i} {
       border-left: #{$i}px solid $border-color !important;
     }
@@ -51,6 +53,15 @@ $breakpoints: (
     }
     .rounded-#{$i} {
       border-radius: $size !important;
+    }
+  }
+  @each $i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 'full'] {
+    $size: null;
+    @if ($i == 'full') {
+      $size: 999px;
+    }
+    @else {
+      $size: $border-radius-step * $i;
     }
     .rounded-l-#{$i} {
       border-top-left-radius: $size !important;
@@ -411,6 +422,108 @@ $breakpoints: (
       font-weight: $i !important;
     }
   }
+  .weight-light,
+  .text-weight-light {
+    font-weight: $weight-light !important;
+  }
+  .weight-normal,
+  .text-weight-normal {
+    font-weight: $weight-normal !important;
+  }
+  .weight-medium,
+  .text-weight-medium {
+    font-weight: $weight-medium !important;
+  }
+  .weight-semibold,
+  .text-weight-semibold {
+    font-weight: $weight-semibold !important;
+  }
+  .weight-bold,
+  .text-weight-bold {
+    font-weight: $weight-bold !important;
+  }
+
+/* ---- Text Size -------------------- */
+
+  .size-small,
+  .text-size-small {
+    font-size: $size-small !important;
+  }
+  .size-normal,
+  .text-size-normal {
+    font-size: $size-normal !important;
+  }
+  .size-medium,
+  .text-size-medium {
+    font-size: $size-medium !important;
+  }
+  .size-large,
+  .text-size-large {
+    font-size: $size-large !important;
+  }
+  @each $size in $font-sizes {
+    $i: index($font-sizes, $size);
+    .size-#{$i},
+    .text-size-#{$i} {
+      font-size: $size !important;
+    }
+  }
+
+/* ---- Text family ------------------ */
+
+  .family-primary,
+  .text-family-primary {
+    font-family: $family-primary !important;
+  }
+  .family-secondary,
+  .text-family-secondary {
+    font-family: $family-secondary !important;
+  }
+  .family-sans-serif,
+  .text-family-sans-serif {
+    font-family: $family-sans-serif !important;
+  }
+  .family-monospace,
+  .text-family-monospace {
+    font-family: $family-monospace !important;
+  }
+  .family-code,
+  .text-family-code {
+    font-family: $family-code !important;
+  }
+
+/* ---- Text transformations --------- */
+
+  .text-capitalized {
+    text-transform: capitalize !important
+  }
+  .text-lowercase {
+    text-transform: lowercase !important
+  }
+  .text-uppercase {
+    text-transform: uppercase !important
+  }
+  .text-italic {
+    font-style: italic !important
+  }
+  .text-underlined {
+    text-decoration: underline !important
+  }
+
+/* ---- Text Alignments --------- */
+
+  .text-left {
+    text-align: left !important;
+  }
+  .text-right {
+    text-align: right !important;
+  }
+  .text-center {
+    text-align: center !important;
+  }
+  .text-justify {
+    text-align: justify !important;
+  }
 
 /* ---- Text Overflow ---------------- */
 
@@ -474,6 +587,12 @@ $breakpoints: (
   .min-0 {
     min-width: 0 !important;
   }
+  .width-100 {
+    width: 100%;
+  }
+  .width-auto {
+    width: auto;
+  }
   .no-select {
     -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
@@ -481,15 +600,6 @@ $breakpoints: (
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
-  }
-  .text-left {
-    text-align: left !important;
-  }
-  .text-right {
-    text-align: right !important;
-  }
-  .text-center {
-    text-align: center !important;
   }
   .cover {
     width: 100%;

@@ -15,7 +15,7 @@ body {
   background-color: transparent;
   color: #121212;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5em;
@@ -1950,8 +1950,8 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   flex-wrap: wrap;
 }
 
-.col-none,
 .col-initial,
+.col-none,
 .col,
 .col-1,
 .col-1-5,
@@ -1967,307 +1967,307 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .col-10,
 .col-11,
 .col-12 {
+  display: block;
   flex: none;
-  position: relative;
   min-height: 1px;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   box-sizing: border-box;
 }
 
-.col-12 {
-  width: 100%;
-}
-
-.col-11 {
-  width: 91.6666667%;
-}
-
-.col-10 {
-  width: 83.33333333%;
-}
-
-.col-9 {
-  width: 75%;
-}
-
-.col-8 {
-  width: 66.66666667%;
-}
-
-.col-7 {
-  width: 58.33333333%;
-}
-
-.col-6 {
-  width: 50%;
-}
-
-.col-5 {
-  width: 41.66666667%;
-}
-
-.col-4 {
-  width: 33.33333333%;
-}
-
-.col-3 {
-  width: 25%;
-}
-
-.col-2-5 {
-  width: 20%;
-}
-
-.col-2 {
-  width: 16.66666667%;
-}
-
-.col-1-5 {
-  width: 12.5%;
-}
-
-.col-1 {
-  width: 8.333333333%;
-}
-
-.print\:col-12 {
-  width: 100%;
-}
-
-.print\:col-11 {
-  width: 91.6666667%;
-}
-
-.print\:col-10 {
-  width: 83.33333333%;
-}
-
-.print\:col-9 {
-  width: 75%;
-}
-
-.print\:col-8 {
-  width: 66.66666667%;
-}
-
-.print\:col-7 {
-  width: 58.33333333%;
-}
-
-.print\:col-6 {
-  width: 50%;
-}
-
-.print\:col-5 {
-  width: 41.66666667%;
-}
-
-.print\:col-4 {
-  width: 33.33333333%;
-}
-
-.print\:col-3 {
-  width: 25%;
-}
-
-.print\:col-2-5 {
-  width: 20%;
-}
-
-.print\:col-2 {
-  width: 16.66666667%;
-}
-
-.print\:col-1-5 {
-  width: 12.5%;
-}
-
-.print\:col-1 {
-  width: 8.333333333%;
-}
-
-.col {
+.col, .width {
   flex: 1;
 }
 
-.col-initial {
+.cols-initial > [class^="col"] {
   flex: 0;
+}
+
+.cols-none > [class^="col"] {
+  flex: none;
+}
+
+.cols-1 > [class^="col"] {
+  flex: none;
+  width: 8.333333333%;
+}
+
+.cols-1-5 > [class^="col"] {
+  flex: none;
+  width: 12.5%;
+}
+
+.cols-2 > [class^="col"] {
+  flex: none;
+  width: 16.66666667%;
+}
+
+.cols-2-5 > [class^="col"] {
+  flex: none;
+  width: 20%;
+}
+
+.cols-3 > [class^="col"] {
+  flex: none;
+  width: 25%;
+}
+
+.cols-4 > [class^="col"] {
+  flex: none;
+  width: 33.33333333%;
+}
+
+.cols-5 > [class^="col"] {
+  flex: none;
+  width: 41.66666667%;
+}
+
+.cols-6 > [class^="col"] {
+  flex: none;
+  width: 50%;
+}
+
+.cols-7 > [class^="col"] {
+  flex: none;
+  width: 58.33333333%;
+}
+
+.cols-8 > [class^="col"] {
+  flex: none;
+  width: 66.66666667%;
+}
+
+.cols-9 > [class^="col"] {
+  flex: none;
+  width: 75%;
+}
+
+.cols-10 > [class^="col"] {
+  flex: none;
+  width: 83.33333333%;
+}
+
+.cols-11 > [class^="col"] {
+  flex: none;
+  width: 91.6666667%;
+}
+
+.cols-12 > [class^="col"] {
+  flex: none;
+  width: 100%;
+}
+
+[class^="cols"] > .col-initial, .col-initial, .width-initial {
+  flex: 0;
+}
+
+[class^="cols"] > .col-none, .col-none, .width-none {
+  flex: none;
+}
+
+[class^="cols"] > .col-1, .col-1, .width-1 {
+  flex: none;
+  width: 8.333333333%;
+}
+
+[class^="cols"] > .col-1-5, .col-1-5, .width-1-5 {
+  flex: none;
+  width: 12.5%;
+}
+
+[class^="cols"] > .col-2, .col-2, .width-2 {
+  flex: none;
+  width: 16.66666667%;
+}
+
+[class^="cols"] > .col-2-5, .col-2-5, .width-2-5 {
+  flex: none;
+  width: 20%;
+}
+
+[class^="cols"] > .col-3, .col-3, .width-3 {
+  flex: none;
+  width: 25%;
+}
+
+[class^="cols"] > .col-4, .col-4, .width-4 {
+  flex: none;
+  width: 33.33333333%;
+}
+
+[class^="cols"] > .col-5, .col-5, .width-5 {
+  flex: none;
+  width: 41.66666667%;
+}
+
+[class^="cols"] > .col-6, .col-6, .width-6 {
+  flex: none;
+  width: 50%;
+}
+
+[class^="cols"] > .col-7, .col-7, .width-7 {
+  flex: none;
+  width: 58.33333333%;
+}
+
+[class^="cols"] > .col-8, .col-8, .width-8 {
+  flex: none;
+  width: 66.66666667%;
+}
+
+[class^="cols"] > .col-9, .col-9, .width-9 {
+  flex: none;
+  width: 75%;
+}
+
+[class^="cols"] > .col-10, .col-10, .width-10 {
+  flex: none;
+  width: 83.33333333%;
+}
+
+[class^="cols"] > .col-11, .col-11, .width-11 {
+  flex: none;
+  width: 91.6666667%;
+}
+
+[class^="cols"] > .col-12, .col-12, .width-12 {
+  flex: none;
+  width: 100%;
 }
 
 @media screen and (max-width: 1023px) {
   .cols-responsive .col-1,
   .cols-responsive .col-1-5,
   .cols-responsive .col-2 {
+    flex: none;
     width: 33.33333333%;
   }
-  .lg\:cols-12 > [class*="col"] {
-    width: 100%;
+  .lg\:cols-initial > [class^="col"] {
+    flex: 0;
   }
-  .lg\:cols-11 > [class*="col"] {
-    width: 91.6666667%;
+  .lg\:cols-none > [class^="col"] {
+    flex: none;
   }
-  .lg\:cols-10 > [class*="col"] {
-    width: 83.33333333%;
-  }
-  .lg\:cols-9 > [class*="col"] {
-    width: 75%;
-  }
-  .lg\:cols-8 > [class*="col"] {
-    width: 66.66666667%;
-  }
-  .lg\:cols-7 > [class*="col"] {
-    width: 58.33333333%;
-  }
-  .lg\:cols-6 > [class*="col"] {
-    width: 50%;
-  }
-  .lg\:cols-5 > [class*="col"] {
-    width: 41.66666667%;
-  }
-  .lg\:cols-4 > [class*="col"] {
-    width: 33.33333333%;
-  }
-  .lg\:cols-3 > [class*="col"] {
-    width: 25%;
-  }
-  .lg\:cols-2-5 > [class*="col"] {
-    width: 20%;
-  }
-  .lg\:cols-2 > [class*="col"] {
-    width: 16.66666667%;
-  }
-  .lg\:cols-1-5 > [class*="col"] {
-    width: 12.5%;
-  }
-  .lg\:cols-1 > [class*="col"] {
+  .lg\:cols-1 > [class^="col"] {
+    flex: none;
     width: 8.333333333%;
   }
-  .lg\:print\:cols-12 > [class*="col"] {
-    width: 100%;
-  }
-  .lg\:print\:cols-11 > [class*="col"] {
-    width: 91.6666667%;
-  }
-  .lg\:print\:cols-10 > [class*="col"] {
-    width: 83.33333333%;
-  }
-  .lg\:print\:cols-9 > [class*="col"] {
-    width: 75%;
-  }
-  .lg\:print\:cols-8 > [class*="col"] {
-    width: 66.66666667%;
-  }
-  .lg\:print\:cols-7 > [class*="col"] {
-    width: 58.33333333%;
-  }
-  .lg\:print\:cols-6 > [class*="col"] {
-    width: 50%;
-  }
-  .lg\:print\:cols-5 > [class*="col"] {
-    width: 41.66666667%;
-  }
-  .lg\:print\:cols-4 > [class*="col"] {
-    width: 33.33333333%;
-  }
-  .lg\:print\:cols-3 > [class*="col"] {
-    width: 25%;
-  }
-  .lg\:print\:cols-2-5 > [class*="col"] {
-    width: 20%;
-  }
-  .lg\:print\:cols-2 > [class*="col"] {
-    width: 16.66666667%;
-  }
-  .lg\:print\:cols-1-5 > [class*="col"] {
+  .lg\:cols-1-5 > [class^="col"] {
+    flex: none;
     width: 12.5%;
   }
-  .lg\:print\:cols-1 > [class*="col"] {
-    width: 8.333333333%;
-  }
-  .cols > [class*="lg:col-12"] {
-    width: 100%;
-  }
-  .cols > [class*="lg:col-11"] {
-    width: 91.6666667%;
-  }
-  .cols > [class*="lg:col-10"] {
-    width: 83.33333333%;
-  }
-  .cols > [class*="lg:col-9"] {
-    width: 75%;
-  }
-  .cols > [class*="lg:col-8"] {
-    width: 66.66666667%;
-  }
-  .cols > [class*="lg:col-7"] {
-    width: 58.33333333%;
-  }
-  .cols > [class*="lg:col-6"] {
-    width: 50%;
-  }
-  .cols > [class*="lg:col-5"] {
-    width: 41.66666667%;
-  }
-  .cols > [class*="lg:col-4"] {
-    width: 33.33333333%;
-  }
-  .cols > [class*="lg:col-3"] {
-    width: 25%;
-  }
-  .cols > [class*="lg:col-2-5"] {
-    width: 20%;
-  }
-  .cols > [class*="lg:col-2"] {
+  .lg\:cols-2 > [class^="col"] {
+    flex: none;
     width: 16.66666667%;
   }
-  .cols > [class*="lg:col-1-5"] {
-    width: 12.5%;
-  }
-  .cols > [class*="lg:col-1"] {
-    width: 8.333333333%;
-  }
-  .cols > [class*="lg:print:col-12"] {
-    width: 100%;
-  }
-  .cols > [class*="lg:print:col-11"] {
-    width: 91.6666667%;
-  }
-  .cols > [class*="lg:print:col-10"] {
-    width: 83.33333333%;
-  }
-  .cols > [class*="lg:print:col-9"] {
-    width: 75%;
-  }
-  .cols > [class*="lg:print:col-8"] {
-    width: 66.66666667%;
-  }
-  .cols > [class*="lg:print:col-7"] {
-    width: 58.33333333%;
-  }
-  .cols > [class*="lg:print:col-6"] {
-    width: 50%;
-  }
-  .cols > [class*="lg:print:col-5"] {
-    width: 41.66666667%;
-  }
-  .cols > [class*="lg:print:col-4"] {
-    width: 33.33333333%;
-  }
-  .cols > [class*="lg:print:col-3"] {
-    width: 25%;
-  }
-  .cols > [class*="lg:print:col-2-5"] {
+  .lg\:cols-2-5 > [class^="col"] {
+    flex: none;
     width: 20%;
   }
-  .cols > [class*="lg:print:col-2"] {
-    width: 16.66666667%;
+  .lg\:cols-3 > [class^="col"] {
+    flex: none;
+    width: 25%;
   }
-  .cols > [class*="lg:print:col-1-5"] {
+  .lg\:cols-4 > [class^="col"] {
+    flex: none;
+    width: 33.33333333%;
+  }
+  .lg\:cols-5 > [class^="col"] {
+    flex: none;
+    width: 41.66666667%;
+  }
+  .lg\:cols-6 > [class^="col"] {
+    flex: none;
+    width: 50%;
+  }
+  .lg\:cols-7 > [class^="col"] {
+    flex: none;
+    width: 58.33333333%;
+  }
+  .lg\:cols-8 > [class^="col"] {
+    flex: none;
+    width: 66.66666667%;
+  }
+  .lg\:cols-9 > [class^="col"] {
+    flex: none;
+    width: 75%;
+  }
+  .lg\:cols-10 > [class^="col"] {
+    flex: none;
+    width: 83.33333333%;
+  }
+  .lg\:cols-11 > [class^="col"] {
+    flex: none;
+    width: 91.6666667%;
+  }
+  .lg\:cols-12 > [class^="col"] {
+    flex: none;
+    width: 100%;
+  }
+  [class^="cols"] > .lg\:col, .lg\:col, .lg\:width {
+    flex: 1;
+  }
+  [class^="cols"] > .lg\:col-initial, .lg\:col-initial, .lg\:width-initial {
+    flex: 0;
+  }
+  [class^="cols"] > .lg\:col-none, .lg\:col-none, .lg\:width-none {
+    flex: none;
+  }
+  [class^="cols"] > .lg\:col-1, .lg\:col-1, .lg\:width-1 {
+    flex: none;
+    width: 8.333333333%;
+  }
+  [class^="cols"] > .lg\:col-1-5, .lg\:col-1-5, .lg\:width-1-5 {
+    flex: none;
     width: 12.5%;
   }
-  .cols > [class*="lg:print:col-1"] {
-    width: 8.333333333%;
+  [class^="cols"] > .lg\:col-2, .lg\:col-2, .lg\:width-2 {
+    flex: none;
+    width: 16.66666667%;
+  }
+  [class^="cols"] > .lg\:col-2-5, .lg\:col-2-5, .lg\:width-2-5 {
+    flex: none;
+    width: 20%;
+  }
+  [class^="cols"] > .lg\:col-3, .lg\:col-3, .lg\:width-3 {
+    flex: none;
+    width: 25%;
+  }
+  [class^="cols"] > .lg\:col-4, .lg\:col-4, .lg\:width-4 {
+    flex: none;
+    width: 33.33333333%;
+  }
+  [class^="cols"] > .lg\:col-5, .lg\:col-5, .lg\:width-5 {
+    flex: none;
+    width: 41.66666667%;
+  }
+  [class^="cols"] > .lg\:col-6, .lg\:col-6, .lg\:width-6 {
+    flex: none;
+    width: 50%;
+  }
+  [class^="cols"] > .lg\:col-7, .lg\:col-7, .lg\:width-7 {
+    flex: none;
+    width: 58.33333333%;
+  }
+  [class^="cols"] > .lg\:col-8, .lg\:col-8, .lg\:width-8 {
+    flex: none;
+    width: 66.66666667%;
+  }
+  [class^="cols"] > .lg\:col-9, .lg\:col-9, .lg\:width-9 {
+    flex: none;
+    width: 75%;
+  }
+  [class^="cols"] > .lg\:col-10, .lg\:col-10, .lg\:width-10 {
+    flex: none;
+    width: 83.33333333%;
+  }
+  [class^="cols"] > .lg\:col-11, .lg\:col-11, .lg\:width-11 {
+    flex: none;
+    width: 91.6666667%;
+  }
+  [class^="cols"] > .lg\:col-12, .lg\:col-12, .lg\:width-12 {
+    flex: none;
+    width: 100%;
   }
 }
 
@@ -2280,6 +2280,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .cols-responsive .col-10,
   .cols-responsive .col-11,
   .cols-responsive .col-12 {
+    flex: none;
     width: 100%;
   }
   .cols-responsive .col-1,
@@ -2288,350 +2289,270 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .cols-responsive .col-2-5,
   .cols-responsive .col-3,
   .cols-responsive .col-4 {
+    flex: none;
     width: 50%;
   }
-  .md\:cols-12 > [class*="col"] {
-    width: 100%;
+  .md\:cols-initial > [class^="col"] {
+    flex: 0;
   }
-  .md\:cols-11 > [class*="col"] {
-    width: 91.6666667%;
+  .md\:cols-none > [class^="col"] {
+    flex: none;
   }
-  .md\:cols-10 > [class*="col"] {
-    width: 83.33333333%;
-  }
-  .md\:cols-9 > [class*="col"] {
-    width: 75%;
-  }
-  .md\:cols-8 > [class*="col"] {
-    width: 66.66666667%;
-  }
-  .md\:cols-7 > [class*="col"] {
-    width: 58.33333333%;
-  }
-  .md\:cols-6 > [class*="col"] {
-    width: 50%;
-  }
-  .md\:cols-5 > [class*="col"] {
-    width: 41.66666667%;
-  }
-  .md\:cols-4 > [class*="col"] {
-    width: 33.33333333%;
-  }
-  .md\:cols-3 > [class*="col"] {
-    width: 25%;
-  }
-  .md\:cols-2-5 > [class*="col"] {
-    width: 20%;
-  }
-  .md\:cols-2 > [class*="col"] {
-    width: 16.66666667%;
-  }
-  .md\:cols-1-5 > [class*="col"] {
-    width: 12.5%;
-  }
-  .md\:cols-1 > [class*="col"] {
+  .md\:cols-1 > [class^="col"] {
+    flex: none;
     width: 8.333333333%;
   }
-  .md\:print\:cols-12 > [class*="col"] {
-    width: 100%;
-  }
-  .md\:print\:cols-11 > [class*="col"] {
-    width: 91.6666667%;
-  }
-  .md\:print\:cols-10 > [class*="col"] {
-    width: 83.33333333%;
-  }
-  .md\:print\:cols-9 > [class*="col"] {
-    width: 75%;
-  }
-  .md\:print\:cols-8 > [class*="col"] {
-    width: 66.66666667%;
-  }
-  .md\:print\:cols-7 > [class*="col"] {
-    width: 58.33333333%;
-  }
-  .md\:print\:cols-6 > [class*="col"] {
-    width: 50%;
-  }
-  .md\:print\:cols-5 > [class*="col"] {
-    width: 41.66666667%;
-  }
-  .md\:print\:cols-4 > [class*="col"] {
-    width: 33.33333333%;
-  }
-  .md\:print\:cols-3 > [class*="col"] {
-    width: 25%;
-  }
-  .md\:print\:cols-2-5 > [class*="col"] {
-    width: 20%;
-  }
-  .md\:print\:cols-2 > [class*="col"] {
-    width: 16.66666667%;
-  }
-  .md\:print\:cols-1-5 > [class*="col"] {
+  .md\:cols-1-5 > [class^="col"] {
+    flex: none;
     width: 12.5%;
   }
-  .md\:print\:cols-1 > [class*="col"] {
-    width: 8.333333333%;
-  }
-  .cols > [class*="md:col-12"] {
-    width: 100%;
-  }
-  .cols > [class*="md:col-11"] {
-    width: 91.6666667%;
-  }
-  .cols > [class*="md:col-10"] {
-    width: 83.33333333%;
-  }
-  .cols > [class*="md:col-9"] {
-    width: 75%;
-  }
-  .cols > [class*="md:col-8"] {
-    width: 66.66666667%;
-  }
-  .cols > [class*="md:col-7"] {
-    width: 58.33333333%;
-  }
-  .cols > [class*="md:col-6"] {
-    width: 50%;
-  }
-  .cols > [class*="md:col-5"] {
-    width: 41.66666667%;
-  }
-  .cols > [class*="md:col-4"] {
-    width: 33.33333333%;
-  }
-  .cols > [class*="md:col-3"] {
-    width: 25%;
-  }
-  .cols > [class*="md:col-2-5"] {
-    width: 20%;
-  }
-  .cols > [class*="md:col-2"] {
+  .md\:cols-2 > [class^="col"] {
+    flex: none;
     width: 16.66666667%;
   }
-  .cols > [class*="md:col-1-5"] {
-    width: 12.5%;
-  }
-  .cols > [class*="md:col-1"] {
-    width: 8.333333333%;
-  }
-  .cols > [class*="md:print:col-12"] {
-    width: 100%;
-  }
-  .cols > [class*="md:print:col-11"] {
-    width: 91.6666667%;
-  }
-  .cols > [class*="md:print:col-10"] {
-    width: 83.33333333%;
-  }
-  .cols > [class*="md:print:col-9"] {
-    width: 75%;
-  }
-  .cols > [class*="md:print:col-8"] {
-    width: 66.66666667%;
-  }
-  .cols > [class*="md:print:col-7"] {
-    width: 58.33333333%;
-  }
-  .cols > [class*="md:print:col-6"] {
-    width: 50%;
-  }
-  .cols > [class*="md:print:col-5"] {
-    width: 41.66666667%;
-  }
-  .cols > [class*="md:print:col-4"] {
-    width: 33.33333333%;
-  }
-  .cols > [class*="md:print:col-3"] {
-    width: 25%;
-  }
-  .cols > [class*="md:print:col-2-5"] {
+  .md\:cols-2-5 > [class^="col"] {
+    flex: none;
     width: 20%;
   }
-  .cols > [class*="md:print:col-2"] {
-    width: 16.66666667%;
+  .md\:cols-3 > [class^="col"] {
+    flex: none;
+    width: 25%;
   }
-  .cols > [class*="md:print:col-1-5"] {
+  .md\:cols-4 > [class^="col"] {
+    flex: none;
+    width: 33.33333333%;
+  }
+  .md\:cols-5 > [class^="col"] {
+    flex: none;
+    width: 41.66666667%;
+  }
+  .md\:cols-6 > [class^="col"] {
+    flex: none;
+    width: 50%;
+  }
+  .md\:cols-7 > [class^="col"] {
+    flex: none;
+    width: 58.33333333%;
+  }
+  .md\:cols-8 > [class^="col"] {
+    flex: none;
+    width: 66.66666667%;
+  }
+  .md\:cols-9 > [class^="col"] {
+    flex: none;
+    width: 75%;
+  }
+  .md\:cols-10 > [class^="col"] {
+    flex: none;
+    width: 83.33333333%;
+  }
+  .md\:cols-11 > [class^="col"] {
+    flex: none;
+    width: 91.6666667%;
+  }
+  .md\:cols-12 > [class^="col"] {
+    flex: none;
+    width: 100%;
+  }
+  [class^="cols"] > .md\:col, .md\:col, .md\:width {
+    flex: 1;
+  }
+  [class^="cols"] > .md\:col-initial, .md\:col-initial, .md\:width-initial {
+    flex: 0;
+  }
+  [class^="cols"] > .md\:col-none, .md\:col-none, .md\:width-none {
+    flex: none;
+  }
+  [class^="cols"] > .md\:col-1, .md\:col-1, .md\:width-1 {
+    flex: none;
+    width: 8.333333333%;
+  }
+  [class^="cols"] > .md\:col-1-5, .md\:col-1-5, .md\:width-1-5 {
+    flex: none;
     width: 12.5%;
   }
-  .cols > [class*="md:print:col-1"] {
-    width: 8.333333333%;
+  [class^="cols"] > .md\:col-2, .md\:col-2, .md\:width-2 {
+    flex: none;
+    width: 16.66666667%;
+  }
+  [class^="cols"] > .md\:col-2-5, .md\:col-2-5, .md\:width-2-5 {
+    flex: none;
+    width: 20%;
+  }
+  [class^="cols"] > .md\:col-3, .md\:col-3, .md\:width-3 {
+    flex: none;
+    width: 25%;
+  }
+  [class^="cols"] > .md\:col-4, .md\:col-4, .md\:width-4 {
+    flex: none;
+    width: 33.33333333%;
+  }
+  [class^="cols"] > .md\:col-5, .md\:col-5, .md\:width-5 {
+    flex: none;
+    width: 41.66666667%;
+  }
+  [class^="cols"] > .md\:col-6, .md\:col-6, .md\:width-6 {
+    flex: none;
+    width: 50%;
+  }
+  [class^="cols"] > .md\:col-7, .md\:col-7, .md\:width-7 {
+    flex: none;
+    width: 58.33333333%;
+  }
+  [class^="cols"] > .md\:col-8, .md\:col-8, .md\:width-8 {
+    flex: none;
+    width: 66.66666667%;
+  }
+  [class^="cols"] > .md\:col-9, .md\:col-9, .md\:width-9 {
+    flex: none;
+    width: 75%;
+  }
+  [class^="cols"] > .md\:col-10, .md\:col-10, .md\:width-10 {
+    flex: none;
+    width: 83.33333333%;
+  }
+  [class^="cols"] > .md\:col-11, .md\:col-11, .md\:width-11 {
+    flex: none;
+    width: 91.6666667%;
+  }
+  [class^="cols"] > .md\:col-12, .md\:col-12, .md\:width-12 {
+    flex: none;
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 590px) {
   .cols-responsive .col-3,
   .cols-responsive .col-4 {
+    flex: none;
     width: 100%;
   }
-  .sm\:cols-12 > [class*="col"] {
-    width: 100%;
+  .sm\:cols-initial > [class^="col"] {
+    flex: 0;
   }
-  .sm\:cols-11 > [class*="col"] {
-    width: 91.6666667%;
+  .sm\:cols-none > [class^="col"] {
+    flex: none;
   }
-  .sm\:cols-10 > [class*="col"] {
-    width: 83.33333333%;
-  }
-  .sm\:cols-9 > [class*="col"] {
-    width: 75%;
-  }
-  .sm\:cols-8 > [class*="col"] {
-    width: 66.66666667%;
-  }
-  .sm\:cols-7 > [class*="col"] {
-    width: 58.33333333%;
-  }
-  .sm\:cols-6 > [class*="col"] {
-    width: 50%;
-  }
-  .sm\:cols-5 > [class*="col"] {
-    width: 41.66666667%;
-  }
-  .sm\:cols-4 > [class*="col"] {
-    width: 33.33333333%;
-  }
-  .sm\:cols-3 > [class*="col"] {
-    width: 25%;
-  }
-  .sm\:cols-2-5 > [class*="col"] {
-    width: 20%;
-  }
-  .sm\:cols-2 > [class*="col"] {
-    width: 16.66666667%;
-  }
-  .sm\:cols-1-5 > [class*="col"] {
-    width: 12.5%;
-  }
-  .sm\:cols-1 > [class*="col"] {
+  .sm\:cols-1 > [class^="col"] {
+    flex: none;
     width: 8.333333333%;
   }
-  .sm\:print\:cols-12 > [class*="col"] {
-    width: 100%;
-  }
-  .sm\:print\:cols-11 > [class*="col"] {
-    width: 91.6666667%;
-  }
-  .sm\:print\:cols-10 > [class*="col"] {
-    width: 83.33333333%;
-  }
-  .sm\:print\:cols-9 > [class*="col"] {
-    width: 75%;
-  }
-  .sm\:print\:cols-8 > [class*="col"] {
-    width: 66.66666667%;
-  }
-  .sm\:print\:cols-7 > [class*="col"] {
-    width: 58.33333333%;
-  }
-  .sm\:print\:cols-6 > [class*="col"] {
-    width: 50%;
-  }
-  .sm\:print\:cols-5 > [class*="col"] {
-    width: 41.66666667%;
-  }
-  .sm\:print\:cols-4 > [class*="col"] {
-    width: 33.33333333%;
-  }
-  .sm\:print\:cols-3 > [class*="col"] {
-    width: 25%;
-  }
-  .sm\:print\:cols-2-5 > [class*="col"] {
-    width: 20%;
-  }
-  .sm\:print\:cols-2 > [class*="col"] {
-    width: 16.66666667%;
-  }
-  .sm\:print\:cols-1-5 > [class*="col"] {
+  .sm\:cols-1-5 > [class^="col"] {
+    flex: none;
     width: 12.5%;
   }
-  .sm\:print\:cols-1 > [class*="col"] {
-    width: 8.333333333%;
-  }
-  .cols > [class*="sm:col-12"] {
-    width: 100%;
-  }
-  .cols > [class*="sm:col-11"] {
-    width: 91.6666667%;
-  }
-  .cols > [class*="sm:col-10"] {
-    width: 83.33333333%;
-  }
-  .cols > [class*="sm:col-9"] {
-    width: 75%;
-  }
-  .cols > [class*="sm:col-8"] {
-    width: 66.66666667%;
-  }
-  .cols > [class*="sm:col-7"] {
-    width: 58.33333333%;
-  }
-  .cols > [class*="sm:col-6"] {
-    width: 50%;
-  }
-  .cols > [class*="sm:col-5"] {
-    width: 41.66666667%;
-  }
-  .cols > [class*="sm:col-4"] {
-    width: 33.33333333%;
-  }
-  .cols > [class*="sm:col-3"] {
-    width: 25%;
-  }
-  .cols > [class*="sm:col-2-5"] {
-    width: 20%;
-  }
-  .cols > [class*="sm:col-2"] {
+  .sm\:cols-2 > [class^="col"] {
+    flex: none;
     width: 16.66666667%;
   }
-  .cols > [class*="sm:col-1-5"] {
-    width: 12.5%;
-  }
-  .cols > [class*="sm:col-1"] {
-    width: 8.333333333%;
-  }
-  .cols > [class*="sm:print:col-12"] {
-    width: 100%;
-  }
-  .cols > [class*="sm:print:col-11"] {
-    width: 91.6666667%;
-  }
-  .cols > [class*="sm:print:col-10"] {
-    width: 83.33333333%;
-  }
-  .cols > [class*="sm:print:col-9"] {
-    width: 75%;
-  }
-  .cols > [class*="sm:print:col-8"] {
-    width: 66.66666667%;
-  }
-  .cols > [class*="sm:print:col-7"] {
-    width: 58.33333333%;
-  }
-  .cols > [class*="sm:print:col-6"] {
-    width: 50%;
-  }
-  .cols > [class*="sm:print:col-5"] {
-    width: 41.66666667%;
-  }
-  .cols > [class*="sm:print:col-4"] {
-    width: 33.33333333%;
-  }
-  .cols > [class*="sm:print:col-3"] {
-    width: 25%;
-  }
-  .cols > [class*="sm:print:col-2-5"] {
+  .sm\:cols-2-5 > [class^="col"] {
+    flex: none;
     width: 20%;
   }
-  .cols > [class*="sm:print:col-2"] {
-    width: 16.66666667%;
+  .sm\:cols-3 > [class^="col"] {
+    flex: none;
+    width: 25%;
   }
-  .cols > [class*="sm:print:col-1-5"] {
+  .sm\:cols-4 > [class^="col"] {
+    flex: none;
+    width: 33.33333333%;
+  }
+  .sm\:cols-5 > [class^="col"] {
+    flex: none;
+    width: 41.66666667%;
+  }
+  .sm\:cols-6 > [class^="col"] {
+    flex: none;
+    width: 50%;
+  }
+  .sm\:cols-7 > [class^="col"] {
+    flex: none;
+    width: 58.33333333%;
+  }
+  .sm\:cols-8 > [class^="col"] {
+    flex: none;
+    width: 66.66666667%;
+  }
+  .sm\:cols-9 > [class^="col"] {
+    flex: none;
+    width: 75%;
+  }
+  .sm\:cols-10 > [class^="col"] {
+    flex: none;
+    width: 83.33333333%;
+  }
+  .sm\:cols-11 > [class^="col"] {
+    flex: none;
+    width: 91.6666667%;
+  }
+  .sm\:cols-12 > [class^="col"] {
+    flex: none;
+    width: 100%;
+  }
+  [class^="cols"] > .sm\:col, .sm\:col, .sm\:width {
+    flex: 1;
+  }
+  [class^="cols"] > .sm\:col-initial, .sm\:col-initial, .sm\:width-initial {
+    flex: 0;
+  }
+  [class^="cols"] > .sm\:col-none, .sm\:col-none, .sm\:width-none {
+    flex: none;
+  }
+  [class^="cols"] > .sm\:col-1, .sm\:col-1, .sm\:width-1 {
+    flex: none;
+    width: 8.333333333%;
+  }
+  [class^="cols"] > .sm\:col-1-5, .sm\:col-1-5, .sm\:width-1-5 {
+    flex: none;
     width: 12.5%;
   }
-  .cols > [class*="sm:print:col-1"] {
-    width: 8.333333333%;
+  [class^="cols"] > .sm\:col-2, .sm\:col-2, .sm\:width-2 {
+    flex: none;
+    width: 16.66666667%;
+  }
+  [class^="cols"] > .sm\:col-2-5, .sm\:col-2-5, .sm\:width-2-5 {
+    flex: none;
+    width: 20%;
+  }
+  [class^="cols"] > .sm\:col-3, .sm\:col-3, .sm\:width-3 {
+    flex: none;
+    width: 25%;
+  }
+  [class^="cols"] > .sm\:col-4, .sm\:col-4, .sm\:width-4 {
+    flex: none;
+    width: 33.33333333%;
+  }
+  [class^="cols"] > .sm\:col-5, .sm\:col-5, .sm\:width-5 {
+    flex: none;
+    width: 41.66666667%;
+  }
+  [class^="cols"] > .sm\:col-6, .sm\:col-6, .sm\:width-6 {
+    flex: none;
+    width: 50%;
+  }
+  [class^="cols"] > .sm\:col-7, .sm\:col-7, .sm\:width-7 {
+    flex: none;
+    width: 58.33333333%;
+  }
+  [class^="cols"] > .sm\:col-8, .sm\:col-8, .sm\:width-8 {
+    flex: none;
+    width: 66.66666667%;
+  }
+  [class^="cols"] > .sm\:col-9, .sm\:col-9, .sm\:width-9 {
+    flex: none;
+    width: 75%;
+  }
+  [class^="cols"] > .sm\:col-10, .sm\:col-10, .sm\:width-10 {
+    flex: none;
+    width: 83.33333333%;
+  }
+  [class^="cols"] > .sm\:col-11, .sm\:col-11, .sm\:width-11 {
+    flex: none;
+    width: 91.6666667%;
+  }
+  [class^="cols"] > .sm\:col-12, .sm\:col-12, .sm\:width-12 {
+    flex: none;
+    width: 100%;
   }
 }
 
@@ -2640,175 +2561,135 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .cols-responsive .col-1-5,
   .cols-responsive .col-2,
   .cols-responsive .col-2-5 {
+    flex: none;
     width: 100%;
   }
-  .xs\:cols-12 > [class*="col"] {
-    width: 100%;
+  .xs\:cols-initial > [class^="col"] {
+    flex: 0;
   }
-  .xs\:cols-11 > [class*="col"] {
-    width: 91.6666667%;
+  .xs\:cols-none > [class^="col"] {
+    flex: none;
   }
-  .xs\:cols-10 > [class*="col"] {
-    width: 83.33333333%;
-  }
-  .xs\:cols-9 > [class*="col"] {
-    width: 75%;
-  }
-  .xs\:cols-8 > [class*="col"] {
-    width: 66.66666667%;
-  }
-  .xs\:cols-7 > [class*="col"] {
-    width: 58.33333333%;
-  }
-  .xs\:cols-6 > [class*="col"] {
-    width: 50%;
-  }
-  .xs\:cols-5 > [class*="col"] {
-    width: 41.66666667%;
-  }
-  .xs\:cols-4 > [class*="col"] {
-    width: 33.33333333%;
-  }
-  .xs\:cols-3 > [class*="col"] {
-    width: 25%;
-  }
-  .xs\:cols-2-5 > [class*="col"] {
-    width: 20%;
-  }
-  .xs\:cols-2 > [class*="col"] {
-    width: 16.66666667%;
-  }
-  .xs\:cols-1-5 > [class*="col"] {
-    width: 12.5%;
-  }
-  .xs\:cols-1 > [class*="col"] {
+  .xs\:cols-1 > [class^="col"] {
+    flex: none;
     width: 8.333333333%;
   }
-  .xs\:print\:cols-12 > [class*="col"] {
-    width: 100%;
-  }
-  .xs\:print\:cols-11 > [class*="col"] {
-    width: 91.6666667%;
-  }
-  .xs\:print\:cols-10 > [class*="col"] {
-    width: 83.33333333%;
-  }
-  .xs\:print\:cols-9 > [class*="col"] {
-    width: 75%;
-  }
-  .xs\:print\:cols-8 > [class*="col"] {
-    width: 66.66666667%;
-  }
-  .xs\:print\:cols-7 > [class*="col"] {
-    width: 58.33333333%;
-  }
-  .xs\:print\:cols-6 > [class*="col"] {
-    width: 50%;
-  }
-  .xs\:print\:cols-5 > [class*="col"] {
-    width: 41.66666667%;
-  }
-  .xs\:print\:cols-4 > [class*="col"] {
-    width: 33.33333333%;
-  }
-  .xs\:print\:cols-3 > [class*="col"] {
-    width: 25%;
-  }
-  .xs\:print\:cols-2-5 > [class*="col"] {
-    width: 20%;
-  }
-  .xs\:print\:cols-2 > [class*="col"] {
-    width: 16.66666667%;
-  }
-  .xs\:print\:cols-1-5 > [class*="col"] {
+  .xs\:cols-1-5 > [class^="col"] {
+    flex: none;
     width: 12.5%;
   }
-  .xs\:print\:cols-1 > [class*="col"] {
-    width: 8.333333333%;
-  }
-  .cols > [class*="xs:col-12"] {
-    width: 100%;
-  }
-  .cols > [class*="xs:col-11"] {
-    width: 91.6666667%;
-  }
-  .cols > [class*="xs:col-10"] {
-    width: 83.33333333%;
-  }
-  .cols > [class*="xs:col-9"] {
-    width: 75%;
-  }
-  .cols > [class*="xs:col-8"] {
-    width: 66.66666667%;
-  }
-  .cols > [class*="xs:col-7"] {
-    width: 58.33333333%;
-  }
-  .cols > [class*="xs:col-6"] {
-    width: 50%;
-  }
-  .cols > [class*="xs:col-5"] {
-    width: 41.66666667%;
-  }
-  .cols > [class*="xs:col-4"] {
-    width: 33.33333333%;
-  }
-  .cols > [class*="xs:col-3"] {
-    width: 25%;
-  }
-  .cols > [class*="xs:col-2-5"] {
-    width: 20%;
-  }
-  .cols > [class*="xs:col-2"] {
+  .xs\:cols-2 > [class^="col"] {
+    flex: none;
     width: 16.66666667%;
   }
-  .cols > [class*="xs:col-1-5"] {
-    width: 12.5%;
-  }
-  .cols > [class*="xs:col-1"] {
-    width: 8.333333333%;
-  }
-  .cols > [class*="xs:print:col-12"] {
-    width: 100%;
-  }
-  .cols > [class*="xs:print:col-11"] {
-    width: 91.6666667%;
-  }
-  .cols > [class*="xs:print:col-10"] {
-    width: 83.33333333%;
-  }
-  .cols > [class*="xs:print:col-9"] {
-    width: 75%;
-  }
-  .cols > [class*="xs:print:col-8"] {
-    width: 66.66666667%;
-  }
-  .cols > [class*="xs:print:col-7"] {
-    width: 58.33333333%;
-  }
-  .cols > [class*="xs:print:col-6"] {
-    width: 50%;
-  }
-  .cols > [class*="xs:print:col-5"] {
-    width: 41.66666667%;
-  }
-  .cols > [class*="xs:print:col-4"] {
-    width: 33.33333333%;
-  }
-  .cols > [class*="xs:print:col-3"] {
-    width: 25%;
-  }
-  .cols > [class*="xs:print:col-2-5"] {
+  .xs\:cols-2-5 > [class^="col"] {
+    flex: none;
     width: 20%;
   }
-  .cols > [class*="xs:print:col-2"] {
-    width: 16.66666667%;
+  .xs\:cols-3 > [class^="col"] {
+    flex: none;
+    width: 25%;
   }
-  .cols > [class*="xs:print:col-1-5"] {
+  .xs\:cols-4 > [class^="col"] {
+    flex: none;
+    width: 33.33333333%;
+  }
+  .xs\:cols-5 > [class^="col"] {
+    flex: none;
+    width: 41.66666667%;
+  }
+  .xs\:cols-6 > [class^="col"] {
+    flex: none;
+    width: 50%;
+  }
+  .xs\:cols-7 > [class^="col"] {
+    flex: none;
+    width: 58.33333333%;
+  }
+  .xs\:cols-8 > [class^="col"] {
+    flex: none;
+    width: 66.66666667%;
+  }
+  .xs\:cols-9 > [class^="col"] {
+    flex: none;
+    width: 75%;
+  }
+  .xs\:cols-10 > [class^="col"] {
+    flex: none;
+    width: 83.33333333%;
+  }
+  .xs\:cols-11 > [class^="col"] {
+    flex: none;
+    width: 91.6666667%;
+  }
+  .xs\:cols-12 > [class^="col"] {
+    flex: none;
+    width: 100%;
+  }
+  [class^="cols"] > .xs\:col, .xs\:col, .xs\:width {
+    flex: 1;
+  }
+  [class^="cols"] > .xs\:col-initial, .xs\:col-initial, .xs\:width-initial {
+    flex: 0;
+  }
+  [class^="cols"] > .xs\:col-none, .xs\:col-none, .xs\:width-none {
+    flex: none;
+  }
+  [class^="cols"] > .xs\:col-1, .xs\:col-1, .xs\:width-1 {
+    flex: none;
+    width: 8.333333333%;
+  }
+  [class^="cols"] > .xs\:col-1-5, .xs\:col-1-5, .xs\:width-1-5 {
+    flex: none;
     width: 12.5%;
   }
-  .cols > [class*="xs:print:col-1"] {
-    width: 8.333333333%;
+  [class^="cols"] > .xs\:col-2, .xs\:col-2, .xs\:width-2 {
+    flex: none;
+    width: 16.66666667%;
+  }
+  [class^="cols"] > .xs\:col-2-5, .xs\:col-2-5, .xs\:width-2-5 {
+    flex: none;
+    width: 20%;
+  }
+  [class^="cols"] > .xs\:col-3, .xs\:col-3, .xs\:width-3 {
+    flex: none;
+    width: 25%;
+  }
+  [class^="cols"] > .xs\:col-4, .xs\:col-4, .xs\:width-4 {
+    flex: none;
+    width: 33.33333333%;
+  }
+  [class^="cols"] > .xs\:col-5, .xs\:col-5, .xs\:width-5 {
+    flex: none;
+    width: 41.66666667%;
+  }
+  [class^="cols"] > .xs\:col-6, .xs\:col-6, .xs\:width-6 {
+    flex: none;
+    width: 50%;
+  }
+  [class^="cols"] > .xs\:col-7, .xs\:col-7, .xs\:width-7 {
+    flex: none;
+    width: 58.33333333%;
+  }
+  [class^="cols"] > .xs\:col-8, .xs\:col-8, .xs\:width-8 {
+    flex: none;
+    width: 66.66666667%;
+  }
+  [class^="cols"] > .xs\:col-9, .xs\:col-9, .xs\:width-9 {
+    flex: none;
+    width: 75%;
+  }
+  [class^="cols"] > .xs\:col-10, .xs\:col-10, .xs\:width-10 {
+    flex: none;
+    width: 83.33333333%;
+  }
+  [class^="cols"] > .xs\:col-11, .xs\:col-11, .xs\:width-11 {
+    flex: none;
+    width: 91.6666667%;
+  }
+  [class^="cols"] > .xs\:col-12, .xs\:col-12, .xs\:width-12 {
+    flex: none;
+    width: 100%;
   }
 }
 
@@ -4279,7 +4160,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .form ::-webkit-input-placeholder {
-  color: rgba(18, 18, 18, 0.5);
+  color: rgba(18, 18, 18, 0.4);
 }
 
 .form input:-webkit-autofill {
@@ -4306,7 +4187,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .input-btn .btn {
   width: auto !important;
   min-width: 0;
-  font-size: 0.8em;
+  font-size: 0.9rem;
   line-height: 1.5rem;
   border-radius: 4px;
   padding: 13px 19px;
@@ -4341,8 +4222,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form label,
 .form .label,
 .form .label-right {
-  display: inline-block;
-  vertical-align: top;
+  display: block;
   font-size: 0.85rem;
   line-height: 1.4em;
   margin-bottom: 0.45em;
@@ -4491,6 +4371,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
       -ms-user-select: none;
           user-select: none;
   margin-bottom: 0;
+  vertical-align: sub;
 }
 
 .form .radio-grp input + label:before,
@@ -4559,6 +4440,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  vertical-align: sub;
 }
 
 .form .toggle-grp input + label:before,
@@ -5225,10 +5107,20 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   z-index: 20;
   transition: all 0s 0.3s linear;
   text-align: center;
+  /* Active */
+  /* Styles */
 }
 
-.modal .overlay {
-  background-color: rgba(255, 255, 255, 0.93);
+.modal .modal-wrapper {
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.modal .modal-wrapper .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.08);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -5238,33 +5130,23 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   transition: all 0.3s ease;
 }
 
-.modal .table {
-  width: 100%;
-}
-
-.modal .table .table-column {
-  padding: 0 1rem;
-}
-
-.modal .modal-body-wrapper {
+.modal .modal-wrapper .modal-box {
   position: relative;
-  max-width: 923px;
-  margin: 0 auto 100px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 2em;
   border-radius: 6px;
   opacity: 0.001;
+  background-color: #fff;
+  box-shadow: 0 0 18px 0px #00000012;
   transform: scale(0.96);
   transition: all 0.2s ease;
 }
 
-.modal .modal-header,
-.modal .modal-body {
-  background-color: rgba(255, 255, 255, 0);
-}
-
 .modal .modal-header {
-  text-align: center;
   position: relative;
-  margin-bottom: 0;
+  background-color: rgba(255, 255, 255, 0);
+  margin: 0;
 }
 
 .modal .modal-header .x1 {
@@ -5273,38 +5155,55 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .modal .modal-body {
+  background-color: rgba(255, 255, 255, 0);
   margin: 0;
-  min-height: 0;
 }
 
-@media (max-width: 550px) {
-  .modal .modal-body-wrapper {
-    margin-bottom: 1rem;
-  }
-}
-
-/* Modal active */
-.modal.active {
+.modal.is-active {
   left: 0;
   transition: all 0s 0s linear;
 }
 
-.modal.active .overlay {
+.modal.is-active .modal-overlay {
   opacity: 0.999;
   transition: all 0.2s ease;
 }
 
-.modal.active .modal-body-wrapper {
+.modal.is-active .modal-box {
   opacity: 0.999;
   transform: translateY(0);
   transition: all 0.3s ease;
 }
 
-/* Modal types */
-/* ... */
+.modal.modal-white .modal-overlay {
+  background-color: rgba(255, 255, 255, 0.86);
+}
+
+.modal.modal-white .modal-box {
+  background-color: #fff;
+  border: 2px solid #111;
+  box-shadow: 0 0 18px 0px #00000012;
+}
+
 /* ---- Borders ---------------------- */
 .b-1 {
   border: 1px solid #f5f5f5 !important;
+}
+
+.b-2 {
+  border: 2px solid #f5f5f5 !important;
+}
+
+.b-3 {
+  border: 3px solid #f5f5f5 !important;
+}
+
+.b-4 {
+  border: 4px solid #f5f5f5 !important;
+}
+
+.b-5 {
+  border: 5px solid #f5f5f5 !important;
 }
 
 .bl-1 {
@@ -5333,10 +5232,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom: 1px solid #f5f5f5 !important;
 }
 
-.b-2 {
-  border: 2px solid #f5f5f5 !important;
-}
-
 .bl-2 {
   border-left: 2px solid #f5f5f5 !important;
 }
@@ -5361,10 +5256,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .by-2 {
   border-top: 2px solid #f5f5f5 !important;
   border-bottom: 2px solid #f5f5f5 !important;
-}
-
-.b-3 {
-  border: 3px solid #f5f5f5 !important;
 }
 
 .bl-3 {
@@ -5393,10 +5284,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom: 3px solid #f5f5f5 !important;
 }
 
-.b-4 {
-  border: 4px solid #f5f5f5 !important;
-}
-
 .bl-4 {
   border-left: 4px solid #f5f5f5 !important;
 }
@@ -5421,10 +5308,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .by-4 {
   border-top: 4px solid #f5f5f5 !important;
   border-bottom: 4px solid #f5f5f5 !important;
-}
-
-.b-5 {
-  border: 5px solid #f5f5f5 !important;
 }
 
 .bl-5 {
@@ -5456,6 +5339,90 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 /* ---- Border radius -------------- */
 .rounded-0 {
   border-radius: 0px !important;
+}
+
+.rounded-1 {
+  border-radius: 2px !important;
+}
+
+.rounded-2 {
+  border-radius: 4px !important;
+}
+
+.rounded-3 {
+  border-radius: 6px !important;
+}
+
+.rounded-4 {
+  border-radius: 8px !important;
+}
+
+.rounded-5 {
+  border-radius: 10px !important;
+}
+
+.rounded-6 {
+  border-radius: 12px !important;
+}
+
+.rounded-7 {
+  border-radius: 14px !important;
+}
+
+.rounded-8 {
+  border-radius: 16px !important;
+}
+
+.rounded-9 {
+  border-radius: 18px !important;
+}
+
+.rounded-10 {
+  border-radius: 20px !important;
+}
+
+.rounded-11 {
+  border-radius: 22px !important;
+}
+
+.rounded-12 {
+  border-radius: 24px !important;
+}
+
+.rounded-13 {
+  border-radius: 26px !important;
+}
+
+.rounded-14 {
+  border-radius: 28px !important;
+}
+
+.rounded-15 {
+  border-radius: 30px !important;
+}
+
+.rounded-16 {
+  border-radius: 32px !important;
+}
+
+.rounded-17 {
+  border-radius: 34px !important;
+}
+
+.rounded-18 {
+  border-radius: 36px !important;
+}
+
+.rounded-19 {
+  border-radius: 38px !important;
+}
+
+.rounded-20 {
+  border-radius: 40px !important;
+}
+
+.rounded-full {
+  border-radius: 999px !important;
 }
 
 .rounded-l-0 {
@@ -5498,10 +5465,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 0px !important;
 }
 
-.rounded-1 {
-  border-radius: 2px !important;
-}
-
 .rounded-l-1 {
   border-top-left-radius: 2px !important;
   border-bottom-left-radius: 2px !important;
@@ -5540,10 +5503,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-1 {
   border-bottom-right-radius: 2px !important;
-}
-
-.rounded-2 {
-  border-radius: 4px !important;
 }
 
 .rounded-l-2 {
@@ -5586,10 +5545,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 4px !important;
 }
 
-.rounded-3 {
-  border-radius: 6px !important;
-}
-
 .rounded-l-3 {
   border-top-left-radius: 6px !important;
   border-bottom-left-radius: 6px !important;
@@ -5628,10 +5583,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-3 {
   border-bottom-right-radius: 6px !important;
-}
-
-.rounded-4 {
-  border-radius: 8px !important;
 }
 
 .rounded-l-4 {
@@ -5674,10 +5625,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 8px !important;
 }
 
-.rounded-5 {
-  border-radius: 10px !important;
-}
-
 .rounded-l-5 {
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
@@ -5716,10 +5663,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-5 {
   border-bottom-right-radius: 10px !important;
-}
-
-.rounded-6 {
-  border-radius: 12px !important;
 }
 
 .rounded-l-6 {
@@ -5762,10 +5705,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 12px !important;
 }
 
-.rounded-7 {
-  border-radius: 14px !important;
-}
-
 .rounded-l-7 {
   border-top-left-radius: 14px !important;
   border-bottom-left-radius: 14px !important;
@@ -5804,10 +5743,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-7 {
   border-bottom-right-radius: 14px !important;
-}
-
-.rounded-8 {
-  border-radius: 16px !important;
 }
 
 .rounded-l-8 {
@@ -5850,10 +5785,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 16px !important;
 }
 
-.rounded-9 {
-  border-radius: 18px !important;
-}
-
 .rounded-l-9 {
   border-top-left-radius: 18px !important;
   border-bottom-left-radius: 18px !important;
@@ -5892,10 +5823,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-9 {
   border-bottom-right-radius: 18px !important;
-}
-
-.rounded-10 {
-  border-radius: 20px !important;
 }
 
 .rounded-l-10 {
@@ -5938,10 +5865,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 20px !important;
 }
 
-.rounded-11 {
-  border-radius: 22px !important;
-}
-
 .rounded-l-11 {
   border-top-left-radius: 22px !important;
   border-bottom-left-radius: 22px !important;
@@ -5980,10 +5903,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-11 {
   border-bottom-right-radius: 22px !important;
-}
-
-.rounded-12 {
-  border-radius: 24px !important;
 }
 
 .rounded-l-12 {
@@ -6026,10 +5945,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 24px !important;
 }
 
-.rounded-13 {
-  border-radius: 26px !important;
-}
-
 .rounded-l-13 {
   border-top-left-radius: 26px !important;
   border-bottom-left-radius: 26px !important;
@@ -6068,10 +5983,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-13 {
   border-bottom-right-radius: 26px !important;
-}
-
-.rounded-14 {
-  border-radius: 28px !important;
 }
 
 .rounded-l-14 {
@@ -6114,10 +6025,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 28px !important;
 }
 
-.rounded-15 {
-  border-radius: 30px !important;
-}
-
 .rounded-l-15 {
   border-top-left-radius: 30px !important;
   border-bottom-left-radius: 30px !important;
@@ -6156,10 +6063,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-15 {
   border-bottom-right-radius: 30px !important;
-}
-
-.rounded-16 {
-  border-radius: 32px !important;
 }
 
 .rounded-l-16 {
@@ -6202,10 +6105,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 32px !important;
 }
 
-.rounded-17 {
-  border-radius: 34px !important;
-}
-
 .rounded-l-17 {
   border-top-left-radius: 34px !important;
   border-bottom-left-radius: 34px !important;
@@ -6244,10 +6143,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-17 {
   border-bottom-right-radius: 34px !important;
-}
-
-.rounded-18 {
-  border-radius: 36px !important;
 }
 
 .rounded-l-18 {
@@ -6290,10 +6185,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 36px !important;
 }
 
-.rounded-19 {
-  border-radius: 38px !important;
-}
-
 .rounded-l-19 {
   border-top-left-radius: 38px !important;
   border-bottom-left-radius: 38px !important;
@@ -6334,10 +6225,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   border-bottom-right-radius: 38px !important;
 }
 
-.rounded-20 {
-  border-radius: 40px !important;
-}
-
 .rounded-l-20 {
   border-top-left-radius: 40px !important;
   border-bottom-left-radius: 40px !important;
@@ -6376,10 +6263,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .rounded-br-20 {
   border-bottom-right-radius: 40px !important;
-}
-
-.rounded-full {
-  border-radius: 999px !important;
 }
 
 .rounded-l-full {
@@ -7526,6 +7409,151 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   font-weight: 900 !important;
 }
 
+.weight-light,
+.text-weight-light {
+  font-weight: 300 !important;
+}
+
+.weight-normal,
+.text-weight-normal {
+  font-weight: 400 !important;
+}
+
+.weight-medium,
+.text-weight-medium {
+  font-weight: 500 !important;
+}
+
+.weight-semibold,
+.text-weight-semibold {
+  font-weight: 600 !important;
+}
+
+.weight-bold,
+.text-weight-bold {
+  font-weight: 700 !important;
+}
+
+/* ---- Text Size -------------------- */
+.size-small,
+.text-size-small {
+  font-size: 0.8rem !important;
+}
+
+.size-normal,
+.text-size-normal {
+  font-size: 1rem !important;
+}
+
+.size-medium,
+.text-size-medium {
+  font-size: 1.2rem !important;
+}
+
+.size-large,
+.text-size-large {
+  font-size: 1.4rem !important;
+}
+
+.size-1,
+.text-size-1 {
+  font-size: 0.8rem !important;
+}
+
+.size-2,
+.text-size-2 {
+  font-size: 0.9rem !important;
+}
+
+.size-3,
+.text-size-3 {
+  font-size: 1rem !important;
+}
+
+.size-4,
+.text-size-4 {
+  font-size: 1.2rem !important;
+}
+
+.size-5,
+.text-size-5 {
+  font-size: 1.4rem !important;
+}
+
+.size-6,
+.text-size-6 {
+  font-size: 1.6rem !important;
+}
+
+.size-7,
+.text-size-7 {
+  font-size: 1.8rem !important;
+}
+
+/* ---- Text family ------------------ */
+.family-primary,
+.text-family-primary {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+.family-secondary,
+.text-family-secondary {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+.family-sans-serif,
+.text-family-sans-serif {
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
+}
+
+.family-monospace,
+.text-family-monospace {
+  font-family: monospace !important;
+}
+
+.family-code,
+.text-family-code {
+  font-family: monospace !important;
+}
+
+/* ---- Text transformations --------- */
+.text-capitalized {
+  text-transform: capitalize !important;
+}
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-italic {
+  font-style: italic !important;
+}
+
+.text-underlined {
+  text-decoration: underline !important;
+}
+
+/* ---- Text Alignments --------- */
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
 /* ---- Text Overflow ---------------- */
 .overflow-ellipsis
 .text-overflow-ellipsis {
@@ -7627,24 +7655,20 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   min-width: 0 !important;
 }
 
+.width-100 {
+  width: 100%;
+}
+
+.width-auto {
+  width: auto;
+}
+
 .no-select {
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
   -moz-user-select: none !important;
   -ms-user-select: none !important;
   user-select: none !important;
-}
-
-.text-left {
-  text-align: left !important;
-}
-
-.text-right {
-  text-align: right !important;
-}
-
-.text-center {
-  text-align: center !important;
 }
 
 .cover {
@@ -7715,6 +7739,74 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding: 0rem !important;
 }
 
+.p-0-5 {
+  padding: 0.25rem !important;
+}
+
+.p-1 {
+  padding: 0.5rem !important;
+}
+
+.p-1-5 {
+  padding: 0.75rem !important;
+}
+
+.p-2 {
+  padding: 1rem !important;
+}
+
+.p-2-5 {
+  padding: 1.25rem !important;
+}
+
+.p-3 {
+  padding: 1.5rem !important;
+}
+
+.p-4 {
+  padding: 2rem !important;
+}
+
+.p-5 {
+  padding: 2.5rem !important;
+}
+
+.p-6 {
+  padding: 3rem !important;
+}
+
+.p-7 {
+  padding: 3.5rem !important;
+}
+
+.p-8 {
+  padding: 4rem !important;
+}
+
+.p-9 {
+  padding: 4.5rem !important;
+}
+
+.p-10 {
+  padding: 5rem !important;
+}
+
+.p-11 {
+  padding: 5.5rem !important;
+}
+
+.p-12 {
+  padding: 6rem !important;
+}
+
+.p-13 {
+  padding: 6.5rem !important;
+}
+
+.p-14 {
+  padding: 7rem !important;
+}
+
 .pt-0,
 .py-0 {
   padding-top: 0rem !important;
@@ -7733,10 +7825,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-0,
 .px-0 {
   padding-right: 0rem !important;
-}
-
-.p-0-5 {
-  padding: 0.25rem !important;
 }
 
 .pt-0-5,
@@ -7759,10 +7847,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding-right: 0.25rem !important;
 }
 
-.p-1 {
-  padding: 0.5rem !important;
-}
-
 .pt-1,
 .py-1 {
   padding-top: 0.5rem !important;
@@ -7781,10 +7865,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-1,
 .px-1 {
   padding-right: 0.5rem !important;
-}
-
-.p-1-5 {
-  padding: 0.75rem !important;
 }
 
 .pt-1-5,
@@ -7807,10 +7887,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding-right: 0.75rem !important;
 }
 
-.p-2 {
-  padding: 1rem !important;
-}
-
 .pt-2,
 .py-2 {
   padding-top: 1rem !important;
@@ -7829,10 +7905,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-2,
 .px-2 {
   padding-right: 1rem !important;
-}
-
-.p-2-5 {
-  padding: 1.25rem !important;
 }
 
 .pt-2-5,
@@ -7855,10 +7927,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding-right: 1.25rem !important;
 }
 
-.p-3 {
-  padding: 1.5rem !important;
-}
-
 .pt-3,
 .py-3 {
   padding-top: 1.5rem !important;
@@ -7877,10 +7945,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-3,
 .px-3 {
   padding-right: 1.5rem !important;
-}
-
-.p-4 {
-  padding: 2rem !important;
 }
 
 .pt-4,
@@ -7903,10 +7967,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding-right: 2rem !important;
 }
 
-.p-5 {
-  padding: 2.5rem !important;
-}
-
 .pt-5,
 .py-5 {
   padding-top: 2.5rem !important;
@@ -7925,10 +7985,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-5,
 .px-5 {
   padding-right: 2.5rem !important;
-}
-
-.p-6 {
-  padding: 3rem !important;
 }
 
 .pt-6,
@@ -7951,10 +8007,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding-right: 3rem !important;
 }
 
-.p-7 {
-  padding: 3.5rem !important;
-}
-
 .pt-7,
 .py-7 {
   padding-top: 3.5rem !important;
@@ -7973,10 +8025,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-7,
 .px-7 {
   padding-right: 3.5rem !important;
-}
-
-.p-8 {
-  padding: 4rem !important;
 }
 
 .pt-8,
@@ -7999,10 +8047,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding-right: 4rem !important;
 }
 
-.p-9 {
-  padding: 4.5rem !important;
-}
-
 .pt-9,
 .py-9 {
   padding-top: 4.5rem !important;
@@ -8021,10 +8065,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-9,
 .px-9 {
   padding-right: 4.5rem !important;
-}
-
-.p-10 {
-  padding: 5rem !important;
 }
 
 .pt-10,
@@ -8047,10 +8087,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding-right: 5rem !important;
 }
 
-.p-11 {
-  padding: 5.5rem !important;
-}
-
 .pt-11,
 .py-11 {
   padding-top: 5.5rem !important;
@@ -8069,10 +8105,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-11,
 .px-11 {
   padding-right: 5.5rem !important;
-}
-
-.p-12 {
-  padding: 6rem !important;
 }
 
 .pt-12,
@@ -8095,10 +8127,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   padding-right: 6rem !important;
 }
 
-.p-13 {
-  padding: 6.5rem !important;
-}
-
 .pt-13,
 .py-13 {
   padding-top: 6.5rem !important;
@@ -8117,10 +8145,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .pr-13,
 .px-13 {
   padding-right: 6.5rem !important;
-}
-
-.p-14 {
-  padding: 7rem !important;
 }
 
 .pt-14,
@@ -8147,6 +8171,74 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin: 0rem !important;
 }
 
+.m-0-5 {
+  margin: 0.25rem !important;
+}
+
+.m-1 {
+  margin: 0.5rem !important;
+}
+
+.m-1-5 {
+  margin: 0.75rem !important;
+}
+
+.m-2 {
+  margin: 1rem !important;
+}
+
+.m-2-5 {
+  margin: 1.25rem !important;
+}
+
+.m-3 {
+  margin: 1.5rem !important;
+}
+
+.m-4 {
+  margin: 2rem !important;
+}
+
+.m-5 {
+  margin: 2.5rem !important;
+}
+
+.m-6 {
+  margin: 3rem !important;
+}
+
+.m-7 {
+  margin: 3.5rem !important;
+}
+
+.m-8 {
+  margin: 4rem !important;
+}
+
+.m-9 {
+  margin: 4.5rem !important;
+}
+
+.m-10 {
+  margin: 5rem !important;
+}
+
+.m-11 {
+  margin: 5.5rem !important;
+}
+
+.m-12 {
+  margin: 6rem !important;
+}
+
+.m-13 {
+  margin: 6.5rem !important;
+}
+
+.m-14 {
+  margin: 7rem !important;
+}
+
 .mt-0,
 .my-0 {
   margin-top: 0rem !important;
@@ -8165,10 +8257,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-0,
 .mx-0 {
   margin-right: 0rem !important;
-}
-
-.m-0-5 {
-  margin: 0.25rem !important;
 }
 
 .mt-0-5,
@@ -8191,10 +8279,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-right: 0.25rem !important;
 }
 
-.m-1 {
-  margin: 0.5rem !important;
-}
-
 .mt-1,
 .my-1 {
   margin-top: 0.5rem !important;
@@ -8213,10 +8297,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-1,
 .mx-1 {
   margin-right: 0.5rem !important;
-}
-
-.m-1-5 {
-  margin: 0.75rem !important;
 }
 
 .mt-1-5,
@@ -8239,10 +8319,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-right: 0.75rem !important;
 }
 
-.m-2 {
-  margin: 1rem !important;
-}
-
 .mt-2,
 .my-2 {
   margin-top: 1rem !important;
@@ -8261,10 +8337,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-2,
 .mx-2 {
   margin-right: 1rem !important;
-}
-
-.m-2-5 {
-  margin: 1.25rem !important;
 }
 
 .mt-2-5,
@@ -8287,10 +8359,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-right: 1.25rem !important;
 }
 
-.m-3 {
-  margin: 1.5rem !important;
-}
-
 .mt-3,
 .my-3 {
   margin-top: 1.5rem !important;
@@ -8309,10 +8377,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-3,
 .mx-3 {
   margin-right: 1.5rem !important;
-}
-
-.m-4 {
-  margin: 2rem !important;
 }
 
 .mt-4,
@@ -8335,10 +8399,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-right: 2rem !important;
 }
 
-.m-5 {
-  margin: 2.5rem !important;
-}
-
 .mt-5,
 .my-5 {
   margin-top: 2.5rem !important;
@@ -8357,10 +8417,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-5,
 .mx-5 {
   margin-right: 2.5rem !important;
-}
-
-.m-6 {
-  margin: 3rem !important;
 }
 
 .mt-6,
@@ -8383,10 +8439,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-right: 3rem !important;
 }
 
-.m-7 {
-  margin: 3.5rem !important;
-}
-
 .mt-7,
 .my-7 {
   margin-top: 3.5rem !important;
@@ -8405,10 +8457,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-7,
 .mx-7 {
   margin-right: 3.5rem !important;
-}
-
-.m-8 {
-  margin: 4rem !important;
 }
 
 .mt-8,
@@ -8431,10 +8479,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-right: 4rem !important;
 }
 
-.m-9 {
-  margin: 4.5rem !important;
-}
-
 .mt-9,
 .my-9 {
   margin-top: 4.5rem !important;
@@ -8453,10 +8497,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-9,
 .mx-9 {
   margin-right: 4.5rem !important;
-}
-
-.m-10 {
-  margin: 5rem !important;
 }
 
 .mt-10,
@@ -8479,10 +8519,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-right: 5rem !important;
 }
 
-.m-11 {
-  margin: 5.5rem !important;
-}
-
 .mt-11,
 .my-11 {
   margin-top: 5.5rem !important;
@@ -8501,10 +8537,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-11,
 .mx-11 {
   margin-right: 5.5rem !important;
-}
-
-.m-12 {
-  margin: 6rem !important;
 }
 
 .mt-12,
@@ -8527,10 +8559,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-right: 6rem !important;
 }
 
-.m-13 {
-  margin: 6.5rem !important;
-}
-
 .mt-13,
 .my-13 {
   margin-top: 6.5rem !important;
@@ -8549,10 +8577,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .mr-13,
 .mx-13 {
   margin-right: 6.5rem !important;
-}
-
-.m-14 {
-  margin: 7rem !important;
 }
 
 .mt-14,
@@ -8579,6 +8603,57 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:p-0 {
     padding: 0rem !important;
   }
+  .lg\:p-0-5 {
+    padding: 0.25rem !important;
+  }
+  .lg\:p-1 {
+    padding: 0.5rem !important;
+  }
+  .lg\:p-1-5 {
+    padding: 0.75rem !important;
+  }
+  .lg\:p-2 {
+    padding: 1rem !important;
+  }
+  .lg\:p-2-5 {
+    padding: 1.25rem !important;
+  }
+  .lg\:p-3 {
+    padding: 1.5rem !important;
+  }
+  .lg\:p-4 {
+    padding: 2rem !important;
+  }
+  .lg\:p-5 {
+    padding: 2.5rem !important;
+  }
+  .lg\:p-6 {
+    padding: 3rem !important;
+  }
+  .lg\:p-7 {
+    padding: 3.5rem !important;
+  }
+  .lg\:p-8 {
+    padding: 4rem !important;
+  }
+  .lg\:p-9 {
+    padding: 4.5rem !important;
+  }
+  .lg\:p-10 {
+    padding: 5rem !important;
+  }
+  .lg\:p-11 {
+    padding: 5.5rem !important;
+  }
+  .lg\:p-12 {
+    padding: 6rem !important;
+  }
+  .lg\:p-13 {
+    padding: 6.5rem !important;
+  }
+  .lg\:p-14 {
+    padding: 7rem !important;
+  }
   .lg\:pt-0,
   .lg\:py-0 {
     padding-top: 0rem !important;
@@ -8594,9 +8669,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-0,
   .lg\:px-0 {
     padding-right: 0rem !important;
-  }
-  .lg\:p-0-5 {
-    padding: 0.25rem !important;
   }
   .lg\:pt-0-5,
   .lg\:py-0-5 {
@@ -8614,9 +8686,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:px-0-5 {
     padding-right: 0.25rem !important;
   }
-  .lg\:p-1 {
-    padding: 0.5rem !important;
-  }
   .lg\:pt-1,
   .lg\:py-1 {
     padding-top: 0.5rem !important;
@@ -8632,9 +8701,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-1,
   .lg\:px-1 {
     padding-right: 0.5rem !important;
-  }
-  .lg\:p-1-5 {
-    padding: 0.75rem !important;
   }
   .lg\:pt-1-5,
   .lg\:py-1-5 {
@@ -8652,9 +8718,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:px-1-5 {
     padding-right: 0.75rem !important;
   }
-  .lg\:p-2 {
-    padding: 1rem !important;
-  }
   .lg\:pt-2,
   .lg\:py-2 {
     padding-top: 1rem !important;
@@ -8670,9 +8733,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-2,
   .lg\:px-2 {
     padding-right: 1rem !important;
-  }
-  .lg\:p-2-5 {
-    padding: 1.25rem !important;
   }
   .lg\:pt-2-5,
   .lg\:py-2-5 {
@@ -8690,9 +8750,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:px-2-5 {
     padding-right: 1.25rem !important;
   }
-  .lg\:p-3 {
-    padding: 1.5rem !important;
-  }
   .lg\:pt-3,
   .lg\:py-3 {
     padding-top: 1.5rem !important;
@@ -8708,9 +8765,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-3,
   .lg\:px-3 {
     padding-right: 1.5rem !important;
-  }
-  .lg\:p-4 {
-    padding: 2rem !important;
   }
   .lg\:pt-4,
   .lg\:py-4 {
@@ -8728,9 +8782,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:px-4 {
     padding-right: 2rem !important;
   }
-  .lg\:p-5 {
-    padding: 2.5rem !important;
-  }
   .lg\:pt-5,
   .lg\:py-5 {
     padding-top: 2.5rem !important;
@@ -8746,9 +8797,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-5,
   .lg\:px-5 {
     padding-right: 2.5rem !important;
-  }
-  .lg\:p-6 {
-    padding: 3rem !important;
   }
   .lg\:pt-6,
   .lg\:py-6 {
@@ -8766,9 +8814,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:px-6 {
     padding-right: 3rem !important;
   }
-  .lg\:p-7 {
-    padding: 3.5rem !important;
-  }
   .lg\:pt-7,
   .lg\:py-7 {
     padding-top: 3.5rem !important;
@@ -8784,9 +8829,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-7,
   .lg\:px-7 {
     padding-right: 3.5rem !important;
-  }
-  .lg\:p-8 {
-    padding: 4rem !important;
   }
   .lg\:pt-8,
   .lg\:py-8 {
@@ -8804,9 +8846,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:px-8 {
     padding-right: 4rem !important;
   }
-  .lg\:p-9 {
-    padding: 4.5rem !important;
-  }
   .lg\:pt-9,
   .lg\:py-9 {
     padding-top: 4.5rem !important;
@@ -8822,9 +8861,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-9,
   .lg\:px-9 {
     padding-right: 4.5rem !important;
-  }
-  .lg\:p-10 {
-    padding: 5rem !important;
   }
   .lg\:pt-10,
   .lg\:py-10 {
@@ -8842,9 +8878,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:px-10 {
     padding-right: 5rem !important;
   }
-  .lg\:p-11 {
-    padding: 5.5rem !important;
-  }
   .lg\:pt-11,
   .lg\:py-11 {
     padding-top: 5.5rem !important;
@@ -8860,9 +8893,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-11,
   .lg\:px-11 {
     padding-right: 5.5rem !important;
-  }
-  .lg\:p-12 {
-    padding: 6rem !important;
   }
   .lg\:pt-12,
   .lg\:py-12 {
@@ -8880,9 +8910,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:px-12 {
     padding-right: 6rem !important;
   }
-  .lg\:p-13 {
-    padding: 6.5rem !important;
-  }
   .lg\:pt-13,
   .lg\:py-13 {
     padding-top: 6.5rem !important;
@@ -8898,9 +8925,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:pr-13,
   .lg\:px-13 {
     padding-right: 6.5rem !important;
-  }
-  .lg\:p-14 {
-    padding: 7rem !important;
   }
   .lg\:pt-14,
   .lg\:py-14 {
@@ -8921,6 +8945,57 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:m-0 {
     margin: 0rem !important;
   }
+  .lg\:m-0-5 {
+    margin: 0.25rem !important;
+  }
+  .lg\:m-1 {
+    margin: 0.5rem !important;
+  }
+  .lg\:m-1-5 {
+    margin: 0.75rem !important;
+  }
+  .lg\:m-2 {
+    margin: 1rem !important;
+  }
+  .lg\:m-2-5 {
+    margin: 1.25rem !important;
+  }
+  .lg\:m-3 {
+    margin: 1.5rem !important;
+  }
+  .lg\:m-4 {
+    margin: 2rem !important;
+  }
+  .lg\:m-5 {
+    margin: 2.5rem !important;
+  }
+  .lg\:m-6 {
+    margin: 3rem !important;
+  }
+  .lg\:m-7 {
+    margin: 3.5rem !important;
+  }
+  .lg\:m-8 {
+    margin: 4rem !important;
+  }
+  .lg\:m-9 {
+    margin: 4.5rem !important;
+  }
+  .lg\:m-10 {
+    margin: 5rem !important;
+  }
+  .lg\:m-11 {
+    margin: 5.5rem !important;
+  }
+  .lg\:m-12 {
+    margin: 6rem !important;
+  }
+  .lg\:m-13 {
+    margin: 6.5rem !important;
+  }
+  .lg\:m-14 {
+    margin: 7rem !important;
+  }
   .lg\:mt-0,
   .lg\:my-0 {
     margin-top: 0rem !important;
@@ -8936,9 +9011,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-0,
   .lg\:mx-0 {
     margin-right: 0rem !important;
-  }
-  .lg\:m-0-5 {
-    margin: 0.25rem !important;
   }
   .lg\:mt-0-5,
   .lg\:my-0-5 {
@@ -8956,9 +9028,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mx-0-5 {
     margin-right: 0.25rem !important;
   }
-  .lg\:m-1 {
-    margin: 0.5rem !important;
-  }
   .lg\:mt-1,
   .lg\:my-1 {
     margin-top: 0.5rem !important;
@@ -8974,9 +9043,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-1,
   .lg\:mx-1 {
     margin-right: 0.5rem !important;
-  }
-  .lg\:m-1-5 {
-    margin: 0.75rem !important;
   }
   .lg\:mt-1-5,
   .lg\:my-1-5 {
@@ -8994,9 +9060,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mx-1-5 {
     margin-right: 0.75rem !important;
   }
-  .lg\:m-2 {
-    margin: 1rem !important;
-  }
   .lg\:mt-2,
   .lg\:my-2 {
     margin-top: 1rem !important;
@@ -9012,9 +9075,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-2,
   .lg\:mx-2 {
     margin-right: 1rem !important;
-  }
-  .lg\:m-2-5 {
-    margin: 1.25rem !important;
   }
   .lg\:mt-2-5,
   .lg\:my-2-5 {
@@ -9032,9 +9092,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mx-2-5 {
     margin-right: 1.25rem !important;
   }
-  .lg\:m-3 {
-    margin: 1.5rem !important;
-  }
   .lg\:mt-3,
   .lg\:my-3 {
     margin-top: 1.5rem !important;
@@ -9050,9 +9107,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-3,
   .lg\:mx-3 {
     margin-right: 1.5rem !important;
-  }
-  .lg\:m-4 {
-    margin: 2rem !important;
   }
   .lg\:mt-4,
   .lg\:my-4 {
@@ -9070,9 +9124,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mx-4 {
     margin-right: 2rem !important;
   }
-  .lg\:m-5 {
-    margin: 2.5rem !important;
-  }
   .lg\:mt-5,
   .lg\:my-5 {
     margin-top: 2.5rem !important;
@@ -9088,9 +9139,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-5,
   .lg\:mx-5 {
     margin-right: 2.5rem !important;
-  }
-  .lg\:m-6 {
-    margin: 3rem !important;
   }
   .lg\:mt-6,
   .lg\:my-6 {
@@ -9108,9 +9156,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mx-6 {
     margin-right: 3rem !important;
   }
-  .lg\:m-7 {
-    margin: 3.5rem !important;
-  }
   .lg\:mt-7,
   .lg\:my-7 {
     margin-top: 3.5rem !important;
@@ -9126,9 +9171,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-7,
   .lg\:mx-7 {
     margin-right: 3.5rem !important;
-  }
-  .lg\:m-8 {
-    margin: 4rem !important;
   }
   .lg\:mt-8,
   .lg\:my-8 {
@@ -9146,9 +9188,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mx-8 {
     margin-right: 4rem !important;
   }
-  .lg\:m-9 {
-    margin: 4.5rem !important;
-  }
   .lg\:mt-9,
   .lg\:my-9 {
     margin-top: 4.5rem !important;
@@ -9164,9 +9203,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-9,
   .lg\:mx-9 {
     margin-right: 4.5rem !important;
-  }
-  .lg\:m-10 {
-    margin: 5rem !important;
   }
   .lg\:mt-10,
   .lg\:my-10 {
@@ -9184,9 +9220,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mx-10 {
     margin-right: 5rem !important;
   }
-  .lg\:m-11 {
-    margin: 5.5rem !important;
-  }
   .lg\:mt-11,
   .lg\:my-11 {
     margin-top: 5.5rem !important;
@@ -9202,9 +9235,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-11,
   .lg\:mx-11 {
     margin-right: 5.5rem !important;
-  }
-  .lg\:m-12 {
-    margin: 6rem !important;
   }
   .lg\:mt-12,
   .lg\:my-12 {
@@ -9222,9 +9252,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mx-12 {
     margin-right: 6rem !important;
   }
-  .lg\:m-13 {
-    margin: 6.5rem !important;
-  }
   .lg\:mt-13,
   .lg\:my-13 {
     margin-top: 6.5rem !important;
@@ -9240,9 +9267,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .lg\:mr-13,
   .lg\:mx-13 {
     margin-right: 6.5rem !important;
-  }
-  .lg\:m-14 {
-    margin: 7rem !important;
   }
   .lg\:mt-14,
   .lg\:my-14 {
@@ -9266,6 +9290,57 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:p-0 {
     padding: 0rem !important;
   }
+  .md\:p-0-5 {
+    padding: 0.25rem !important;
+  }
+  .md\:p-1 {
+    padding: 0.5rem !important;
+  }
+  .md\:p-1-5 {
+    padding: 0.75rem !important;
+  }
+  .md\:p-2 {
+    padding: 1rem !important;
+  }
+  .md\:p-2-5 {
+    padding: 1.25rem !important;
+  }
+  .md\:p-3 {
+    padding: 1.5rem !important;
+  }
+  .md\:p-4 {
+    padding: 2rem !important;
+  }
+  .md\:p-5 {
+    padding: 2.5rem !important;
+  }
+  .md\:p-6 {
+    padding: 3rem !important;
+  }
+  .md\:p-7 {
+    padding: 3.5rem !important;
+  }
+  .md\:p-8 {
+    padding: 4rem !important;
+  }
+  .md\:p-9 {
+    padding: 4.5rem !important;
+  }
+  .md\:p-10 {
+    padding: 5rem !important;
+  }
+  .md\:p-11 {
+    padding: 5.5rem !important;
+  }
+  .md\:p-12 {
+    padding: 6rem !important;
+  }
+  .md\:p-13 {
+    padding: 6.5rem !important;
+  }
+  .md\:p-14 {
+    padding: 7rem !important;
+  }
   .md\:pt-0,
   .md\:py-0 {
     padding-top: 0rem !important;
@@ -9281,9 +9356,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-0,
   .md\:px-0 {
     padding-right: 0rem !important;
-  }
-  .md\:p-0-5 {
-    padding: 0.25rem !important;
   }
   .md\:pt-0-5,
   .md\:py-0-5 {
@@ -9301,9 +9373,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:px-0-5 {
     padding-right: 0.25rem !important;
   }
-  .md\:p-1 {
-    padding: 0.5rem !important;
-  }
   .md\:pt-1,
   .md\:py-1 {
     padding-top: 0.5rem !important;
@@ -9319,9 +9388,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-1,
   .md\:px-1 {
     padding-right: 0.5rem !important;
-  }
-  .md\:p-1-5 {
-    padding: 0.75rem !important;
   }
   .md\:pt-1-5,
   .md\:py-1-5 {
@@ -9339,9 +9405,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:px-1-5 {
     padding-right: 0.75rem !important;
   }
-  .md\:p-2 {
-    padding: 1rem !important;
-  }
   .md\:pt-2,
   .md\:py-2 {
     padding-top: 1rem !important;
@@ -9357,9 +9420,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-2,
   .md\:px-2 {
     padding-right: 1rem !important;
-  }
-  .md\:p-2-5 {
-    padding: 1.25rem !important;
   }
   .md\:pt-2-5,
   .md\:py-2-5 {
@@ -9377,9 +9437,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:px-2-5 {
     padding-right: 1.25rem !important;
   }
-  .md\:p-3 {
-    padding: 1.5rem !important;
-  }
   .md\:pt-3,
   .md\:py-3 {
     padding-top: 1.5rem !important;
@@ -9395,9 +9452,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-3,
   .md\:px-3 {
     padding-right: 1.5rem !important;
-  }
-  .md\:p-4 {
-    padding: 2rem !important;
   }
   .md\:pt-4,
   .md\:py-4 {
@@ -9415,9 +9469,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:px-4 {
     padding-right: 2rem !important;
   }
-  .md\:p-5 {
-    padding: 2.5rem !important;
-  }
   .md\:pt-5,
   .md\:py-5 {
     padding-top: 2.5rem !important;
@@ -9433,9 +9484,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-5,
   .md\:px-5 {
     padding-right: 2.5rem !important;
-  }
-  .md\:p-6 {
-    padding: 3rem !important;
   }
   .md\:pt-6,
   .md\:py-6 {
@@ -9453,9 +9501,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:px-6 {
     padding-right: 3rem !important;
   }
-  .md\:p-7 {
-    padding: 3.5rem !important;
-  }
   .md\:pt-7,
   .md\:py-7 {
     padding-top: 3.5rem !important;
@@ -9471,9 +9516,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-7,
   .md\:px-7 {
     padding-right: 3.5rem !important;
-  }
-  .md\:p-8 {
-    padding: 4rem !important;
   }
   .md\:pt-8,
   .md\:py-8 {
@@ -9491,9 +9533,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:px-8 {
     padding-right: 4rem !important;
   }
-  .md\:p-9 {
-    padding: 4.5rem !important;
-  }
   .md\:pt-9,
   .md\:py-9 {
     padding-top: 4.5rem !important;
@@ -9509,9 +9548,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-9,
   .md\:px-9 {
     padding-right: 4.5rem !important;
-  }
-  .md\:p-10 {
-    padding: 5rem !important;
   }
   .md\:pt-10,
   .md\:py-10 {
@@ -9529,9 +9565,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:px-10 {
     padding-right: 5rem !important;
   }
-  .md\:p-11 {
-    padding: 5.5rem !important;
-  }
   .md\:pt-11,
   .md\:py-11 {
     padding-top: 5.5rem !important;
@@ -9547,9 +9580,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-11,
   .md\:px-11 {
     padding-right: 5.5rem !important;
-  }
-  .md\:p-12 {
-    padding: 6rem !important;
   }
   .md\:pt-12,
   .md\:py-12 {
@@ -9567,9 +9597,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:px-12 {
     padding-right: 6rem !important;
   }
-  .md\:p-13 {
-    padding: 6.5rem !important;
-  }
   .md\:pt-13,
   .md\:py-13 {
     padding-top: 6.5rem !important;
@@ -9585,9 +9612,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:pr-13,
   .md\:px-13 {
     padding-right: 6.5rem !important;
-  }
-  .md\:p-14 {
-    padding: 7rem !important;
   }
   .md\:pt-14,
   .md\:py-14 {
@@ -9608,6 +9632,57 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:m-0 {
     margin: 0rem !important;
   }
+  .md\:m-0-5 {
+    margin: 0.25rem !important;
+  }
+  .md\:m-1 {
+    margin: 0.5rem !important;
+  }
+  .md\:m-1-5 {
+    margin: 0.75rem !important;
+  }
+  .md\:m-2 {
+    margin: 1rem !important;
+  }
+  .md\:m-2-5 {
+    margin: 1.25rem !important;
+  }
+  .md\:m-3 {
+    margin: 1.5rem !important;
+  }
+  .md\:m-4 {
+    margin: 2rem !important;
+  }
+  .md\:m-5 {
+    margin: 2.5rem !important;
+  }
+  .md\:m-6 {
+    margin: 3rem !important;
+  }
+  .md\:m-7 {
+    margin: 3.5rem !important;
+  }
+  .md\:m-8 {
+    margin: 4rem !important;
+  }
+  .md\:m-9 {
+    margin: 4.5rem !important;
+  }
+  .md\:m-10 {
+    margin: 5rem !important;
+  }
+  .md\:m-11 {
+    margin: 5.5rem !important;
+  }
+  .md\:m-12 {
+    margin: 6rem !important;
+  }
+  .md\:m-13 {
+    margin: 6.5rem !important;
+  }
+  .md\:m-14 {
+    margin: 7rem !important;
+  }
   .md\:mt-0,
   .md\:my-0 {
     margin-top: 0rem !important;
@@ -9623,9 +9698,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-0,
   .md\:mx-0 {
     margin-right: 0rem !important;
-  }
-  .md\:m-0-5 {
-    margin: 0.25rem !important;
   }
   .md\:mt-0-5,
   .md\:my-0-5 {
@@ -9643,9 +9715,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mx-0-5 {
     margin-right: 0.25rem !important;
   }
-  .md\:m-1 {
-    margin: 0.5rem !important;
-  }
   .md\:mt-1,
   .md\:my-1 {
     margin-top: 0.5rem !important;
@@ -9661,9 +9730,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-1,
   .md\:mx-1 {
     margin-right: 0.5rem !important;
-  }
-  .md\:m-1-5 {
-    margin: 0.75rem !important;
   }
   .md\:mt-1-5,
   .md\:my-1-5 {
@@ -9681,9 +9747,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mx-1-5 {
     margin-right: 0.75rem !important;
   }
-  .md\:m-2 {
-    margin: 1rem !important;
-  }
   .md\:mt-2,
   .md\:my-2 {
     margin-top: 1rem !important;
@@ -9699,9 +9762,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-2,
   .md\:mx-2 {
     margin-right: 1rem !important;
-  }
-  .md\:m-2-5 {
-    margin: 1.25rem !important;
   }
   .md\:mt-2-5,
   .md\:my-2-5 {
@@ -9719,9 +9779,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mx-2-5 {
     margin-right: 1.25rem !important;
   }
-  .md\:m-3 {
-    margin: 1.5rem !important;
-  }
   .md\:mt-3,
   .md\:my-3 {
     margin-top: 1.5rem !important;
@@ -9737,9 +9794,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-3,
   .md\:mx-3 {
     margin-right: 1.5rem !important;
-  }
-  .md\:m-4 {
-    margin: 2rem !important;
   }
   .md\:mt-4,
   .md\:my-4 {
@@ -9757,9 +9811,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mx-4 {
     margin-right: 2rem !important;
   }
-  .md\:m-5 {
-    margin: 2.5rem !important;
-  }
   .md\:mt-5,
   .md\:my-5 {
     margin-top: 2.5rem !important;
@@ -9775,9 +9826,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-5,
   .md\:mx-5 {
     margin-right: 2.5rem !important;
-  }
-  .md\:m-6 {
-    margin: 3rem !important;
   }
   .md\:mt-6,
   .md\:my-6 {
@@ -9795,9 +9843,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mx-6 {
     margin-right: 3rem !important;
   }
-  .md\:m-7 {
-    margin: 3.5rem !important;
-  }
   .md\:mt-7,
   .md\:my-7 {
     margin-top: 3.5rem !important;
@@ -9813,9 +9858,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-7,
   .md\:mx-7 {
     margin-right: 3.5rem !important;
-  }
-  .md\:m-8 {
-    margin: 4rem !important;
   }
   .md\:mt-8,
   .md\:my-8 {
@@ -9833,9 +9875,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mx-8 {
     margin-right: 4rem !important;
   }
-  .md\:m-9 {
-    margin: 4.5rem !important;
-  }
   .md\:mt-9,
   .md\:my-9 {
     margin-top: 4.5rem !important;
@@ -9851,9 +9890,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-9,
   .md\:mx-9 {
     margin-right: 4.5rem !important;
-  }
-  .md\:m-10 {
-    margin: 5rem !important;
   }
   .md\:mt-10,
   .md\:my-10 {
@@ -9871,9 +9907,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mx-10 {
     margin-right: 5rem !important;
   }
-  .md\:m-11 {
-    margin: 5.5rem !important;
-  }
   .md\:mt-11,
   .md\:my-11 {
     margin-top: 5.5rem !important;
@@ -9889,9 +9922,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-11,
   .md\:mx-11 {
     margin-right: 5.5rem !important;
-  }
-  .md\:m-12 {
-    margin: 6rem !important;
   }
   .md\:mt-12,
   .md\:my-12 {
@@ -9909,9 +9939,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mx-12 {
     margin-right: 6rem !important;
   }
-  .md\:m-13 {
-    margin: 6.5rem !important;
-  }
   .md\:mt-13,
   .md\:my-13 {
     margin-top: 6.5rem !important;
@@ -9927,9 +9954,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .md\:mr-13,
   .md\:mx-13 {
     margin-right: 6.5rem !important;
-  }
-  .md\:m-14 {
-    margin: 7rem !important;
   }
   .md\:mt-14,
   .md\:my-14 {
@@ -9953,6 +9977,57 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:p-0 {
     padding: 0rem !important;
   }
+  .sm\:p-0-5 {
+    padding: 0.25rem !important;
+  }
+  .sm\:p-1 {
+    padding: 0.5rem !important;
+  }
+  .sm\:p-1-5 {
+    padding: 0.75rem !important;
+  }
+  .sm\:p-2 {
+    padding: 1rem !important;
+  }
+  .sm\:p-2-5 {
+    padding: 1.25rem !important;
+  }
+  .sm\:p-3 {
+    padding: 1.5rem !important;
+  }
+  .sm\:p-4 {
+    padding: 2rem !important;
+  }
+  .sm\:p-5 {
+    padding: 2.5rem !important;
+  }
+  .sm\:p-6 {
+    padding: 3rem !important;
+  }
+  .sm\:p-7 {
+    padding: 3.5rem !important;
+  }
+  .sm\:p-8 {
+    padding: 4rem !important;
+  }
+  .sm\:p-9 {
+    padding: 4.5rem !important;
+  }
+  .sm\:p-10 {
+    padding: 5rem !important;
+  }
+  .sm\:p-11 {
+    padding: 5.5rem !important;
+  }
+  .sm\:p-12 {
+    padding: 6rem !important;
+  }
+  .sm\:p-13 {
+    padding: 6.5rem !important;
+  }
+  .sm\:p-14 {
+    padding: 7rem !important;
+  }
   .sm\:pt-0,
   .sm\:py-0 {
     padding-top: 0rem !important;
@@ -9968,9 +10043,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-0,
   .sm\:px-0 {
     padding-right: 0rem !important;
-  }
-  .sm\:p-0-5 {
-    padding: 0.25rem !important;
   }
   .sm\:pt-0-5,
   .sm\:py-0-5 {
@@ -9988,9 +10060,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:px-0-5 {
     padding-right: 0.25rem !important;
   }
-  .sm\:p-1 {
-    padding: 0.5rem !important;
-  }
   .sm\:pt-1,
   .sm\:py-1 {
     padding-top: 0.5rem !important;
@@ -10006,9 +10075,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-1,
   .sm\:px-1 {
     padding-right: 0.5rem !important;
-  }
-  .sm\:p-1-5 {
-    padding: 0.75rem !important;
   }
   .sm\:pt-1-5,
   .sm\:py-1-5 {
@@ -10026,9 +10092,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:px-1-5 {
     padding-right: 0.75rem !important;
   }
-  .sm\:p-2 {
-    padding: 1rem !important;
-  }
   .sm\:pt-2,
   .sm\:py-2 {
     padding-top: 1rem !important;
@@ -10044,9 +10107,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-2,
   .sm\:px-2 {
     padding-right: 1rem !important;
-  }
-  .sm\:p-2-5 {
-    padding: 1.25rem !important;
   }
   .sm\:pt-2-5,
   .sm\:py-2-5 {
@@ -10064,9 +10124,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:px-2-5 {
     padding-right: 1.25rem !important;
   }
-  .sm\:p-3 {
-    padding: 1.5rem !important;
-  }
   .sm\:pt-3,
   .sm\:py-3 {
     padding-top: 1.5rem !important;
@@ -10082,9 +10139,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-3,
   .sm\:px-3 {
     padding-right: 1.5rem !important;
-  }
-  .sm\:p-4 {
-    padding: 2rem !important;
   }
   .sm\:pt-4,
   .sm\:py-4 {
@@ -10102,9 +10156,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:px-4 {
     padding-right: 2rem !important;
   }
-  .sm\:p-5 {
-    padding: 2.5rem !important;
-  }
   .sm\:pt-5,
   .sm\:py-5 {
     padding-top: 2.5rem !important;
@@ -10120,9 +10171,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-5,
   .sm\:px-5 {
     padding-right: 2.5rem !important;
-  }
-  .sm\:p-6 {
-    padding: 3rem !important;
   }
   .sm\:pt-6,
   .sm\:py-6 {
@@ -10140,9 +10188,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:px-6 {
     padding-right: 3rem !important;
   }
-  .sm\:p-7 {
-    padding: 3.5rem !important;
-  }
   .sm\:pt-7,
   .sm\:py-7 {
     padding-top: 3.5rem !important;
@@ -10158,9 +10203,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-7,
   .sm\:px-7 {
     padding-right: 3.5rem !important;
-  }
-  .sm\:p-8 {
-    padding: 4rem !important;
   }
   .sm\:pt-8,
   .sm\:py-8 {
@@ -10178,9 +10220,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:px-8 {
     padding-right: 4rem !important;
   }
-  .sm\:p-9 {
-    padding: 4.5rem !important;
-  }
   .sm\:pt-9,
   .sm\:py-9 {
     padding-top: 4.5rem !important;
@@ -10196,9 +10235,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-9,
   .sm\:px-9 {
     padding-right: 4.5rem !important;
-  }
-  .sm\:p-10 {
-    padding: 5rem !important;
   }
   .sm\:pt-10,
   .sm\:py-10 {
@@ -10216,9 +10252,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:px-10 {
     padding-right: 5rem !important;
   }
-  .sm\:p-11 {
-    padding: 5.5rem !important;
-  }
   .sm\:pt-11,
   .sm\:py-11 {
     padding-top: 5.5rem !important;
@@ -10234,9 +10267,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-11,
   .sm\:px-11 {
     padding-right: 5.5rem !important;
-  }
-  .sm\:p-12 {
-    padding: 6rem !important;
   }
   .sm\:pt-12,
   .sm\:py-12 {
@@ -10254,9 +10284,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:px-12 {
     padding-right: 6rem !important;
   }
-  .sm\:p-13 {
-    padding: 6.5rem !important;
-  }
   .sm\:pt-13,
   .sm\:py-13 {
     padding-top: 6.5rem !important;
@@ -10272,9 +10299,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:pr-13,
   .sm\:px-13 {
     padding-right: 6.5rem !important;
-  }
-  .sm\:p-14 {
-    padding: 7rem !important;
   }
   .sm\:pt-14,
   .sm\:py-14 {
@@ -10295,6 +10319,57 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:m-0 {
     margin: 0rem !important;
   }
+  .sm\:m-0-5 {
+    margin: 0.25rem !important;
+  }
+  .sm\:m-1 {
+    margin: 0.5rem !important;
+  }
+  .sm\:m-1-5 {
+    margin: 0.75rem !important;
+  }
+  .sm\:m-2 {
+    margin: 1rem !important;
+  }
+  .sm\:m-2-5 {
+    margin: 1.25rem !important;
+  }
+  .sm\:m-3 {
+    margin: 1.5rem !important;
+  }
+  .sm\:m-4 {
+    margin: 2rem !important;
+  }
+  .sm\:m-5 {
+    margin: 2.5rem !important;
+  }
+  .sm\:m-6 {
+    margin: 3rem !important;
+  }
+  .sm\:m-7 {
+    margin: 3.5rem !important;
+  }
+  .sm\:m-8 {
+    margin: 4rem !important;
+  }
+  .sm\:m-9 {
+    margin: 4.5rem !important;
+  }
+  .sm\:m-10 {
+    margin: 5rem !important;
+  }
+  .sm\:m-11 {
+    margin: 5.5rem !important;
+  }
+  .sm\:m-12 {
+    margin: 6rem !important;
+  }
+  .sm\:m-13 {
+    margin: 6.5rem !important;
+  }
+  .sm\:m-14 {
+    margin: 7rem !important;
+  }
   .sm\:mt-0,
   .sm\:my-0 {
     margin-top: 0rem !important;
@@ -10310,9 +10385,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-0,
   .sm\:mx-0 {
     margin-right: 0rem !important;
-  }
-  .sm\:m-0-5 {
-    margin: 0.25rem !important;
   }
   .sm\:mt-0-5,
   .sm\:my-0-5 {
@@ -10330,9 +10402,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mx-0-5 {
     margin-right: 0.25rem !important;
   }
-  .sm\:m-1 {
-    margin: 0.5rem !important;
-  }
   .sm\:mt-1,
   .sm\:my-1 {
     margin-top: 0.5rem !important;
@@ -10348,9 +10417,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-1,
   .sm\:mx-1 {
     margin-right: 0.5rem !important;
-  }
-  .sm\:m-1-5 {
-    margin: 0.75rem !important;
   }
   .sm\:mt-1-5,
   .sm\:my-1-5 {
@@ -10368,9 +10434,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mx-1-5 {
     margin-right: 0.75rem !important;
   }
-  .sm\:m-2 {
-    margin: 1rem !important;
-  }
   .sm\:mt-2,
   .sm\:my-2 {
     margin-top: 1rem !important;
@@ -10386,9 +10449,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-2,
   .sm\:mx-2 {
     margin-right: 1rem !important;
-  }
-  .sm\:m-2-5 {
-    margin: 1.25rem !important;
   }
   .sm\:mt-2-5,
   .sm\:my-2-5 {
@@ -10406,9 +10466,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mx-2-5 {
     margin-right: 1.25rem !important;
   }
-  .sm\:m-3 {
-    margin: 1.5rem !important;
-  }
   .sm\:mt-3,
   .sm\:my-3 {
     margin-top: 1.5rem !important;
@@ -10424,9 +10481,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-3,
   .sm\:mx-3 {
     margin-right: 1.5rem !important;
-  }
-  .sm\:m-4 {
-    margin: 2rem !important;
   }
   .sm\:mt-4,
   .sm\:my-4 {
@@ -10444,9 +10498,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mx-4 {
     margin-right: 2rem !important;
   }
-  .sm\:m-5 {
-    margin: 2.5rem !important;
-  }
   .sm\:mt-5,
   .sm\:my-5 {
     margin-top: 2.5rem !important;
@@ -10462,9 +10513,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-5,
   .sm\:mx-5 {
     margin-right: 2.5rem !important;
-  }
-  .sm\:m-6 {
-    margin: 3rem !important;
   }
   .sm\:mt-6,
   .sm\:my-6 {
@@ -10482,9 +10530,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mx-6 {
     margin-right: 3rem !important;
   }
-  .sm\:m-7 {
-    margin: 3.5rem !important;
-  }
   .sm\:mt-7,
   .sm\:my-7 {
     margin-top: 3.5rem !important;
@@ -10500,9 +10545,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-7,
   .sm\:mx-7 {
     margin-right: 3.5rem !important;
-  }
-  .sm\:m-8 {
-    margin: 4rem !important;
   }
   .sm\:mt-8,
   .sm\:my-8 {
@@ -10520,9 +10562,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mx-8 {
     margin-right: 4rem !important;
   }
-  .sm\:m-9 {
-    margin: 4.5rem !important;
-  }
   .sm\:mt-9,
   .sm\:my-9 {
     margin-top: 4.5rem !important;
@@ -10538,9 +10577,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-9,
   .sm\:mx-9 {
     margin-right: 4.5rem !important;
-  }
-  .sm\:m-10 {
-    margin: 5rem !important;
   }
   .sm\:mt-10,
   .sm\:my-10 {
@@ -10558,9 +10594,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mx-10 {
     margin-right: 5rem !important;
   }
-  .sm\:m-11 {
-    margin: 5.5rem !important;
-  }
   .sm\:mt-11,
   .sm\:my-11 {
     margin-top: 5.5rem !important;
@@ -10576,9 +10609,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-11,
   .sm\:mx-11 {
     margin-right: 5.5rem !important;
-  }
-  .sm\:m-12 {
-    margin: 6rem !important;
   }
   .sm\:mt-12,
   .sm\:my-12 {
@@ -10596,9 +10626,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mx-12 {
     margin-right: 6rem !important;
   }
-  .sm\:m-13 {
-    margin: 6.5rem !important;
-  }
   .sm\:mt-13,
   .sm\:my-13 {
     margin-top: 6.5rem !important;
@@ -10614,9 +10641,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .sm\:mr-13,
   .sm\:mx-13 {
     margin-right: 6.5rem !important;
-  }
-  .sm\:m-14 {
-    margin: 7rem !important;
   }
   .sm\:mt-14,
   .sm\:my-14 {
@@ -10640,6 +10664,57 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:p-0 {
     padding: 0rem !important;
   }
+  .xs\:p-0-5 {
+    padding: 0.25rem !important;
+  }
+  .xs\:p-1 {
+    padding: 0.5rem !important;
+  }
+  .xs\:p-1-5 {
+    padding: 0.75rem !important;
+  }
+  .xs\:p-2 {
+    padding: 1rem !important;
+  }
+  .xs\:p-2-5 {
+    padding: 1.25rem !important;
+  }
+  .xs\:p-3 {
+    padding: 1.5rem !important;
+  }
+  .xs\:p-4 {
+    padding: 2rem !important;
+  }
+  .xs\:p-5 {
+    padding: 2.5rem !important;
+  }
+  .xs\:p-6 {
+    padding: 3rem !important;
+  }
+  .xs\:p-7 {
+    padding: 3.5rem !important;
+  }
+  .xs\:p-8 {
+    padding: 4rem !important;
+  }
+  .xs\:p-9 {
+    padding: 4.5rem !important;
+  }
+  .xs\:p-10 {
+    padding: 5rem !important;
+  }
+  .xs\:p-11 {
+    padding: 5.5rem !important;
+  }
+  .xs\:p-12 {
+    padding: 6rem !important;
+  }
+  .xs\:p-13 {
+    padding: 6.5rem !important;
+  }
+  .xs\:p-14 {
+    padding: 7rem !important;
+  }
   .xs\:pt-0,
   .xs\:py-0 {
     padding-top: 0rem !important;
@@ -10655,9 +10730,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-0,
   .xs\:px-0 {
     padding-right: 0rem !important;
-  }
-  .xs\:p-0-5 {
-    padding: 0.25rem !important;
   }
   .xs\:pt-0-5,
   .xs\:py-0-5 {
@@ -10675,9 +10747,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:px-0-5 {
     padding-right: 0.25rem !important;
   }
-  .xs\:p-1 {
-    padding: 0.5rem !important;
-  }
   .xs\:pt-1,
   .xs\:py-1 {
     padding-top: 0.5rem !important;
@@ -10693,9 +10762,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-1,
   .xs\:px-1 {
     padding-right: 0.5rem !important;
-  }
-  .xs\:p-1-5 {
-    padding: 0.75rem !important;
   }
   .xs\:pt-1-5,
   .xs\:py-1-5 {
@@ -10713,9 +10779,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:px-1-5 {
     padding-right: 0.75rem !important;
   }
-  .xs\:p-2 {
-    padding: 1rem !important;
-  }
   .xs\:pt-2,
   .xs\:py-2 {
     padding-top: 1rem !important;
@@ -10731,9 +10794,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-2,
   .xs\:px-2 {
     padding-right: 1rem !important;
-  }
-  .xs\:p-2-5 {
-    padding: 1.25rem !important;
   }
   .xs\:pt-2-5,
   .xs\:py-2-5 {
@@ -10751,9 +10811,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:px-2-5 {
     padding-right: 1.25rem !important;
   }
-  .xs\:p-3 {
-    padding: 1.5rem !important;
-  }
   .xs\:pt-3,
   .xs\:py-3 {
     padding-top: 1.5rem !important;
@@ -10769,9 +10826,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-3,
   .xs\:px-3 {
     padding-right: 1.5rem !important;
-  }
-  .xs\:p-4 {
-    padding: 2rem !important;
   }
   .xs\:pt-4,
   .xs\:py-4 {
@@ -10789,9 +10843,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:px-4 {
     padding-right: 2rem !important;
   }
-  .xs\:p-5 {
-    padding: 2.5rem !important;
-  }
   .xs\:pt-5,
   .xs\:py-5 {
     padding-top: 2.5rem !important;
@@ -10807,9 +10858,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-5,
   .xs\:px-5 {
     padding-right: 2.5rem !important;
-  }
-  .xs\:p-6 {
-    padding: 3rem !important;
   }
   .xs\:pt-6,
   .xs\:py-6 {
@@ -10827,9 +10875,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:px-6 {
     padding-right: 3rem !important;
   }
-  .xs\:p-7 {
-    padding: 3.5rem !important;
-  }
   .xs\:pt-7,
   .xs\:py-7 {
     padding-top: 3.5rem !important;
@@ -10845,9 +10890,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-7,
   .xs\:px-7 {
     padding-right: 3.5rem !important;
-  }
-  .xs\:p-8 {
-    padding: 4rem !important;
   }
   .xs\:pt-8,
   .xs\:py-8 {
@@ -10865,9 +10907,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:px-8 {
     padding-right: 4rem !important;
   }
-  .xs\:p-9 {
-    padding: 4.5rem !important;
-  }
   .xs\:pt-9,
   .xs\:py-9 {
     padding-top: 4.5rem !important;
@@ -10883,9 +10922,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-9,
   .xs\:px-9 {
     padding-right: 4.5rem !important;
-  }
-  .xs\:p-10 {
-    padding: 5rem !important;
   }
   .xs\:pt-10,
   .xs\:py-10 {
@@ -10903,9 +10939,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:px-10 {
     padding-right: 5rem !important;
   }
-  .xs\:p-11 {
-    padding: 5.5rem !important;
-  }
   .xs\:pt-11,
   .xs\:py-11 {
     padding-top: 5.5rem !important;
@@ -10921,9 +10954,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-11,
   .xs\:px-11 {
     padding-right: 5.5rem !important;
-  }
-  .xs\:p-12 {
-    padding: 6rem !important;
   }
   .xs\:pt-12,
   .xs\:py-12 {
@@ -10941,9 +10971,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:px-12 {
     padding-right: 6rem !important;
   }
-  .xs\:p-13 {
-    padding: 6.5rem !important;
-  }
   .xs\:pt-13,
   .xs\:py-13 {
     padding-top: 6.5rem !important;
@@ -10959,9 +10986,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:pr-13,
   .xs\:px-13 {
     padding-right: 6.5rem !important;
-  }
-  .xs\:p-14 {
-    padding: 7rem !important;
   }
   .xs\:pt-14,
   .xs\:py-14 {
@@ -10982,6 +11006,57 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:m-0 {
     margin: 0rem !important;
   }
+  .xs\:m-0-5 {
+    margin: 0.25rem !important;
+  }
+  .xs\:m-1 {
+    margin: 0.5rem !important;
+  }
+  .xs\:m-1-5 {
+    margin: 0.75rem !important;
+  }
+  .xs\:m-2 {
+    margin: 1rem !important;
+  }
+  .xs\:m-2-5 {
+    margin: 1.25rem !important;
+  }
+  .xs\:m-3 {
+    margin: 1.5rem !important;
+  }
+  .xs\:m-4 {
+    margin: 2rem !important;
+  }
+  .xs\:m-5 {
+    margin: 2.5rem !important;
+  }
+  .xs\:m-6 {
+    margin: 3rem !important;
+  }
+  .xs\:m-7 {
+    margin: 3.5rem !important;
+  }
+  .xs\:m-8 {
+    margin: 4rem !important;
+  }
+  .xs\:m-9 {
+    margin: 4.5rem !important;
+  }
+  .xs\:m-10 {
+    margin: 5rem !important;
+  }
+  .xs\:m-11 {
+    margin: 5.5rem !important;
+  }
+  .xs\:m-12 {
+    margin: 6rem !important;
+  }
+  .xs\:m-13 {
+    margin: 6.5rem !important;
+  }
+  .xs\:m-14 {
+    margin: 7rem !important;
+  }
   .xs\:mt-0,
   .xs\:my-0 {
     margin-top: 0rem !important;
@@ -10997,9 +11072,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-0,
   .xs\:mx-0 {
     margin-right: 0rem !important;
-  }
-  .xs\:m-0-5 {
-    margin: 0.25rem !important;
   }
   .xs\:mt-0-5,
   .xs\:my-0-5 {
@@ -11017,9 +11089,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mx-0-5 {
     margin-right: 0.25rem !important;
   }
-  .xs\:m-1 {
-    margin: 0.5rem !important;
-  }
   .xs\:mt-1,
   .xs\:my-1 {
     margin-top: 0.5rem !important;
@@ -11035,9 +11104,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-1,
   .xs\:mx-1 {
     margin-right: 0.5rem !important;
-  }
-  .xs\:m-1-5 {
-    margin: 0.75rem !important;
   }
   .xs\:mt-1-5,
   .xs\:my-1-5 {
@@ -11055,9 +11121,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mx-1-5 {
     margin-right: 0.75rem !important;
   }
-  .xs\:m-2 {
-    margin: 1rem !important;
-  }
   .xs\:mt-2,
   .xs\:my-2 {
     margin-top: 1rem !important;
@@ -11073,9 +11136,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-2,
   .xs\:mx-2 {
     margin-right: 1rem !important;
-  }
-  .xs\:m-2-5 {
-    margin: 1.25rem !important;
   }
   .xs\:mt-2-5,
   .xs\:my-2-5 {
@@ -11093,9 +11153,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mx-2-5 {
     margin-right: 1.25rem !important;
   }
-  .xs\:m-3 {
-    margin: 1.5rem !important;
-  }
   .xs\:mt-3,
   .xs\:my-3 {
     margin-top: 1.5rem !important;
@@ -11111,9 +11168,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-3,
   .xs\:mx-3 {
     margin-right: 1.5rem !important;
-  }
-  .xs\:m-4 {
-    margin: 2rem !important;
   }
   .xs\:mt-4,
   .xs\:my-4 {
@@ -11131,9 +11185,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mx-4 {
     margin-right: 2rem !important;
   }
-  .xs\:m-5 {
-    margin: 2.5rem !important;
-  }
   .xs\:mt-5,
   .xs\:my-5 {
     margin-top: 2.5rem !important;
@@ -11149,9 +11200,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-5,
   .xs\:mx-5 {
     margin-right: 2.5rem !important;
-  }
-  .xs\:m-6 {
-    margin: 3rem !important;
   }
   .xs\:mt-6,
   .xs\:my-6 {
@@ -11169,9 +11217,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mx-6 {
     margin-right: 3rem !important;
   }
-  .xs\:m-7 {
-    margin: 3.5rem !important;
-  }
   .xs\:mt-7,
   .xs\:my-7 {
     margin-top: 3.5rem !important;
@@ -11187,9 +11232,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-7,
   .xs\:mx-7 {
     margin-right: 3.5rem !important;
-  }
-  .xs\:m-8 {
-    margin: 4rem !important;
   }
   .xs\:mt-8,
   .xs\:my-8 {
@@ -11207,9 +11249,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mx-8 {
     margin-right: 4rem !important;
   }
-  .xs\:m-9 {
-    margin: 4.5rem !important;
-  }
   .xs\:mt-9,
   .xs\:my-9 {
     margin-top: 4.5rem !important;
@@ -11225,9 +11264,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-9,
   .xs\:mx-9 {
     margin-right: 4.5rem !important;
-  }
-  .xs\:m-10 {
-    margin: 5rem !important;
   }
   .xs\:mt-10,
   .xs\:my-10 {
@@ -11245,9 +11281,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mx-10 {
     margin-right: 5rem !important;
   }
-  .xs\:m-11 {
-    margin: 5.5rem !important;
-  }
   .xs\:mt-11,
   .xs\:my-11 {
     margin-top: 5.5rem !important;
@@ -11263,9 +11296,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-11,
   .xs\:mx-11 {
     margin-right: 5.5rem !important;
-  }
-  .xs\:m-12 {
-    margin: 6rem !important;
   }
   .xs\:mt-12,
   .xs\:my-12 {
@@ -11283,9 +11313,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mx-12 {
     margin-right: 6rem !important;
   }
-  .xs\:m-13 {
-    margin: 6.5rem !important;
-  }
   .xs\:mt-13,
   .xs\:my-13 {
     margin-top: 6.5rem !important;
@@ -11301,9 +11328,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   .xs\:mr-13,
   .xs\:mx-13 {
     margin-right: 6.5rem !important;
-  }
-  .xs\:m-14 {
-    margin: 7rem !important;
   }
   .xs\:mt-14,
   .xs\:my-14 {

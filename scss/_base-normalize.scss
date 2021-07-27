@@ -1,16 +1,13 @@
-$family-primary:       BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-                       "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
-$family-secondary:     BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-                      "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
-$family-mono:          monospace !default;
+$doc-font-size: 15px !default;
+
 $body-background:      transparent !default;
 $body-color:           $text !default;
 $body-font-family:     $family-primary !default;
-$body-font-size:       1em !default;
-$body-font-weight:     400 !default;
+$body-font-size:       $size-3 !default;
+$body-font-weight:     $weight-normal !default;
 $body-letter-spacing:  0 !default;
 $body-line-height:     1.5em !default;
-$doc-font-size:        15px !default;
+
 $link-text-decoration: underline !default;
 $link-outline:         none !default;
 
