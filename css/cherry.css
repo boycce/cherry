@@ -6314,8 +6314,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-black-light {
-  color: #121212 !important;
-  fill: #121212 !important;
+  background-color: #121212 !important;
 }
 
 .text-black-lighter {
@@ -6326,8 +6325,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-black-lighter {
-  color: #212121 !important;
-  fill: #212121 !important;
+  background-color: #212121 !important;
 }
 
 .text-black-lightest {
@@ -6338,8 +6336,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-black-lightest {
-  color: #2b2b2b !important;
-  fill: #2b2b2b !important;
+  background-color: #2b2b2b !important;
 }
 
 .text-grey {
@@ -6350,8 +6347,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-grey {
-  color: #454545 !important;
-  fill: #454545 !important;
+  background-color: #454545 !important;
 }
 
 .text-grey-light {
@@ -6362,8 +6358,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-grey-light {
-  color: #787878 !important;
-  fill: #787878 !important;
+  background-color: #787878 !important;
 }
 
 .text-grey-lighter {
@@ -6374,8 +6369,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-grey-lighter {
-  color: #bababa !important;
-  fill: #bababa !important;
+  background-color: #bababa !important;
 }
 
 .text-grey-lightest {
@@ -6386,8 +6380,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-grey-lightest {
-  color: #e8e8e8 !important;
-  fill: #e8e8e8 !important;
+  background-color: #e8e8e8 !important;
 }
 
 .text-white-dark {
@@ -6398,8 +6391,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-white-dark {
-  color: #fafafa !important;
-  fill: #fafafa !important;
+  background-color: #fafafa !important;
 }
 
 .text-white-darker {
@@ -6410,8 +6402,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-white-darker {
-  color: whitesmoke !important;
-  fill: whitesmoke !important;
+  background-color: whitesmoke !important;
 }
 
 .text-white-darkest {
@@ -6422,8 +6413,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-white-darkest {
-  color: #f0f0f0 !important;
-  fill: #f0f0f0 !important;
+  background-color: #f0f0f0 !important;
 }
 
 .text-white {
@@ -6434,8 +6424,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-white {
-  color: white !important;
-  fill: white !important;
+  background-color: white !important;
 }
 
 .text-black {
@@ -6446,8 +6435,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-black {
-  color: black !important;
-  fill: black !important;
+  background-color: black !important;
 }
 
 .text-primary {
@@ -6458,8 +6446,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-primary {
-  color: #8c57ff !important;
-  fill: #8c57ff !important;
+  background-color: #8c57ff !important;
 }
 
 .text-secondary {
@@ -6470,8 +6457,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-secondary {
-  color: #3273dc !important;
-  fill: #3273dc !important;
+  background-color: #3273dc !important;
 }
 
 .text-info {
@@ -6482,8 +6468,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-info {
-  color: #3273dc !important;
-  fill: #3273dc !important;
+  background-color: #3273dc !important;
 }
 
 .text-success {
@@ -6494,8 +6479,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-success {
-  color: #48c774 !important;
-  fill: #48c774 !important;
+  background-color: #48c774 !important;
 }
 
 .text-warning {
@@ -6506,8 +6490,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-warning {
-  color: #ffdd57 !important;
-  fill: #ffdd57 !important;
+  background-color: #ffdd57 !important;
 }
 
 .text-danger {
@@ -6518,8 +6501,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-danger {
-  color: #f14668 !important;
-  fill: #f14668 !important;
+  background-color: #f14668 !important;
 }
 
 .text-text {
@@ -6530,8 +6512,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-text {
-  color: #121212 !important;
-  fill: #121212 !important;
+  background-color: #121212 !important;
 }
 
 .text {
@@ -6549,8 +6530,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-light {
-  color: #454545 !important;
-  fill: #454545 !important;
+  background-color: #454545 !important;
 }
 
 .text-lighter {
@@ -6561,8 +6541,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-lighter {
-  color: #787878 !important;
-  fill: #787878 !important;
+  background-color: #787878 !important;
 }
 
 .text-strong {
@@ -6573,8 +6552,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-strong {
-  color: black !important;
-  fill: black !important;
+  background-color: black !important;
 }
 
 .text-link {
@@ -6585,8 +6563,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-link {
-  color: #121212 !important;
-  fill: #121212 !important;
+  background-color: #121212 !important;
 }
 
 .text-link--hover {
@@ -6597,8 +6574,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-link--hover {
-  color: #3273dc !important;
-  fill: #3273dc !important;
+  background-color: #3273dc !important;
 }
 
 .text-link--focus {
@@ -6609,8 +6585,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-link--focus {
-  color: #3273dc !important;
-  fill: #3273dc !important;
+  background-color: #3273dc !important;
 }
 
 .text-grad1 {
@@ -6621,8 +6596,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .bg-grad1 {
-  color: #8c57ff !important;
-  fill: #8c57ff !important;
+  background-color: #8c57ff !important;
 }
 
 .bg-grad1 {

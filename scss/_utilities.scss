@@ -104,36 +104,34 @@ $breakpoints: (
       $color: nth($color, 1);
     }
     .text-#{$name} {
-      color: $color !important;;
-      text-decoration-color: $color !important;;
-      fill: $color !important;;
+      color: $color !important;
+      text-decoration-color: $color !important;
+      fill: $color !important;
     }
     .bg-#{$name} {
-      color: $color !important;;
-      fill: $color !important;;
+      background-color: $color !important;
     }
     @if ($name == 'text') {
       .text {
-        color: $color !important;;
-        text-decoration-color: $color !important;;
-        fill: $color !important;;
+        color: $color !important;
+        text-decoration-color: $color !important;
+        fill: $color !important;
       }
     }
     @if (variable-exists(color-invert)) {
       .text-#{$name}-invert {
-        color: $color-invert !important;;
-        text-decoration-color: $color-invert !important;;
+        color: $color-invert !important;
+        text-decoration-color: $color-invert !important;
         fill: $color-invert !important;
       }
       .bg-#{$name}-invert {
-        color: $color-invert !important;;
-        fill: $color-invert !important;;
+        background-color: $color-invert !important;
       }
       @if ($name == 'text') {
         .text-invert {
-          color: $color-invert !important;;
-          text-decoration-color: $color-invert !important;;
-          fill: $color-invert !important;;
+          color: $color-invert !important;
+          text-decoration-color: $color-invert !important;
+          fill: $color-invert !important;
         }
       }
     }
