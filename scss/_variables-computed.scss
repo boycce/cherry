@@ -1,3 +1,18 @@
+// App colors
+$primary:          $violet !default;
+$secondary:        $blue !default;
+$success:          $green !default;
+$info:             $blue !default;
+$warning:          $yellow !default;
+$danger:           $red !default;
+$text:             $black-light !default;
+$text-light:       $grey !default;
+$text-lighter:     $grey-light !default;
+$text-strong:      $black !default;
+$link:             $black-light !default;
+$link--hover:      $blue !default;
+$link--focus:      $blue !default;
+
 // Base color variations
 $orange-invert:       findColorInvert($orange) !default;
 $yellow-invert:       findColorInvert($yellow) !default;

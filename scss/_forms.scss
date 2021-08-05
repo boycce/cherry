@@ -210,10 +210,12 @@
       color: map-get($map, "label-color");
       text-decoration-color: map-get($map, "label-color");
     }
-    label.invalid-out {
+    label.invalid-out,
+    label.is-invalid-out {
       //opacity: 0.2;
     }
-    label.invalid-in {
+    label.invalid-in,
+    label.is-invalid-in {
       //opacity: 1;
       color: $danger;
     }
@@ -440,10 +442,20 @@
 
     input:active,
     input:focus,
+    input.is-active,
+    input.is-focused,
     select:active,
     select:focus,
+    select.is-active,
+    select.is-focused,
     textarea:active,
     textarea:focus,
+    textarea.is-active,
+    textarea.is-focused,
+    .input:active,
+    .input:focus,
+    .input.is-active,
+    .input.is-focused,
     .vs--open .vs__dropdown-toggle {
       outline: 0;
       box-shadow:
@@ -460,10 +472,12 @@
     input.is-invalid,
     select.is-invalid,
     textarea.is-invalid,
+    .input.is-invalid,
     .vs__dropdown-toggle.is-invalid,
     .input-grp.is-invalid input,
     .input-grp.is-invalid select,
     .input-grp.is-invalid textarea,
+    .input-grp.is-invalid .input,
     .input-grp.is-invalid .vs__dropdown-toggle {
       color: map-get($map, "input-color--invalid");
       box-shadow:
