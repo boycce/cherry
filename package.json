@@ -39,7 +39,8 @@
     "css",
     "scss",
     "cherry.scss",
-    "README.md"
+    "resources",
+    "README.md",
   ],
   "standard-version": {
     "releaseCommitMessageFormat": "{{currentTag}}",
