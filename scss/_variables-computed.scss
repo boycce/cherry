@@ -94,10 +94,12 @@ $shades: (
 ) !default;
 
 // Typography
-$size-small: $size-1 !default
-$size-normal: $size-3 !default
-$size-medium: $size-4 !default
-$size-large: $size-5 !default
+$size-xsmall: $size-1 !default;
+$size-small: $size-2 !default;
+$size-normal: $size-3 !default;
+$size-medium: $size-4 !default;
+$size-large: $size-5 !default;
+$size-xlarge: $size-6 !default;
 
 $family-primary: $family-sans-serif !default;
 $family-secondary: $family-sans-serif !default;

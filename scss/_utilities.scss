@@ -443,6 +443,10 @@ $breakpoints: (
 
 /* ---- Text Size -------------------- */
 
+  .size-xsmall,
+  .text-size-xsmall {
+    font-size: $size-xsmall !important;
+  }
   .size-small,
   .text-size-small {
     font-size: $size-small !important;
@@ -458,6 +462,10 @@ $breakpoints: (
   .size-large,
   .text-size-large {
     font-size: $size-large !important;
+  }
+  .size-xlarge,
+  .text-size-xlarge {
+    font-size: $size-xlarge !important;
   }
   @each $size in $font-sizes {
     $i: index($font-sizes, $size);

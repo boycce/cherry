@@ -4249,7 +4249,8 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
           text-decoration-color: #454545;
 }
 
-.form label.invalid-in {
+.form label.invalid-in,
+.form label.is-invalid-in {
   color: #f14668;
 }
 
@@ -4483,10 +4484,20 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .form input:active,
 .form input:focus,
+.form input.is-active,
+.form input.is-focused,
 .form select:active,
 .form select:focus,
+.form select.is-active,
+.form select.is-focused,
 .form textarea:active,
 .form textarea:focus,
+.form textarea.is-active,
+.form textarea.is-focused,
+.form .input:active,
+.form .input:focus,
+.form .input.is-active,
+.form .input.is-focused,
 .form .vs--open .vs__dropdown-toggle {
   outline: 0;
   box-shadow: 0 0 0 2px #8c57ff inset;
@@ -4495,10 +4506,20 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .form input:active:-webkit-autofill,
 .form input:focus:-webkit-autofill,
+.form input.is-active:-webkit-autofill,
+.form input.is-focused:-webkit-autofill,
 .form select:active:-webkit-autofill,
 .form select:focus:-webkit-autofill,
+.form select.is-active:-webkit-autofill,
+.form select.is-focused:-webkit-autofill,
 .form textarea:active:-webkit-autofill,
 .form textarea:focus:-webkit-autofill,
+.form textarea.is-active:-webkit-autofill,
+.form textarea.is-focused:-webkit-autofill,
+.form .input:active:-webkit-autofill,
+.form .input:focus:-webkit-autofill,
+.form .input.is-active:-webkit-autofill,
+.form .input.is-focused:-webkit-autofill,
 .form .vs--open .vs__dropdown-toggle:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 2px #8c57ff inset, 0 0 0 1000px #fdfdfd inset;
 }
@@ -4506,10 +4527,12 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form input.is-invalid,
 .form select.is-invalid,
 .form textarea.is-invalid,
+.form .input.is-invalid,
 .form .vs__dropdown-toggle.is-invalid,
 .form .input-grp.is-invalid input,
 .form .input-grp.is-invalid select,
 .form .input-grp.is-invalid textarea,
+.form .input-grp.is-invalid .input,
 .form .input-grp.is-invalid .vs__dropdown-toggle {
   color: #121212;
   box-shadow: 0 0 0 2px #f14668 inset;
@@ -4524,10 +4547,12 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form input.is-invalid:-webkit-autofill,
 .form select.is-invalid:-webkit-autofill,
 .form textarea.is-invalid:-webkit-autofill,
+.form .input.is-invalid:-webkit-autofill,
 .form .vs__dropdown-toggle.is-invalid:-webkit-autofill,
 .form .input-grp.is-invalid input:-webkit-autofill,
 .form .input-grp.is-invalid select:-webkit-autofill,
 .form .input-grp.is-invalid textarea:-webkit-autofill,
+.form .input-grp.is-invalid .input:-webkit-autofill,
 .form .input-grp.is-invalid .vs__dropdown-toggle:-webkit-autofill {
   -webkit-text-fill-color: #121212;
   -webkit-box-shadow: 0 0 0 2px #f14668 inset, 0 0 0 1000px #fdfdfd inset;
@@ -7409,9 +7434,14 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 /* ---- Text Size -------------------- */
+.size-xsmall,
+.text-size-xsmall {
+  font-size: 0.8rem !important;
+}
+
 .size-small,
 .text-size-small {
-  font-size: 0.8rem !important;
+  font-size: 0.9rem !important;
 }
 
 .size-normal,
@@ -7427,6 +7457,11 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .size-large,
 .text-size-large {
   font-size: 1.4rem !important;
+}
+
+.size-xlarge,
+.text-size-xlarge {
+  font-size: 1.6rem !important;
 }
 
 .size-1,
