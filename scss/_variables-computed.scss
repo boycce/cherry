@@ -13,7 +13,7 @@ $link:             $black-light !default;
 $link--hover:      $blue !default;
 $link--focus:      $blue !default;
 
-// Base color variations
+// Base color invert variations
 $orange-invert:       findColorInvert($orange) !default;
 $yellow-invert:       findColorInvert($yellow) !default;
 $green-invert:        findColorInvert($green) !default;
@@ -22,6 +22,24 @@ $cyan-invert:         findColorInvert($cyan) !default;
 $blue-invert:         findColorInvert($blue) !default;
 $purple-invert:       findColorInvert($purple) !default;
 $red-invert:          findColorInvert($red) !default;
+
+$orange-light:        findLightColor($orange) !default;
+$yellow-light:        findLightColor($yellow) !default;
+$green-light:         findLightColor($green) !default;
+$turquoise-light:     findLightColor($turquoise) !default;
+$cyan-light:          findLightColor($cyan) !default;
+$blue-light:          findLightColor($blue) !default;
+$purple-light:        findLightColor($purple) !default;
+$red-light:           findLightColor($red) !default;
+
+$orange-dark:         findDarkColor($orange) !default;
+$yellow-dark:         findDarkColor($yellow) !default;
+$green-dark:          findDarkColor($green) !default;
+$turquoise-dark:      findDarkColor($turquoise) !default;
+$cyan-dark:           findDarkColor($cyan) !default;
+$blue-dark:           findDarkColor($blue) !default;
+$purple-dark:         findDarkColor($purple) !default;
+$red-dark:            findDarkColor($red) !default;
 
 // App color variations
 $primary-invert:      findColorInvert($primary) !default;
@@ -62,6 +80,7 @@ $forms: (/* E.g. ("input-background": #000), ... */) !default;
   $custom-colors: map-merge($custom-colors, ($name: $value));
 }
 
+// Used for button.is-*, td.is-*, .text-*, .bg-*
 $app-colors: mergeColorMaps((
   "white": ($white, $black, null, null, null),
   "black": ($black, $white, null, null, null),
@@ -80,17 +99,78 @@ $app-colors: mergeColorMaps((
   "link--focus": ($link--focus, $link--focus-invert, null, null, null),
 ), $custom-colors) !default;
 
-$shades: (
+// Used for .text-*, .bg-*
+$additional-colors: (
+  // Shades
+  "grey": $grey,
   "black-light": $black-light,
   "black-lighter": $black-lighter,
   "black-lightest": $black-lightest,
-  "grey": $grey,
   "grey-light": $grey-light,
   "grey-lighter": $grey-lighter,
   "grey-lightest": $grey-lightest,
   "white-dark": $white-dark,
   "white-darker": $white-darker,
-  "white-darkest": $white-darkest
+  "white-darkest": $white-darkest,
+  // Colors
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "turquoise": $turquoise,
+  "cyan": $cyan,
+  "blue": $blue,
+  "purple": $purple,
+  "red": $red,
+  "orange-invert": $orange-invert,
+  "yellow-invert": $yellow-invert,
+  "green-invert": $green-invert,
+  "turquoise-invert": $turquoise-invert,
+  "cyan-invert": $cyan-invert,
+  "blue-invert": $blue-invert,
+  "purple-invert": $purple-invert,
+  "red-invert": $red-invert,
+  "orange-light": $orange-light,
+  "yellow-light": $yellow-light,
+  "green-light": $green-light,
+  "turquoise-light": $turquoise-light,
+  "cyan-light": $cyan-light,
+  "blue-light": $blue-light,
+  "purple-light": $purple-light,
+  "red-light": $red-light,
+  "orange-dark": $orange-dark,
+  "yellow-dark": $yellow-dark,
+  "green-dark": $green-dark,
+  "turquoise-dark": $turquoise-dark,
+  "cyan-dark": $cyan-dark,
+  "blue-dark": $blue-dark,
+  "purple-dark": $purple-dark,
+  "red-dark": $red-dark,
+  // App color variations
+  "primary-invert": $primary-invert,
+  "primary-light": $primary-light,
+  "primary-dark": $primary-dark,
+  "secondary-invert": $secondary-invert,
+  "secondary-light": $secondary-light,
+  "secondary-dark": $secondary-dark,
+  "success-invert": $success-invert,
+  "success-light": $success-light,
+  "success-dark": $success-dark,
+  "info-invert": $info-invert,
+  "info-light": $info-light,
+  "info-dark": $info-dark,
+  "warning-invert": $warning-invert,
+  "warning-light": $warning-light,
+  "warning-dark": $warning-dark,
+  "danger-invert": $danger-invert,
+  "danger-light": $danger-light,
+  "danger-dark": $danger-dark,
+  "text-invert": $text-invert,
+  "text-light-invert": $text-light-invert,
+  "text-lighter-invert": $text-lighter-invert,
+  "text-strong-invert": $text-strong-invert,
+  "link-invert": $link-invert,
+  "link--hover-invert": $link--hover-invert,
+  "link--focus-invert": $link--focus-invert,
 ) !default;
 
 // Typography

@@ -218,3 +218,39 @@
   }
   @return $string;
 }
+
+@function paddingSide($padding, $side) {
+  $p-top: null;
+  $p-right: null;
+  $p-bottom: null;
+  $p-left: null;
+  @if length($padding) > 3 {
+    $p-top: nth($padding, 1);
+    $p-right: nth($padding, 2);
+    $p-bottom: nth($padding, 3);
+    $p-left: nth($padding, 4);
+  }
+  @else if length($padding) > 2 {
+    $p-top: nth($padding, 1);
+    $p-left: nth($padding, 2);
+    $p-right: nth($padding, 2);
+    $p-bottom: nth($padding, 3);
+  }
+  @else if length($padding) > 1 {
+    $p-top: nth($padding, 1);
+    $p-bottom: nth($padding, 1);
+    $p-left: nth($padding, 2);
+    $p-right: nth($padding, 2);
+  }
+  @else {
+    $p-top: $padding;
+    $p-bottom: $padding;
+    $p-left: $padding;
+    $p-right: $padding;
+  }
+  // return
+  @if $side == 'top' { @return $p-top; }
+  @if $side == 'right' { @return $p-right; }
+  @if $side == 'bottom' { @return $p-bottom; }
+  @if $side == 'left' { @return $p-left; }
+}

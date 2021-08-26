@@ -4,13 +4,32 @@
     "input-background":            #fdfdfd,
     "input-border-color--active":  $primary,
     "input-padding":               13px 19px,
+    "textarea-padding":            13px 19px,
     "toggle-height":               1.8em,
   ), $form);
+
+  // Second, find variables referenced below
+  $ip-t: paddingSide(map-get($form, "input-padding"), 'top');
+  $ip-r: paddingSide(map-get($form, "input-padding"), 'right');
+  $ip-b: paddingSide(map-get($form, "input-padding"), 'bottom');
+  $ip-l: paddingSide(map-get($form, "input-padding"), 'left');
+  $tp-t: paddingSide(map-get($form, "textarea-padding"), 'top');
+  $tp-r: paddingSide(map-get($form, "textarea-padding"), 'right');
+  $tp-b: paddingSide(map-get($form, "textarea-padding"), 'bottom');
+  $tp-l: paddingSide(map-get($form, "textarea-padding"), 'left');
+  $form: map-merge((
+    "input-padding--inside":    ($ip-t + ($ip-t * 0.5)) $ip-r ($ip-b - ($ip-b * 0.5)) $ip-l,
+    "textarea-padding--inside": ($tp-t + ($tp-t * 0.5)) $tp-r ($tp-b - ($tp-b * 0.5)) $tp-l,
+  ), $form);
+
+
 
   @return map-merge((
     // Error
     "error-font-size":             0.85rem,
+    "error-font-color":            $danger,
     // Input
+    "input-animation--invalid":    shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both,
     "input-background":            map-get($form, "input-background"),
     "input-background--active":    map-get($form, "input-background"),
     "input-background--invalid":   map-get($form, "input-background"),
@@ -29,16 +48,26 @@
     "input-font-size":             16px, // 0.95rem,
     "input-font-weight":           inherit,
     "input-icon-width":            18px,
+    "input-letter-spacing":        normal,
     "input-margin-bottom":         1.5rem,
     "input-padding":               map-get($form, "input-padding"),
     "input-placeholder-color":     rgba($text, 0.4),
+    // Inside label
+    "inside-label-color":          $text-light,
+    "inside-label-font-size":      0.75rem,
+    "inside-label-input-left":     paddingSide(map-get($form, "input-padding--inside"), 'left'),
+    "inside-label-input-top":      calc(#{paddingSide(map-get($form, "input-padding--inside"), 'bottom')} - 1px),
+    "inside-label-textarea-left":  paddingSide(map-get($form, "textarea-padding--inside"), 'left'),
+    "inside-label-textarea-top":   calc(#{paddingSide(map-get($form, "textarea-padding--inside"), 'bottom')} - 1px),
     // Label
     "label-color":                 $text-light,
     "label-font-size":             0.85rem,
     "label-margin-bottom":         0.45rem,
     // Textarea
+    "textarea-line-height":        1.5rem, // same as input
     "textarea-min-height":         7em,
-    "textarea-padding":            map-get($form, "input-padding"),
+    "textarea-padding":            map-get($form, "textarea-padding"),
+
     // Variable inputs
     "variable-color":              darken(map-get($form, "input-background"), 12%),
     "variable-color--active":      map-get($form, "input-border-color--active"),
@@ -82,6 +111,7 @@
       color: map-get($map, "input-color");
       font-size: map-get($map, "input-font-size");
       font-weight: map-get($map, "input-font-weight");
+      letter-spacing: map-get($map, "input-letter-spacing");
       line-height: 1.5rem;
       background: map-get($map, "input-background");
       box-shadow:
@@ -109,6 +139,7 @@
     }
     textarea {
       padding: map-get($map, "textarea-padding");
+      line-height: map-get($map, "textarea-line-height");
       max-height: 40em;
       min-height: map-get($map, "textarea-min-height");
       resize: vertical;
@@ -167,8 +198,9 @@
 
     .form-error {
       display: none;
-      color: $danger;
+      color: map-get($map, "error-font-color");
     }
+    .form-error,
     .toggle-grp .form-error,
     .checkbox-grp .form-error,
     .radio-grp .form-error,
@@ -233,51 +265,66 @@
 
     /* Floating labels */
 
-    .has-float-label input + label,
-    .has-float-label select + label,
-    .has-float-label textarea + label {
-      position: absolute;
-      left: 0;
-      top: 0;
-      cursor: text;
-      color: map-get($map, "label-color");
-      font-size: map-get($map, "label-font-size");
-      opacity: 0;
-      transform: translateY(3px);
-      transition: transform 0.2s, opacity 0.2s;
-    }
-    .has-float-label input:not(:placeholder-shown) + *,
-    .has-float-label select:not(:placeholder-shown) + *,
-    .has-float-label textarea:not(:placeholder-shown) + *,
-    .has-float-label input:-webkit-autofill + * {
-      transform: translateY(0px);
-      opacity: 1;
+    .has-float-label,
+    .has-inside-label {
+      input + label,
+      select + label,
+      textarea + label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        cursor: text;
+        color: map-get($map, "label-color");
+        font-size: map-get($map, "label-font-size");
+        opacity: 0;
+        transform: translateY(3px);
+        transition: transform 0.2s, opacity 0.2s;
+      }
+      input:-webkit-autofill + *,
+      input:not(:placeholder-shown) + *,
+      select:not(:placeholder-shown) + *,
+      textarea:not(:placeholder-shown) + * {
+        transform: translateY(0px);
+        opacity: 1;
+      }
     }
 
-  /* ---- Icons ------------------------ */
+    /* Inside labels */
 
-    $ip: map-get($map, "input-padding");
-    $ip-left: null;
-    $ip-right: null;
+    .has-inside-label {
+      input + label,
+      select + label {
+        left: map-get($map, "inside-label-input-left");
+        top: map-get($map, "inside-label-input-top");
+        font-size: map-get($map, "inside-label-font-size");
+      }
+      textarea + label {
+        left: map-get($map, "inside-label-textarea-left");
+        top: map-get($map, "inside-label-textarea-top");
+        font-size: map-get($map, "inside-label-font-size");
+      }
+      input:-webkit-autofill,
+      input:not(:placeholder-shown),
+      select:not(:placeholder-shown) {
+        padding: map-get($map, "input-padding--inside");
+      }
+      textarea:not(:placeholder-shown) {
+        padding: map-get($map, "textarea-padding--inside");
+      }
+    }
 
-    @if length($ip) > 3 {
-      $ip-left: nth($ip, 4);
-      $ip-right: nth($ip, 2);
-    }
-    @else if length($ip) > 1 {
-      $ip-left: nth($ip, 2);
-      $ip-right: nth($ip, 2);
-    }
-    @else {
-      $ip-left: $ip;
-      $ip-right: $ip;
-    }
+  /* ---- Icons (no textarea support) -- */
+
+    // ip = input-padding
+    $ip-top: paddingSide(map-get($map, "input-padding"), 'top');
+    $ip-left: paddingSide(map-get($map, "input-padding"), 'left');
+    $ip-right: paddingSide(map-get($map, "input-padding"), 'right');
     .icon-left,
     .icon-right {
       position: absolute;
-      top: 0px;
-      bottom: 0px;
+      margin-top: $ip-top;
       width: map-get($map, "input-icon-width");
+      height: 1.5rem; /*same as input line-height*/
       pointer-events: none;
       align-items: center;
       display: inline-flex;
@@ -289,7 +336,7 @@
       select,
       .input,
       .vs__dropdown-toggle {
-        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.8em);
+        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75rem);
       }
       .icon-left {
         left: calc(#{$ip-left} - 2px);
@@ -301,10 +348,29 @@
       select,
       .input,
       .vs__dropdown-toggle {
-        padding-right: calc(#{$ip-right} - 2px + #{map-get($map, "input-icon-width")} + 0.4em);
+        padding-right: calc(#{$ip-right} - 2px + #{map-get($map, "input-icon-width")} + 0.4rem);
       }
       .icon-right {
         right: calc(#{$ip-right} - 2px);
+      }
+    }
+
+    /* Inside label with icon */
+
+    $ip-left: paddingSide(map-get($map, "input-padding--inside"), 'left');
+    $ip-right: paddingSide(map-get($map, "input-padding--inside"), 'right');
+    $ll-left: map-get($map, "inside-label-input-left");
+    .has-icon-left.has-inside-label,
+    .has-icon-left .has-inside-label,
+    .has-inside-label .has-icon-left {
+      input:-webkit-autofill,
+      input:not(:placeholder-shown),
+      select:not(:placeholder-shown) {
+        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75rem);
+      }
+      input + label,
+      select + label {
+        left: calc(#{$ll-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75rem);
       }
     }
 
@@ -485,7 +551,7 @@
         map-get($map, "input-box-shadow--invalid");
       // doesnt work for dropdown/toggle
       background-color: map-get($map, "input-background--invalid");
-      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      animation: map-get($map, "input-animation--invalid");
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       &:-webkit-autofill {
@@ -501,7 +567,7 @@
     input[type="checkbox"].is-invalid + label,
     input[type="radio"].is-invalid + label,
     input[type="checkbox"].is-invalid + label {
-      animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+      animation: map-get($map, "input-animation--invalid");
       transform: translate3d(0, 0, 0);
       backface-visibility: hidden;
       color: #7b1a1a;
@@ -580,6 +646,5 @@
         }
       }
     }
-
   }
 }

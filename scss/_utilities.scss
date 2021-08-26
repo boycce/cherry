@@ -98,7 +98,7 @@ $breakpoints: (
 
 /* ---- Colors & Gradients ----------- */
 
-  @each $name, $color in map-merge($shades, $app-colors) {
+  @each $name, $color in map-merge($additional-colors, $app-colors) {
     @if (type-of($color) == 'map' or type-of($color) == 'list') {
       $color-invert: nth($color, 2);
       $color: nth($color, 1);
