@@ -22,8 +22,6 @@
     "textarea-padding--inside": ($tp-t + ($tp-t * 0.5)) $tp-r ($tp-b - ($tp-b * 0.5)) $tp-l,
   ), $form);
 
-
-
   @return map-merge((
     // Error
     "error-font-size":             0.85rem,
@@ -104,7 +102,8 @@
     select,
     textarea,
     .input,
-    .vs__dropdown-toggle {
+    .vs__dropdown-toggle,
+    .rs__control {
       width: 100%;
       padding: map-get($map, "input-padding");
       font-family: map-get($map, "input-font-family");
@@ -269,13 +268,13 @@
     .has-inside-label {
       input + label,
       select + label,
-      textarea + label {
+      textarea + label,
+      .input + label,
+      .rs__control + label {
         position: absolute;
         left: 0;
         top: 0;
         cursor: text;
-        color: map-get($map, "label-color");
-        font-size: map-get($map, "label-font-size");
         opacity: 0;
         transform: translateY(3px);
         transition: transform 0.2s, opacity 0.2s;
@@ -283,7 +282,8 @@
       input:-webkit-autofill + *,
       input:not(:placeholder-shown) + *,
       select:not(:placeholder-shown) + *,
-      textarea:not(:placeholder-shown) + * {
+      textarea:not(:placeholder-shown) + *,
+      .rs__control.rs__control--has-value + * {
         transform: translateY(0px);
         opacity: 1;
       }
@@ -293,7 +293,8 @@
 
     .has-inside-label {
       input + label,
-      select + label {
+      select + label,
+      .rs__control + label {
         left: map-get($map, "inside-label-input-left");
         top: map-get($map, "inside-label-input-top");
         font-size: map-get($map, "inside-label-font-size");
@@ -305,7 +306,8 @@
       }
       input:-webkit-autofill,
       input:not(:placeholder-shown),
-      select:not(:placeholder-shown) {
+      select:not(:placeholder-shown),
+      .rs__control.rs__control--has-value {
         padding: map-get($map, "input-padding--inside");
       }
       textarea:not(:placeholder-shown) {
@@ -376,13 +378,14 @@
 
   /* ---- Select ----------------------- */
 
+    $ip-right: paddingSide(map-get($map, "input-padding"), 'right');
     select,
     .vs__dropdown-toggle {
       background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%23c5cbd2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
       appearance: none;
       background-repeat: no-repeat;
       background-size: auto 7px;
-      background-position: right 17px center;
+      background-position: right $ip-right center;
       transition: all 200ms ease;
     }
 
@@ -522,7 +525,9 @@
     .input:focus,
     .input.is-active,
     .input.is-focused,
-    .vs--open .vs__dropdown-toggle {
+    .vs--open .vs__dropdown-toggle,
+    .rs__control--is-focused,
+    .rs__control--menu-is-open {
       outline: 0;
       box-shadow:
         0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset,
@@ -540,11 +545,13 @@
     textarea.is-invalid,
     .input.is-invalid,
     .vs__dropdown-toggle.is-invalid,
+    .rs__control--is-invalid,
     .input-grp.is-invalid input,
     .input-grp.is-invalid select,
     .input-grp.is-invalid textarea,
     .input-grp.is-invalid .input,
-    .input-grp.is-invalid .vs__dropdown-toggle {
+    .input-grp.is-invalid .vs__dropdown-toggle,
+    .input-grp.is-invalid .rs__control {
       color: map-get($map, "input-color--invalid");
       box-shadow:
         0 0 0 map-get($map, "input-border-width") $danger inset,
@@ -578,9 +585,67 @@
       background-color: map-get($map, "input-background--invalid");
     }
     textarea:disabled,
-    input:disabled {
+    input:disabled,
+    .rs__control--is-disabled {
       background-color: #f7f7f7;
       color: #a5a5a5;
+    }
+
+  /* ---- React Select ----------------- */
+
+    /* Remove inner input & element styling */
+    .rs {
+      position: static;
+    }
+    .rs__value-container {
+      padding: 0;
+      padding-right: 15px;
+      &.rs__value-container--is-multi.rs__value-container--has-value {
+        padding-right: 43px;
+        > input {
+          /* not searchable with multi yeilds an awkward input box once there is a value*/
+          line-height: 0;
+          font-size: 0;
+        }
+      }
+      input {
+        padding: 0 !important;
+        border: 0;
+        box-shadow: none;
+        background-color: transparent;
+      }
+      > div {
+        margin: 0 5px 0 0;
+        padding: 0;
+      }
+      .rs__placeholder {
+        color: map-get($map, "input-placeholder-color");
+      }
+      .rs__single-value {
+        color: map-get($map, "input-color");
+      }
+      .rs__multi-value {
+        margin-top: 1px;
+        margin-bottom: 1px;
+      }
+    }
+    .rs__indicators {
+      position: absolute;
+      top: 50%;
+      right: paddingSide(map-get($map, "input-padding"), 'right');
+      margin-top: -10px;
+      margin-right: -7px;
+      .rs__indicator-separator {
+        display: none;
+      }
+      > div {
+        padding: 0px 4px;
+        height: 100%;
+        align-items: center;
+        &:not(:hover) {
+          color: #c5ccd3;
+        }
+      }
     }
 
   /* ---- Miscellaneous ---------------- */
@@ -628,7 +693,8 @@
         input[type="url"],
         input[type="week"],
         select,
-        textarea {
+        textarea,
+        .input {
           font-size: 16px;
           letter-spacing: 0;
         }
@@ -646,5 +712,6 @@
         }
       }
     }
+
   }
 }
