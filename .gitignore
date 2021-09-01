@@ -4,6 +4,7 @@ node_modules
 package-lock.json
 docs/.sass-cache
 docs/_site
+resources/todo.txt
 
 # User files
 # resources
