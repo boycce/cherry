@@ -47,6 +47,7 @@
     "input-font-weight":           inherit,
     "input-icon-width":            18px,
     "input-letter-spacing":        normal,
+    "input-line-height":           1.5rem,
     "input-margin-bottom":         1.5rem,
     "input-padding":               map-get($form, "input-padding"),
     "input-placeholder-color":     rgba($text, 0.4),
@@ -111,7 +112,7 @@
       font-size: map-get($map, "input-font-size");
       font-weight: map-get($map, "input-font-weight");
       letter-spacing: map-get($map, "input-letter-spacing");
-      line-height: 1.5rem;
+      line-height: map-get($map, "input-line-height");
       background: map-get($map, "input-background");
       box-shadow:
         0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color") inset,
@@ -185,7 +186,7 @@
       width: auto !important;
       min-width: 0;
       font-size: map-get($map, "input-btn-font-size");
-      line-height: 1.5rem;
+      line-height: map-get($map, "input-line-height");
       border-radius: map-get($map, "input-border-radius");
       padding: map-get($map, "input-padding");
       margin-left: -5px;
@@ -205,7 +206,6 @@
     .radio-grp .form-error,
     .input-grp .form-error {
       font-size: map-get($map, "error-font-size");
-      line-height: 1.4em;
     }
     .form-error:empty {
       margin: 0 !important;
@@ -326,7 +326,7 @@
       position: absolute;
       margin-top: $ip-top;
       width: map-get($map, "input-icon-width");
-      height: 1.5rem; /*same as input line-height*/
+      height: map-get($map, "input-line-height");
       pointer-events: none;
       align-items: center;
       display: inline-flex;

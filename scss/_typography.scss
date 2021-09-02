@@ -1,78 +1,37 @@
 /* ---- Content (wysiwyg) ------------ */
 
   .content {
-    h1, h2, h3, h4 {
-      font-style: normal;
+    h1, h2, h3, h4, h5, h6 {
       font-weight: bold;
-      line-height: 1.5em;
-      letter-spacing: -0.03em;
-      margin: 0 0 0.8em 0;
+      margin-bottom: 1.4rem;
     }
     h1 {
-      font-size: 27px;
+      font-size: 1.9rem;
     }
     h2 {
-      font-size: 25px;
+      font-size: 1.7rem;
     }
     h3 {
-      font-size: 22px;
+      font-size: 1.5rem;
     }
     h4 {
-      font-size: 18px;
+      font-size: 1.3rem;
     }
-    b, strong {
-      font-weight: bold;
+    h5 {
+      font-size: 1.1rem;
+    }
+    h6 {
+      font-size: 1.0rem;
     }
     p,
     ul,
     ol,
     q,
-    small,
-    code {
-      margin-top: 0;
-      margin-bottom: 1.4rem;
-      line-height: 1.6em;
-    }
-    small,
-    code {
-      display: block;
-    }
     pre {
-      margin: 0;
-    }
-    ul, ol {}
-    li {
-      margin: 0 0 0.2em 2em;
-    }
-    .ul-blank {
-      list-style: none;
-    }
-    .ul-blank li {
-      margin: 0 0 0.5em 0em;
-    }
-    ol a,
-    ul a,
-    p a {
-      text-decoration: underline;
-      //transition: color 0.1s ease;
-    }
-    ol a:hover,
-    ul a:hover,
-    p a:hover,
-    ol a:focus,
-    ul a:focus,
-    p a:focus {
-      text-decoration: underline;
-    }
-    ul li:last-child {
-      padding-bottom: 0.1em;
-    }
-    ul li:last-child {
-      padding-bottom: 0.1em;
+      margin-bottom: 1.4rem;
     }
     small {
       font-size: 0.85em;
-      line-height: 1.6em;
     }
     q {
       background-color: #abc3441f;
@@ -86,5 +45,20 @@
       &:after {
         display: none;
       }
+    }
+    li {
+      margin: 0 0 0.2em 2em;
+    }
+    .ul-blank {
+      list-style: none;
+    }
+    .ul-blank li {
+      margin: 0 0 0.5em 0em;
+    }
+    ul li:last-child {
+      padding-bottom: 0.1em;
+    }
+    ul li:last-child {
+      padding-bottom: 0.1em;
     }
   }

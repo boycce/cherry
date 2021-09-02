@@ -115,32 +115,30 @@ $col-gap-multiplier-xs: false !default;
 
   // https://www.w3.org/TR/selectors/#attribute-representation
   // https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors
-  //
-  // 1. Prevent the user from using .col without .cols* so that responsive selectors work:
-  //    e.g. `[class^="cols"] > ..`
-  .col, .width { flex: 1; }
+  .col,
+  .width { flex: 1; }
   @include col-sizes(false, '.cols{x} > [class^="col"]');
   @include col-sizes(false, '[class^="cols"] > .col{x}, .col{x}, .width{x}');
 
   @media screen and (max-width: $breakpoint-lg) {
     @include cols-responsive-lg('.cols-responsive');
-    @include col-sizes(false, '.lg\\:cols{x} > [class^="col"]');
-    @include col-sizes(true,  '[class^="cols"] > .lg\\:col{x}, .lg\\:col{x}, .lg\\:width{x}');
+    @include col-sizes(true, '.lg\\:cols{x} > .col, .lg\\:cols{x} > [class*="col-"]');
+    @include col-sizes(true, '.cols > .lg\\:col{x}, [class*="cols-"] > .lg\\:col{x}, .lg\\:col{x}, .lg\\:width{x}');
   }
   @media screen and (max-width: $breakpoint-md) {
     @include cols-responsive-md('.cols-responsive');
-    @include col-sizes(false, '.md\\:cols{x} > [class^="col"]');
-    @include col-sizes(true,  '[class^="cols"] > .md\\:col{x}, .md\\:col{x}, .md\\:width{x}');
+    @include col-sizes(true, '.md\\:cols{x} > .col, .md\\:cols{x} > [class*="col-"]');
+    @include col-sizes(true, '.cols > .md\\:col{x}, [class*="cols-"] > .md\\:col{x}, .md\\:col{x}, .md\\:width{x}');
   }
   @media screen and (max-width: $breakpoint-sm) {
     @include cols-responsive-sm('.cols-responsive');
-    @include col-sizes(false, '.sm\\:cols{x} > [class^="col"]');
-    @include col-sizes(true,  '[class^="cols"] > .sm\\:col{x}, .sm\\:col{x}, .sm\\:width{x}');
+    @include col-sizes(true, '.sm\\:cols{x} > .col, .sm\\:cols{x} > [class*="col-"]');
+    @include col-sizes(true, '.cols > .sm\\:col{x}, [class*="cols-"] > .sm\\:col{x}, .sm\\:col{x}, .sm\\:width{x}');
   }
   @media screen and (max-width: $breakpoint-xs) {
     @include cols-responsive-xs('.cols-responsive');
-    @include col-sizes(false, '.xs\\:cols{x} > [class^="col"]');
-    @include col-sizes(true,  '[class^="cols"] > .xs\\:col{x}, .xs\\:col{x}, .xs\\:width{x}');
+    @include col-sizes(true, '.xs\\:cols{x} > .col, .xs\\:cols{x} > [class*="col-"]');
+    @include col-sizes(true, '.cols > .xs\\:col{x}, [class*="cols-"] > .xs\\:col{x}, .xs\\:col{x}, .xs\\:width{x}');
   }
 
   /* cols-gap */

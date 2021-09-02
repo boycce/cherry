@@ -6,15 +6,40 @@ $body-font-family:     $family-primary !default;
 $body-font-size:       $size-3 !default;
 $body-font-weight:     $weight-normal !default;
 $body-letter-spacing:  0 !default;
-$body-line-height:     1.5em !default;
+$body-line-height:     1.5 !default;
+$body-overflow-y:      visible !default;
 
 $link-text-decoration: underline !default;
 $link-outline:         none !default;
 
-/* ---- Main ------------------------- */
+/* ---- Reset ------------------------ */
 
+  /* References: davidwells/reset, and necolas/normalise */
+
+  /* Using the mixin below to help reduce devtools style stacking */
+
+  p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset,
+  legend, textarea, hr, tbody, tfoot, thead, tr, caption {
+    margin: 0;
+    padding: 0;
+  }
+  q, article, aside, details, figcaption, form, figure,
+  footer, header, hgroup, main,  menu, nav, section, summary {
+    display: block;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+  }
+  b,
+  strong {
+    font-weight: bolder;
+  }
   html {
     font-size: $doc-font-size;
+    /*reset style(s) below to reduce devtools style stacking */
     -webkit-text-size-adjust: 100%;
     -webkit-backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
@@ -28,76 +53,34 @@ $link-outline:         none !default;
     font-weight: $body-font-weight;
     letter-spacing: $body-letter-spacing;
     line-height: $body-line-height;
-    overflow-y: scroll;
-  }
-  html, body {
-    height: 100%;
+    overflow-y: $body-overflow-y;
+    /*reset style(s) below to reduce devtools style stacking */
     margin: 0;
+    padding: 0;
   }
-  .preload * {
-    animation-duration: 0s !important;
-    -webkit-animation-duration: 0s !important;
-  }
-  a {
-    color: $link;
-    background-color: transparent; /* ie10 */
-    text-decoration: $link-text-decoration;
-    text-decoration-color: $link;
-    transition: 0.13s ease;
-  }
-  a:hover {
-    color: $link--hover;
-    text-decoration-color: $link--hover;
-  }
-  a:focus {
-    color: $link--focus;
-    text-decoration-color: $link--focus;
-    outline: $link-outline;
-  }
-  q,
-  div,
-  article,
-  aside,
-  details,
-  figcaption,
-  form,
-  figure,
-  footer,
-  header,
-  hgroup,
-  main,
-  menu,
-  nav,
-  section,
-  summary {
-    display: block;
-    -webkit-box-sizing: border-box;
+  * {
     box-sizing: border-box;
   }
-  b, strong {
-    font-weight: bolder;
-  }
-  h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
-  }
-  hr {
-    border: none;
-    height: 0;
-    border-bottom: 1px solid #f0f0f0;
-    overflow: hidden;
-  }
-  img {
-    border-style: none;
-  }
-  pre, code, kbd, samp {
+  pre {
+    margin: 0;
+    padding: 0;
+    display: block;
     font-family: monospace, monospace;
+  }
+  code, kbd, samp {
+    margin: 0;
+    padding: 0;
     font-size: 0.9em;
+    font-family: monospace, monospace;
   }
   small {
+    margin: 0;
+    padding: 0;
     font-size: 80%;
   }
   sub, sup {
+    margin: 0;
+    padding: 0;
     font-size: 75%;
     line-height: 0;
     position: relative;
@@ -109,16 +92,20 @@ $link-outline:         none !default;
   sup {
     top: -0.5em;
   }
-  ul, ol, li {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  img, video {
+    height: auto;
+    max-width: 100%;
+  }
+  iframe {
+    border: 0;
   }
 
-/* ---- Table ------------------------ */
+/* ---- Reset: Table ----------------- */
 
   table,
   .table {
+    margin: 0;
+    padding: 0;
     border-collapse: collapse;
     border-spacing: 0;
     font-size: inherit;
@@ -145,19 +132,19 @@ $link-outline:         none !default;
   }
   th,
   .th {
+    margin: 0;
     padding: 0;
     display: table-cell;
     vertical-align: inherit;
     font-weight: bold;
-    text-align: -internal-center;
+    text-align: inherit;
   }
   td,
   .td {
+    margin: 0;
+    padding: 0;
     display: table-cell;
     vertical-align: inherit;
-  }
-  .td,
-  .th {
     text-align: inherit;
   }
   td:not([align]),
@@ -165,28 +152,33 @@ $link-outline:         none !default;
     text-align: inherit;
   }
 
-/* ---- Forms ------------------------ */
+/* ---- Reset: Forms ----------------- */
 
-  form {
+  @mixin formmixin() {
     margin: 0;
-  }
-  button,
-  input,
-  optgroup,
-  select,
-  textarea {
     font-family: inherit;
     font-size: 100%;
     line-height: 1.15;
-    margin: 0;
   }
-  button,
-  input {
+  button {
+    @include formmixin();
+    text-transform: none;
     overflow: visible;
   }
-  button,
+  input {
+    @include formmixin();
+    overflow: visible;
+  }
+  optgroup {
+    @include formmixin();
+  }
   select {
+    @include formmixin();
     text-transform: none;
+  }
+  textarea {
+    @include formmixin();
+    overflow: auto;
   }
   button,
   [type="button"],
@@ -209,16 +201,16 @@ $link-outline:         none !default;
   }
   [type="checkbox"],
   [type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
+    box-sizing: border-box;
+    padding: 0;
   }
   [type="number"]::-webkit-inner-spin-button,
   [type="number"]::-webkit-outer-spin-button {
     height: auto;
   }
   [type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-    outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+    outline-offset: -2px;
   }
   [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
@@ -241,31 +233,29 @@ $link-outline:         none !default;
       display: none;
     }
   }
-  textarea {
-    overflow: auto;
-  }
   ::-webkit-file-upload-button {
-    -webkit-appearance: button; /* 1 */
-    font: inherit; /* 2 */
+    -webkit-appearance: button;
+    font: inherit;
   }
 
-/* ---- Selection -------------------- */
+/* ---- Generic ---------------------- */
 
-  ::-moz-selection {
-    background: #5984FF;
-    text-shadow: none;
-    color: #fff;
-    -webkit-text-fill-color: #fff !important;
+  a {
+    color: $link;
+    background-color: transparent; /* ie10 */
+    text-decoration: $link-text-decoration;
+    text-decoration-color: $link;
   }
-  ::selection {
-    background: #5984FF;
-    text-shadow: none;
-    color: #fff;
-    -webkit-text-fill-color: #fff !important;
+  a:hover {
+    color: $link--hover;
+    text-decoration-color: $link--hover;
   }
-  ::-moz-selection {
-    background: #5984FF;
-    text-shadow: none;
-    color: #fff;
-    -webkit-text-fill-color: #fff !important;
+  a:focus {
+    color: $link--focus;
+    text-decoration-color: $link--focus;
+    outline: $link-outline;
+  }
+  .preload * {
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
   }

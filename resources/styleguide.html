@@ -8,14 +8,19 @@
     }
     .styleguide > h1,
     .styleguide > h2,
-    .styleguide > h3,
-    .styleguide > h4 {
-      margin-top: 0;
-      margin-bottom: 1em;
+    .styleguide > h3 {
+      font-weight: bold;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
-    .styleguide > h1,
+    .styleguide > h1 {
+      font-size: 1.7rem;
+    }
     .styleguide > h2 {
-      margin-top: 1em;
+      font-size: 1.5rem;
+    }
+    .styleguide > h3 {
+      font-size: 1.0rem;
     }
     .styleguide .example-box,
     .styleguide .example-box2 {
@@ -40,7 +45,7 @@
 
   <h2>Buttons</h2>
 
-  <h4>Colors</h4>
+  <h3>Colors</h3>
   <div class="btns">
     <div class="btn is-primary">is-primary</div>
     <div class="btn is-secondary">is-secondary</div>
@@ -52,7 +57,7 @@
     <div class="btn is-grad1">is-grad1</div>
   </div>
 
-  <h4>Colors inverted</h4>
+  <h3>Colors inverted</h3>
   <div class="btns">
     <div class="btn is-primary is-inverted">is-primary</div>
     <div class="btn is-secondary is-inverted">is-secondary</div>
@@ -64,7 +69,7 @@
     <div class="btn is-grad1 is-inverted">is-grad1</div>
   </div>
 
-  <h4>Colors outlined</h4>
+  <h3>Colors outlined</h3>
   <div class="btns">
     <div class="btn is-primary is-outlined">is-primary</div>
     <div class="btn is-secondary is-outlined">is-secondary</div>
@@ -76,7 +81,7 @@
     <div class="btn is-grad1 is-outlined">is-grad1</div>
   </div>
 
-  <h4>Colors light</h4>
+  <h3>Colors light</h3>
   <div class="btns">
     <div class="btn is-primary is-light">is-primary</div>
     <div class="btn is-secondary is-light">is-secondary</div>
@@ -88,20 +93,20 @@
     <div class="btn is-grad1 is-light">is-grad1</div>
   </div>
 
-  <h4>Shades</h4>
+  <h3>Shades</h3>
   <div class="btns">
-    <div class="btn is-white">is-white</div>
     <div class="btn is-black">is-black</div>
+    <div class="btn is-white">is-white</div>
   </div>
 
-  <h4>Grouping</h4>
+  <h3>Grouping</h3>
   <div class="btns" style={{ 'maxWidth': '300px' }}>
     <div class="btn">Button</div>
     <div class="btn">Button</div>
     <div class="btn">Button</div>
   </div>
 
-  <h4>Icon</h4>
+  <h3>Icon</h3>
   <div class="btns">
     <div class="btn">
       <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg="">
@@ -119,7 +124,7 @@
 
   <h2>Form</h2>
 
-  <h4>Input</h4>
+  <h3>Input</h3>
   <form class="form">
     <div class="cols">
       <div class="col-3">
@@ -275,7 +280,7 @@
     </div>
   </form>
 
-  <h4>Textarea</h4>
+  <h3>Textarea</h3>
   <form class="form">
     <div class="cols">
       <div class="col-3">
@@ -301,7 +306,7 @@
     </div>
   </form>
 
-  <h4>Errors</h4>
+  <h3>Errors</h3>
   <form class="form is-invalid">
     <div class="cols">
       <div class="col-3">
@@ -315,7 +320,7 @@
     </div>
   </form>
 
-  <h4 class="hidden">Form styling variation</h4>
+  <h3 class="hidden">Form styling variation</h3>
   <form class="hidden form-2">
     <div class="cols">
       <div class="col-3">
@@ -329,7 +334,7 @@
 
   <h2>Columns</h2>
 
-  <h4>Sizes</h4>
+  <h3>Sizes</h3>
   <div class="cols">
     <div class="col-1"><div class="example-box">col-1</div></div>
     <div class="col"><div class="example-box2">col</div></div>
@@ -378,17 +383,21 @@
     <div class="col-12"><div class="example-box">col-12</div></div>
   </div>
 
-  <h4>Responsive Columns</h4>
+  <h3>Responsive Columns</h3>
   <div class="cols cols-4 lg:cols-6">
     <div class="col-5 lg:col-7"><div class="example-box">col-5, lg:cols-7</div></div>
     <div class="col"><div class="example-box2">col-4, lg:cols-6</div></div>
   </div>
-  <div class="cols cols-4 lg:cols-6 md:cols-8">
-    <div class="col-5 lg:col-7 md:col-9"><div class="example-box">col-5, lg:cols-7, md:cols-9</div></div>
-    <div class="col"><div class="example-box2">cols-4, lg:cols-6, md:cols-8</div></div>
+  <div class="cols cols-4 lg:cols-6 md:cols-12">
+    <div class="col-5 lg:col-7 md:col-9"><div class="example-box">col-5, lg:col-7, md:col-9</div></div>
+    <div class="col"><div class="example-box2">cols-4, lg:cols-6, md:cols-12</div></div>
+  </div>
+  <div class="cols sm:cols-12">
+    <div class="col-4"><div class="example-box">col-4, sm:cols-12</div></div>
+    <div class="col"><div class="example-box2">cols(flex:1), sm:cols-12</div></div>
   </div>
 
-  <h4>Gaps (1-9)</h4>
+  <h3>Gaps (1-9)</h3>
   <div class="cols gap-1">
     <div class="col-3"><div class="example-box">gap-1</div></div>
     <div class="col"><div class="example-box2">&nbsp;</div></div>
@@ -407,16 +416,21 @@
   </div>
   <div class="mb-4">etc..</div>
 
-  <h2>Content</h2>
+  <h2>Content (wysiwyg)</h2>
 
   <div class="content px-3 mb-4">
     <h1>Heading 1</h1>
     <h2>Heading 2</h2>
     <h3>Heading 3</h3>
     <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
     <p>Paragraph with some <b>bold</b> text. Here is a <a href="#">link</a>.</p>
-    <small>Small block with some text</small>
-    <code>Code block with some text</code>
+    <p>
+      <small>Small block with some text</small>
+      <code>Code block with some text</code>
+    </p>
+    <pre><code>Pre code block with some text</code></pre>
     <q>Quote with some <b>bold</b> text</q>
     <ol>
       <li>Ordered list item 1</li>
@@ -432,7 +446,7 @@
 
   <h2>Tables</h2>
 
-  <h4>Native elements</h4>
+  <h3>Native elements</h3>
   <div style="overflow-x: auto;">
     <table class="table mb-2-5">
       <thead>
@@ -531,7 +545,7 @@
     </table>
   </div>
 
-  <h4>Pseudo elements</h4>
+  <h3>Pseudo elements</h3>
   <div style="overflow-x: auto;">
     <div class="table">
       <div class="tr">
