@@ -18,7 +18,7 @@ $link-outline:         none !default;
 
   /* Using the mixin below to help reduce devtools style stacking */
 
-  p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset,
+  p, ol, ul, li, dl, dt, dd, blockquote, form, figure, fieldset,
   legend, textarea, hr, tbody, tfoot, thead, tr, caption {
     margin: 0;
     padding: 0;
