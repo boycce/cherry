@@ -47,7 +47,7 @@
     "input-font-weight":           inherit,
     "input-icon-width":            18px,
     "input-letter-spacing":        normal,
-    "input-line-height":           1.5rem,
+    "input-line-height":           1.5,
     "input-margin-bottom":         1.5rem,
     "input-padding":               map-get($form, "input-padding"),
     "input-placeholder-color":     rgba($text, 0.4),
@@ -63,7 +63,7 @@
     "label-font-size":             0.85rem,
     "label-margin-bottom":         0.45rem,
     // Textarea
-    "textarea-line-height":        1.5rem, // same as input
+    "textarea-line-height":        1.5, // same as input
     "textarea-min-height":         7em,
     "textarea-padding":            map-get($form, "textarea-padding"),
 

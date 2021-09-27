@@ -594,10 +594,10 @@ $breakpoints: (
     min-width: 0 !important;
   }
   .width-100 {
-    width: 100%;
+    width: 100% !important;
   }
   .width-auto {
-    width: auto;
+    width: auto !important;
   }
   .no-select {
     -webkit-touch-callout: none !important;
