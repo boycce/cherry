@@ -14,7 +14,7 @@
     "input-padding":               0.86em 1.26em,
     "label-font-size":             0.85rem,
     "textarea-padding":            0.86em 1.26em,
-    "toggle-height":               1.8em,
+    "toggle-height":               1.55rem,
   ), $form);
 
   // Second, find --inside reference variables
@@ -75,13 +75,12 @@
     "textarea-line-height":        1.5em, // same as input
     "textarea-min-height":         7em,
     "textarea-padding":            map-get($form, "textarea-padding"),
-
     // Variable inputs
     "variable-color":              darken(map-get($form, "input-background"), 12%),
     "variable-color--active":      map-get($form, "input-border-color--active"),
     "checkbox-font-size":          map-get($form, "label-font-size"),
-    "checkbox-height":             1.5em, // determines width
-    "checkbox-inner-height":       0.85em, // determines width
+    "checkbox-height":             1.33rem, // determines width
+    "checkbox-inner-height":       0.66rem, // determines width
     "checkbox-padding-left":       0.8em,
     "checkbox-padding-right":      1.066em,
     "toggle-font-size":            map-get($form, "label-font-size"),
@@ -436,7 +435,7 @@
         display: inline-block;
         font-size: map-get($map, "checkbox-font-size");
         padding: map-get($map, "input-padding");
-        padding-left: $checkbox-width + map-get($map, "checkbox-padding-left"); //0.8em;
+        padding-left: calc(#{$checkbox-width} + #{map-get($map, "checkbox-padding-left")});
         padding-right: map-get($map, "checkbox-padding-right");
         user-select: none;
         margin-bottom: 0;
@@ -463,7 +462,7 @@
         top: 50%;
         width: $checkbox-inner-width;
         height: map-get($map, "checkbox-inner-height");
-        margin-left: ($checkbox-width - $checkbox-inner-width) / 2;
+        margin-left: calc((#{$checkbox-width} - #{$checkbox-inner-width}) / 2);
         margin-top: -(map-get($map, "checkbox-inner-height") / 2);
         border-radius: 2px;
         transition: all 0.2s ease;
@@ -493,7 +492,7 @@
         font-size: map-get($map, "toggle-font-size");
         min-height: map-get($map, "toggle-height"); //1em;height:
         padding: map-get($map, "input-padding");
-        padding-left: map-get($map, "toggle-width") + 0.8em;
+        padding-left: calc(#{map-get($map, "toggle-width")} + 0.8em);
         padding-right: 1.2em;
         margin-bottom: 0;
         user-select: none;
