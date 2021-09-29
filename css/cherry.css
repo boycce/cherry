@@ -5,7 +5,7 @@
 /* ---- Reset ------------------------ */
 /* References: davidwells/reset, and necolas/normalise */
 /* Using the mixin below to help reduce devtools style stacking */
-p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset,
+p, ol, ul, li, dl, dt, dd, form, blockquote, figure, fieldset,
 legend, textarea, hr, tbody, tfoot, thead, tr, caption {
   margin: 0;
   padding: 0;
@@ -299,13 +299,13 @@ a:focus {
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 12px 31px;
+  padding: 0.86em 2.06em;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 1rem;
   min-height: 0;
-  line-height: 1.5em;
+  line-height: 1.5;
   text-align: center;
   text-decoration: none;
   justify-content: center;
@@ -4114,13 +4114,13 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .vs__dropdown-toggle,
 .form .rs__control {
   width: 100%;
-  padding: 13px 19px;
+  padding: 0.86em 1.26em;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   color: #121212;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: inherit;
   letter-spacing: normal;
-  line-height: 1.5rem;
+  line-height: 1.5;
   background: #fdfdfd;
   box-shadow: 0 0 0 2px #efefef inset;
   border: 0;
@@ -4152,8 +4152,8 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .form textarea {
-  padding: 13px 19px;
-  line-height: 1.5rem;
+  padding: 0.86em 1.26em;
+  line-height: 1.5em;
   max-height: 40em;
   min-height: 7em;
   resize: vertical;
@@ -4178,7 +4178,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .form input:-webkit-autofill::first-line {
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: inherit;
 }
 
@@ -4196,9 +4196,9 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   width: auto !important;
   min-width: 0;
   font-size: 0.9rem;
-  line-height: 1.5rem;
+  line-height: 1.5;
   border-radius: 4px;
-  padding: 13px 19px;
+  padding: 0.86em 1.26em;
   margin-left: -5px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -4311,14 +4311,24 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .has-inside-label input + label,
 .form .has-inside-label select + label,
 .form .has-inside-label .rs__control + label {
-  left: 19px;
-  top: calc(6.5px - 1px);
+  left: 1.26em;
+  top: calc(0.43em - 1px);
+  font-size: 1rem;
+}
+
+.form .has-inside-label input + label > span,
+.form .has-inside-label select + label > span,
+.form .has-inside-label .rs__control + label > span {
   font-size: 0.75rem;
 }
 
 .form .has-inside-label textarea + label {
-  left: 19px;
-  top: calc(6.5px - 1px);
+  left: 1.26em;
+  top: calc(0.43em - 1px);
+  font-size: 1rem;
+}
+
+.form .has-inside-label textarea + label > span {
   font-size: 0.75rem;
 }
 
@@ -4326,31 +4336,40 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .has-inside-label input:not(:placeholder-shown),
 .form .has-inside-label select:not(:placeholder-shown),
 .form .has-inside-label .rs__control.rs__control--has-value {
-  padding: 19.5px 19px 6.5px 19px;
+  padding: 1.29em 1.26em 0.43em 1.26em;
 }
 
 .form .has-inside-label textarea:not(:-moz-placeholder-shown) {
-  padding: 19.5px 19px 6.5px 19px;
+  padding: 1.29em 1.26em 0.43em 1.26em;
 }
 
 .form .has-inside-label textarea:not(:-ms-input-placeholder) {
-  padding: 19.5px 19px 6.5px 19px;
+  padding: 1.29em 1.26em 0.43em 1.26em;
 }
 
 .form .has-inside-label textarea:not(:placeholder-shown) {
-  padding: 19.5px 19px 6.5px 19px;
+  padding: 1.29em 1.26em 0.43em 1.26em;
 }
 
 .form .icon-left,
 .form .icon-right {
   position: absolute;
-  margin-top: 13px;
-  width: 18px;
-  height: 1.5rem;
+  margin-top: 0.86em;
+  font-size: 1rem;
+  line-height: 1.5;
+  width: 1.2em;
   pointer-events: none;
   align-items: center;
   display: inline-flex;
   justify-content: center;
+}
+
+.form .icon-left:after,
+.form .icon-right:after {
+  content: "a";
+  display: inline;
+  width: 0;
+  overflow: hidden;
 }
 
 .form .has-icon-left {
@@ -4361,11 +4380,11 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .has-icon-left select,
 .form .has-icon-left .input,
 .form .has-icon-left .vs__dropdown-toggle {
-  padding-left: calc(19px - 2px + 18px + 0.75rem);
+  padding-left: calc(1.26em - 2px + 1.2em + 0.75em);
 }
 
 .form .has-icon-left .icon-left {
-  left: calc(19px - 2px);
+  left: calc(1.26em - 2px);
 }
 
 .form .has-icon-right {
@@ -4376,11 +4395,11 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .has-icon-right select,
 .form .has-icon-right .input,
 .form .has-icon-right .vs__dropdown-toggle {
-  padding-right: calc(19px - 2px + 18px + 0.4rem);
+  padding-right: calc(1.26em - 2px + 1.2em + 0.4em);
 }
 
 .form .has-icon-right .icon-right {
-  right: calc(19px - 2px);
+  right: calc(1.26em - 2px);
 }
 
 .form .has-icon-left.has-inside-label input:-webkit-autofill,
@@ -4392,7 +4411,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .has-inside-label .has-icon-left input:-webkit-autofill,
 .form .has-inside-label .has-icon-left input:not(:placeholder-shown),
 .form .has-inside-label .has-icon-left select:not(:placeholder-shown) {
-  padding-left: calc(19px - 2px + 18px + 0.75rem);
+  padding-left: calc(1.26em - 2px + 1.2em + 0.75em);
 }
 
 .form .has-icon-left.has-inside-label input + label,
@@ -4401,7 +4420,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .has-icon-left .has-inside-label select + label,
 .form .has-inside-label .has-icon-left input + label,
 .form .has-inside-label .has-icon-left select + label {
-  left: calc(19px - 2px + 18px + 0.75rem);
+  left: calc(1.26em - 2px + 1.2em + 0.75em);
 }
 
 .form select,
@@ -4412,7 +4431,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
           appearance: none;
   background-repeat: no-repeat;
   background-size: auto 7px;
-  background-position: right 19px center;
+  background-position: right 1.26em center;
   transition: all 200ms ease;
 }
 
@@ -4437,9 +4456,10 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .checkbox-grp input + label {
   position: relative;
   display: inline-block;
-  padding: 13px 19px;
-  padding-left: 32px;
-  padding-right: 16px;
+  font-size: 0.85rem;
+  padding: 0.86em 1.26em;
+  padding-left: calc(1.33rem + 0.8em);
+  padding-right: 1.066em;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -4454,9 +4474,9 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
+  width: 1.33rem;
+  height: 1.33rem;
+  margin-top: -0.665rem;
   background: #fdfdfd;
   border: 2px solid #dedede;
   border-radius: 3px;
@@ -4470,11 +4490,11 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 10px;
-  height: 10px;
-  margin-left: 5px;
-  margin-top: -5px;
-  border-radius: 3px;
+  width: 0.66rem;
+  height: 0.66rem;
+  margin-left: calc((1.33rem - 0.66rem) / 2);
+  margin-top: -0.33rem;
+  border-radius: 2px;
   transition: all 0.2s ease;
 }
 
@@ -4505,9 +4525,10 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .toggle-grp input + label {
   position: relative;
   display: inline-block;
-  min-height: 1.8em;
-  padding: 13px 19px;
-  padding-left: 4.04em;
+  font-size: 0.85rem;
+  min-height: 1.55rem;
+  padding: 0.86em 1.26em;
+  padding-left: calc(2.79rem + 0.8em);
   padding-right: 1.2em;
   margin-bottom: 0;
   -webkit-user-select: none;
@@ -4523,17 +4544,17 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -0.9em;
+  margin-top: -0.775rem;
   background: #dedede;
-  border-radius: 1.8em;
-  width: 3.24em;
-  height: 1.8em;
+  border-radius: 1.55rem;
+  width: 2.79rem;
+  height: 1.55rem;
   box-sizing: border-box;
   transition: all 0.2s ease;
 }
 
 .form .toggle-grp input + label:after {
-  width: 1.8em;
+  width: 1.55rem;
   border: 2px solid transparent;
   border-color: transparent;
   background-color: #fff;
@@ -4545,11 +4566,11 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .form .toggle-grp input:checked + label:after {
-  left: 1.44em;
+  left: 1.24rem;
 }
 
 .form .toggle-grp.has-no-label input + label {
-  padding-left: 3.24em;
+  padding-left: 2.79rem;
   padding-right: 0;
   padding-top: 0;
   padding-bottom: 0;
@@ -4711,7 +4732,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .rs__indicators {
   position: absolute;
   top: 50%;
-  right: 19px;
+  right: 1.26em;
   margin-top: -10px;
   margin-right: -7px;
 }
@@ -8439,11 +8460,11 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .width-100 {
-  width: 100%;
+  width: 100% !important;
 }
 
 .width-auto {
-  width: auto;
+  width: auto !important;
 }
 
 .no-select {
