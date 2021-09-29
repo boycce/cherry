@@ -1,14 +1,23 @@
 @function formDefaults($form) {
-  // First, find variables that are referenced below
+  /**
+   * Notes:
+   *  - Element font-size set to REM
+   *  - Element attributes set to EM
+   *  - Margins are set to REM so they can be resized separately if the user sets the element
+   *    font size to px/em, which is very handy for responsive design
+   */
+
+  // First, find referenced variables
   $form: map-merge((
     "input-background":            #fdfdfd,
     "input-border-color--active":  $primary,
-    "input-padding":               13px 19px,
-    "textarea-padding":            13px 19px,
+    "input-padding":               0.86em 1.26em,
+    "label-font-size":             0.85rem,
+    "textarea-padding":            0.86em 1.26em,
     "toggle-height":               1.8em,
   ), $form);
 
-  // Second, find variables referenced below
+  // Second, find --inside reference variables
   $ip-t: paddingSide(map-get($form, "input-padding"), 'top');
   $ip-r: paddingSide(map-get($form, "input-padding"), 'right');
   $ip-b: paddingSide(map-get($form, "input-padding"), 'bottom');
@@ -43,9 +52,9 @@
     "input-color":                 $text,
     "input-color--invalid":        $text,
     "input-font-family":           $body-font-family,
-    "input-font-size":             16px, // 0.95rem,
+    "input-font-size":             1rem,
     "input-font-weight":           inherit,
-    "input-icon-width":            18px,
+    "input-icon-width":            1.2em,
     "input-letter-spacing":        normal,
     "input-line-height":           1.5,
     "input-margin-bottom":         1.5rem,
@@ -60,20 +69,22 @@
     "inside-label-textarea-top":   calc(#{paddingSide(map-get($form, "textarea-padding--inside"), 'bottom')} - 1px),
     // Label
     "label-color":                 $text-light,
-    "label-font-size":             0.85rem,
+    "label-font-size":             map-get($form, "label-font-size"),
     "label-margin-bottom":         0.45rem,
     // Textarea
-    "textarea-line-height":        1.5, // same as input
+    "textarea-line-height":        1.5em, // same as input
     "textarea-min-height":         7em,
     "textarea-padding":            map-get($form, "textarea-padding"),
 
     // Variable inputs
     "variable-color":              darken(map-get($form, "input-background"), 12%),
     "variable-color--active":      map-get($form, "input-border-color--active"),
-    "checkbox-height":             20px, // determines width
-    "checkbox-inner-height":       10px, // determines width
-    "checkbox-padding-left":       12px,
-    "checkbox-padding-right":      16px,
+    "checkbox-font-size":          map-get($form, "label-font-size"),
+    "checkbox-height":             1.5em, // determines width
+    "checkbox-inner-height":       0.85em, // determines width
+    "checkbox-padding-left":       0.8em,
+    "checkbox-padding-right":      1.066em,
+    "toggle-font-size":            map-get($form, "label-font-size"),
     "toggle-height":               map-get($form, "toggle-height"),
     "toggle-width":                map-get($form, "toggle-height") * 1.8,
   ), $form);
@@ -297,12 +308,18 @@
       .rs__control + label {
         left: map-get($map, "inside-label-input-left");
         top: map-get($map, "inside-label-input-top");
-        font-size: map-get($map, "inside-label-font-size");
+        font-size: map-get($map, "input-font-size");
+        > span {
+          font-size: map-get($map, "inside-label-font-size");
+        }
       }
       textarea + label {
         left: map-get($map, "inside-label-textarea-left");
         top: map-get($map, "inside-label-textarea-top");
-        font-size: map-get($map, "inside-label-font-size");
+        font-size: map-get($map, "input-font-size");
+        > span {
+          font-size: map-get($map, "inside-label-font-size");
+        }
       }
       input:-webkit-autofill,
       input:not(:placeholder-shown),
@@ -325,12 +342,20 @@
     .icon-right {
       position: absolute;
       margin-top: $ip-top;
+      font-size: map-get($map, "input-font-size");
+      line-height: map-get($map, "input-line-height");
       width: map-get($map, "input-icon-width");
-      height: map-get($map, "input-line-height");
       pointer-events: none;
       align-items: center;
       display: inline-flex;
       justify-content: center;
+      &:after {
+        // Force line height to take effect
+        content: "a";
+        display: inline;
+        width: 0;
+        overflow: hidden;
+      }
     }
     .has-icon-left {
       position: relative;
@@ -338,7 +363,7 @@
       select,
       .input,
       .vs__dropdown-toggle {
-        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75rem);
+        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75em);
       }
       .icon-left {
         left: calc(#{$ip-left} - 2px);
@@ -350,7 +375,7 @@
       select,
       .input,
       .vs__dropdown-toggle {
-        padding-right: calc(#{$ip-right} - 2px + #{map-get($map, "input-icon-width")} + 0.4rem);
+        padding-right: calc(#{$ip-right} - 2px + #{map-get($map, "input-icon-width")} + 0.4em);
       }
       .icon-right {
         right: calc(#{$ip-right} - 2px);
@@ -368,11 +393,11 @@
       input:-webkit-autofill,
       input:not(:placeholder-shown),
       select:not(:placeholder-shown) {
-        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75rem);
+        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75em);
       }
       input + label,
       select + label {
-        left: calc(#{$ll-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75rem);
+        left: calc(#{$ll-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75em);
       }
     }
 
@@ -409,6 +434,7 @@
       input + label {
         position: relative;
         display: inline-block;
+        font-size: map-get($map, "checkbox-font-size");
         padding: map-get($map, "input-padding");
         padding-left: $checkbox-width + map-get($map, "checkbox-padding-left"); //0.8em;
         padding-right: map-get($map, "checkbox-padding-right");
@@ -439,7 +465,7 @@
         height: map-get($map, "checkbox-inner-height");
         margin-left: ($checkbox-width - $checkbox-inner-width) / 2;
         margin-top: -(map-get($map, "checkbox-inner-height") / 2);
-        border-radius: 3px;
+        border-radius: 2px;
         transition: all 0.2s ease;
       }
       input:checked + label:before {
@@ -464,6 +490,7 @@
       input + label {
         position: relative;
         display: inline-block;
+        font-size: map-get($map, "toggle-font-size");
         min-height: map-get($map, "toggle-height"); //1em;height:
         padding: map-get($map, "input-padding");
         padding-left: map-get($map, "toggle-width") + 0.8em;
