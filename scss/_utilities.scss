@@ -201,7 +201,7 @@ $breakpoints: (
       display: contents !important;
     }
     .#{$prefix}hidden {
-      display: none !important;
+      display: none !important; /* none use for float */
     }
   }
 
@@ -441,40 +441,6 @@ $breakpoints: (
     font-weight: $weight-bold !important;
   }
 
-/* ---- Text Size -------------------- */
-
-  .size-xsmall,
-  .text-size-xsmall {
-    font-size: $size-xsmall !important;
-  }
-  .size-small,
-  .text-size-small {
-    font-size: $size-small !important;
-  }
-  .size-normal,
-  .text-size-normal {
-    font-size: $size-normal !important;
-  }
-  .size-medium,
-  .text-size-medium {
-    font-size: $size-medium !important;
-  }
-  .size-large,
-  .text-size-large {
-    font-size: $size-large !important;
-  }
-  .size-xlarge,
-  .text-size-xlarge {
-    font-size: $size-xlarge !important;
-  }
-  @each $size in $font-sizes {
-    $i: index($font-sizes, $size);
-    .size-#{$i},
-    .text-size-#{$i} {
-      font-size: $size !important;
-    }
-  }
-
 /* ---- Text family ------------------ */
 
   .family-primary,
@@ -501,54 +467,49 @@ $breakpoints: (
 /* ---- Text transformations --------- */
 
   .text-capitalized {
-    text-transform: capitalize !important
+    text-transform: capitalize !important;
   }
   .text-lowercase {
-    text-transform: lowercase !important
+    text-transform: lowercase !important;
   }
   .text-uppercase {
-    text-transform: uppercase !important
+    text-transform: uppercase !important;
   }
   .text-italic {
-    font-style: italic !important
+    font-style: italic !important;
   }
   .text-underlined {
-    text-decoration: underline !important
+    text-decoration: underline !important;
   }
 
-/* ---- Text Alignments -------------- */
+/* ---- Overflow --------------------- */
 
-  .text-left {
-    text-align: left !important;
+  @each $i in [auto, hidden, inherit, initial, overlay, scroll, visible] {
+    .overflow-#{$i} {
+      overflow: $i !important;
+    }
+    .overflow-x-#{$i} {
+      overflow-x: $i !important;
+    }
+    .overflow-y-#{$i} {
+      overflow-y: $i !important;
+    }
   }
-  .text-right {
-    text-align: right !important;
-  }
-  .text-center {
-    text-align: center !important;
-  }
-  .text-justify {
-    text-align: justify !important;
-  }
-
-/* ---- Text Overflow ---------------- */
-
-  @each $i in [ellipsis, clip] {
-    .overflow-#{$i}
+  @each $i in [clip, ellipsis, inherit, initial] {
     .text-overflow-#{$i} {
       text-overflow: $i !important;
     }
   }
   .truncate,
   .text-truncate {
-    text-overflow: ellipsis;
-    overflow: hidden;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
   }
   .truncate1,
   .text-truncate1 {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
   }
 
 /* ---- Vertical align --------------- */
@@ -560,17 +521,75 @@ $breakpoints: (
     }
   }
 
-/* ---- Helpers ---------------------- */
+/* ---- White space ------------------ */
 
-  .relative {
-    position: relative !important;
+  @each $i in [normal, nowrap, pre, pre-line, pre-wrap] {
+    .white-space-#{$i} {
+      white-space: $i !important;
+    }
   }
-  .left {
-    float: left !important;
+
+/* ---- Responsive Utilities --------- */
+
+  @mixin general($prefix) {
+    /* Text sizes, e.g. size-small */
+    $size-names: [xsmall, small, normal, medium, large, xlarge];
+    $size-values: [$size-xsmall, $size-small, $size-normal, $size-medium, $size-large, $size-xlarge];
+    @for $i from 1 through length($size-names) {
+      $name: nth($size-names, $i);
+      $size: nth($size-values, $i);
+      .size-#{$name},/*e.g. size-small */
+      .text-size-#{$name} {
+        font-size: $size !important;
+      }
+    }
+    /* Text sizes, e.g. size-1 */
+    @each $size in $font-sizes {
+      $i: index($font-sizes, $size);
+      .size-#{$i},
+      .text-size-#{$i} {
+        font-size: $size !important;
+      }
+    }
+    /* Text align */
+    @each $i in [left, right, center, justify] {
+      .#{$prefix}text-#{$i} {
+        text-align: #{$i} !important;
+      }
+    }
+    /* Position */
+    @each $i in [relative, absolute, static] {
+      .#{$prefix}#{$i} {
+        position: #{$i} !important;
+      }
+    }
+    /* Width */
+    @each $i in [0, 50, 100] {
+      .#{$prefix}width-#{$i} {
+        width: #{$i}% !important;
+      }
+    }
+    .#{$prefix}width-auto {
+      width: auto;
+    }
+    /* Float */
+    @each $i in [left, none, right] {
+      .#{$prefix}float-#{$i},
+      .#{$prefix}#{$i} {
+        float: $i !important;
+      }
+    }
   }
-  .right {
-    float: right !important;
+  @each $key, $width in $breakpoints {
+    @if ($width) {
+      @media screen and (max-width: $width) { @include general($key + '\\:'); }
+    } @else {
+      @include general('');
+    }
   }
+
+/* ---- General ---------------------- */
+
   .center,
   .mx-auto {
     margin-left: auto !important;
@@ -592,12 +611,6 @@ $breakpoints: (
   }
   .min-0 {
     min-width: 0 !important;
-  }
-  .width-100 {
-    width: 100% !important;
-  }
-  .width-auto {
-    width: auto !important;
   }
   .no-select {
     -webkit-touch-callout: none !important;
