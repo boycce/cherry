@@ -48,7 +48,7 @@
     "input-box-shadow":            map-get($form, "input-box-shadow"),
     "input-box-shadow--active":    map-get($form, "input-box-shadow"),
     "input-box-shadow--invalid":   map-get($form, "input-box-shadow"),
-    "input-btn-font-size":         0.9rem,
+    "input-btn-font-size":         0.9rem, // todo: change to % off btn font-size
     "input-color":                 $text,
     "input-color--invalid":        $text,
     "input-font-family":           $body-font-family,
@@ -234,7 +234,6 @@
       // display: inline-block;
       // vertical-align: top;
       display: block;
-      font-size: map-get($map, "label-font-size");
       line-height: 1.4em;
       margin-bottom: 0.45em;
       cursor: pointer;
@@ -247,9 +246,16 @@
     }
     label,
     .label,
-    .text-label {
+    .text-label,
+    .label-right {
       color: map-get($map, "label-color");
       text-decoration-color: map-get($map, "label-color");
+    }
+    label,
+    .label,
+    .size-label,
+    .label-right {
+      font-size: map-get($map, "label-font-size");
     }
     label.invalid-out,
     label.is-invalid-out {

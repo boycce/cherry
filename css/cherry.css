@@ -4231,7 +4231,6 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 .form .label,
 .form .label-right {
   display: block;
-  font-size: 0.85rem;
   line-height: 1.4em;
   margin-bottom: 0.45em;
   cursor: pointer;
@@ -4251,10 +4250,18 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 
 .form label,
 .form .label,
-.form .text-label {
+.form .text-label,
+.form .label-right {
   color: #454545;
   -webkit-text-decoration-color: #454545;
           text-decoration-color: #454545;
+}
+
+.form label,
+.form .label,
+.form .size-label,
+.form .label-right {
+  font-size: 0.85rem;
 }
 
 .form label.invalid-in,
