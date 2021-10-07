@@ -141,6 +141,9 @@
     .toggle-grp {
       margin-bottom: map-get($map, "input-margin-bottom");
     }
+    .size-input {
+      font-size: map-get($map, "input-font-size");
+    }
     input[type="password"]:not(:placeholder-shown) {
       letter-spacing: 1px;
     }
@@ -211,6 +214,7 @@
       color: map-get($map, "error-font-color");
     }
     .form-error,
+    .size-error,
     .toggle-grp .form-error,
     .checkbox-grp .form-error,
     .radio-grp .form-error,

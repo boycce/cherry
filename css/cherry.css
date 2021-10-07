@@ -4139,6 +4139,10 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   margin-bottom: 1.5rem;
 }
 
+.form .size-input {
+  font-size: 1rem;
+}
+
 .form input[type="password"]:not(:-moz-placeholder-shown) {
   letter-spacing: 1px;
 }
@@ -4210,6 +4214,7 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
 }
 
 .form .form-error,
+.form .size-error,
 .form .toggle-grp .form-error,
 .form .checkbox-grp .form-error,
 .form .radio-grp .form-error,
