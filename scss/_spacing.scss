@@ -55,7 +55,7 @@ $spacing-breakpoints: (
   @each $size, $width, $multiplier in $spacing-breakpoints {
     @media screen and (max-width: $width) {
       @each $type, $t in (padding, p), (margin, m) {
-        @if ($multiplier != false) { @include spacing($t, $type, $multiplier, ''); }
+        @if ($multiplier != false) { @include spacing($t, $type, $multiplier, $size + '\\:'); }
         @include spacing($t, $type, 1.0, $size + '\\:');
       }
     }

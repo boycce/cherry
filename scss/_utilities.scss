@@ -290,25 +290,6 @@ $breakpoints: (
     order: 0 !important;
   }
 
-  /* Gap */
-
-  @each $i in [0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9] {
-    $ii: $i;
-    @if $i == 0.5 { $ii: '0-5'; }
-    @if $i == 1.5 { $ii: '1-5'; }
-    @if $i == 2.5 { $ii: '2-5'; }
-    .grid-gap-#{$ii} {
-      // Not used for cols, please see gap-*
-      gap: #{$utilities-multiplier * $i} !important;
-    }
-    .column-gap-#{$ii} {
-      column-gap: #{$utilities-multiplier * $i} !important;
-    }
-    .row-gap-#{$ii} {
-      row-gap: #{$utilities-multiplier * $i} !important;
-    }
-  }
-
   /* Justify */
 
   .justify-center {
@@ -577,6 +558,29 @@ $breakpoints: (
       .#{$prefix}float-#{$i},
       .#{$prefix}#{$i} {
         float: $i !important;
+      }
+    }
+    /* Column count */
+    @each $i in [1, 2, 3, 4] {
+      .#{$prefix}column-#{$i} {
+        column-count: $i !important;
+      }
+    }
+    /* Gap */
+    @each $i in [0, 0.5, 1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9] {
+      $ii: $i;
+      @if $i == 0.5 { $ii: '0-5'; }
+      @if $i == 1.5 { $ii: '1-5'; }
+      @if $i == 2.5 { $ii: '2-5'; }
+      .#{$prefix}grid-gap-#{$ii} {
+        // Not used for cols, please see gap-*
+        gap: #{$utilities-multiplier * $i} !important;
+      }
+      .#{$prefix}column-gap-#{$ii} {
+        column-gap: #{$utilities-multiplier * $i} !important;
+      }
+      .#{$prefix}row-gap-#{$ii} {
+        row-gap: #{$utilities-multiplier * $i} !important;
       }
     }
   }
