@@ -64,9 +64,10 @@
     "inside-label-color":          $text-light,
     "inside-label-font-size":      0.75rem,
     "inside-label-input-left":     paddingSide(map-get($form, "input-padding--inside"), 'left'),
-    "inside-label-input-top":      calc(#{paddingSide(map-get($form, "input-padding--inside"), 'bottom')} - 1px),
+    // Todo: find an relative top negative offset, rather than -2px
+    "inside-label-input-top":      calc(#{paddingSide(map-get($form, "input-padding--inside"), 'bottom')} - 2px),
     "inside-label-textarea-left":  paddingSide(map-get($form, "textarea-padding--inside"), 'left'),
-    "inside-label-textarea-top":   calc(#{paddingSide(map-get($form, "textarea-padding--inside"), 'bottom')} - 1px),
+    "inside-label-textarea-top":   calc(#{paddingSide(map-get($form, "textarea-padding--inside"), 'bottom')} - 2px),
     // Label
     "label-color":                 $text-light,
     "label-font-size":             map-get($form, "label-font-size"),
