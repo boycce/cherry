@@ -16,8 +16,8 @@
     "sass"
   ],
   "scripts": {
-    "minor": "standard-version --release-as minor && npm publish",
-    "patch": "standard-version && npm publish",
+    "minor": "npm run build && standard-version --commit-all --release-as minor && npm publish",
+    "patch": "standard-version --commit-all && npm publish",
     "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/cherry.css css/cherry.css",
     "build-cleancss": "cleancss -o css/cherry.min.css css/cherry.css",
@@ -45,6 +45,9 @@
   "standard-version": {
     "releaseCommitMessageFormat": "{{currentTag}}",
     "sign": true,
+    "scripts": {
+      "prerelease": "npm run build && git reset && git add css/*"
+    },
     "skip": {
       "changelog": true,
       "tag": true
