@@ -173,13 +173,13 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     $color: nth($value, 1);
     $color-invert: nth($value, 2);
     $background-image: nth($value, 5);
-    $border-color: null;
+    $btn-border-color-match: null;
 
     @if ($background-image == null) {
       $background-image: none;
     }
     @if ($name == 'default') {
-      $border-color: $btn-border-color;
+      $btn-border-color-match: $btn-border-color;
     }
     @if $name != 'default' {
       $cssname: '.btn.is-#{$name}';
@@ -188,7 +188,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     #{$cssname} {
       color: $color-invert;
       background-color: $color;
-      box-shadow: calcBoxShadow($border-color);
+      box-shadow: calcBoxShadow($btn-border-color-match);
       background-image: $background-image;
       &:hover,
       &:focus,
@@ -197,9 +197,9 @@ $btn-app-colors: mergeColorMaps($app-colors, (
       &.is-focused,
       &.is-active {
         color: $color-invert;
-        background-color: cherryDarken($color, 8%);
+        background-color: cherryDarkenSmart($color, 2.5%);
         background-position: right center;
-        box-shadow: calcBoxShadow($border-color);
+        box-shadow: calcBoxShadow($btn-border-color-match);
       }
       &[disabled],
       fieldset[disabled] & {
@@ -228,7 +228,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         &.is-hovered,
         &.is-focused,
         &.is-active {
-          background-color: cherryDarken($color-invert, 5%);
+          background-color: cherryDarkenSmart($color-invert, 4%);
         }
         &[disabled],
         fieldset[disabled] &,
@@ -238,9 +238,9 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         }
       }
       &.is-outlined {
-        // Use $color if default `border-color` not set
-        $border-color-outlined: $border-color;
-        @if ($border-color == null) {
+        // Use $color if default `btn-border-color-match` not set
+        $border-color-outlined: $btn-border-color-match;
+        @if ($btn-border-color-match == null) {
           $border-color-outlined: $color;
         }
         color: $color;
@@ -288,7 +288,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
           &.is-hovered,
           &.is-focused,
           &.is-active {
-            background-color: cherryDarken($color-light, 4%);
+            background-color: cherryDarkenSmart($color-light, 4%);
             color: $color-dark;
           }
           &[disabled],

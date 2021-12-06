@@ -544,6 +544,12 @@ $breakpoints: (
         position: #{$i} !important;
       }
     }
+    /* Height */
+    @each $i in [0, 50, 100] {
+      .#{$prefix}height-#{$i} {
+        height: #{$i}% !important;
+      }
+    }
     /* Width */
     @each $i in [0, 50, 100] {
       .#{$prefix}width-#{$i} {
@@ -572,8 +578,7 @@ $breakpoints: (
       @if $i == 0.5 { $ii: '0-5'; }
       @if $i == 1.5 { $ii: '1-5'; }
       @if $i == 2.5 { $ii: '2-5'; }
-      .#{$prefix}grid-gap-#{$ii} {
-        // Not used for cols, please see gap-*
+      .#{$prefix}gap-#{$ii} {
         gap: #{$utilities-multiplier * $i} !important;
       }
       .#{$prefix}column-gap-#{$ii} {

@@ -172,7 +172,7 @@
 
 @function findColorInvert($color) {
   @if (colorLuminance($color) > 0.55) {
-    @return rgba(#000, 0.7);
+    @return rgb(72, 72, 72); // rgba(#000, 0.7); - rgba doesn't work well with darken
   }
   @else {
     @return #fff;
@@ -191,6 +191,19 @@
     @return $color;
   }
   @return darken($color, $amount);
+}
+
+@function cherryDarkenSmart($color, $amount) {
+  // Non grey colors need an extra push
+  @if type-of($color) != 'color' {
+    @return $color;
+  }
+  @if (colorLuminance($color) < 0.70) {
+    @return darken($color, $amount + 4%);
+  }
+  @else {
+    @return darken($color, $amount);
+  }
 }
 
 @function cherryLighten($color, $amount) {
