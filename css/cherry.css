@@ -684,6 +684,11 @@ fieldset[disabled] .btn.is-primary.is-light, .btn.is-primary.is-light.is-loading
   box-shadow: none;
 }
 
+.btn.is-primary.is-light[disabled]::after,
+fieldset[disabled] .btn.is-primary.is-light::after, .btn.is-primary.is-light.is-loading::after {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
+}
+
 .btn.is-secondary {
   color: #fff;
   background-color: #3273dc;
@@ -783,6 +788,11 @@ fieldset[disabled] .btn.is-secondary.is-light, .btn.is-secondary.is-light.is-loa
   background-color: #eef3fc;
   background-image: none;
   box-shadow: none;
+}
+
+.btn.is-secondary.is-light[disabled]::after,
+fieldset[disabled] .btn.is-secondary.is-light::after, .btn.is-secondary.is-light.is-loading::after {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%232160C4" stroke-width="2"/></svg>');
 }
 
 .btn.is-info {
@@ -886,6 +896,11 @@ fieldset[disabled] .btn.is-info.is-light, .btn.is-info.is-light.is-loading {
   box-shadow: none;
 }
 
+.btn.is-info.is-light[disabled]::after,
+fieldset[disabled] .btn.is-info.is-light::after, .btn.is-info.is-light.is-loading::after {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%232160C4" stroke-width="2"/></svg>');
+}
+
 .btn.is-success {
   color: #fff;
   background-color: #48c774;
@@ -985,6 +1000,11 @@ fieldset[disabled] .btn.is-success.is-light, .btn.is-success.is-light.is-loading
   background-color: #effaf3;
   background-image: none;
   box-shadow: none;
+}
+
+.btn.is-success.is-light[disabled]::after,
+fieldset[disabled] .btn.is-success.is-light::after, .btn.is-success.is-light.is-loading::after {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23257942" stroke-width="2"/></svg>');
 }
 
 .btn.is-warning {
@@ -1088,6 +1108,11 @@ fieldset[disabled] .btn.is-warning.is-light, .btn.is-warning.is-light.is-loading
   box-shadow: none;
 }
 
+.btn.is-warning.is-light[disabled]::after,
+fieldset[disabled] .btn.is-warning.is-light::after, .btn.is-warning.is-light.is-loading::after {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23947600" stroke-width="2"/></svg>');
+}
+
 .btn.is-danger {
   color: #fff;
   background-color: #f14668;
@@ -1187,6 +1212,11 @@ fieldset[disabled] .btn.is-danger.is-light, .btn.is-danger.is-light.is-loading {
   background-color: #feecf0;
   background-image: none;
   box-shadow: none;
+}
+
+.btn.is-danger.is-light[disabled]::after,
+fieldset[disabled] .btn.is-danger.is-light::after, .btn.is-danger.is-light.is-loading::after {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23CC0F35" stroke-width="2"/></svg>');
 }
 
 .btn.is-text {
@@ -1829,6 +1859,11 @@ fieldset[disabled] .btn.is-grad1.is-light, .btn.is-grad1.is-light.is-loading {
   box-shadow: none;
 }
 
+.btn.is-grad1.is-light[disabled]::after,
+fieldset[disabled] .btn.is-grad1.is-light::after, .btn.is-grad1.is-light.is-loading::after {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
+}
+
 .btn {
   color: #fff;
   background-color: #8c57ff;
@@ -1928,6 +1963,11 @@ fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   background-color: #f1ebff;
   background-image: none;
   box-shadow: none;
+}
+
+.btn.is-light[disabled]::after,
+fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
 }
 
 /* ---- Columns ---------------------- */
