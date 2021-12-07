@@ -298,6 +298,9 @@ $btn-app-colors: mergeColorMaps($app-colors, (
             background-color: $color-light;
             background-image: none;
             box-shadow: calcBoxShadow();
+            &::after {
+              @include loader($color-dark);
+            }
           }
         }
       }
