@@ -4252,7 +4252,7 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 .form .has-icon-right select,
 .form .has-icon-right .input,
 .form .has-icon-right .vs__dropdown-toggle {
-  padding-right: calc(1.26em - 2px + 1.2em + 0.4em);
+  padding-right: calc( 1.26em - 2px + 1.2em + 0.75em);
 }
 
 .form .has-icon-right .icon-right {
@@ -7626,19 +7626,23 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 }
 
 /* Direction */
-.flex-column {
+.flex-column,
+.flex-direction-column {
   flex-direction: column !important;
 }
 
-.flex-column-reverse {
+.flex-column-reverse,
+.flex-direction-column-reverse {
   flex-direction: column-reverse !important;
 }
 
-.flex-row {
+.flex-row,
+.flex-direction-row {
   flex-direction: row !important;
 }
 
-.flex-row-reverse {
+.flex-row-reverse,
+.flex-direction-row-reverse {
   flex-direction: row-reverse !important;
 }
 
@@ -7734,27 +7738,33 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 }
 
 /* Justify */
-.justify-center {
+.justify-center,
+.justify-content-center {
   justify-content: center !important;
 }
 
-.justify-end {
+.justify-end,
+.justify-content-end {
   justify-content: flex-end !important;
 }
 
-.justify-space-around {
+.justify-space-around,
+.justify-content-space-around {
   justify-content: space-around !important;
 }
 
-.justify-space-between {
+.justify-space-between,
+.justify-content-space-between {
   justify-content: space-between !important;
 }
 
-.justify-space-evenly {
+.justify-space-evenly,
+.justify-content-space-evenly {
   justify-content: space-evenly !important;
 }
 
-.justify-start {
+.justify-start,
+.justify-content-start {
   justify-content: flex-start !important;
 }
 
@@ -7795,27 +7805,33 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 }
 
 /* Align */
-.align-center {
+.align-center,
+.align-content-center {
   align-content: center !important;
 }
 
-.align-end {
+.align-end,
+.align-content-end {
   align-content: flex-end !important;
 }
 
-.align-space-around {
+.align-space-around,
+.align-content-space-around {
   align-content: space-around !important;
 }
 
-.align-space-between {
+.align-space-between,
+.align-content-space-between {
   align-content: space-between !important;
 }
 
-.align-space-evenly {
+.align-space-evenly,
+.align-content-space-evenly {
   align-content: space-evenly !important;
 }
 
-.align-start {
+.align-start,
+.align-content-start {
   align-content: flex-start !important;
 }
 
@@ -7947,6 +7963,7 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 }
 
 /* ---- Text transformations --------- */
+.text-capitalize,
 .text-capitalized {
   text-transform: capitalize !important;
 }
@@ -7963,6 +7980,7 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   font-style: italic !important;
 }
 
+.text-underline,
 .text-underlined {
   text-decoration: underline !important;
 }
@@ -8241,8 +8259,40 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   height: 0% !important;
 }
 
+.height-10 {
+  height: 10% !important;
+}
+
+.height-20 {
+  height: 20% !important;
+}
+
+.height-30 {
+  height: 30% !important;
+}
+
+.height-40 {
+  height: 40% !important;
+}
+
 .height-50 {
   height: 50% !important;
+}
+
+.height-60 {
+  height: 60% !important;
+}
+
+.height-70 {
+  height: 70% !important;
+}
+
+.height-80 {
+  height: 80% !important;
+}
+
+.height-90 {
+  height: 90% !important;
 }
 
 .height-100 {
@@ -8254,8 +8304,40 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   width: 0% !important;
 }
 
+.width-10 {
+  width: 10% !important;
+}
+
+.width-20 {
+  width: 20% !important;
+}
+
+.width-30 {
+  width: 30% !important;
+}
+
+.width-40 {
+  width: 40% !important;
+}
+
 .width-50 {
   width: 50% !important;
+}
+
+.width-60 {
+  width: 60% !important;
+}
+
+.width-70 {
+  width: 70% !important;
+}
+
+.width-80 {
+  width: 80% !important;
+}
+
+.width-90 {
+  width: 90% !important;
 }
 
 .width-100 {
@@ -8555,8 +8637,32 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   .lg\:height-0 {
     height: 0% !important;
   }
+  .lg\:height-10 {
+    height: 10% !important;
+  }
+  .lg\:height-20 {
+    height: 20% !important;
+  }
+  .lg\:height-30 {
+    height: 30% !important;
+  }
+  .lg\:height-40 {
+    height: 40% !important;
+  }
   .lg\:height-50 {
     height: 50% !important;
+  }
+  .lg\:height-60 {
+    height: 60% !important;
+  }
+  .lg\:height-70 {
+    height: 70% !important;
+  }
+  .lg\:height-80 {
+    height: 80% !important;
+  }
+  .lg\:height-90 {
+    height: 90% !important;
   }
   .lg\:height-100 {
     height: 100% !important;
@@ -8565,8 +8671,32 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   .lg\:width-0 {
     width: 0% !important;
   }
+  .lg\:width-10 {
+    width: 10% !important;
+  }
+  .lg\:width-20 {
+    width: 20% !important;
+  }
+  .lg\:width-30 {
+    width: 30% !important;
+  }
+  .lg\:width-40 {
+    width: 40% !important;
+  }
   .lg\:width-50 {
     width: 50% !important;
+  }
+  .lg\:width-60 {
+    width: 60% !important;
+  }
+  .lg\:width-70 {
+    width: 70% !important;
+  }
+  .lg\:width-80 {
+    width: 80% !important;
+  }
+  .lg\:width-90 {
+    width: 90% !important;
   }
   .lg\:width-100 {
     width: 100% !important;
@@ -8819,8 +8949,32 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   .md\:height-0 {
     height: 0% !important;
   }
+  .md\:height-10 {
+    height: 10% !important;
+  }
+  .md\:height-20 {
+    height: 20% !important;
+  }
+  .md\:height-30 {
+    height: 30% !important;
+  }
+  .md\:height-40 {
+    height: 40% !important;
+  }
   .md\:height-50 {
     height: 50% !important;
+  }
+  .md\:height-60 {
+    height: 60% !important;
+  }
+  .md\:height-70 {
+    height: 70% !important;
+  }
+  .md\:height-80 {
+    height: 80% !important;
+  }
+  .md\:height-90 {
+    height: 90% !important;
   }
   .md\:height-100 {
     height: 100% !important;
@@ -8829,8 +8983,32 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   .md\:width-0 {
     width: 0% !important;
   }
+  .md\:width-10 {
+    width: 10% !important;
+  }
+  .md\:width-20 {
+    width: 20% !important;
+  }
+  .md\:width-30 {
+    width: 30% !important;
+  }
+  .md\:width-40 {
+    width: 40% !important;
+  }
   .md\:width-50 {
     width: 50% !important;
+  }
+  .md\:width-60 {
+    width: 60% !important;
+  }
+  .md\:width-70 {
+    width: 70% !important;
+  }
+  .md\:width-80 {
+    width: 80% !important;
+  }
+  .md\:width-90 {
+    width: 90% !important;
   }
   .md\:width-100 {
     width: 100% !important;
@@ -9083,8 +9261,32 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   .sm\:height-0 {
     height: 0% !important;
   }
+  .sm\:height-10 {
+    height: 10% !important;
+  }
+  .sm\:height-20 {
+    height: 20% !important;
+  }
+  .sm\:height-30 {
+    height: 30% !important;
+  }
+  .sm\:height-40 {
+    height: 40% !important;
+  }
   .sm\:height-50 {
     height: 50% !important;
+  }
+  .sm\:height-60 {
+    height: 60% !important;
+  }
+  .sm\:height-70 {
+    height: 70% !important;
+  }
+  .sm\:height-80 {
+    height: 80% !important;
+  }
+  .sm\:height-90 {
+    height: 90% !important;
   }
   .sm\:height-100 {
     height: 100% !important;
@@ -9093,8 +9295,32 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   .sm\:width-0 {
     width: 0% !important;
   }
+  .sm\:width-10 {
+    width: 10% !important;
+  }
+  .sm\:width-20 {
+    width: 20% !important;
+  }
+  .sm\:width-30 {
+    width: 30% !important;
+  }
+  .sm\:width-40 {
+    width: 40% !important;
+  }
   .sm\:width-50 {
     width: 50% !important;
+  }
+  .sm\:width-60 {
+    width: 60% !important;
+  }
+  .sm\:width-70 {
+    width: 70% !important;
+  }
+  .sm\:width-80 {
+    width: 80% !important;
+  }
+  .sm\:width-90 {
+    width: 90% !important;
   }
   .sm\:width-100 {
     width: 100% !important;
@@ -9347,8 +9573,32 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   .xs\:height-0 {
     height: 0% !important;
   }
+  .xs\:height-10 {
+    height: 10% !important;
+  }
+  .xs\:height-20 {
+    height: 20% !important;
+  }
+  .xs\:height-30 {
+    height: 30% !important;
+  }
+  .xs\:height-40 {
+    height: 40% !important;
+  }
   .xs\:height-50 {
     height: 50% !important;
+  }
+  .xs\:height-60 {
+    height: 60% !important;
+  }
+  .xs\:height-70 {
+    height: 70% !important;
+  }
+  .xs\:height-80 {
+    height: 80% !important;
+  }
+  .xs\:height-90 {
+    height: 90% !important;
   }
   .xs\:height-100 {
     height: 100% !important;
@@ -9357,8 +9607,32 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   .xs\:width-0 {
     width: 0% !important;
   }
+  .xs\:width-10 {
+    width: 10% !important;
+  }
+  .xs\:width-20 {
+    width: 20% !important;
+  }
+  .xs\:width-30 {
+    width: 30% !important;
+  }
+  .xs\:width-40 {
+    width: 40% !important;
+  }
   .xs\:width-50 {
     width: 50% !important;
+  }
+  .xs\:width-60 {
+    width: 60% !important;
+  }
+  .xs\:width-70 {
+    width: 70% !important;
+  }
+  .xs\:width-80 {
+    width: 80% !important;
+  }
+  .xs\:width-90 {
+    width: 90% !important;
   }
   .xs\:width-100 {
     width: 100% !important;
