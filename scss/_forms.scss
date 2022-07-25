@@ -55,6 +55,7 @@
     "input-font-size":             1rem,
     "input-font-weight":           inherit,
     "input-icon-width":            1.2em,
+    "input-icon-spacing":          0.75em,
     "input-letter-spacing":        normal,
     "input-line-height":           1.5,
     "input-margin-bottom":         1.5rem,
@@ -269,7 +270,7 @@
     label.invalid-in,
     label.is-invalid-in {
       //opacity: 1;
-      color: $danger;
+      color: map-get($map, "error-font-color");
     }
     .label-right,
     a.label-right {
@@ -373,7 +374,9 @@
       select,
       .input,
       .vs__dropdown-toggle {
-        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75em);
+        padding-left: calc(#{$ip-left} - 2px +
+          #{map-get($map, "input-icon-width")} +
+          #{map-get($map, "input-icon-spacing")});
       }
       .icon-left {
         left: calc(#{$ip-left} - 2px);
@@ -385,7 +388,10 @@
       select,
       .input,
       .vs__dropdown-toggle {
-        padding-right: calc(#{$ip-right} - 2px + #{map-get($map, "input-icon-width")} + 0.4em);
+        padding-right: calc(
+          #{$ip-right} - 2px +
+          #{map-get($map, "input-icon-width")} +
+          #{map-get($map, "input-icon-spacing")});
       }
       .icon-right {
         right: calc(#{$ip-right} - 2px);
@@ -403,11 +409,15 @@
       input:-webkit-autofill,
       input:not(:placeholder-shown),
       select:not(:placeholder-shown) {
-        padding-left: calc(#{$ip-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75em);
+        padding-left: calc(#{$ip-left} - 2px +
+          #{map-get($map, "input-icon-width")} +
+          #{map-get($map, "input-icon-spacing")});
       }
       input + label,
       select + label {
-        left: calc(#{$ll-left} - 2px + #{map-get($map, "input-icon-width")} + 0.75em);
+        left: calc(#{$ll-left} - 2px +
+          #{map-get($map, "input-icon-width")} +
+          #{map-get($map, "input-icon-spacing")});
       }
     }
 
@@ -591,7 +601,7 @@
     .input-grp.is-invalid .rs__control {
       color: map-get($map, "input-color--invalid");
       box-shadow:
-        0 0 0 map-get($map, "input-border-width") $danger inset,
+        0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--invalid") inset,
         map-get($map, "input-box-shadow--invalid");
       // doesnt work for dropdown/toggle
       background-color: map-get($map, "input-background--invalid");
@@ -618,7 +628,7 @@
     }
     input[type="radio"].is-invalid + label:before,
     input[type="checkbox"].is-invalid + label:before {
-      border-color: $danger;
+      border-color: map-get($map, "input-border-color--invalid"); // was $danger
       background-color: map-get($map, "input-background--invalid");
     }
     textarea:disabled,
