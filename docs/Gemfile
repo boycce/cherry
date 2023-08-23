@@ -1,2 +1,10 @@
-source 'http://rubygems.org'
-gem 'github-pages', group: :jekyll_plugins
+# Old
+# source 'https://rubygems.org'
+# gem 'github-pages', group: :jekyll_plugins
+
+# Below pulls the latest remote_theme in development
+source 'https://rubygems.org'
+gem "github-docs", git: "https://github.com/boycce/github-docs"
+group :jekyll_plugins do
+  gem "jekyll-remote-theme", "~> 0.4.2"
+end
