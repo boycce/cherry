@@ -13,12 +13,12 @@ $breakpoints: (
 
 /* ---- Borders ---------------------- */
 
-  @each $i in [1, 2, 3, 4, 5] {
+  @each $i in [0, 1, 2, 3, 4, 5] {
     .b-#{$i} {
       border: #{$i}px solid $border-color !important;
     }
   }
-  @each $i in [1, 2, 3, 4, 5] {
+  @each $i in [0, 1, 2, 3, 4, 5] {
     .bl-#{$i} {
       border-left: #{$i}px solid $border-color !important;
     }
@@ -210,6 +210,28 @@ $breakpoints: (
       @media screen and (max-width: $width) { @include display($key + '\\:'); }
     } @else {
       @include display('');
+    }
+  }
+
+/* ---- Visibility ------------------- */
+
+  @mixin visibility($prefix) {
+    .#{$prefix}visible {
+      visibility: visible !important;
+    }
+    .#{$prefix}invisible {
+      visibility: hidden !important;
+    }
+    .#{$prefix}collapse {
+      visibility: collapse !important;
+    }
+  }
+
+  @each $key, $width in $breakpoints {
+    @if ($width) {
+      @media screen and (max-width: $width) { @include visibility($key + '\\:'); }
+    } @else {
+      @include visibility('');
     }
   }
 
@@ -557,7 +579,7 @@ $breakpoints: (
       }
     }
     /* Position */
-    @each $i in [relative, absolute, static] {
+    @each $i in [relative, absolute, static, sticky, fixed] {
       .#{$prefix}#{$i} {
         position: #{$i} !important;
       }
