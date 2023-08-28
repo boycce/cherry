@@ -15,6 +15,8 @@
     "label-font-family":           $body-font-family,
     "label-font-size":             0.85rem,
     "textarea-padding":            0.86em 1.26em,
+    "checkbox-height":             1.33rem, // determines width
+    "checkbox-inner-height":       0.66rem, // determines width
     "toggle-height":               1.55rem,
   ), $form);
 
@@ -85,15 +87,22 @@
     // Variable inputs
     "variable-color":              darken(map-get($form, "input-background"), 12%),
     "variable-color--active":      map-get($form, "input-border-color--active"),
+    // Checkbox/radio
     "checkbox-font-family":        map-get($form, "label-font-family"),
     "checkbox-font-size":          map-get($form, "label-font-size"),
     "checkbox-font-weight":        inherit, 
     "checkbox-letter-spacing":     inherit, 
     "checkbox-text-transform":     inherit,
-    "checkbox-height":             1.33rem, // determines width
-    "checkbox-inner-height":       0.66rem, // determines width
     "checkbox-padding-left":       0.8em,
     "checkbox-padding-right":      1.066em,
+    // checkbox 
+    "checkbox-height":             map-get($form, "checkbox-height"), // determines width
+    "checkbox-inner-height":       map-get($form, "checkbox-inner-height"), // determines width
+    "checkbox-tick-height":        0.7rem, // determines width
+    // radio
+    "radio-height":                map-get($form, "checkbox-height"), // determines width
+    "radio-inner-height":          map-get($form, "checkbox-inner-height"), // determines width
+    // toggle
     "toggle-font-family":          map-get($form, "label-font-family"),
     "toggle-font-size":            map-get($form, "label-font-size"),
     "toggle-font-weight":          inherit, 
@@ -455,8 +464,6 @@
 
     .radio-grp,
     .checkbox-grp {
-      $checkbox-width: map-get($map, "checkbox-height");
-      $checkbox-inner-width: map-get($map, "checkbox-inner-height");
       input {
         position: absolute;
         left: -9999px;
@@ -477,7 +484,6 @@
         letter-spacing: map-get($map, "checkbox-letter-spacing");
         text-transform: map-get($map, "checkbox-text-transform");
         padding: map-get($map, "input-padding");
-        padding-left: calc(#{$checkbox-width} + #{map-get($map, "checkbox-padding-left")});
         padding-right: map-get($map, "checkbox-padding-right");
         user-select: none;
         margin-bottom: 0;
@@ -488,9 +494,6 @@
         position: absolute;
         left: 0;
         top: 50%;
-        width: $checkbox-width;
-        height: map-get($map, "checkbox-height");
-        margin-top: -(map-get($map, "checkbox-height") / 2);
         background: map-get($map, "input-background");
         border: 2px solid map-get($map, "variable-color");
         border-radius: 3px;
@@ -502,23 +505,73 @@
         position: absolute;
         left: 0;
         top: 50%;
-        width: $checkbox-inner-width;
-        height: map-get($map, "checkbox-inner-height");
-        margin-left: calc((#{$checkbox-width} - #{$checkbox-inner-width}) / 2);
-        margin-top: -(map-get($map, "checkbox-inner-height") / 2);
         border-radius: 2px;
         transition: all 0.2s ease;
+        color: transparent;
       }
       input:checked + label:before {
         border-color: map-get($map, "variable-color--active");
       }
       input:checked + label:after {
         background-color: map-get($map, "variable-color--active");
+        color: map-get($map, "variable-color--active");
       }
     }
-    .radio-grp input + label:before,
-    .radio-grp input + label:after {
-      border-radius: 100% !important;
+    .checkbox-grp {
+      $checkbox-width: map-get($map, "checkbox-height");
+      $checkbox-inner-width: map-get($map, "checkbox-inner-height");
+      $checkbox-tick-width: map-get($map, "checkbox-tick-height");
+      input + label {
+        padding-left: calc(#{$checkbox-width} + #{map-get($map, "checkbox-padding-left")});
+      }
+      input + label:before {
+        width: $checkbox-width;
+        height: map-get($map, "checkbox-height");
+        margin-top: -(map-get($map, "checkbox-height") / 2);
+      }
+      input + label:after {
+        width: $checkbox-inner-width;
+        height: map-get($map, "checkbox-inner-height");
+        margin-left: calc((#{$checkbox-width} - #{$checkbox-inner-width}) / 2);
+        margin-top: -(map-get($map, "checkbox-inner-height") / 2);
+      }
+      &.is-tick {
+        input + label:after {
+          width: $checkbox-tick-width;
+          height: map-get($map, "checkbox-tick-height");
+          margin-left: calc((#{$checkbox-width} - #{$checkbox-tick-width}) / 2);
+          margin-top: -(map-get($map, "checkbox-tick-height") / 2);
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-color: transparent !important;
+        }
+        input:checked + label:after {
+          // SVG's in edge can't include ', ^, `, |, x7F
+          // alternative: clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 45 37' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.13 20.11L14.73 31.07L41.81 2.70001' stroke='#{encodecolor(map-get($map, 'variable-color--active'))}' stroke-width='7' /></svg>");
+        }
+      }
+      
+    }
+    .radio-grp {
+      $radio-width: map-get($map, "radio-height");
+      $radio-inner-width: map-get($map, "radio-inner-height");
+      input + label {
+        padding-left: calc(#{$radio-width} + #{map-get($map, "checkbox-padding-left")});
+      }
+      input + label:before {
+        width: $radio-width;
+        height: map-get($map, "radio-height");
+        margin-top: -(map-get($map, "radio-height") / 2);
+        border-radius: 100% !important;
+      }
+      input + label:after {
+        width: $radio-inner-width;
+        height: map-get($map, "radio-inner-height");
+        margin-left: calc((#{$radio-width} - #{$radio-inner-width}) / 2);
+        margin-top: -(map-get($map, "radio-inner-height") / 2);
+        border-radius: 100% !important;
+      }
     }
     .toggle-grp {
       input {
