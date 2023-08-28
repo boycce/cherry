@@ -72,7 +72,8 @@
     // Label
     "label-color":                 $text-light,
     "label-font-size":             map-get($form, "label-font-size"),
-    "label-margin-bottom":         0.45rem,
+    "label-margin-bottom":         0.45rem, // NOT USED
+    "label-text-transform":        none,
     // Textarea
     "textarea-line-height":        1.5em, // same as input
     "textarea-min-height":         7em,
@@ -262,6 +263,7 @@
     .size-label,
     .label-right {
       font-size: map-get($map, "label-font-size");
+      text-transform: map-get($map, "label-text-transform");
     }
     label.invalid-out,
     label.is-invalid-out {
