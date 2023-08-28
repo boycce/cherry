@@ -4112,6 +4112,7 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 .form .size-label,
 .form .label-right {
   font-size: 0.85rem;
+  text-transform: none;
 }
 
 .form label.invalid-in,
