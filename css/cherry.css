@@ -4084,8 +4084,8 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   line-height: 1.4em;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: inherit;
-  letter-spacing: normal;
-  text-transform: none;
+  letter-spacing: inherit;
+  text-transform: inherit;
   margin-bottom: 0.45em;
   cursor: pointer;
   -webkit-user-select: none;
@@ -4318,6 +4318,10 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   position: relative;
   display: inline-block;
   font-size: 0.85rem;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
   padding: 0.86em 1.26em;
   padding-left: calc(1.33rem + 0.8em);
   padding-right: 1.066em;
@@ -4387,6 +4391,10 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   position: relative;
   display: inline-block;
   font-size: 0.85rem;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
   min-height: 1.55rem;
   padding: 0.86em 1.26em;
   padding-left: calc(2.79rem + 0.8em);
