@@ -11,6 +11,7 @@
   $form: map-merge((
     "input-background":            #fdfdfd,
     "input-border-color--active":  $primary,
+    "input-border-width":          2px,
     "input-padding":               0.86em 1.26em,
     "label-font-family":           $body-font-family,
     "label-font-size":             0.85rem,
@@ -47,10 +48,10 @@
     "input-border-color--active":  map-get($form, "input-border-color--active"),
     "input-border-color--invalid": $danger,
     "input-border-radius":         4px,
-    "input-border-width":          2px,
-    "input-box-shadow":            map-get($form, "input-box-shadow"),
-    "input-box-shadow--active":    map-get($form, "input-box-shadow"),
-    "input-box-shadow--invalid":   map-get($form, "input-box-shadow"),
+    "input-border-width":          map-get($form, "input-border-width"),
+    "input-box-shadow":            map-get($form, "input-box-shadow"), // ??? not defined above
+    "input-box-shadow--active":    map-get($form, "input-box-shadow"), // ??? not defined above
+    "input-box-shadow--invalid":   map-get($form, "input-box-shadow"), // ??? not defined above
     "input-btn-font-size":         0.9rem, // todo: change to % off btn font-size
     "input-color":                 $text,
     "input-color--invalid":        $text,
@@ -87,7 +88,9 @@
     // Variable inputs
     "variable-color":              darken(map-get($form, "input-background"), 12%),
     "variable-color--active":      map-get($form, "input-border-color--active"),
-    // Checkbox/radio
+    // Checkbox/radio (maybe change below to "variable-*")
+    "checkbox-border-width":       map-get($form, "input-border-width"),
+    "checkbox-border-radius":      2px,
     "checkbox-font-family":        map-get($form, "label-font-family"),
     "checkbox-font-size":          map-get($form, "label-font-size"),
     "checkbox-font-weight":        inherit, 
@@ -495,8 +498,8 @@
         left: 0;
         top: 50%;
         background: map-get($map, "input-background");
-        border: 2px solid map-get($map, "variable-color");
-        border-radius: 3px;
+        border: map-get($map, "checkbox-border-width") solid map-get($map, "variable-color");
+        border-radius: map-get($map, "checkbox-border-radius");
         box-sizing: border-box;
         transition: all 0.2s ease;
       }
@@ -505,7 +508,7 @@
         position: absolute;
         left: 0;
         top: 50%;
-        border-radius: 2px;
+        border-radius: map-get($map, "checkbox-border-radius");
         transition: all 0.2s ease;
         color: transparent;
       }
