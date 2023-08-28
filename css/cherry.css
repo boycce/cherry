@@ -4323,7 +4323,6 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   letter-spacing: inherit;
   text-transform: inherit;
   padding: 0.86em 1.26em;
-  padding-left: calc(1.33rem + 0.8em);
   padding-right: 1.066em;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -4339,9 +4338,6 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 1.33rem;
-  height: 1.33rem;
-  margin-top: -0.665rem;
   background: #fdfdfd;
   border: 2px solid #dedede;
   border-radius: 3px;
@@ -4355,12 +4351,9 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   position: absolute;
   left: 0;
   top: 50%;
-  width: 0.66rem;
-  height: 0.66rem;
-  margin-left: calc((1.33rem - 0.66rem) / 2);
-  margin-top: -0.33rem;
   border-radius: 2px;
   transition: all 0.2s ease;
+  color: transparent;
 }
 
 .form .radio-grp input:checked + label:before,
@@ -4371,10 +4364,56 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 .form .radio-grp input:checked + label:after,
 .form .checkbox-grp input:checked + label:after {
   background-color: #8c57ff;
+  color: #8c57ff;
 }
 
-.form .radio-grp input + label:before,
+.form .checkbox-grp input + label {
+  padding-left: calc(1.33rem + 0.8em);
+}
+
+.form .checkbox-grp input + label:before {
+  width: 1.33rem;
+  height: 1.33rem;
+  margin-top: -0.665rem;
+}
+
+.form .checkbox-grp input + label:after {
+  width: 0.66rem;
+  height: 0.66rem;
+  margin-left: calc((1.33rem - 0.66rem) / 2);
+  margin-top: -0.33rem;
+}
+
+.form .checkbox-grp.is-tick input + label:after {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-left: calc((1.33rem - 0.7rem) / 2);
+  margin-top: -0.35rem;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: transparent !important;
+}
+
+.form .checkbox-grp.is-tick input:checked + label:after {
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 45 37' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.13 20.11L14.73 31.07L41.81 2.70001' stroke='%238C57FF' stroke-width='7' /></svg>");
+}
+
+.form .radio-grp input + label {
+  padding-left: calc(1.33rem + 0.8em);
+}
+
+.form .radio-grp input + label:before {
+  width: 1.33rem;
+  height: 1.33rem;
+  margin-top: -0.665rem;
+  border-radius: 100% !important;
+}
+
 .form .radio-grp input + label:after {
+  width: 0.66rem;
+  height: 0.66rem;
+  margin-left: calc((1.33rem - 0.66rem) / 2);
+  margin-top: -0.33rem;
   border-radius: 100% !important;
 }
 
