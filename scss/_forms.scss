@@ -71,8 +71,11 @@
     "inside-label-textarea-top":   calc(#{paddingSide(map-get($form, "textarea-padding--inside"), 'bottom')} - 2px),
     // Label
     "label-color":                 $text-light,
+    "label-font-family":           $body-font-family,
     "label-font-size":             map-get($form, "label-font-size"),
-    "label-margin-bottom":         0.45rem, // NOT USED
+    "label-font-weight":           inherit, 
+    "label-letter-spacing":        normal, 
+    "label-margin-bottom":         0.45em,
     "label-text-transform":        none,
     // Textarea
     "textarea-line-height":        1.5em, // same as input
@@ -242,7 +245,11 @@
       // vertical-align: top;
       display: block;
       line-height: 1.4em;
-      margin-bottom: 0.45em;
+      font-family: map-get($map, "label-font-family");
+      font-weight: map-get($map, "label-font-weight");
+      letter-spacing: map-get($map, "label-letter-spacing");
+      text-transform: map-get($map, "label-text-transform");
+      margin-bottom: map-get($map, "label-margin-bottom");
       cursor: pointer;
       user-select: none;
     }
@@ -263,7 +270,6 @@
     .size-label,
     .label-right {
       font-size: map-get($map, "label-font-size");
-      text-transform: map-get($map, "label-text-transform");
     }
     label.invalid-out,
     label.is-invalid-out {
