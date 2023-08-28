@@ -4340,7 +4340,7 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   top: 50%;
   background: #fdfdfd;
   border: 2px solid #dedede;
-  border-radius: 3px;
+  border-radius: 2px;
   box-sizing: border-box;
   transition: all 0.2s ease;
 }
