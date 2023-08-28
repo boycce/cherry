@@ -4082,6 +4082,10 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 .form .label-right {
   display: block;
   line-height: 1.4em;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: inherit;
+  letter-spacing: normal;
+  text-transform: none;
   margin-bottom: 0.45em;
   cursor: pointer;
   -webkit-user-select: none;
@@ -4112,7 +4116,6 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 .form .size-label,
 .form .label-right {
   font-size: 0.85rem;
-  text-transform: none;
 }
 
 .form label.invalid-in,
