@@ -12,6 +12,7 @@
     "input-background":            #fdfdfd,
     "input-border-color--active":  $primary,
     "input-padding":               0.86em 1.26em,
+    "label-font-family":           $body-font-family,
     "label-font-size":             0.85rem,
     "textarea-padding":            0.86em 1.26em,
     "toggle-height":               1.55rem,
@@ -71,12 +72,12 @@
     "inside-label-textarea-top":   calc(#{paddingSide(map-get($form, "textarea-padding--inside"), 'bottom')} - 2px),
     // Label
     "label-color":                 $text-light,
-    "label-font-family":           $body-font-family,
+    "label-font-family":           map-get($form, "label-font-family"),
     "label-font-size":             map-get($form, "label-font-size"),
     "label-font-weight":           inherit, 
-    "label-letter-spacing":        normal, 
+    "label-letter-spacing":        inherit, 
     "label-margin-bottom":         0.45em,
-    "label-text-transform":        none,
+    "label-text-transform":        inherit,
     // Textarea
     "textarea-line-height":        1.5em, // same as input
     "textarea-min-height":         7em,
@@ -84,12 +85,20 @@
     // Variable inputs
     "variable-color":              darken(map-get($form, "input-background"), 12%),
     "variable-color--active":      map-get($form, "input-border-color--active"),
+    "checkbox-font-family":        map-get($form, "label-font-family"),
     "checkbox-font-size":          map-get($form, "label-font-size"),
+    "checkbox-font-weight":        inherit, 
+    "checkbox-letter-spacing":     inherit, 
+    "checkbox-text-transform":     inherit,
     "checkbox-height":             1.33rem, // determines width
     "checkbox-inner-height":       0.66rem, // determines width
     "checkbox-padding-left":       0.8em,
     "checkbox-padding-right":      1.066em,
+    "toggle-font-family":          map-get($form, "label-font-family"),
     "toggle-font-size":            map-get($form, "label-font-size"),
+    "toggle-font-weight":          inherit, 
+    "toggle-letter-spacing":       inherit, 
+    "toggle-text-transform":       inherit,
     "toggle-height":               map-get($form, "toggle-height"),
     "toggle-width":                map-get($form, "toggle-height") * 1.8,
   ), $form);
@@ -463,6 +472,10 @@
         position: relative;
         display: inline-block;
         font-size: map-get($map, "checkbox-font-size");
+        font-family: map-get($map, "checkbox-font-family");
+        font-weight: map-get($map, "checkbox-font-weight");
+        letter-spacing: map-get($map, "checkbox-letter-spacing");
+        text-transform: map-get($map, "checkbox-text-transform");
         padding: map-get($map, "input-padding");
         padding-left: calc(#{$checkbox-width} + #{map-get($map, "checkbox-padding-left")});
         padding-right: map-get($map, "checkbox-padding-right");
@@ -519,6 +532,10 @@
         position: relative;
         display: inline-block;
         font-size: map-get($map, "toggle-font-size");
+        font-family: map-get($map, "toggle-font-family");
+        font-weight: map-get($map, "toggle-font-weight");
+        letter-spacing: map-get($map, "toggle-letter-spacing");
+        text-transform: map-get($map, "toggle-text-transform");
         min-height: map-get($map, "toggle-height"); //1em;height:
         padding: map-get($map, "input-padding");
         padding-left: calc(#{map-get($map, "toggle-width")} + 0.8em);
