@@ -4588,7 +4588,10 @@ fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
 
 .form textarea:disabled,
 .form input:disabled,
+.form textarea.is-disabled,
+.form input.is-disabled,
 .form .rs__control--is-disabled {
+  border-color: inherit;
   background-color: #f7f7f7;
   color: #a5a5a5;
 }

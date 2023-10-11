@@ -44,9 +44,11 @@
     "input-background":            map-get($form, "input-background"),
     "input-background--active":    map-get($form, "input-background"),
     "input-background--invalid":   map-get($form, "input-background"),
+    "input-background--disabled":  #f7f7f7,
     "input-border-color":          #efefef,
     "input-border-color--active":  map-get($form, "input-border-color--active"),
     "input-border-color--invalid": $danger,
+    "input-border-color--disabled": inherit,
     "input-border-radius":         4px,
     "input-border-width":          map-get($form, "input-border-width"),
     "input-box-shadow":            map-get($form, "input-box-shadow"), // ??? not defined above
@@ -55,6 +57,7 @@
     "input-btn-font-size":         0.9rem, // todo: change to % off btn font-size
     "input-color":                 $text,
     "input-color--invalid":        $text,
+    "input-color--disabled":       #a5a5a5,
     "input-font-family":           $body-font-family,
     "input-font-size":             1rem,
     "input-font-weight":           inherit,
@@ -714,9 +717,12 @@
     }
     textarea:disabled,
     input:disabled,
+    textarea.is-disabled,
+    input.is-disabled,
     .rs__control--is-disabled {
-      background-color: #f7f7f7;
-      color: #a5a5a5;
+      border-color: map-get($map, "input-border-color--disabled"); // NEW: may affect invalid borders
+      background-color: map-get($map, "input-background--disabled");
+      color: map-get($map, "input-color--disabled");
     }
 
   /* ---- React Select ----------------- */
