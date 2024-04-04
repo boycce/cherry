@@ -1,3 +1,4 @@
+@use "sass:math";
 @function formDefaults($form) {
   /**
    * Notes:
@@ -533,20 +534,20 @@
       input + label:before {
         width: $checkbox-width;
         height: map-get($map, "checkbox-height");
-        margin-top: -(map-get($map, "checkbox-height") / 2);
+        margin-top: -(math.div(map-get($map, "checkbox-height"), 2)); // todo: check that this is minus...
       }
       input + label:after {
         width: $checkbox-inner-width;
         height: map-get($map, "checkbox-inner-height");
         margin-left: calc((#{$checkbox-width} - #{$checkbox-inner-width}) / 2);
-        margin-top: -(map-get($map, "checkbox-inner-height") / 2);
+        margin-top: -(math.div(map-get($map, "checkbox-inner-height"), 2)); // todo: check that this is minus...
       }
       &.is-tick {
         input + label:after {
           width: $checkbox-tick-width;
           height: map-get($map, "checkbox-tick-height");
           margin-left: calc((#{$checkbox-width} - #{$checkbox-tick-width}) / 2);
-          margin-top: -(map-get($map, "checkbox-tick-height") / 2);
+          margin-top: -(math.div(map-get($map, "checkbox-tick-height"), 2)); // todo: check that this is minus...
           background-repeat: no-repeat;
           background-position: center center;
           background-color: transparent !important;
@@ -568,14 +569,14 @@
       input + label:before {
         width: $radio-width;
         height: map-get($map, "radio-height");
-        margin-top: -(map-get($map, "radio-height") / 2);
+        margin-top: -(math.div(map-get($map, "radio-height"), 2)); // todo: check that this is minus...
         border-radius: 100% !important;
       }
       input + label:after {
         width: $radio-inner-width;
         height: map-get($map, "radio-inner-height");
         margin-left: calc((#{$radio-width} - #{$radio-inner-width}) / 2);
-        margin-top: -(map-get($map, "radio-inner-height") / 2);
+        margin-top: -(math.div(map-get($map, "radio-inner-height"), 2)); // todo: check that this is minus...
         border-radius: 100% !important;
       }
     }
@@ -609,7 +610,7 @@
         position: absolute;
         left: 0;
         top: 50%;
-        margin-top: -(map-get($map, "toggle-height")/2);
+        margin-top: -(math.div(map-get($map, "toggle-height"), 2)); // todo: check that this is minus...
         background: map-get($map, "variable-color");
         border-radius: map-get($map, "toggle-height");
         width: map-get($map, "toggle-width");
