@@ -10,6 +10,11 @@ This repository is distributed with NPM. After installing NPM, you can install C
 npm install --save cherry
 ```
 
+## Version
+
+- `^1.0` has been rewritten to use Dart SASS
+- `^0.1` uses node-sass
+
 ## Usage
 
 After installation, you can then import the SCSS into your project sourcing from your `node_modules` directory:
