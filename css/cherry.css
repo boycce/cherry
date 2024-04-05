@@ -271,20 +271,17 @@ a {
   color: hsl(0, 0%, 7%);
   background-color: transparent; /* ie10 */
   text-decoration: underline;
-  -webkit-text-decoration-color: hsl(0, 0%, 7%);
-          text-decoration-color: hsl(0, 0%, 7%);
+  text-decoration-color: hsl(0, 0%, 7%);
 }
 
 a:hover {
   color: hsl(217, 71%, 53%);
-  -webkit-text-decoration-color: hsl(217, 71%, 53%);
-          text-decoration-color: hsl(217, 71%, 53%);
+  text-decoration-color: hsl(217, 71%, 53%);
 }
 
 a:focus {
   color: hsl(217, 71%, 53%);
-  -webkit-text-decoration-color: hsl(217, 71%, 53%);
-          text-decoration-color: hsl(217, 71%, 53%);
+  text-decoration-color: hsl(217, 71%, 53%);
   outline: none;
 }
 
@@ -3670,17 +3667,14 @@ a:focus {
 .form label,
 .form .label {
   /* matches util.errorElement  */
-  transition: opacity 0.15s ease, color 0.25s ease, -webkit-text-decoration-color 0.25s ease;
   transition: opacity 0.15s ease, color 0.25s ease, text-decoration-color 0.25s ease;
-  transition: opacity 0.15s ease, color 0.25s ease, text-decoration-color 0.25s ease, -webkit-text-decoration-color 0.25s ease;
 }
 .form label,
 .form .label,
 .form .text-label,
 .form .label-right {
   color: hsl(0, 0%, 27%);
-  -webkit-text-decoration-color: hsl(0, 0%, 27%);
-          text-decoration-color: hsl(0, 0%, 27%);
+  text-decoration-color: hsl(0, 0%, 27%);
 }
 .form label,
 .form .label,
@@ -5889,8 +5883,7 @@ a:focus {
 /* ---- Colors & Gradients ----------- */
 .text-grey {
   color: hsl(0, 0%, 27%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 27%) !important;
-          text-decoration-color: hsl(0, 0%, 27%) !important;
+  text-decoration-color: hsl(0, 0%, 27%) !important;
   fill: hsl(0, 0%, 27%) !important;
 }
 
@@ -5900,8 +5893,7 @@ a:focus {
 
 .text-black-light {
   color: hsl(0, 0%, 7%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 7%) !important;
-          text-decoration-color: hsl(0, 0%, 7%) !important;
+  text-decoration-color: hsl(0, 0%, 7%) !important;
   fill: hsl(0, 0%, 7%) !important;
 }
 
@@ -5911,8 +5903,7 @@ a:focus {
 
 .text-black-lighter {
   color: hsl(0, 0%, 13%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 13%) !important;
-          text-decoration-color: hsl(0, 0%, 13%) !important;
+  text-decoration-color: hsl(0, 0%, 13%) !important;
   fill: hsl(0, 0%, 13%) !important;
 }
 
@@ -5922,8 +5913,7 @@ a:focus {
 
 .text-black-lightest {
   color: hsl(0, 0%, 17%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 17%) !important;
-          text-decoration-color: hsl(0, 0%, 17%) !important;
+  text-decoration-color: hsl(0, 0%, 17%) !important;
   fill: hsl(0, 0%, 17%) !important;
 }
 
@@ -5933,8 +5923,7 @@ a:focus {
 
 .text-grey-light {
   color: hsl(0, 0%, 47%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 47%) !important;
-          text-decoration-color: hsl(0, 0%, 47%) !important;
+  text-decoration-color: hsl(0, 0%, 47%) !important;
   fill: hsl(0, 0%, 47%) !important;
 }
 
@@ -5944,8 +5933,7 @@ a:focus {
 
 .text-grey-lighter {
   color: hsl(0, 0%, 73%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 73%) !important;
-          text-decoration-color: hsl(0, 0%, 73%) !important;
+  text-decoration-color: hsl(0, 0%, 73%) !important;
   fill: hsl(0, 0%, 73%) !important;
 }
 
@@ -5955,8 +5943,7 @@ a:focus {
 
 .text-grey-lightest {
   color: hsl(0, 0%, 91%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 91%) !important;
-          text-decoration-color: hsl(0, 0%, 91%) !important;
+  text-decoration-color: hsl(0, 0%, 91%) !important;
   fill: hsl(0, 0%, 91%) !important;
 }
 
@@ -5966,8 +5953,7 @@ a:focus {
 
 .text-white-dark {
   color: hsl(0, 0%, 98%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 98%) !important;
-          text-decoration-color: hsl(0, 0%, 98%) !important;
+  text-decoration-color: hsl(0, 0%, 98%) !important;
   fill: hsl(0, 0%, 98%) !important;
 }
 
@@ -5977,8 +5963,7 @@ a:focus {
 
 .text-white-darker {
   color: hsl(0, 0%, 96%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 96%) !important;
-          text-decoration-color: hsl(0, 0%, 96%) !important;
+  text-decoration-color: hsl(0, 0%, 96%) !important;
   fill: hsl(0, 0%, 96%) !important;
 }
 
@@ -5988,8 +5973,7 @@ a:focus {
 
 .text-white-darkest {
   color: hsl(0, 0%, 94%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 94%) !important;
-          text-decoration-color: hsl(0, 0%, 94%) !important;
+  text-decoration-color: hsl(0, 0%, 94%) !important;
   fill: hsl(0, 0%, 94%) !important;
 }
 
@@ -5999,8 +5983,7 @@ a:focus {
 
 .text-orange {
   color: hsl(14, 100%, 53%) !important;
-  -webkit-text-decoration-color: hsl(14, 100%, 53%) !important;
-          text-decoration-color: hsl(14, 100%, 53%) !important;
+  text-decoration-color: hsl(14, 100%, 53%) !important;
   fill: hsl(14, 100%, 53%) !important;
 }
 
@@ -6010,8 +5993,7 @@ a:focus {
 
 .text-yellow {
   color: hsl(48, 100%, 67%) !important;
-  -webkit-text-decoration-color: hsl(48, 100%, 67%) !important;
-          text-decoration-color: hsl(48, 100%, 67%) !important;
+  text-decoration-color: hsl(48, 100%, 67%) !important;
   fill: hsl(48, 100%, 67%) !important;
 }
 
@@ -6021,8 +6003,7 @@ a:focus {
 
 .text-green {
   color: hsl(141, 53%, 53%) !important;
-  -webkit-text-decoration-color: hsl(141, 53%, 53%) !important;
-          text-decoration-color: hsl(141, 53%, 53%) !important;
+  text-decoration-color: hsl(141, 53%, 53%) !important;
   fill: hsl(141, 53%, 53%) !important;
 }
 
@@ -6032,8 +6013,7 @@ a:focus {
 
 .text-turquoise {
   color: hsl(171, 100%, 41%) !important;
-  -webkit-text-decoration-color: hsl(171, 100%, 41%) !important;
-          text-decoration-color: hsl(171, 100%, 41%) !important;
+  text-decoration-color: hsl(171, 100%, 41%) !important;
   fill: hsl(171, 100%, 41%) !important;
 }
 
@@ -6043,8 +6023,7 @@ a:focus {
 
 .text-cyan {
   color: hsl(204, 71%, 53%) !important;
-  -webkit-text-decoration-color: hsl(204, 71%, 53%) !important;
-          text-decoration-color: hsl(204, 71%, 53%) !important;
+  text-decoration-color: hsl(204, 71%, 53%) !important;
   fill: hsl(204, 71%, 53%) !important;
 }
 
@@ -6054,8 +6033,7 @@ a:focus {
 
 .text-blue {
   color: hsl(217, 71%, 53%) !important;
-  -webkit-text-decoration-color: hsl(217, 71%, 53%) !important;
-          text-decoration-color: hsl(217, 71%, 53%) !important;
+  text-decoration-color: hsl(217, 71%, 53%) !important;
   fill: hsl(217, 71%, 53%) !important;
 }
 
@@ -6065,8 +6043,7 @@ a:focus {
 
 .text-purple {
   color: hsl(271, 100%, 71%) !important;
-  -webkit-text-decoration-color: hsl(271, 100%, 71%) !important;
-          text-decoration-color: hsl(271, 100%, 71%) !important;
+  text-decoration-color: hsl(271, 100%, 71%) !important;
   fill: hsl(271, 100%, 71%) !important;
 }
 
@@ -6076,8 +6053,7 @@ a:focus {
 
 .text-red {
   color: hsl(348, 86%, 61%) !important;
-  -webkit-text-decoration-color: hsl(348, 86%, 61%) !important;
-          text-decoration-color: hsl(348, 86%, 61%) !important;
+  text-decoration-color: hsl(348, 86%, 61%) !important;
   fill: hsl(348, 86%, 61%) !important;
 }
 
@@ -6087,8 +6063,7 @@ a:focus {
 
 .text-orange-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6098,8 +6073,7 @@ a:focus {
 
 .text-yellow-invert {
   color: rgb(72, 72, 72) !important;
-  -webkit-text-decoration-color: rgb(72, 72, 72) !important;
-          text-decoration-color: rgb(72, 72, 72) !important;
+  text-decoration-color: rgb(72, 72, 72) !important;
   fill: rgb(72, 72, 72) !important;
 }
 
@@ -6109,8 +6083,7 @@ a:focus {
 
 .text-green-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6120,8 +6093,7 @@ a:focus {
 
 .text-turquoise-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6131,8 +6103,7 @@ a:focus {
 
 .text-cyan-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6142,8 +6113,7 @@ a:focus {
 
 .text-blue-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6153,8 +6123,7 @@ a:focus {
 
 .text-purple-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6164,8 +6133,7 @@ a:focus {
 
 .text-red-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6175,8 +6143,7 @@ a:focus {
 
 .text-orange-light {
   color: #ffefeb !important;
-  -webkit-text-decoration-color: #ffefeb !important;
-          text-decoration-color: #ffefeb !important;
+  text-decoration-color: #ffefeb !important;
   fill: #ffefeb !important;
 }
 
@@ -6186,8 +6153,7 @@ a:focus {
 
 .text-yellow-light {
   color: #fffbeb !important;
-  -webkit-text-decoration-color: #fffbeb !important;
-          text-decoration-color: #fffbeb !important;
+  text-decoration-color: #fffbeb !important;
   fill: #fffbeb !important;
 }
 
@@ -6197,8 +6163,7 @@ a:focus {
 
 .text-green-light {
   color: #effaf3 !important;
-  -webkit-text-decoration-color: #effaf3 !important;
-          text-decoration-color: #effaf3 !important;
+  text-decoration-color: #effaf3 !important;
   fill: #effaf3 !important;
 }
 
@@ -6208,8 +6173,7 @@ a:focus {
 
 .text-turquoise-light {
   color: #ebfffc !important;
-  -webkit-text-decoration-color: #ebfffc !important;
-          text-decoration-color: #ebfffc !important;
+  text-decoration-color: #ebfffc !important;
   fill: #ebfffc !important;
 }
 
@@ -6219,8 +6183,7 @@ a:focus {
 
 .text-cyan-light {
   color: #eef6fc !important;
-  -webkit-text-decoration-color: #eef6fc !important;
-          text-decoration-color: #eef6fc !important;
+  text-decoration-color: #eef6fc !important;
   fill: #eef6fc !important;
 }
 
@@ -6230,8 +6193,7 @@ a:focus {
 
 .text-blue-light {
   color: #eef3fc !important;
-  -webkit-text-decoration-color: #eef3fc !important;
-          text-decoration-color: #eef3fc !important;
+  text-decoration-color: #eef3fc !important;
   fill: #eef3fc !important;
 }
 
@@ -6241,8 +6203,7 @@ a:focus {
 
 .text-purple-light {
   color: #f5ebff !important;
-  -webkit-text-decoration-color: #f5ebff !important;
-          text-decoration-color: #f5ebff !important;
+  text-decoration-color: #f5ebff !important;
   fill: #f5ebff !important;
 }
 
@@ -6252,8 +6213,7 @@ a:focus {
 
 .text-red-light {
   color: #feecf0 !important;
-  -webkit-text-decoration-color: #feecf0 !important;
-          text-decoration-color: #feecf0 !important;
+  text-decoration-color: #feecf0 !important;
   fill: #feecf0 !important;
 }
 
@@ -6263,8 +6223,7 @@ a:focus {
 
 .text-orange-dark {
   color: #d63200 !important;
-  -webkit-text-decoration-color: #d63200 !important;
-          text-decoration-color: #d63200 !important;
+  text-decoration-color: #d63200 !important;
   fill: #d63200 !important;
 }
 
@@ -6274,8 +6233,7 @@ a:focus {
 
 .text-yellow-dark {
   color: #947600 !important;
-  -webkit-text-decoration-color: #947600 !important;
-          text-decoration-color: #947600 !important;
+  text-decoration-color: #947600 !important;
   fill: #947600 !important;
 }
 
@@ -6285,8 +6243,7 @@ a:focus {
 
 .text-green-dark {
   color: #257942 !important;
-  -webkit-text-decoration-color: #257942 !important;
-          text-decoration-color: #257942 !important;
+  text-decoration-color: #257942 !important;
   fill: #257942 !important;
 }
 
@@ -6296,8 +6253,7 @@ a:focus {
 
 .text-turquoise-dark {
   color: #00947e !important;
-  -webkit-text-decoration-color: #00947e !important;
-          text-decoration-color: #00947e !important;
+  text-decoration-color: #00947e !important;
   fill: #00947e !important;
 }
 
@@ -6307,8 +6263,7 @@ a:focus {
 
 .text-cyan-dark {
   color: #1d72aa !important;
-  -webkit-text-decoration-color: #1d72aa !important;
-          text-decoration-color: #1d72aa !important;
+  text-decoration-color: #1d72aa !important;
   fill: #1d72aa !important;
 }
 
@@ -6318,8 +6273,7 @@ a:focus {
 
 .text-blue-dark {
   color: #2160c4 !important;
-  -webkit-text-decoration-color: #2160c4 !important;
-          text-decoration-color: #2160c4 !important;
+  text-decoration-color: #2160c4 !important;
   fill: #2160c4 !important;
 }
 
@@ -6329,8 +6283,7 @@ a:focus {
 
 .text-purple-dark {
   color: #6700c7 !important;
-  -webkit-text-decoration-color: #6700c7 !important;
-          text-decoration-color: #6700c7 !important;
+  text-decoration-color: #6700c7 !important;
   fill: #6700c7 !important;
 }
 
@@ -6340,8 +6293,7 @@ a:focus {
 
 .text-red-dark {
   color: #cc0f35 !important;
-  -webkit-text-decoration-color: #cc0f35 !important;
-          text-decoration-color: #cc0f35 !important;
+  text-decoration-color: #cc0f35 !important;
   fill: #cc0f35 !important;
 }
 
@@ -6351,8 +6303,7 @@ a:focus {
 
 .text-primary-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6362,8 +6313,7 @@ a:focus {
 
 .text-primary-light {
   color: #f1ebff !important;
-  -webkit-text-decoration-color: #f1ebff !important;
-          text-decoration-color: #f1ebff !important;
+  text-decoration-color: #f1ebff !important;
   fill: #f1ebff !important;
 }
 
@@ -6373,8 +6323,7 @@ a:focus {
 
 .text-primary-dark {
   color: #4700e0 !important;
-  -webkit-text-decoration-color: #4700e0 !important;
-          text-decoration-color: #4700e0 !important;
+  text-decoration-color: #4700e0 !important;
   fill: #4700e0 !important;
 }
 
@@ -6384,8 +6333,7 @@ a:focus {
 
 .text-secondary-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6395,8 +6343,7 @@ a:focus {
 
 .text-secondary-light {
   color: #eef3fc !important;
-  -webkit-text-decoration-color: #eef3fc !important;
-          text-decoration-color: #eef3fc !important;
+  text-decoration-color: #eef3fc !important;
   fill: #eef3fc !important;
 }
 
@@ -6406,8 +6353,7 @@ a:focus {
 
 .text-secondary-dark {
   color: #2160c4 !important;
-  -webkit-text-decoration-color: #2160c4 !important;
-          text-decoration-color: #2160c4 !important;
+  text-decoration-color: #2160c4 !important;
   fill: #2160c4 !important;
 }
 
@@ -6417,8 +6363,7 @@ a:focus {
 
 .text-success-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6428,8 +6373,7 @@ a:focus {
 
 .text-success-light {
   color: #effaf3 !important;
-  -webkit-text-decoration-color: #effaf3 !important;
-          text-decoration-color: #effaf3 !important;
+  text-decoration-color: #effaf3 !important;
   fill: #effaf3 !important;
 }
 
@@ -6439,8 +6383,7 @@ a:focus {
 
 .text-success-dark {
   color: #257942 !important;
-  -webkit-text-decoration-color: #257942 !important;
-          text-decoration-color: #257942 !important;
+  text-decoration-color: #257942 !important;
   fill: #257942 !important;
 }
 
@@ -6450,8 +6393,7 @@ a:focus {
 
 .text-info-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6461,8 +6403,7 @@ a:focus {
 
 .text-info-light {
   color: #eef3fc !important;
-  -webkit-text-decoration-color: #eef3fc !important;
-          text-decoration-color: #eef3fc !important;
+  text-decoration-color: #eef3fc !important;
   fill: #eef3fc !important;
 }
 
@@ -6472,8 +6413,7 @@ a:focus {
 
 .text-info-dark {
   color: #2160c4 !important;
-  -webkit-text-decoration-color: #2160c4 !important;
-          text-decoration-color: #2160c4 !important;
+  text-decoration-color: #2160c4 !important;
   fill: #2160c4 !important;
 }
 
@@ -6483,8 +6423,7 @@ a:focus {
 
 .text-warning-invert {
   color: rgb(72, 72, 72) !important;
-  -webkit-text-decoration-color: rgb(72, 72, 72) !important;
-          text-decoration-color: rgb(72, 72, 72) !important;
+  text-decoration-color: rgb(72, 72, 72) !important;
   fill: rgb(72, 72, 72) !important;
 }
 
@@ -6494,8 +6433,7 @@ a:focus {
 
 .text-warning-light {
   color: #fffbeb !important;
-  -webkit-text-decoration-color: #fffbeb !important;
-          text-decoration-color: #fffbeb !important;
+  text-decoration-color: #fffbeb !important;
   fill: #fffbeb !important;
 }
 
@@ -6505,8 +6443,7 @@ a:focus {
 
 .text-warning-dark {
   color: #947600 !important;
-  -webkit-text-decoration-color: #947600 !important;
-          text-decoration-color: #947600 !important;
+  text-decoration-color: #947600 !important;
   fill: #947600 !important;
 }
 
@@ -6516,8 +6453,7 @@ a:focus {
 
 .text-danger-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6527,8 +6463,7 @@ a:focus {
 
 .text-danger-light {
   color: #feecf0 !important;
-  -webkit-text-decoration-color: #feecf0 !important;
-          text-decoration-color: #feecf0 !important;
+  text-decoration-color: #feecf0 !important;
   fill: #feecf0 !important;
 }
 
@@ -6538,8 +6473,7 @@ a:focus {
 
 .text-danger-dark {
   color: #cc0f35 !important;
-  -webkit-text-decoration-color: #cc0f35 !important;
-          text-decoration-color: #cc0f35 !important;
+  text-decoration-color: #cc0f35 !important;
   fill: #cc0f35 !important;
 }
 
@@ -6549,8 +6483,7 @@ a:focus {
 
 .text-text-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6560,8 +6493,7 @@ a:focus {
 
 .text-text-light-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6571,8 +6503,7 @@ a:focus {
 
 .text-text-lighter-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6582,8 +6513,7 @@ a:focus {
 
 .text-text-strong-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6593,8 +6523,7 @@ a:focus {
 
 .text-link-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6604,8 +6533,7 @@ a:focus {
 
 .text-link--hover-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6615,8 +6543,7 @@ a:focus {
 
 .text-link--focus-invert {
   color: #fff !important;
-  -webkit-text-decoration-color: #fff !important;
-          text-decoration-color: #fff !important;
+  text-decoration-color: #fff !important;
   fill: #fff !important;
 }
 
@@ -6626,8 +6553,7 @@ a:focus {
 
 .text-white {
   color: hsl(0, 0%, 100%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 100%) !important;
-          text-decoration-color: hsl(0, 0%, 100%) !important;
+  text-decoration-color: hsl(0, 0%, 100%) !important;
   fill: hsl(0, 0%, 100%) !important;
 }
 
@@ -6637,8 +6563,7 @@ a:focus {
 
 .text-black {
   color: hsl(0, 0%, 0%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 0%) !important;
-          text-decoration-color: hsl(0, 0%, 0%) !important;
+  text-decoration-color: hsl(0, 0%, 0%) !important;
   fill: hsl(0, 0%, 0%) !important;
 }
 
@@ -6648,8 +6573,7 @@ a:focus {
 
 .text-primary {
   color: hsl(259, 100%, 67%) !important;
-  -webkit-text-decoration-color: hsl(259, 100%, 67%) !important;
-          text-decoration-color: hsl(259, 100%, 67%) !important;
+  text-decoration-color: hsl(259, 100%, 67%) !important;
   fill: hsl(259, 100%, 67%) !important;
 }
 
@@ -6659,8 +6583,7 @@ a:focus {
 
 .text-secondary {
   color: hsl(217, 71%, 53%) !important;
-  -webkit-text-decoration-color: hsl(217, 71%, 53%) !important;
-          text-decoration-color: hsl(217, 71%, 53%) !important;
+  text-decoration-color: hsl(217, 71%, 53%) !important;
   fill: hsl(217, 71%, 53%) !important;
 }
 
@@ -6670,8 +6593,7 @@ a:focus {
 
 .text-info {
   color: hsl(217, 71%, 53%) !important;
-  -webkit-text-decoration-color: hsl(217, 71%, 53%) !important;
-          text-decoration-color: hsl(217, 71%, 53%) !important;
+  text-decoration-color: hsl(217, 71%, 53%) !important;
   fill: hsl(217, 71%, 53%) !important;
 }
 
@@ -6681,8 +6603,7 @@ a:focus {
 
 .text-success {
   color: hsl(141, 53%, 53%) !important;
-  -webkit-text-decoration-color: hsl(141, 53%, 53%) !important;
-          text-decoration-color: hsl(141, 53%, 53%) !important;
+  text-decoration-color: hsl(141, 53%, 53%) !important;
   fill: hsl(141, 53%, 53%) !important;
 }
 
@@ -6692,8 +6613,7 @@ a:focus {
 
 .text-warning {
   color: hsl(48, 100%, 67%) !important;
-  -webkit-text-decoration-color: hsl(48, 100%, 67%) !important;
-          text-decoration-color: hsl(48, 100%, 67%) !important;
+  text-decoration-color: hsl(48, 100%, 67%) !important;
   fill: hsl(48, 100%, 67%) !important;
 }
 
@@ -6703,8 +6623,7 @@ a:focus {
 
 .text-danger {
   color: hsl(348, 86%, 61%) !important;
-  -webkit-text-decoration-color: hsl(348, 86%, 61%) !important;
-          text-decoration-color: hsl(348, 86%, 61%) !important;
+  text-decoration-color: hsl(348, 86%, 61%) !important;
   fill: hsl(348, 86%, 61%) !important;
 }
 
@@ -6714,8 +6633,7 @@ a:focus {
 
 .text-text {
   color: hsl(0, 0%, 7%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 7%) !important;
-          text-decoration-color: hsl(0, 0%, 7%) !important;
+  text-decoration-color: hsl(0, 0%, 7%) !important;
   fill: hsl(0, 0%, 7%) !important;
 }
 
@@ -6725,15 +6643,13 @@ a:focus {
 
 .text {
   color: hsl(0, 0%, 7%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 7%) !important;
-          text-decoration-color: hsl(0, 0%, 7%) !important;
+  text-decoration-color: hsl(0, 0%, 7%) !important;
   fill: hsl(0, 0%, 7%) !important;
 }
 
 .text-light {
   color: hsl(0, 0%, 27%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 27%) !important;
-          text-decoration-color: hsl(0, 0%, 27%) !important;
+  text-decoration-color: hsl(0, 0%, 27%) !important;
   fill: hsl(0, 0%, 27%) !important;
 }
 
@@ -6743,8 +6659,7 @@ a:focus {
 
 .text-lighter {
   color: hsl(0, 0%, 47%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 47%) !important;
-          text-decoration-color: hsl(0, 0%, 47%) !important;
+  text-decoration-color: hsl(0, 0%, 47%) !important;
   fill: hsl(0, 0%, 47%) !important;
 }
 
@@ -6754,8 +6669,7 @@ a:focus {
 
 .text-strong {
   color: hsl(0, 0%, 0%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 0%) !important;
-          text-decoration-color: hsl(0, 0%, 0%) !important;
+  text-decoration-color: hsl(0, 0%, 0%) !important;
   fill: hsl(0, 0%, 0%) !important;
 }
 
@@ -6765,8 +6679,7 @@ a:focus {
 
 .text-link {
   color: hsl(0, 0%, 7%) !important;
-  -webkit-text-decoration-color: hsl(0, 0%, 7%) !important;
-          text-decoration-color: hsl(0, 0%, 7%) !important;
+  text-decoration-color: hsl(0, 0%, 7%) !important;
   fill: hsl(0, 0%, 7%) !important;
 }
 
@@ -6776,8 +6689,7 @@ a:focus {
 
 .text-link--hover {
   color: hsl(217, 71%, 53%) !important;
-  -webkit-text-decoration-color: hsl(217, 71%, 53%) !important;
-          text-decoration-color: hsl(217, 71%, 53%) !important;
+  text-decoration-color: hsl(217, 71%, 53%) !important;
   fill: hsl(217, 71%, 53%) !important;
 }
 
@@ -6787,8 +6699,7 @@ a:focus {
 
 .text-link--focus {
   color: hsl(217, 71%, 53%) !important;
-  -webkit-text-decoration-color: hsl(217, 71%, 53%) !important;
-          text-decoration-color: hsl(217, 71%, 53%) !important;
+  text-decoration-color: hsl(217, 71%, 53%) !important;
   fill: hsl(217, 71%, 53%) !important;
 }
 
@@ -6798,8 +6709,7 @@ a:focus {
 
 .text-grad1 {
   color: hsl(259, 100%, 67%) !important;
-  -webkit-text-decoration-color: hsl(259, 100%, 67%) !important;
-          text-decoration-color: hsl(259, 100%, 67%) !important;
+  text-decoration-color: hsl(259, 100%, 67%) !important;
   fill: hsl(259, 100%, 67%) !important;
 }
 
