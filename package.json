@@ -27,7 +27,7 @@
     "docs": "cd docs && bundle exec jekyll serve --livereload --livereload-port 4001"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^10.4.19",
     "clean-css-cli": "^4.3.0",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
@@ -43,8 +43,8 @@
     "README.md"
   ],
   "engines": {
-    "node": "^18",
-    "npm": "^10"
+    "node": ">=14",
+    "npm": ">=6"
   },
   "standard-version": {
     "releaseCommitMessageFormat": "{{currentTag}}",
