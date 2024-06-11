@@ -29,9 +29,9 @@ Variable | Default value | Computed value
 `$btn-min-height`         | `0` |
 `$btns-margin-right`      | `1rem` |
 `$btns-margin-bottom`     | `1.5rem` |
-You can add additional button colors which are avaliable via .btn-{name}
+You can add additional button colors which are avaliable via .btn-{name}|-|
 `$custom-colors`          | `e.g. ("{name}": (#000, #fff), ...)` |
-You can add additional button color gradients which are avaliable via .btn-{name}
+You can add additional button color gradients which are avaliable via .btn-{name}|-|
 `$custom-gradients`       | `e.g. ("{name}": (160deg, #555, #333, #000), ...) ` |
 
 #### Tables
