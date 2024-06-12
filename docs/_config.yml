@@ -1,7 +1,9 @@
 remote_theme: boycce/github-docs
 title: Cherry
 description: Minimal and comprehensible CSS framework
-github_url: "https://github.com/boycce/cherry/docs"
+github_url: "https://github.com/boycce/cherry"
+port: 4001
+basedir: "docs"
 
 # Aux links for the naviation
 aux_links:

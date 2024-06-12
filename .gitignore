@@ -15,6 +15,11 @@ resources/todo.txt
 Desktop.ini
 Thumbs.db
 
+# Jekyll artifacts
+_site
+.jekyll-cache
+docs/.sass-cache
+
 # External disk files
 .Spotlight-V100
 .Trashes
