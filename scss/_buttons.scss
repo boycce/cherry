@@ -1,6 +1,7 @@
 $btn-background-color:   $primary !default;
 $btn-background-image:   null !default;
 $btn-border-color:       null !default;
+$btn-border-color--active: $btn-border-color !default;
 $btn-border-radius:      5px !default;
 $btn-border-width:       2px !default;
 $btn-box-shadow:         none !default;
@@ -81,7 +82,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     user-select: none;
   }
   .btn.is-full,
-  .btn.is-fullwidth, {
+  .btn.is-fullwidth {
     display: flex;
     width: 100%;
   }
@@ -173,13 +174,9 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     $color: nth($value, 1);
     $color-invert: nth($value, 2);
     $background-image: nth($value, 5);
-    $btn-border-color-match: null;
 
     @if ($background-image == null) {
       $background-image: none;
-    }
-    @if ($name == 'default') {
-      $btn-border-color-match: $btn-border-color;
     }
     @if $name != 'default' {
       $cssname: '.btn.is-#{$name}';
@@ -188,7 +185,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     #{$cssname} {
       color: $color-invert;
       background-color: $color;
-      box-shadow: calcBoxShadow($btn-border-color-match);
+      box-shadow: calcBoxShadow($btn-border-color);
       background-image: $background-image;
       &:hover,
       &:focus,
@@ -199,7 +196,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         color: $color-invert;
         background-color: cherryDarkenSmart($color, 2.5%);
         background-position: right center;
-        box-shadow: calcBoxShadow($btn-border-color-match);
+        box-shadow: calcBoxShadow($btn-border-color--active);
       }
       &[disabled],
       fieldset[disabled] & {
@@ -239,10 +236,11 @@ $btn-app-colors: mergeColorMaps($app-colors, (
       }
       &.is-outlined {
         // Use $color if default `btn-border-color-match` not set
-        $border-color-outlined: $btn-border-color-match;
-        @if ($btn-border-color-match == null) {
-          $border-color-outlined: $color;
-        }
+        // $border-color-outlined: $btn-border-color;
+        // @if ($btn-border-color == null) {
+        //   $border-color-outlined: $color;
+        // }
+        $border-color-outlined: $color;
         color: $color;
         background-color: transparent;
         background-image: none;
@@ -259,7 +257,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
           color: $color-invert;
           background-color: $color;
           background-image: $background-image;
-          box-shadow: calcBoxShadow(transparent);
+          box-shadow: calcBoxShadow($btn-border-color--active);
         }
         &[disabled],
         fieldset[disabled] &,
@@ -290,6 +288,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
           &.is-active {
             background-color: cherryDarkenSmart($color-light, 4%);
             color: $color-dark;
+            box-shadow: calcBoxShadow();
           }
           &[disabled],
           fieldset[disabled] &,
