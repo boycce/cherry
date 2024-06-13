@@ -142,11 +142,19 @@
 }
 
 @function encodecolor($string) {
-  @if type-of($string) == 'color' {
+  // print 
+  // @debug $string;
+  // We need to account for transparent
+  @if $string == transparent {
+    $string: "00000000";
+  }
+  @else if type-of($string) == 'color' {
     $hex: str-slice(ie-hex-str($string), 4);
-    $string:unquote("#{$hex}");
+    $string: unquote("#{$hex}");
   }
   $string: '%23' + $string;
+  // print 
+  // @debug $string;
   @return $string;
 }
 
