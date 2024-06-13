@@ -3896,6 +3896,7 @@ a:focus {
 }
 .form .radio-grp input:checked + label:before,
 .form .checkbox-grp input:checked + label:before {
+  background: #fdfdfd;
   border-color: hsl(259, 100%, 67%);
 }
 .form .radio-grp input:checked + label:after,
@@ -3925,9 +3926,10 @@ a:focus {
   background-repeat: no-repeat;
   background-position: center center;
   background-color: transparent !important;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 45 37' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.13 20.11L14.73 31.07L41.81 2.70001' stroke='%2300000000' stroke-width='8' /></svg>");
 }
 .form .checkbox-grp.is-tick input:checked + label:after {
-  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 45 37' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.13 20.11L14.73 31.07L41.81 2.70001' stroke='%238C57FF' stroke-width='7' /></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 45 37' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.13 20.11L14.73 31.07L41.81 2.70001' stroke='%238C57FF' stroke-width='8' /></svg>");
 }
 .form .radio-grp input + label {
   padding-left: calc(1.33rem + 0.8em);
@@ -3977,25 +3979,29 @@ a:focus {
   left: 0;
   top: 50%;
   margin-top: -0.775rem;
-  background: #dedede;
   border-radius: 1.55rem;
-  width: 2.79rem;
   height: 1.55rem;
   box-sizing: border-box;
   transition: all 0.2s ease;
 }
+.form .toggle-grp input + label:before {
+  width: 2.79rem;
+  background: #fdfdfd;
+  border: 2px solid #dedede;
+}
 .form .toggle-grp input + label:after {
   width: 1.55rem;
-  border: 2px solid transparent;
-  border-color: transparent;
-  background-color: #fff;
+  border: 4px solid transparent;
+  background: #dedede;
   background-clip: content-box;
 }
 .form .toggle-grp input:checked + label:before {
-  background-color: hsl(259, 100%, 67%);
+  background-color: #fdfdfd;
+  border-color: hsl(259, 100%, 67%);
 }
 .form .toggle-grp input:checked + label:after {
   left: 1.24rem;
+  background-color: hsl(259, 100%, 67%);
 }
 .form .toggle-grp.has-no-label input + label {
   padding-left: 2.79rem;
