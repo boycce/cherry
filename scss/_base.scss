@@ -10,7 +10,12 @@ $body-line-height:     1.5 !default;
 $body-overflow-y:      visible !default;
 
 // todo: change link to link-color and text-link
+$link:                 null !default;
+$link--hover:          null !default;
+$link--focus:          null !default;
 $link-text-decoration: underline !default;
+$link-text-decoration--hover: $link-text-decoration !default;
+$link-text-decoration--focus: $link-text-decoration !default;
 $link-outline:         none !default;
 
 /* ---- Reset ------------------------ */
@@ -249,10 +254,12 @@ $link-outline:         none !default;
   }
   a:hover {
     color: $link--hover;
+    text-decoration: $link-text-decoration--hover;
     text-decoration-color: $link--hover;
   }
   a:focus {
     color: $link--focus;
+    text-decoration: $link-text-decoration--focus;
     text-decoration-color: $link--focus;
     outline: $link-outline;
   }
