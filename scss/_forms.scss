@@ -638,8 +638,8 @@
         position: absolute;
         left: 0;
         top: 50%;
-        margin-top: -(math.div(map-get($map, "toggle-height"), 2)); // todo: check that this is minus...
         border-radius: map-get($map, "toggle-height");
+        margin-top: -(math.div(map-get($map, "toggle-height"), 2));
         height: map-get($map, "toggle-height");
         box-sizing: border-box;
         transition: all 0.2s ease;
@@ -650,8 +650,10 @@
         border: map-get($map, "toggle-border-width") solid map-get($map, "toggle-border-color");
       }
       input + label:after { // foreground
-        width: map-get($map, "toggle-height");
-        border: map-get($map, "toggle-inner-space") solid transparent; // padding
+        height: calc(#{map-get($map, "toggle-height")} - #{map-get($map, "toggle-inner-space") * 2});
+        width: calc(#{map-get($map, "toggle-height")} - #{map-get($map, "toggle-inner-space") * 2});
+        margin-left: map-get($map, "toggle-inner-space");
+        margin-top: calc((#{math.div(map-get($map, "toggle-height"), 2)} - map-get($map, "toggle-inner-space")) * -1);
         background: map-get($map, "toggle-color");
         background-clip: content-box;
       }
