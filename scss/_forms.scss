@@ -315,7 +315,8 @@
     label,
     .label,
     .text-label,
-    .label-right {
+    div.label-right,
+    span.label-right {
       color: map-get($map, "label-color");
       text-decoration-color: map-get($map, "label-color");
     }
@@ -656,7 +657,7 @@
         height: calc(#{map-get($map, "toggle-height")} - #{map-get($map, "toggle-inner-space") * 2});
         width: calc(#{map-get($map, "toggle-height")} - #{map-get($map, "toggle-inner-space") * 2});
         margin-left: map-get($map, "toggle-inner-space");
-        margin-top: calc((#{math.div(map-get($map, "toggle-height"), 2)} - map-get($map, "toggle-inner-space")) * -1);
+        margin-top: calc((#{math.div(map-get($map, "toggle-height"), 2)} - #{map-get($map, "toggle-inner-space")}) * -1);
         background: map-get($map, "toggle-color");
         background-clip: content-box;
       }
