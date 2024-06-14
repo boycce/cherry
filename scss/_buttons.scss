@@ -13,6 +13,7 @@ $btn-font-weight:        600 !default;
 $btn-icon-size:          1.3em !default;
 $btn-icon-margin:        0.4em !default;
 $btn-line-height:        1.5 !default;
+$btn-loading-animation:  loaderOne .9s cubic-bezier(.435,.165,.615,.81) infinite !default;
 $btn-padding:            0.86em 2.06em !default;
 $btn-min-height:         0 !default;
 $btns-margin-right:      1rem !default;
@@ -135,7 +136,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     margin: -9px;
     opacity: 0;
     z-index: 0;
-    animation: loaderOne .9s cubic-bezier(.435,.165,.615,.81) infinite;
+    animation: $btn-loading-animation;
     background-size: auto;
     background-position: top;
     background-repeat: no-repeat;
