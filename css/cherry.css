@@ -3680,7 +3680,8 @@ a:focus {
 .form label,
 .form .label,
 .form .text-label,
-.form .label-right {
+.form div.label-right,
+.form span.label-right {
   color: hsl(0, 0%, 27%);
   text-decoration-color: hsl(0, 0%, 27%);
 }
