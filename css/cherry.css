@@ -276,11 +276,13 @@ a {
 
 a:hover {
   color: hsl(217, 71%, 53%);
+  text-decoration: underline;
   text-decoration-color: hsl(217, 71%, 53%);
 }
 
 a:focus {
   color: hsl(217, 71%, 53%);
+  text-decoration: underline;
   text-decoration-color: hsl(217, 71%, 53%);
   outline: none;
 }
