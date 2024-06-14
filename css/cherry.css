@@ -3978,8 +3978,8 @@ a:focus {
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -0.775rem;
   border-radius: 1.55rem;
+  margin-top: -0.775rem;
   height: 1.55rem;
   box-sizing: border-box;
   transition: all 0.2s ease;
@@ -3990,8 +3990,10 @@ a:focus {
   border: 2px solid #dedede;
 }
 .form .toggle-grp input + label:after {
-  width: 1.55rem;
-  border: 4px solid transparent;
+  height: calc(1.55rem - 8px);
+  width: calc(1.55rem - 8px);
+  margin-left: 4px;
+  margin-top: calc((0.775rem - 4px) * -1);
   background: #dedede;
   background-clip: content-box;
 }
