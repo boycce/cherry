@@ -40,6 +40,7 @@
     "variable-color--active":      map-get($form, "input-border-color--active"),
     "variable-background":         map-get($form, "input-background"),
     "variable-border-width":       map-get($form, "input-border-width"),
+    "variable-padding":            map-get($form, "input-padding"),
   ), $form);
 
   // Third level referenced values
@@ -109,8 +110,9 @@
     "variable-background--active": map-get($form, "variable-background--active"), // fb: variable-background
     "variable-border-color":       map-get($form, "variable-border-color"), // fb: darken("variable-background"), 12%)
     "variable-border-color--active": map-get($form, "variable-border-color--active"), // fb: variable-color--active
+    "variable-border-width":       map-get($form, "variable-border-width"), // fb: input-border-width
+    "variable-padding":            map-get($form, "variable-padding"), // fb: input-padding
     // Checkbox/radio
-    "variable-border-width":       map-get($form, "variable-border-width"),
     "variable-border-radius":      2px,
     "variable-font-family":        map-get($form, "label-font-family"), 
     "variable-font-size":          map-get($form, "label-font-size"),
@@ -130,11 +132,12 @@
     // Toggle
     "toggle-color":                map-get($form, "variable-border-color"),
     "toggle-color--active":        map-get($form, "variable-color--active"),
-    "toggle-background":           map-get($form, "variable-background"),
+    "toggle-background":           map-get($form, "variable-background"), 
     "toggle-background--active":   map-get($form, "variable-background--active"),
     "toggle-border-color":         map-get($form, "variable-border-color"),
     "toggle-border-color--active": map-get($form, "variable-border-color--active"),
     "toggle-border-width":         map-get($form, "variable-border-width"),
+    "toggle-padding":              map-get($form, "variable-padding"),
     "toggle-font-family":          map-get($form, "label-font-family"),
     "toggle-font-size":            map-get($form, "label-font-size"),
     "toggle-font-weight":          inherit, 
@@ -516,7 +519,7 @@
         font-weight: map-get($map, "variable-font-weight");
         letter-spacing: map-get($map, "variable-letter-spacing");
         text-transform: map-get($map, "variable-text-transform");
-        padding: map-get($map, "input-padding");
+        padding: map-get($map, "variable-padding");
         padding-right: map-get($map, "variable-padding-right");
         user-select: none;
         margin-bottom: 0;
@@ -625,7 +628,7 @@
         letter-spacing: map-get($map, "toggle-letter-spacing");
         text-transform: map-get($map, "toggle-text-transform");
         min-height: map-get($map, "toggle-height"); //1em;height:
-        padding: map-get($map, "input-padding");
+        padding: map-get($map, "toggle-padding");
         padding-left: calc(#{map-get($map, "toggle-width")} + 0.8em);
         padding-right: 1.2em;
         margin-bottom: 0;
