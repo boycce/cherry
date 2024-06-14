@@ -14,8 +14,8 @@ $link:                 null !default;
 $link--hover:          null !default;
 $link--focus:          null !default;
 $link-text-decoration: underline !default;
-$link-text-decoration--hover: $link-text-decoration !default;
-$link-text-decoration--focus: $link-text-decoration !default;
+$link-text-decoration--hover: null !default;
+$link-text-decoration--focus: null !default;
 $link-outline:         none !default;
 
 /* ---- Reset ------------------------ */
