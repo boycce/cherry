@@ -772,9 +772,10 @@
     }
     .rs__value-container {
       padding: 0;
-      padding-right: 15px;
       &.rs__value-container--is-multi.rs__value-container--has-value {
-        padding-right: 43px;
+        margin-top: -1px; /*fixes slight input adjustment*/
+        margin-bottom: -1px; /*fixes slight input adjustment*/
+        gap: 2px;
         > input {
           /* not searchable with multi yeilds an awkward input box once there is a value*/
           line-height: 0;
@@ -788,7 +789,7 @@
         background-color: transparent;
       }
       > div {
-        margin: 0 5px 0 0;
+        margin: 0;
         padding: 0;
       }
       .rs__placeholder {
@@ -797,26 +798,21 @@
       .rs__single-value {
         color: map-get($map, "input-color");
       }
-      .rs__multi-value {
-        margin-top: 1px;
-        margin-bottom: 1px;
-      }
     }
     .rs__indicators {
-      position: absolute;
-      top: 50%;
-      right: paddingSide(map-get($map, "input-padding"), 'right');
-      margin-top: -10px;
-      margin-right: -7px;
+      margin-right: -2px; /*indicator svgs normally have a padding*/
       .rs__indicator-separator {
         display: none;
       }
-      > div {
-        padding: 0px 4px;
-        height: 100%;
+      .rs__indicator {
+        padding: 0px;
+        width: 18px;
+        height: 18px;
         align-items: center;
-        &:not(:hover) {
-          color: #c5ccd3;
+        justify-content: center;
+        color: #c5ccd3;
+        &.rs__clear-indicator:hover {
+          color: map-get($map, "input-color");
         }
       }
     }
