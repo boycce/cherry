@@ -270,7 +270,6 @@
     /* Form error */
 
     .form-error {
-      display: none;
       color: map-get($map, "error-font-color");
       font-size: map-get($map, "error-font-size");
       &:empty {
@@ -279,11 +278,6 @@
     }
     .size-error {
       font-size: map-get($map, "error-font-size");
-    }
-    &.is-invalid .form-error,
-    .is-invalid .form-error,
-    .form-error.form-error-show {
-      display: block;
     }
 
   /* ---- Labels ----------------------- */
