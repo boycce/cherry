@@ -173,7 +173,6 @@
     select,
     textarea,
     .input,
-    .vs__dropdown-toggle,
     .rs__control {
       width: 100%;
       padding: map-get($map, "input-padding");
@@ -425,8 +424,7 @@
       position: relative;
       input,
       select,
-      .input,
-      .vs__dropdown-toggle {
+      .input {
         padding-left: calc(#{$ip-left} - 2px +
           #{map-get($map, "input-icon-width")} +
           #{map-get($map, "input-icon-spacing")});
@@ -439,8 +437,7 @@
       position: relative;
       input,
       select,
-      .input,
-      .vs__dropdown-toggle {
+      .input {
         padding-right: calc(
           #{$ip-right} - 2px +
           #{map-get($map, "input-icon-width")} +
@@ -477,8 +474,7 @@
   /* ---- Select ----------------------- */
 
     $ip-right: paddingSide(map-get($map, "input-padding"), 'right');
-    select,
-    .vs__dropdown-toggle {
+    select {
       background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%23c5cbd2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
       appearance: none;
       background-repeat: no-repeat;
@@ -669,90 +665,65 @@
 
   /* ---- States ----------------------- */
 
-    input:active,
-    input:focus,
-    input.is-active,
-    input.is-focused,
-    select:active,
-    select:focus,
-    select.is-active,
-    select.is-focused,
-    textarea:active,
-    textarea:focus,
-    textarea.is-active,
-    textarea.is-focused,
-    .input:active,
-    .input:focus,
-    .input.is-active,
-    .input.is-focused,
-    .vs--open .vs__dropdown-toggle,
-    .rs__control--is-focused,
-    .rs__control--menu-is-open {
-
-      outline: 0;
-      box-shadow:
-        0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset,
-        map-get($map, "input-box-shadow--active");
-      background-color: map-get($map, "input-background--active");
-      &:-webkit-autofill {
-        -webkit-box-shadow:
+    input,
+    select,
+    textarea,
+    .input,
+    .rs__control {
+      &:active,
+      &:focus,
+      &.is-active,
+      &.is-focused,
+      &.rs__control--is-focused,
+      &.rs__control--menu-is-open {
+        outline: 0;
+        box-shadow:
           0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset,
-          0 0 0 1000px map-get($map, "input-background--active") inset,
           map-get($map, "input-box-shadow--active");
+        background-color: map-get($map, "input-background--active");
+        &:-webkit-autofill {
+          -webkit-box-shadow:
+            0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset,
+            0 0 0 1000px map-get($map, "input-background--active") inset,
+            map-get($map, "input-box-shadow--active");
+        }
       }
-    }
-    input.is-invalid,
-    select.is-invalid,
-    textarea.is-invalid,
-    .input.is-invalid,
-    .vs__dropdown-toggle.is-invalid,
-    .rs__control--is-invalid,
-    .input-grp.is-invalid input,
-    .input-grp.is-invalid select,
-    .input-grp.is-invalid textarea,
-    .input-grp.is-invalid .input,
-    .input-grp.is-invalid .vs__dropdown-toggle,
-    .input-grp.is-invalid .rs__control {
-      color: map-get($map, "input-color--invalid");
-      box-shadow:
-        0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--invalid") inset,
-        map-get($map, "input-box-shadow--invalid");
-      // doesnt work for dropdown/toggle
-      background-color: map-get($map, "input-background--invalid");
-      animation: map-get($map, "input-animation--invalid");
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
-      &:-webkit-autofill {
-        -webkit-text-fill-color: map-get($map, "input-color--invalid");
-        -webkit-box-shadow:
+      &:disabled,
+      &.is-disabled {
+        border-color: map-get($map, "input-border-color--disabled"); // NEW: may affect invalid borders
+        background-color: map-get($map, "input-background--disabled");
+        color: map-get($map, "input-color--disabled");
+      }
+      &.is-invalid {
+        color: map-get($map, "input-color--invalid");
+        box-shadow:
           0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--invalid") inset,
-          0 0 0 1000px map-get($map, "input-background--invalid") inset,
           map-get($map, "input-box-shadow--invalid");
+        // doesnt work for dropdown/toggle
+        background-color: map-get($map, "input-background--invalid");
+        animation: map-get($map, "input-animation--invalid");
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        &:-webkit-autofill {
+          -webkit-text-fill-color: map-get($map, "input-color--invalid");
+          -webkit-box-shadow:
+            0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--invalid") inset,
+            0 0 0 1000px map-get($map, "input-background--invalid") inset,
+            map-get($map, "input-box-shadow--invalid");
+        }
+        // Checkbox/radio/toggle
+        &[type="radio"] + label,
+        &[type="checkbox"] + label {
+          animation: map-get($map, "input-animation--invalid");
+          transform: translate3d(0, 0, 0);
+          backface-visibility: hidden;
+          color: map-get($map, "input-color--invalid");
+          &:before {
+            border-color: map-get($map, "input-border-color--invalid");
+            background-color: map-get($map, "input-background--invalid");
+          }
+        }
       }
-    }
-
-    input[type="radio"].is-invalid + label,
-    input[type="checkbox"].is-invalid + label,
-    input[type="radio"].is-invalid + label,
-    input[type="checkbox"].is-invalid + label {
-      animation: map-get($map, "input-animation--invalid");
-      transform: translate3d(0, 0, 0);
-      backface-visibility: hidden;
-      color: #7b1a1a;
-    }
-    input[type="radio"].is-invalid + label:before,
-    input[type="checkbox"].is-invalid + label:before {
-      border-color: map-get($map, "input-border-color--invalid"); // was $danger
-      background-color: map-get($map, "input-background--invalid");
-    }
-    textarea:disabled,
-    input:disabled,
-    textarea.is-disabled,
-    input.is-disabled,
-    .rs__control--is-disabled {
-      border-color: map-get($map, "input-border-color--disabled"); // NEW: may affect invalid borders
-      background-color: map-get($map, "input-background--disabled");
-      color: map-get($map, "input-color--disabled");
     }
 
   /* ---- React Select ----------------- */
@@ -815,8 +786,7 @@
     .onloading input,
     .onloading select,
     .onloading textarea,
-    .onloading .input,
-    .onloading .vs__dropdown-toggle {
+    .onloading .input {
       transition: none;
     }
 
