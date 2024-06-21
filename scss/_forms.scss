@@ -272,20 +272,16 @@
     .form-error {
       display: none;
       color: map-get($map, "error-font-color");
+      font-size: map-get($map, "error-font-size");
+      &:empty {
+        margin: 0 !important;
+      }
     }
-    .form-error,
-    .size-error,
-    .toggle-grp .form-error,
-    .checkbox-grp .form-error,
-    .radio-grp .form-error,
-    .input-grp .form-error {
+    .size-error {
       font-size: map-get($map, "error-font-size");
     }
-    .form-error:empty {
-      margin: 0 !important;
-    }
-    .is-invalid .form-error,
     &.is-invalid .form-error,
+    .is-invalid .form-error,
     .form-error.form-error-show {
       display: block;
     }
@@ -698,6 +694,7 @@
     .vs--open .vs__dropdown-toggle,
     .rs__control--is-focused,
     .rs__control--menu-is-open {
+
       outline: 0;
       box-shadow:
         0 0 0 map-get($map, "input-border-width") map-get($map, "input-border-color--active") inset,
