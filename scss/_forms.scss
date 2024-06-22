@@ -69,7 +69,7 @@
     "input-box-shadow":            map-get($form, "input-box-shadow"), // ??? not defined above
     "input-box-shadow--active":    map-get($form, "input-box-shadow"), // ??? not defined above
     "input-box-shadow--invalid":   map-get($form, "input-box-shadow"), // ??? not defined above
-    "input-btn-font-size":         0.9rem, // todo: change to % off btn font-size
+    "input-btn-font-size":         $btn-font-size,
     "input-color":                 $text,
     "input-color--invalid":        $text,
     "input-color--disabled":       #a5a5a5,
@@ -197,7 +197,8 @@
     .input-grp,
     .radio-grp,
     .checkbox-grp,
-    .toggle-grp {
+    .toggle-grp,
+    .mb-input {
       margin-bottom: map-get($map, "input-margin-bottom");
     }
     .size-input {
@@ -729,9 +730,6 @@
   /* ---- React Select ----------------- */
 
     /* Remove inner input & element styling */
-    .rs {
-      position: static;
-    }
     .rs__value-container {
       padding: 0;
       &.rs__value-container--is-multi.rs__value-container--has-value {
