@@ -294,6 +294,7 @@ a:focus {
 .btn {
   position: relative;
   display: inline-flex;
+  gap: 0.7em;
   align-items: center;
   padding: 0.86em 2.06em;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -331,17 +332,7 @@ a:focus {
   align-items: center;
   display: inline-flex;
   justify-content: center;
-  height: 1.3em;
-  width: 1.3em;
   transition: opacity 200ms ease;
-}
-.btn .icon:first-child:not(:last-child) {
-  margin-left: calc(-0.2em - 1px);
-  margin-right: 0.4em;
-}
-.btn .icon:last-child:not(:first-child) {
-  margin-right: calc(-0.2em - 1px);
-  margin-left: 0.4em;
 }
 
 /* Multiple buttons */
@@ -3558,7 +3549,6 @@ a:focus {
 .form select,
 .form textarea,
 .form .input,
-.form .vs__dropdown-toggle,
 .form .rs__control {
   width: 100%;
   padding: 0.86em 1.26em;
@@ -3581,7 +3571,8 @@ a:focus {
 .form .input-grp,
 .form .radio-grp,
 .form .checkbox-grp,
-.form .toggle-grp {
+.form .toggle-grp,
+.form .mb-input {
   margin-bottom: 1.5rem;
 }
 .form .size-input {
@@ -3630,7 +3621,7 @@ a:focus {
 .form .input-btn .btn {
   width: auto !important;
   min-width: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.5;
   border-radius: 4px;
   padding: 0.86em 1.26em;
@@ -3639,23 +3630,14 @@ a:focus {
   border-bottom-left-radius: 0;
 }
 .form .form-error {
-  display: none;
   color: hsl(348, 86%, 61%);
-}
-.form .form-error,
-.form .size-error,
-.form .toggle-grp .form-error,
-.form .checkbox-grp .form-error,
-.form .radio-grp .form-error,
-.form .input-grp .form-error {
   font-size: 0.85rem;
 }
 .form .form-error:empty {
   margin: 0 !important;
 }
-.form .is-invalid .form-error, .form.is-invalid .form-error,
-.form .form-error.form-error-show {
-  display: block;
+.form .size-error {
+  font-size: 0.85rem;
 }
 .form label,
 .form .label,
@@ -3793,8 +3775,7 @@ a:focus {
 }
 .form .has-icon-left input,
 .form .has-icon-left select,
-.form .has-icon-left .input,
-.form .has-icon-left .vs__dropdown-toggle {
+.form .has-icon-left .input {
   padding-left: calc(1.26em - 2px + 1.2em + 0.75em);
 }
 .form .has-icon-left .icon-left {
@@ -3805,8 +3786,7 @@ a:focus {
 }
 .form .has-icon-right input,
 .form .has-icon-right select,
-.form .has-icon-right .input,
-.form .has-icon-right .vs__dropdown-toggle {
+.form .has-icon-right .input {
   padding-right: calc(1.26em - 2px + 1.2em + 0.75em);
 }
 .form .has-icon-right .icon-right {
@@ -3831,8 +3811,7 @@ a:focus {
 .form .has-inside-label .has-icon-left select + label {
   left: calc(1.26em - 2px + 1.2em + 0.75em);
 }
-.form select,
-.form .vs__dropdown-toggle {
+.form select {
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 1L6 6L11 1' stroke='%23c5cbd2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -4012,62 +3991,80 @@ a:focus {
   padding-top: 0;
   padding-bottom: 0;
 }
-.form input:active,
-.form input:focus,
-.form input.is-active,
-.form input.is-focused,
+.form input:active, .form input:focus, .form input.is-active, .form input.is-focused, .form input.rs__control--is-focused, .form input.rs__control--menu-is-open,
 .form select:active,
 .form select:focus,
 .form select.is-active,
 .form select.is-focused,
+.form select.rs__control--is-focused,
+.form select.rs__control--menu-is-open,
 .form textarea:active,
 .form textarea:focus,
 .form textarea.is-active,
 .form textarea.is-focused,
+.form textarea.rs__control--is-focused,
+.form textarea.rs__control--menu-is-open,
 .form .input:active,
 .form .input:focus,
 .form .input.is-active,
 .form .input.is-focused,
-.form .vs--open .vs__dropdown-toggle,
-.form .rs__control--is-focused,
-.form .rs__control--menu-is-open {
+.form .input.rs__control--is-focused,
+.form .input.rs__control--menu-is-open,
+.form .rs__control:active,
+.form .rs__control:focus,
+.form .rs__control.is-active,
+.form .rs__control.is-focused,
+.form .rs__control.rs__control--is-focused,
+.form .rs__control.rs__control--menu-is-open {
   outline: 0;
   box-shadow: 0 0 0 2px hsl(259, 100%, 67%) inset;
   background-color: #fdfdfd;
 }
-.form input:active:-webkit-autofill,
-.form input:focus:-webkit-autofill,
-.form input.is-active:-webkit-autofill,
-.form input.is-focused:-webkit-autofill,
+.form input:active:-webkit-autofill, .form input:focus:-webkit-autofill, .form input.is-active:-webkit-autofill, .form input.is-focused:-webkit-autofill, .form input.rs__control--is-focused:-webkit-autofill, .form input.rs__control--menu-is-open:-webkit-autofill,
 .form select:active:-webkit-autofill,
 .form select:focus:-webkit-autofill,
 .form select.is-active:-webkit-autofill,
 .form select.is-focused:-webkit-autofill,
+.form select.rs__control--is-focused:-webkit-autofill,
+.form select.rs__control--menu-is-open:-webkit-autofill,
 .form textarea:active:-webkit-autofill,
 .form textarea:focus:-webkit-autofill,
 .form textarea.is-active:-webkit-autofill,
 .form textarea.is-focused:-webkit-autofill,
+.form textarea.rs__control--is-focused:-webkit-autofill,
+.form textarea.rs__control--menu-is-open:-webkit-autofill,
 .form .input:active:-webkit-autofill,
 .form .input:focus:-webkit-autofill,
 .form .input.is-active:-webkit-autofill,
 .form .input.is-focused:-webkit-autofill,
-.form .vs--open .vs__dropdown-toggle:-webkit-autofill,
-.form .rs__control--is-focused:-webkit-autofill,
-.form .rs__control--menu-is-open:-webkit-autofill {
+.form .input.rs__control--is-focused:-webkit-autofill,
+.form .input.rs__control--menu-is-open:-webkit-autofill,
+.form .rs__control:active:-webkit-autofill,
+.form .rs__control:focus:-webkit-autofill,
+.form .rs__control.is-active:-webkit-autofill,
+.form .rs__control.is-focused:-webkit-autofill,
+.form .rs__control.rs__control--is-focused:-webkit-autofill,
+.form .rs__control.rs__control--menu-is-open:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 2px hsl(259, 100%, 67%) inset, 0 0 0 1000px #fdfdfd inset;
+}
+.form input:disabled, .form input.is-disabled,
+.form select:disabled,
+.form select.is-disabled,
+.form textarea:disabled,
+.form textarea.is-disabled,
+.form .input:disabled,
+.form .input.is-disabled,
+.form .rs__control:disabled,
+.form .rs__control.is-disabled {
+  border-color: inherit;
+  background-color: #f7f7f7;
+  color: #a5a5a5;
 }
 .form input.is-invalid,
 .form select.is-invalid,
 .form textarea.is-invalid,
 .form .input.is-invalid,
-.form .vs__dropdown-toggle.is-invalid,
-.form .rs__control--is-invalid,
-.form .input-grp.is-invalid input,
-.form .input-grp.is-invalid select,
-.form .input-grp.is-invalid textarea,
-.form .input-grp.is-invalid .input,
-.form .input-grp.is-invalid .vs__dropdown-toggle,
-.form .input-grp.is-invalid .rs__control {
+.form .rs__control.is-invalid {
   color: hsl(0, 0%, 7%);
   box-shadow: 0 0 0 2px hsl(348, 86%, 61%) inset;
   background-color: #fdfdfd;
@@ -4079,49 +4076,43 @@ a:focus {
 .form select.is-invalid:-webkit-autofill,
 .form textarea.is-invalid:-webkit-autofill,
 .form .input.is-invalid:-webkit-autofill,
-.form .vs__dropdown-toggle.is-invalid:-webkit-autofill,
-.form .rs__control--is-invalid:-webkit-autofill,
-.form .input-grp.is-invalid input:-webkit-autofill,
-.form .input-grp.is-invalid select:-webkit-autofill,
-.form .input-grp.is-invalid textarea:-webkit-autofill,
-.form .input-grp.is-invalid .input:-webkit-autofill,
-.form .input-grp.is-invalid .vs__dropdown-toggle:-webkit-autofill,
-.form .input-grp.is-invalid .rs__control:-webkit-autofill {
+.form .rs__control.is-invalid:-webkit-autofill {
   -webkit-text-fill-color: hsl(0, 0%, 7%);
   -webkit-box-shadow: 0 0 0 2px hsl(348, 86%, 61%) inset, 0 0 0 1000px #fdfdfd inset;
 }
-.form input[type=radio].is-invalid + label,
-.form input[type=checkbox].is-invalid + label,
-.form input[type=radio].is-invalid + label,
-.form input[type=checkbox].is-invalid + label {
+.form input.is-invalid[type=radio] + label, .form input.is-invalid[type=checkbox] + label,
+.form select.is-invalid[type=radio] + label,
+.form select.is-invalid[type=checkbox] + label,
+.form textarea.is-invalid[type=radio] + label,
+.form textarea.is-invalid[type=checkbox] + label,
+.form .input.is-invalid[type=radio] + label,
+.form .input.is-invalid[type=checkbox] + label,
+.form .rs__control.is-invalid[type=radio] + label,
+.form .rs__control.is-invalid[type=checkbox] + label {
   animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
-  color: #7b1a1a;
+  color: hsl(0, 0%, 7%);
 }
-.form input[type=radio].is-invalid + label:before,
-.form input[type=checkbox].is-invalid + label:before {
+.form input.is-invalid[type=radio] + label:before, .form input.is-invalid[type=checkbox] + label:before,
+.form select.is-invalid[type=radio] + label:before,
+.form select.is-invalid[type=checkbox] + label:before,
+.form textarea.is-invalid[type=radio] + label:before,
+.form textarea.is-invalid[type=checkbox] + label:before,
+.form .input.is-invalid[type=radio] + label:before,
+.form .input.is-invalid[type=checkbox] + label:before,
+.form .rs__control.is-invalid[type=radio] + label:before,
+.form .rs__control.is-invalid[type=checkbox] + label:before {
   border-color: hsl(348, 86%, 61%);
   background-color: #fdfdfd;
 }
-.form textarea:disabled,
-.form input:disabled,
-.form textarea.is-disabled,
-.form input.is-disabled,
-.form .rs__control--is-disabled {
-  border-color: inherit;
-  background-color: #f7f7f7;
-  color: #a5a5a5;
-}
-.form .rs {
-  position: static;
-}
 .form .rs__value-container {
   padding: 0;
-  padding-right: 15px;
 }
 .form .rs__value-container.rs__value-container--is-multi.rs__value-container--has-value {
-  padding-right: 43px;
+  margin-top: -1px; /*fixes slight input adjustment*/
+  margin-bottom: -1px; /*fixes slight input adjustment*/
+  gap: 2px;
 }
 .form .rs__value-container.rs__value-container--is-multi.rs__value-container--has-value > input {
   /* not searchable with multi yeilds an awkward input box once there is a value*/
@@ -4135,7 +4126,7 @@ a:focus {
   background-color: transparent;
 }
 .form .rs__value-container > div {
-  margin: 0 5px 0 0;
+  margin: 0;
   padding: 0;
 }
 .form .rs__value-container .rs__placeholder {
@@ -4144,33 +4135,27 @@ a:focus {
 .form .rs__value-container .rs__single-value {
   color: hsl(0, 0%, 7%);
 }
-.form .rs__value-container .rs__multi-value {
-  margin-top: 1px;
-  margin-bottom: 1px;
-}
 .form .rs__indicators {
-  position: absolute;
-  top: 50%;
-  right: 1.26em;
-  margin-top: -10px;
-  margin-right: -7px;
+  margin-right: -2px; /*indicator svgs normally have a padding*/
 }
 .form .rs__indicators .rs__indicator-separator {
   display: none;
 }
-.form .rs__indicators > div {
-  padding: 0px 4px;
-  height: 100%;
+.form .rs__indicators .rs__indicator {
+  padding: 0px;
+  width: 18px;
+  height: 18px;
   align-items: center;
-}
-.form .rs__indicators > div:not(:hover) {
+  justify-content: center;
   color: #c5ccd3;
+}
+.form .rs__indicators .rs__indicator.rs__clear-indicator:hover {
+  color: hsl(0, 0%, 7%);
 }
 .form .onloading input,
 .form .onloading select,
 .form .onloading textarea,
-.form .onloading .input,
-.form .onloading .vs__dropdown-toggle {
+.form .onloading .input {
   transition: none;
 }
 @keyframes shake {
