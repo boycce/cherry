@@ -282,7 +282,6 @@ a:hover {
 a:focus {
   color: hsl(217, 71%, 53%);
   text-decoration-color: hsl(217, 71%, 53%);
-  outline: none;
 }
 
 .preload * {
@@ -296,7 +295,7 @@ a:focus {
   display: inline-flex;
   gap: 0.7em;
   align-items: center;
-  padding: 0.86em 2.06em;
+  padding: 0.75em 1.9em;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -308,11 +307,10 @@ a:focus {
   justify-content: center;
   background-size: 200% auto; /* 200% for gradients */
   border-radius: 5px;
-  border: 0;
-  outline: 0;
+  border: 2px solid transparent;
   box-sizing: border-box;
   cursor: pointer;
-  transition: all 200ms ease;
+  transition: color 200ms ease, background-color 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
   white-space: nowrap;
   -webkit-appearance: none;
   -moz-user-select: -moz-none;
@@ -405,21 +403,24 @@ a:focus {
   color: hsl(0, 0%, 0%);
   background-color: hsl(0, 0%, 100%);
   box-shadow: none;
+  border-color: hsl(0, 0%, 100%);
   background-image: none;
 }
-.btn.is-white:hover, .btn.is-white:focus, .btn.is-white:active, .btn.is-white.is-hovered, .btn.is-white.is-focused, .btn.is-white.is-active {
+.btn.is-white:active, .btn.is-white:hover, .btn.is-white:focus, .btn.is-white.is-active, .btn.is-white.is-hovered, .btn.is-white.is-focused {
   color: hsl(0, 0%, 0%);
-  background-color: #f9f9f9;
+  background-color: whitesmoke;
   background-position: right center;
-  box-shadow: none;
+  border-color: whitesmoke;
 }
 .btn.is-white[disabled], fieldset[disabled] .btn.is-white {
   opacity: 0.5;
   background-color: hsl(0, 0%, 100%);
+  border-color: hsl(0, 0%, 100%);
   cursor: default;
 }
 .btn.is-white.is-loading {
   background-color: hsl(0, 0%, 100%);
+  border-color: hsl(0, 0%, 100%);
   background-position: left center;
 }
 .btn.is-white.is-loading::after {
@@ -429,59 +430,64 @@ a:focus {
   color: hsl(0, 0%, 100%);
   background-color: hsl(0, 0%, 0%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 0%);
 }
 .btn.is-white.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23FFFFFF" stroke-width="2"/></svg>');
 }
-.btn.is-white.is-inverted:hover, .btn.is-white.is-inverted:focus, .btn.is-white.is-inverted:active, .btn.is-white.is-inverted.is-hovered, .btn.is-white.is-inverted.is-focused, .btn.is-white.is-inverted.is-active {
+.btn.is-white.is-inverted:active, .btn.is-white.is-inverted:hover, .btn.is-white.is-inverted:focus, .btn.is-white.is-inverted.is-active, .btn.is-white.is-inverted.is-hovered, .btn.is-white.is-inverted.is-focused {
   background-color: black;
+  border-color: black;
 }
 .btn.is-white.is-inverted[disabled], fieldset[disabled] .btn.is-white.is-inverted, .btn.is-white.is-inverted.is-loading {
   color: hsl(0, 0%, 100%);
   background-color: hsl(0, 0%, 0%);
+  border-color: hsl(0, 0%, 0%);
 }
 .btn.is-white.is-outlined {
   color: hsl(0, 0%, 100%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 100%) inset;
+  border-color: white;
 }
 .btn.is-white.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23FFFFFF" stroke-width="2"/></svg>');
 }
-.btn.is-white.is-outlined:hover, .btn.is-white.is-outlined:focus, .btn.is-white.is-outlined:active, .btn.is-white.is-outlined.is-hovered, .btn.is-white.is-outlined.is-focused, .btn.is-white.is-outlined.is-active {
+.btn.is-white.is-outlined:active, .btn.is-white.is-outlined:hover, .btn.is-white.is-outlined:focus, .btn.is-white.is-outlined.is-active, .btn.is-white.is-outlined.is-hovered, .btn.is-white.is-outlined.is-focused {
   color: hsl(0, 0%, 0%);
   background-color: hsl(0, 0%, 100%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 100%);
 }
 .btn.is-white.is-outlined[disabled], fieldset[disabled] .btn.is-white.is-outlined, .btn.is-white.is-outlined.is-loading {
   color: hsl(0, 0%, 100%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 100%) inset;
+  border-color: white;
 }
 
 .btn.is-black {
   color: hsl(0, 0%, 100%);
   background-color: hsl(0, 0%, 0%);
   box-shadow: none;
+  border-color: hsl(0, 0%, 0%);
   background-image: none;
 }
-.btn.is-black:hover, .btn.is-black:focus, .btn.is-black:active, .btn.is-black.is-hovered, .btn.is-black.is-focused, .btn.is-black.is-active {
+.btn.is-black:active, .btn.is-black:hover, .btn.is-black:focus, .btn.is-black.is-active, .btn.is-black.is-hovered, .btn.is-black.is-focused {
   color: hsl(0, 0%, 100%);
   background-color: black;
   background-position: right center;
-  box-shadow: none;
+  border-color: black;
 }
 .btn.is-black[disabled], fieldset[disabled] .btn.is-black {
   opacity: 0.5;
   background-color: hsl(0, 0%, 0%);
+  border-color: hsl(0, 0%, 0%);
   cursor: default;
 }
 .btn.is-black.is-loading {
   background-color: hsl(0, 0%, 0%);
+  border-color: hsl(0, 0%, 0%);
   background-position: left center;
 }
 .btn.is-black.is-loading::after {
@@ -491,59 +497,64 @@ a:focus {
   color: hsl(0, 0%, 0%);
   background-color: hsl(0, 0%, 100%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 100%);
 }
 .btn.is-black.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23000000" stroke-width="2"/></svg>');
 }
-.btn.is-black.is-inverted:hover, .btn.is-black.is-inverted:focus, .btn.is-black.is-inverted:active, .btn.is-black.is-inverted.is-hovered, .btn.is-black.is-inverted.is-focused, .btn.is-black.is-inverted.is-active {
+.btn.is-black.is-inverted:active, .btn.is-black.is-inverted:hover, .btn.is-black.is-inverted:focus, .btn.is-black.is-inverted.is-active, .btn.is-black.is-inverted.is-hovered, .btn.is-black.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-black.is-inverted[disabled], fieldset[disabled] .btn.is-black.is-inverted, .btn.is-black.is-inverted.is-loading {
   color: hsl(0, 0%, 0%);
   background-color: hsl(0, 0%, 100%);
+  border-color: hsl(0, 0%, 100%);
 }
 .btn.is-black.is-outlined {
   color: hsl(0, 0%, 0%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 0%) inset;
+  border-color: black;
 }
 .btn.is-black.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23000000" stroke-width="2"/></svg>');
 }
-.btn.is-black.is-outlined:hover, .btn.is-black.is-outlined:focus, .btn.is-black.is-outlined:active, .btn.is-black.is-outlined.is-hovered, .btn.is-black.is-outlined.is-focused, .btn.is-black.is-outlined.is-active {
+.btn.is-black.is-outlined:active, .btn.is-black.is-outlined:hover, .btn.is-black.is-outlined:focus, .btn.is-black.is-outlined.is-active, .btn.is-black.is-outlined.is-hovered, .btn.is-black.is-outlined.is-focused {
   color: hsl(0, 0%, 100%);
   background-color: hsl(0, 0%, 0%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 0%);
 }
 .btn.is-black.is-outlined[disabled], fieldset[disabled] .btn.is-black.is-outlined, .btn.is-black.is-outlined.is-loading {
   color: hsl(0, 0%, 0%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 0%) inset;
+  border-color: black;
 }
 
 .btn.is-primary {
   color: #fff;
   background-color: hsl(259, 100%, 67%);
   box-shadow: none;
+  border-color: hsl(259, 100%, 67%);
   background-image: none;
 }
-.btn.is-primary:hover, .btn.is-primary:focus, .btn.is-primary:active, .btn.is-primary.is-hovered, .btn.is-primary.is-focused, .btn.is-primary.is-active {
+.btn.is-primary:active, .btn.is-primary:hover, .btn.is-primary:focus, .btn.is-primary.is-active, .btn.is-primary.is-hovered, .btn.is-primary.is-focused {
   color: #fff;
-  background-color: #7536ff;
+  background-color: #8150eb;
   background-position: right center;
-  box-shadow: none;
+  border-color: #8150eb;
 }
 .btn.is-primary[disabled], fieldset[disabled] .btn.is-primary {
   opacity: 0.5;
   background-color: hsl(259, 100%, 67%);
+  border-color: hsl(259, 100%, 67%);
   cursor: default;
 }
 .btn.is-primary.is-loading {
   background-color: hsl(259, 100%, 67%);
+  border-color: hsl(259, 100%, 67%);
   background-position: left center;
 }
 .btn.is-primary.is-loading::after {
@@ -553,58 +564,60 @@ a:focus {
   color: hsl(259, 100%, 67%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-primary.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%238C57FF" stroke-width="2"/></svg>');
 }
-.btn.is-primary.is-inverted:hover, .btn.is-primary.is-inverted:focus, .btn.is-primary.is-inverted:active, .btn.is-primary.is-inverted.is-hovered, .btn.is-primary.is-inverted.is-focused, .btn.is-primary.is-inverted.is-active {
+.btn.is-primary.is-inverted:active, .btn.is-primary.is-inverted:hover, .btn.is-primary.is-inverted:focus, .btn.is-primary.is-inverted.is-active, .btn.is-primary.is-inverted.is-hovered, .btn.is-primary.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-primary.is-inverted[disabled], fieldset[disabled] .btn.is-primary.is-inverted, .btn.is-primary.is-inverted.is-loading {
   color: hsl(259, 100%, 67%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-primary.is-outlined {
   color: hsl(259, 100%, 67%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(259, 100%, 67%) inset;
+  border-color: #8654f5;
 }
 .btn.is-primary.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%238C57FF" stroke-width="2"/></svg>');
 }
-.btn.is-primary.is-outlined:hover, .btn.is-primary.is-outlined:focus, .btn.is-primary.is-outlined:active, .btn.is-primary.is-outlined.is-hovered, .btn.is-primary.is-outlined.is-focused, .btn.is-primary.is-outlined.is-active {
+.btn.is-primary.is-outlined:active, .btn.is-primary.is-outlined:hover, .btn.is-primary.is-outlined:focus, .btn.is-primary.is-outlined.is-active, .btn.is-primary.is-outlined.is-hovered, .btn.is-primary.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(259, 100%, 67%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(259, 100%, 67%);
 }
 .btn.is-primary.is-outlined[disabled], fieldset[disabled] .btn.is-primary.is-outlined, .btn.is-primary.is-outlined.is-loading {
   color: hsl(259, 100%, 67%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(259, 100%, 67%) inset;
+  border-color: #8654f5;
 }
 .btn.is-primary.is-light {
   color: #4700e0;
   background-color: #f1ebff;
   background-image: none;
-  box-shadow: none;
+  border-color: #f1ebff;
 }
 .btn.is-primary.is-light::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
 }
-.btn.is-primary.is-light:hover, .btn.is-primary.is-light:focus, .btn.is-primary.is-light:active, .btn.is-primary.is-light.is-hovered, .btn.is-primary.is-light.is-focused, .btn.is-primary.is-light.is-active {
-  background-color: #e3d6ff;
+.btn.is-primary.is-light:active, .btn.is-primary.is-light:hover, .btn.is-primary.is-light:focus, .btn.is-primary.is-light.is-active, .btn.is-primary.is-light.is-hovered, .btn.is-primary.is-light.is-focused {
   color: #4700e0;
-  box-shadow: none;
+  background-color: #e7e2f5;
+  border-color: #e7e2f5;
 }
 .btn.is-primary.is-light[disabled], fieldset[disabled] .btn.is-primary.is-light, .btn.is-primary.is-light.is-loading {
   color: #4700e0;
   background-color: #f1ebff;
   background-image: none;
-  box-shadow: none;
+  border-color: #f1ebff;
 }
 .btn.is-primary.is-light[disabled]::after, fieldset[disabled] .btn.is-primary.is-light::after, .btn.is-primary.is-light.is-loading::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
@@ -614,21 +627,24 @@ a:focus {
   color: #fff;
   background-color: hsl(217, 71%, 53%);
   box-shadow: none;
+  border-color: hsl(217, 71%, 53%);
   background-image: none;
 }
-.btn.is-secondary:hover, .btn.is-secondary:focus, .btn.is-secondary:active, .btn.is-secondary.is-hovered, .btn.is-secondary.is-focused, .btn.is-secondary.is-active {
+.btn.is-secondary:active, .btn.is-secondary:hover, .btn.is-secondary:focus, .btn.is-secondary.is-active, .btn.is-secondary.is-hovered, .btn.is-secondary.is-focused {
   color: #fff;
-  background-color: #2263cb;
+  background-color: #2e6aca;
   background-position: right center;
-  box-shadow: none;
+  border-color: #2e6aca;
 }
 .btn.is-secondary[disabled], fieldset[disabled] .btn.is-secondary {
   opacity: 0.5;
   background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
   cursor: default;
 }
 .btn.is-secondary.is-loading {
   background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
   background-position: left center;
 }
 .btn.is-secondary.is-loading::after {
@@ -638,58 +654,60 @@ a:focus {
   color: hsl(217, 71%, 53%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-secondary.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%233273DC" stroke-width="2"/></svg>');
 }
-.btn.is-secondary.is-inverted:hover, .btn.is-secondary.is-inverted:focus, .btn.is-secondary.is-inverted:active, .btn.is-secondary.is-inverted.is-hovered, .btn.is-secondary.is-inverted.is-focused, .btn.is-secondary.is-inverted.is-active {
+.btn.is-secondary.is-inverted:active, .btn.is-secondary.is-inverted:hover, .btn.is-secondary.is-inverted:focus, .btn.is-secondary.is-inverted.is-active, .btn.is-secondary.is-inverted.is-hovered, .btn.is-secondary.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-secondary.is-inverted[disabled], fieldset[disabled] .btn.is-secondary.is-inverted, .btn.is-secondary.is-inverted.is-loading {
   color: hsl(217, 71%, 53%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-secondary.is-outlined {
   color: hsl(217, 71%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(217, 71%, 53%) inset;
+  border-color: #306ed3;
 }
 .btn.is-secondary.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%233273DC" stroke-width="2"/></svg>');
 }
-.btn.is-secondary.is-outlined:hover, .btn.is-secondary.is-outlined:focus, .btn.is-secondary.is-outlined:active, .btn.is-secondary.is-outlined.is-hovered, .btn.is-secondary.is-outlined.is-focused, .btn.is-secondary.is-outlined.is-active {
+.btn.is-secondary.is-outlined:active, .btn.is-secondary.is-outlined:hover, .btn.is-secondary.is-outlined:focus, .btn.is-secondary.is-outlined.is-active, .btn.is-secondary.is-outlined.is-hovered, .btn.is-secondary.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(217, 71%, 53%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(217, 71%, 53%);
 }
 .btn.is-secondary.is-outlined[disabled], fieldset[disabled] .btn.is-secondary.is-outlined, .btn.is-secondary.is-outlined.is-loading {
   color: hsl(217, 71%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(217, 71%, 53%) inset;
+  border-color: #306ed3;
 }
 .btn.is-secondary.is-light {
   color: #2160c4;
   background-color: #eef3fc;
   background-image: none;
-  box-shadow: none;
+  border-color: #eef3fc;
 }
 .btn.is-secondary.is-light::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%232160C4" stroke-width="2"/></svg>');
 }
-.btn.is-secondary.is-light:hover, .btn.is-secondary.is-light:focus, .btn.is-secondary.is-light:active, .btn.is-secondary.is-light.is-hovered, .btn.is-secondary.is-light.is-focused, .btn.is-secondary.is-light.is-active {
-  background-color: #dce7f9;
+.btn.is-secondary.is-light:active, .btn.is-secondary.is-light:hover, .btn.is-secondary.is-light:focus, .btn.is-secondary.is-light.is-active, .btn.is-secondary.is-light.is-hovered, .btn.is-secondary.is-light.is-focused {
   color: #2160c4;
-  box-shadow: none;
+  background-color: #e4e9f2;
+  border-color: #e4e9f2;
 }
 .btn.is-secondary.is-light[disabled], fieldset[disabled] .btn.is-secondary.is-light, .btn.is-secondary.is-light.is-loading {
   color: #2160c4;
   background-color: #eef3fc;
   background-image: none;
-  box-shadow: none;
+  border-color: #eef3fc;
 }
 .btn.is-secondary.is-light[disabled]::after, fieldset[disabled] .btn.is-secondary.is-light::after, .btn.is-secondary.is-light.is-loading::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%232160C4" stroke-width="2"/></svg>');
@@ -699,21 +717,24 @@ a:focus {
   color: #fff;
   background-color: hsl(217, 71%, 53%);
   box-shadow: none;
+  border-color: hsl(217, 71%, 53%);
   background-image: none;
 }
-.btn.is-info:hover, .btn.is-info:focus, .btn.is-info:active, .btn.is-info.is-hovered, .btn.is-info.is-focused, .btn.is-info.is-active {
+.btn.is-info:active, .btn.is-info:hover, .btn.is-info:focus, .btn.is-info.is-active, .btn.is-info.is-hovered, .btn.is-info.is-focused {
   color: #fff;
-  background-color: #2263cb;
+  background-color: #2e6aca;
   background-position: right center;
-  box-shadow: none;
+  border-color: #2e6aca;
 }
 .btn.is-info[disabled], fieldset[disabled] .btn.is-info {
   opacity: 0.5;
   background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
   cursor: default;
 }
 .btn.is-info.is-loading {
   background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
   background-position: left center;
 }
 .btn.is-info.is-loading::after {
@@ -723,58 +744,60 @@ a:focus {
   color: hsl(217, 71%, 53%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-info.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%233273DC" stroke-width="2"/></svg>');
 }
-.btn.is-info.is-inverted:hover, .btn.is-info.is-inverted:focus, .btn.is-info.is-inverted:active, .btn.is-info.is-inverted.is-hovered, .btn.is-info.is-inverted.is-focused, .btn.is-info.is-inverted.is-active {
+.btn.is-info.is-inverted:active, .btn.is-info.is-inverted:hover, .btn.is-info.is-inverted:focus, .btn.is-info.is-inverted.is-active, .btn.is-info.is-inverted.is-hovered, .btn.is-info.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-info.is-inverted[disabled], fieldset[disabled] .btn.is-info.is-inverted, .btn.is-info.is-inverted.is-loading {
   color: hsl(217, 71%, 53%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-info.is-outlined {
   color: hsl(217, 71%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(217, 71%, 53%) inset;
+  border-color: #306ed3;
 }
 .btn.is-info.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%233273DC" stroke-width="2"/></svg>');
 }
-.btn.is-info.is-outlined:hover, .btn.is-info.is-outlined:focus, .btn.is-info.is-outlined:active, .btn.is-info.is-outlined.is-hovered, .btn.is-info.is-outlined.is-focused, .btn.is-info.is-outlined.is-active {
+.btn.is-info.is-outlined:active, .btn.is-info.is-outlined:hover, .btn.is-info.is-outlined:focus, .btn.is-info.is-outlined.is-active, .btn.is-info.is-outlined.is-hovered, .btn.is-info.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(217, 71%, 53%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(217, 71%, 53%);
 }
 .btn.is-info.is-outlined[disabled], fieldset[disabled] .btn.is-info.is-outlined, .btn.is-info.is-outlined.is-loading {
   color: hsl(217, 71%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(217, 71%, 53%) inset;
+  border-color: #306ed3;
 }
 .btn.is-info.is-light {
   color: #2160c4;
   background-color: #eef3fc;
   background-image: none;
-  box-shadow: none;
+  border-color: #eef3fc;
 }
 .btn.is-info.is-light::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%232160C4" stroke-width="2"/></svg>');
 }
-.btn.is-info.is-light:hover, .btn.is-info.is-light:focus, .btn.is-info.is-light:active, .btn.is-info.is-light.is-hovered, .btn.is-info.is-light.is-focused, .btn.is-info.is-light.is-active {
-  background-color: #dce7f9;
+.btn.is-info.is-light:active, .btn.is-info.is-light:hover, .btn.is-info.is-light:focus, .btn.is-info.is-light.is-active, .btn.is-info.is-light.is-hovered, .btn.is-info.is-light.is-focused {
   color: #2160c4;
-  box-shadow: none;
+  background-color: #e4e9f2;
+  border-color: #e4e9f2;
 }
 .btn.is-info.is-light[disabled], fieldset[disabled] .btn.is-info.is-light, .btn.is-info.is-light.is-loading {
   color: #2160c4;
   background-color: #eef3fc;
   background-image: none;
-  box-shadow: none;
+  border-color: #eef3fc;
 }
 .btn.is-info.is-light[disabled]::after, fieldset[disabled] .btn.is-info.is-light::after, .btn.is-info.is-light.is-loading::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%232160C4" stroke-width="2"/></svg>');
@@ -784,21 +807,24 @@ a:focus {
   color: #fff;
   background-color: hsl(141, 53%, 53%);
   box-shadow: none;
+  border-color: hsl(141, 53%, 53%);
   background-image: none;
 }
-.btn.is-success:hover, .btn.is-success:focus, .btn.is-success:active, .btn.is-success.is-hovered, .btn.is-success.is-focused, .btn.is-success.is-active {
+.btn.is-success:active, .btn.is-success:hover, .btn.is-success:focus, .btn.is-success.is-active, .btn.is-success.is-hovered, .btn.is-success.is-focused {
   color: #fff;
-  background-color: #38b564;
+  background-color: #42b76b;
   background-position: right center;
-  box-shadow: none;
+  border-color: #42b76b;
 }
 .btn.is-success[disabled], fieldset[disabled] .btn.is-success {
   opacity: 0.5;
   background-color: hsl(141, 53%, 53%);
+  border-color: hsl(141, 53%, 53%);
   cursor: default;
 }
 .btn.is-success.is-loading {
   background-color: hsl(141, 53%, 53%);
+  border-color: hsl(141, 53%, 53%);
   background-position: left center;
 }
 .btn.is-success.is-loading::after {
@@ -808,58 +834,60 @@ a:focus {
   color: hsl(141, 53%, 53%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-success.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%2348C774" stroke-width="2"/></svg>');
 }
-.btn.is-success.is-inverted:hover, .btn.is-success.is-inverted:focus, .btn.is-success.is-inverted:active, .btn.is-success.is-inverted.is-hovered, .btn.is-success.is-inverted.is-focused, .btn.is-success.is-inverted.is-active {
+.btn.is-success.is-inverted:active, .btn.is-success.is-inverted:hover, .btn.is-success.is-inverted:focus, .btn.is-success.is-inverted.is-active, .btn.is-success.is-inverted.is-hovered, .btn.is-success.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-success.is-inverted[disabled], fieldset[disabled] .btn.is-success.is-inverted, .btn.is-success.is-inverted.is-loading {
   color: hsl(141, 53%, 53%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-success.is-outlined {
   color: hsl(141, 53%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(141, 53%, 53%) inset;
+  border-color: #45bf6f;
 }
 .btn.is-success.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%2348C774" stroke-width="2"/></svg>');
 }
-.btn.is-success.is-outlined:hover, .btn.is-success.is-outlined:focus, .btn.is-success.is-outlined:active, .btn.is-success.is-outlined.is-hovered, .btn.is-success.is-outlined.is-focused, .btn.is-success.is-outlined.is-active {
+.btn.is-success.is-outlined:active, .btn.is-success.is-outlined:hover, .btn.is-success.is-outlined:focus, .btn.is-success.is-outlined.is-active, .btn.is-success.is-outlined.is-hovered, .btn.is-success.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(141, 53%, 53%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(141, 53%, 53%);
 }
 .btn.is-success.is-outlined[disabled], fieldset[disabled] .btn.is-success.is-outlined, .btn.is-success.is-outlined.is-loading {
   color: hsl(141, 53%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(141, 53%, 53%) inset;
+  border-color: #45bf6f;
 }
 .btn.is-success.is-light {
   color: #257942;
   background-color: #effaf3;
   background-image: none;
-  box-shadow: none;
+  border-color: #effaf3;
 }
 .btn.is-success.is-light::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23257942" stroke-width="2"/></svg>');
 }
-.btn.is-success.is-light:hover, .btn.is-success.is-light:focus, .btn.is-success.is-light:active, .btn.is-success.is-light.is-hovered, .btn.is-success.is-light.is-focused, .btn.is-success.is-light.is-active {
-  background-color: #e0f5e7;
+.btn.is-success.is-light:active, .btn.is-success.is-light:hover, .btn.is-success.is-light:focus, .btn.is-success.is-light.is-active, .btn.is-success.is-light.is-hovered, .btn.is-success.is-light.is-focused {
   color: #257942;
-  box-shadow: none;
+  background-color: #e5f0e9;
+  border-color: #e5f0e9;
 }
 .btn.is-success.is-light[disabled], fieldset[disabled] .btn.is-success.is-light, .btn.is-success.is-light.is-loading {
   color: #257942;
   background-color: #effaf3;
   background-image: none;
-  box-shadow: none;
+  border-color: #effaf3;
 }
 .btn.is-success.is-light[disabled]::after, fieldset[disabled] .btn.is-success.is-light::after, .btn.is-success.is-light.is-loading::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23257942" stroke-width="2"/></svg>');
@@ -869,21 +897,24 @@ a:focus {
   color: rgb(72, 72, 72);
   background-color: hsl(48, 100%, 67%);
   box-shadow: none;
+  border-color: hsl(48, 100%, 67%);
   background-image: none;
 }
-.btn.is-warning:hover, .btn.is-warning:focus, .btn.is-warning:active, .btn.is-warning.is-hovered, .btn.is-warning.is-focused, .btn.is-warning.is-active {
+.btn.is-warning:active, .btn.is-warning:hover, .btn.is-warning:focus, .btn.is-warning.is-active, .btn.is-warning.is-hovered, .btn.is-warning.is-focused {
   color: rgb(72, 72, 72);
-  background-color: #ffdb4a;
+  background-color: #f5d454;
   background-position: right center;
-  box-shadow: none;
+  border-color: #f5d454;
 }
 .btn.is-warning[disabled], fieldset[disabled] .btn.is-warning {
   opacity: 0.5;
   background-color: hsl(48, 100%, 67%);
+  border-color: hsl(48, 100%, 67%);
   cursor: default;
 }
 .btn.is-warning.is-loading {
   background-color: hsl(48, 100%, 67%);
+  border-color: hsl(48, 100%, 67%);
   background-position: left center;
 }
 .btn.is-warning.is-loading::after {
@@ -893,58 +924,60 @@ a:focus {
   color: hsl(48, 100%, 67%);
   background-color: rgb(72, 72, 72);
   background-image: none;
-  box-shadow: none;
+  border-color: rgb(72, 72, 72);
 }
 .btn.is-warning.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23FFDD57" stroke-width="2"/></svg>');
 }
-.btn.is-warning.is-inverted:hover, .btn.is-warning.is-inverted:focus, .btn.is-warning.is-inverted:active, .btn.is-warning.is-inverted.is-hovered, .btn.is-warning.is-inverted.is-focused, .btn.is-warning.is-inverted.is-active {
-  background-color: #343434;
+.btn.is-warning.is-inverted:active, .btn.is-warning.is-inverted:hover, .btn.is-warning.is-inverted:focus, .btn.is-warning.is-inverted.is-active, .btn.is-warning.is-inverted.is-hovered, .btn.is-warning.is-inverted.is-focused {
+  background-color: #424242;
+  border-color: #424242;
 }
 .btn.is-warning.is-inverted[disabled], fieldset[disabled] .btn.is-warning.is-inverted, .btn.is-warning.is-inverted.is-loading {
   color: hsl(48, 100%, 67%);
   background-color: rgb(72, 72, 72);
+  border-color: rgb(72, 72, 72);
 }
 .btn.is-warning.is-outlined {
   color: hsl(48, 100%, 67%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(48, 100%, 67%) inset;
+  border-color: #ffdd57;
 }
 .btn.is-warning.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23FFDD57" stroke-width="2"/></svg>');
 }
-.btn.is-warning.is-outlined:hover, .btn.is-warning.is-outlined:focus, .btn.is-warning.is-outlined:active, .btn.is-warning.is-outlined.is-hovered, .btn.is-warning.is-outlined.is-focused, .btn.is-warning.is-outlined.is-active {
+.btn.is-warning.is-outlined:active, .btn.is-warning.is-outlined:hover, .btn.is-warning.is-outlined:focus, .btn.is-warning.is-outlined.is-active, .btn.is-warning.is-outlined.is-hovered, .btn.is-warning.is-outlined.is-focused {
   color: rgb(72, 72, 72);
   background-color: hsl(48, 100%, 67%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(48, 100%, 67%);
 }
 .btn.is-warning.is-outlined[disabled], fieldset[disabled] .btn.is-warning.is-outlined, .btn.is-warning.is-outlined.is-loading {
   color: hsl(48, 100%, 67%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(48, 100%, 67%) inset;
+  border-color: #ffdd57;
 }
 .btn.is-warning.is-light {
   color: #947600;
   background-color: #fffbeb;
   background-image: none;
-  box-shadow: none;
+  border-color: #fffbeb;
 }
 .btn.is-warning.is-light::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23947600" stroke-width="2"/></svg>');
 }
-.btn.is-warning.is-light:hover, .btn.is-warning.is-light:focus, .btn.is-warning.is-light:active, .btn.is-warning.is-light.is-hovered, .btn.is-warning.is-light.is-focused, .btn.is-warning.is-light.is-active {
-  background-color: #fff7d6;
+.btn.is-warning.is-light:active, .btn.is-warning.is-light:hover, .btn.is-warning.is-light:focus, .btn.is-warning.is-light.is-active, .btn.is-warning.is-light.is-hovered, .btn.is-warning.is-light.is-focused {
   color: #947600;
-  box-shadow: none;
+  background-color: #f5f1e2;
+  border-color: #f5f1e2;
 }
 .btn.is-warning.is-light[disabled], fieldset[disabled] .btn.is-warning.is-light, .btn.is-warning.is-light.is-loading {
   color: #947600;
   background-color: #fffbeb;
   background-image: none;
-  box-shadow: none;
+  border-color: #fffbeb;
 }
 .btn.is-warning.is-light[disabled]::after, fieldset[disabled] .btn.is-warning.is-light::after, .btn.is-warning.is-light.is-loading::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23947600" stroke-width="2"/></svg>');
@@ -954,21 +987,24 @@ a:focus {
   color: #fff;
   background-color: hsl(348, 86%, 61%);
   box-shadow: none;
+  border-color: hsl(348, 86%, 61%);
   background-image: none;
 }
-.btn.is-danger:hover, .btn.is-danger:focus, .btn.is-danger:active, .btn.is-danger.is-hovered, .btn.is-danger.is-focused, .btn.is-danger.is-active {
+.btn.is-danger:active, .btn.is-danger:hover, .btn.is-danger:focus, .btn.is-danger.is-active, .btn.is-danger.is-hovered, .btn.is-danger.is-focused {
   color: #fff;
-  background-color: #ef274f;
+  background-color: #de4060;
   background-position: right center;
-  box-shadow: none;
+  border-color: #de4060;
 }
 .btn.is-danger[disabled], fieldset[disabled] .btn.is-danger {
   opacity: 0.5;
   background-color: hsl(348, 86%, 61%);
+  border-color: hsl(348, 86%, 61%);
   cursor: default;
 }
 .btn.is-danger.is-loading {
   background-color: hsl(348, 86%, 61%);
+  border-color: hsl(348, 86%, 61%);
   background-position: left center;
 }
 .btn.is-danger.is-loading::after {
@@ -978,58 +1014,60 @@ a:focus {
   color: hsl(348, 86%, 61%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-danger.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23F14668" stroke-width="2"/></svg>');
 }
-.btn.is-danger.is-inverted:hover, .btn.is-danger.is-inverted:focus, .btn.is-danger.is-inverted:active, .btn.is-danger.is-inverted.is-hovered, .btn.is-danger.is-inverted.is-focused, .btn.is-danger.is-inverted.is-active {
+.btn.is-danger.is-inverted:active, .btn.is-danger.is-inverted:hover, .btn.is-danger.is-inverted:focus, .btn.is-danger.is-inverted.is-active, .btn.is-danger.is-inverted.is-hovered, .btn.is-danger.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-danger.is-inverted[disabled], fieldset[disabled] .btn.is-danger.is-inverted, .btn.is-danger.is-inverted.is-loading {
   color: hsl(348, 86%, 61%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-danger.is-outlined {
   color: hsl(348, 86%, 61%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(348, 86%, 61%) inset;
+  border-color: #e74364;
 }
 .btn.is-danger.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23F14668" stroke-width="2"/></svg>');
 }
-.btn.is-danger.is-outlined:hover, .btn.is-danger.is-outlined:focus, .btn.is-danger.is-outlined:active, .btn.is-danger.is-outlined.is-hovered, .btn.is-danger.is-outlined.is-focused, .btn.is-danger.is-outlined.is-active {
+.btn.is-danger.is-outlined:active, .btn.is-danger.is-outlined:hover, .btn.is-danger.is-outlined:focus, .btn.is-danger.is-outlined.is-active, .btn.is-danger.is-outlined.is-hovered, .btn.is-danger.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(348, 86%, 61%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(348, 86%, 61%);
 }
 .btn.is-danger.is-outlined[disabled], fieldset[disabled] .btn.is-danger.is-outlined, .btn.is-danger.is-outlined.is-loading {
   color: hsl(348, 86%, 61%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(348, 86%, 61%) inset;
+  border-color: #e74364;
 }
 .btn.is-danger.is-light {
   color: #cc0f35;
   background-color: #feecf0;
   background-image: none;
-  box-shadow: none;
+  border-color: #feecf0;
 }
 .btn.is-danger.is-light::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23CC0F35" stroke-width="2"/></svg>');
 }
-.btn.is-danger.is-light:hover, .btn.is-danger.is-light:focus, .btn.is-danger.is-light:active, .btn.is-danger.is-light.is-hovered, .btn.is-danger.is-light.is-focused, .btn.is-danger.is-light.is-active {
-  background-color: #fcd9e0;
+.btn.is-danger.is-light:active, .btn.is-danger.is-light:hover, .btn.is-danger.is-light:focus, .btn.is-danger.is-light.is-active, .btn.is-danger.is-light.is-hovered, .btn.is-danger.is-light.is-focused {
   color: #cc0f35;
-  box-shadow: none;
+  background-color: #f4e3e6;
+  border-color: #f4e3e6;
 }
 .btn.is-danger.is-light[disabled], fieldset[disabled] .btn.is-danger.is-light, .btn.is-danger.is-light.is-loading {
   color: #cc0f35;
   background-color: #feecf0;
   background-image: none;
-  box-shadow: none;
+  border-color: #feecf0;
 }
 .btn.is-danger.is-light[disabled]::after, fieldset[disabled] .btn.is-danger.is-light::after, .btn.is-danger.is-light.is-loading::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23CC0F35" stroke-width="2"/></svg>');
@@ -1039,21 +1077,24 @@ a:focus {
   color: #fff;
   background-color: hsl(0, 0%, 7%);
   box-shadow: none;
+  border-color: hsl(0, 0%, 7%);
   background-image: none;
 }
-.btn.is-text:hover, .btn.is-text:focus, .btn.is-text:active, .btn.is-text.is-hovered, .btn.is-text.is-focused, .btn.is-text.is-active {
+.btn.is-text:active, .btn.is-text:hover, .btn.is-text:focus, .btn.is-text.is-active, .btn.is-text.is-hovered, .btn.is-text.is-focused {
   color: #fff;
-  background-color: #010101;
+  background-color: #111111;
   background-position: right center;
-  box-shadow: none;
+  border-color: #111111;
 }
 .btn.is-text[disabled], fieldset[disabled] .btn.is-text {
   opacity: 0.5;
   background-color: hsl(0, 0%, 7%);
+  border-color: hsl(0, 0%, 7%);
   cursor: default;
 }
 .btn.is-text.is-loading {
   background-color: hsl(0, 0%, 7%);
+  border-color: hsl(0, 0%, 7%);
   background-position: left center;
 }
 .btn.is-text.is-loading::after {
@@ -1063,59 +1104,64 @@ a:focus {
   color: hsl(0, 0%, 7%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-text.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23121212" stroke-width="2"/></svg>');
 }
-.btn.is-text.is-inverted:hover, .btn.is-text.is-inverted:focus, .btn.is-text.is-inverted:active, .btn.is-text.is-inverted.is-hovered, .btn.is-text.is-inverted.is-focused, .btn.is-text.is-inverted.is-active {
+.btn.is-text.is-inverted:active, .btn.is-text.is-inverted:hover, .btn.is-text.is-inverted:focus, .btn.is-text.is-inverted.is-active, .btn.is-text.is-inverted.is-hovered, .btn.is-text.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-text.is-inverted[disabled], fieldset[disabled] .btn.is-text.is-inverted, .btn.is-text.is-inverted.is-loading {
   color: hsl(0, 0%, 7%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-text.is-outlined {
   color: hsl(0, 0%, 7%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 7%) inset;
+  border-color: #111111;
 }
 .btn.is-text.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23121212" stroke-width="2"/></svg>');
 }
-.btn.is-text.is-outlined:hover, .btn.is-text.is-outlined:focus, .btn.is-text.is-outlined:active, .btn.is-text.is-outlined.is-hovered, .btn.is-text.is-outlined.is-focused, .btn.is-text.is-outlined.is-active {
+.btn.is-text.is-outlined:active, .btn.is-text.is-outlined:hover, .btn.is-text.is-outlined:focus, .btn.is-text.is-outlined.is-active, .btn.is-text.is-outlined.is-hovered, .btn.is-text.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(0, 0%, 7%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 7%);
 }
 .btn.is-text.is-outlined[disabled], fieldset[disabled] .btn.is-text.is-outlined, .btn.is-text.is-outlined.is-loading {
   color: hsl(0, 0%, 7%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 7%) inset;
+  border-color: #111111;
 }
 
 .btn.is-light {
   color: #fff;
   background-color: hsl(0, 0%, 27%);
   box-shadow: none;
+  border-color: hsl(0, 0%, 27%);
   background-image: none;
 }
-.btn.is-light:hover, .btn.is-light:focus, .btn.is-light:active, .btn.is-light.is-hovered, .btn.is-light.is-focused, .btn.is-light.is-active {
+.btn.is-light:active, .btn.is-light:hover, .btn.is-light:focus, .btn.is-light.is-active, .btn.is-light.is-hovered, .btn.is-light.is-focused {
   color: #fff;
-  background-color: #343434;
+  background-color: #3f3f3f;
   background-position: right center;
-  box-shadow: none;
+  border-color: #3f3f3f;
 }
 .btn.is-light[disabled], fieldset[disabled] .btn.is-light {
   opacity: 0.5;
   background-color: hsl(0, 0%, 27%);
+  border-color: hsl(0, 0%, 27%);
   cursor: default;
 }
 .btn.is-light.is-loading {
   background-color: hsl(0, 0%, 27%);
+  border-color: hsl(0, 0%, 27%);
   background-position: left center;
 }
 .btn.is-light.is-loading::after {
@@ -1125,59 +1171,64 @@ a:focus {
   color: hsl(0, 0%, 27%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-light.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23454545" stroke-width="2"/></svg>');
 }
-.btn.is-light.is-inverted:hover, .btn.is-light.is-inverted:focus, .btn.is-light.is-inverted:active, .btn.is-light.is-inverted.is-hovered, .btn.is-light.is-inverted.is-focused, .btn.is-light.is-inverted.is-active {
+.btn.is-light.is-inverted:active, .btn.is-light.is-inverted:hover, .btn.is-light.is-inverted:focus, .btn.is-light.is-inverted.is-active, .btn.is-light.is-inverted.is-hovered, .btn.is-light.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-light.is-inverted[disabled], fieldset[disabled] .btn.is-light.is-inverted, .btn.is-light.is-inverted.is-loading {
   color: hsl(0, 0%, 27%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-light.is-outlined {
   color: hsl(0, 0%, 27%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 27%) inset;
+  border-color: #424242;
 }
 .btn.is-light.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23454545" stroke-width="2"/></svg>');
 }
-.btn.is-light.is-outlined:hover, .btn.is-light.is-outlined:focus, .btn.is-light.is-outlined:active, .btn.is-light.is-outlined.is-hovered, .btn.is-light.is-outlined.is-focused, .btn.is-light.is-outlined.is-active {
+.btn.is-light.is-outlined:active, .btn.is-light.is-outlined:hover, .btn.is-light.is-outlined:focus, .btn.is-light.is-outlined.is-active, .btn.is-light.is-outlined.is-hovered, .btn.is-light.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(0, 0%, 27%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 27%);
 }
 .btn.is-light.is-outlined[disabled], fieldset[disabled] .btn.is-light.is-outlined, .btn.is-light.is-outlined.is-loading {
   color: hsl(0, 0%, 27%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 27%) inset;
+  border-color: #424242;
 }
 
 .btn.is-lighter {
   color: #fff;
   background-color: hsl(0, 0%, 47%);
   box-shadow: none;
+  border-color: hsl(0, 0%, 47%);
   background-image: none;
 }
-.btn.is-lighter:hover, .btn.is-lighter:focus, .btn.is-lighter:active, .btn.is-lighter.is-hovered, .btn.is-lighter.is-focused, .btn.is-lighter.is-active {
+.btn.is-lighter:active, .btn.is-lighter:hover, .btn.is-lighter:focus, .btn.is-lighter.is-active, .btn.is-lighter.is-hovered, .btn.is-lighter.is-focused {
   color: #fff;
-  background-color: #676767;
+  background-color: #6e6e6e;
   background-position: right center;
-  box-shadow: none;
+  border-color: #6e6e6e;
 }
 .btn.is-lighter[disabled], fieldset[disabled] .btn.is-lighter {
   opacity: 0.5;
   background-color: hsl(0, 0%, 47%);
+  border-color: hsl(0, 0%, 47%);
   cursor: default;
 }
 .btn.is-lighter.is-loading {
   background-color: hsl(0, 0%, 47%);
+  border-color: hsl(0, 0%, 47%);
   background-position: left center;
 }
 .btn.is-lighter.is-loading::after {
@@ -1187,59 +1238,64 @@ a:focus {
   color: hsl(0, 0%, 47%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-lighter.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23787878" stroke-width="2"/></svg>');
 }
-.btn.is-lighter.is-inverted:hover, .btn.is-lighter.is-inverted:focus, .btn.is-lighter.is-inverted:active, .btn.is-lighter.is-inverted.is-hovered, .btn.is-lighter.is-inverted.is-focused, .btn.is-lighter.is-inverted.is-active {
+.btn.is-lighter.is-inverted:active, .btn.is-lighter.is-inverted:hover, .btn.is-lighter.is-inverted:focus, .btn.is-lighter.is-inverted.is-active, .btn.is-lighter.is-inverted.is-hovered, .btn.is-lighter.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-lighter.is-inverted[disabled], fieldset[disabled] .btn.is-lighter.is-inverted, .btn.is-lighter.is-inverted.is-loading {
   color: hsl(0, 0%, 47%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-lighter.is-outlined {
   color: hsl(0, 0%, 47%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 47%) inset;
+  border-color: #737373;
 }
 .btn.is-lighter.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23787878" stroke-width="2"/></svg>');
 }
-.btn.is-lighter.is-outlined:hover, .btn.is-lighter.is-outlined:focus, .btn.is-lighter.is-outlined:active, .btn.is-lighter.is-outlined.is-hovered, .btn.is-lighter.is-outlined.is-focused, .btn.is-lighter.is-outlined.is-active {
+.btn.is-lighter.is-outlined:active, .btn.is-lighter.is-outlined:hover, .btn.is-lighter.is-outlined:focus, .btn.is-lighter.is-outlined.is-active, .btn.is-lighter.is-outlined.is-hovered, .btn.is-lighter.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(0, 0%, 47%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 47%);
 }
 .btn.is-lighter.is-outlined[disabled], fieldset[disabled] .btn.is-lighter.is-outlined, .btn.is-lighter.is-outlined.is-loading {
   color: hsl(0, 0%, 47%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 47%) inset;
+  border-color: #737373;
 }
 
 .btn.is-strong {
   color: #fff;
   background-color: hsl(0, 0%, 0%);
   box-shadow: none;
+  border-color: hsl(0, 0%, 0%);
   background-image: none;
 }
-.btn.is-strong:hover, .btn.is-strong:focus, .btn.is-strong:active, .btn.is-strong.is-hovered, .btn.is-strong.is-focused, .btn.is-strong.is-active {
+.btn.is-strong:active, .btn.is-strong:hover, .btn.is-strong:focus, .btn.is-strong.is-active, .btn.is-strong.is-hovered, .btn.is-strong.is-focused {
   color: #fff;
   background-color: black;
   background-position: right center;
-  box-shadow: none;
+  border-color: black;
 }
 .btn.is-strong[disabled], fieldset[disabled] .btn.is-strong {
   opacity: 0.5;
   background-color: hsl(0, 0%, 0%);
+  border-color: hsl(0, 0%, 0%);
   cursor: default;
 }
 .btn.is-strong.is-loading {
   background-color: hsl(0, 0%, 0%);
+  border-color: hsl(0, 0%, 0%);
   background-position: left center;
 }
 .btn.is-strong.is-loading::after {
@@ -1249,59 +1305,64 @@ a:focus {
   color: hsl(0, 0%, 0%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-strong.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23000000" stroke-width="2"/></svg>');
 }
-.btn.is-strong.is-inverted:hover, .btn.is-strong.is-inverted:focus, .btn.is-strong.is-inverted:active, .btn.is-strong.is-inverted.is-hovered, .btn.is-strong.is-inverted.is-focused, .btn.is-strong.is-inverted.is-active {
+.btn.is-strong.is-inverted:active, .btn.is-strong.is-inverted:hover, .btn.is-strong.is-inverted:focus, .btn.is-strong.is-inverted.is-active, .btn.is-strong.is-inverted.is-hovered, .btn.is-strong.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-strong.is-inverted[disabled], fieldset[disabled] .btn.is-strong.is-inverted, .btn.is-strong.is-inverted.is-loading {
   color: hsl(0, 0%, 0%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-strong.is-outlined {
   color: hsl(0, 0%, 0%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 0%) inset;
+  border-color: black;
 }
 .btn.is-strong.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23000000" stroke-width="2"/></svg>');
 }
-.btn.is-strong.is-outlined:hover, .btn.is-strong.is-outlined:focus, .btn.is-strong.is-outlined:active, .btn.is-strong.is-outlined.is-hovered, .btn.is-strong.is-outlined.is-focused, .btn.is-strong.is-outlined.is-active {
+.btn.is-strong.is-outlined:active, .btn.is-strong.is-outlined:hover, .btn.is-strong.is-outlined:focus, .btn.is-strong.is-outlined.is-active, .btn.is-strong.is-outlined.is-hovered, .btn.is-strong.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(0, 0%, 0%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 0%);
 }
 .btn.is-strong.is-outlined[disabled], fieldset[disabled] .btn.is-strong.is-outlined, .btn.is-strong.is-outlined.is-loading {
   color: hsl(0, 0%, 0%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 0%) inset;
+  border-color: black;
 }
 
 .btn.is-link {
   color: #fff;
   background-color: hsl(0, 0%, 7%);
   box-shadow: none;
+  border-color: hsl(0, 0%, 7%);
   background-image: none;
 }
-.btn.is-link:hover, .btn.is-link:focus, .btn.is-link:active, .btn.is-link.is-hovered, .btn.is-link.is-focused, .btn.is-link.is-active {
+.btn.is-link:active, .btn.is-link:hover, .btn.is-link:focus, .btn.is-link.is-active, .btn.is-link.is-hovered, .btn.is-link.is-focused {
   color: #fff;
-  background-color: #010101;
+  background-color: #111111;
   background-position: right center;
-  box-shadow: none;
+  border-color: #111111;
 }
 .btn.is-link[disabled], fieldset[disabled] .btn.is-link {
   opacity: 0.5;
   background-color: hsl(0, 0%, 7%);
+  border-color: hsl(0, 0%, 7%);
   cursor: default;
 }
 .btn.is-link.is-loading {
   background-color: hsl(0, 0%, 7%);
+  border-color: hsl(0, 0%, 7%);
   background-position: left center;
 }
 .btn.is-link.is-loading::after {
@@ -1311,59 +1372,64 @@ a:focus {
   color: hsl(0, 0%, 7%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-link.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23121212" stroke-width="2"/></svg>');
 }
-.btn.is-link.is-inverted:hover, .btn.is-link.is-inverted:focus, .btn.is-link.is-inverted:active, .btn.is-link.is-inverted.is-hovered, .btn.is-link.is-inverted.is-focused, .btn.is-link.is-inverted.is-active {
+.btn.is-link.is-inverted:active, .btn.is-link.is-inverted:hover, .btn.is-link.is-inverted:focus, .btn.is-link.is-inverted.is-active, .btn.is-link.is-inverted.is-hovered, .btn.is-link.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-link.is-inverted[disabled], fieldset[disabled] .btn.is-link.is-inverted, .btn.is-link.is-inverted.is-loading {
   color: hsl(0, 0%, 7%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-link.is-outlined {
   color: hsl(0, 0%, 7%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 7%) inset;
+  border-color: #111111;
 }
 .btn.is-link.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%23121212" stroke-width="2"/></svg>');
 }
-.btn.is-link.is-outlined:hover, .btn.is-link.is-outlined:focus, .btn.is-link.is-outlined:active, .btn.is-link.is-outlined.is-hovered, .btn.is-link.is-outlined.is-focused, .btn.is-link.is-outlined.is-active {
+.btn.is-link.is-outlined:active, .btn.is-link.is-outlined:hover, .btn.is-link.is-outlined:focus, .btn.is-link.is-outlined.is-active, .btn.is-link.is-outlined.is-hovered, .btn.is-link.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(0, 0%, 7%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(0, 0%, 7%);
 }
 .btn.is-link.is-outlined[disabled], fieldset[disabled] .btn.is-link.is-outlined, .btn.is-link.is-outlined.is-loading {
   color: hsl(0, 0%, 7%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(0, 0%, 7%) inset;
+  border-color: #111111;
 }
 
 .btn.is-link--hover {
   color: #fff;
   background-color: hsl(217, 71%, 53%);
   box-shadow: none;
+  border-color: hsl(217, 71%, 53%);
   background-image: none;
 }
-.btn.is-link--hover:hover, .btn.is-link--hover:focus, .btn.is-link--hover:active, .btn.is-link--hover.is-hovered, .btn.is-link--hover.is-focused, .btn.is-link--hover.is-active {
+.btn.is-link--hover:active, .btn.is-link--hover:hover, .btn.is-link--hover:focus, .btn.is-link--hover.is-active, .btn.is-link--hover.is-hovered, .btn.is-link--hover.is-focused {
   color: #fff;
-  background-color: #2263cb;
+  background-color: #2e6aca;
   background-position: right center;
-  box-shadow: none;
+  border-color: #2e6aca;
 }
 .btn.is-link--hover[disabled], fieldset[disabled] .btn.is-link--hover {
   opacity: 0.5;
   background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
   cursor: default;
 }
 .btn.is-link--hover.is-loading {
   background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
   background-position: left center;
 }
 .btn.is-link--hover.is-loading::after {
@@ -1373,59 +1439,64 @@ a:focus {
   color: hsl(217, 71%, 53%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-link--hover.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%233273DC" stroke-width="2"/></svg>');
 }
-.btn.is-link--hover.is-inverted:hover, .btn.is-link--hover.is-inverted:focus, .btn.is-link--hover.is-inverted:active, .btn.is-link--hover.is-inverted.is-hovered, .btn.is-link--hover.is-inverted.is-focused, .btn.is-link--hover.is-inverted.is-active {
+.btn.is-link--hover.is-inverted:active, .btn.is-link--hover.is-inverted:hover, .btn.is-link--hover.is-inverted:focus, .btn.is-link--hover.is-inverted.is-active, .btn.is-link--hover.is-inverted.is-hovered, .btn.is-link--hover.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-link--hover.is-inverted[disabled], fieldset[disabled] .btn.is-link--hover.is-inverted, .btn.is-link--hover.is-inverted.is-loading {
   color: hsl(217, 71%, 53%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-link--hover.is-outlined {
   color: hsl(217, 71%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(217, 71%, 53%) inset;
+  border-color: #306ed3;
 }
 .btn.is-link--hover.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%233273DC" stroke-width="2"/></svg>');
 }
-.btn.is-link--hover.is-outlined:hover, .btn.is-link--hover.is-outlined:focus, .btn.is-link--hover.is-outlined:active, .btn.is-link--hover.is-outlined.is-hovered, .btn.is-link--hover.is-outlined.is-focused, .btn.is-link--hover.is-outlined.is-active {
+.btn.is-link--hover.is-outlined:active, .btn.is-link--hover.is-outlined:hover, .btn.is-link--hover.is-outlined:focus, .btn.is-link--hover.is-outlined.is-active, .btn.is-link--hover.is-outlined.is-hovered, .btn.is-link--hover.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(217, 71%, 53%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(217, 71%, 53%);
 }
 .btn.is-link--hover.is-outlined[disabled], fieldset[disabled] .btn.is-link--hover.is-outlined, .btn.is-link--hover.is-outlined.is-loading {
   color: hsl(217, 71%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(217, 71%, 53%) inset;
+  border-color: #306ed3;
 }
 
 .btn.is-link--focus {
   color: #fff;
   background-color: hsl(217, 71%, 53%);
   box-shadow: none;
+  border-color: hsl(217, 71%, 53%);
   background-image: none;
 }
-.btn.is-link--focus:hover, .btn.is-link--focus:focus, .btn.is-link--focus:active, .btn.is-link--focus.is-hovered, .btn.is-link--focus.is-focused, .btn.is-link--focus.is-active {
+.btn.is-link--focus:active, .btn.is-link--focus:hover, .btn.is-link--focus:focus, .btn.is-link--focus.is-active, .btn.is-link--focus.is-hovered, .btn.is-link--focus.is-focused {
   color: #fff;
-  background-color: #2263cb;
+  background-color: #2e6aca;
   background-position: right center;
-  box-shadow: none;
+  border-color: #2e6aca;
 }
 .btn.is-link--focus[disabled], fieldset[disabled] .btn.is-link--focus {
   opacity: 0.5;
   background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
   cursor: default;
 }
 .btn.is-link--focus.is-loading {
   background-color: hsl(217, 71%, 53%);
+  border-color: hsl(217, 71%, 53%);
   background-position: left center;
 }
 .btn.is-link--focus.is-loading::after {
@@ -1435,59 +1506,64 @@ a:focus {
   color: hsl(217, 71%, 53%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-link--focus.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%233273DC" stroke-width="2"/></svg>');
 }
-.btn.is-link--focus.is-inverted:hover, .btn.is-link--focus.is-inverted:focus, .btn.is-link--focus.is-inverted:active, .btn.is-link--focus.is-inverted.is-hovered, .btn.is-link--focus.is-inverted.is-focused, .btn.is-link--focus.is-inverted.is-active {
+.btn.is-link--focus.is-inverted:active, .btn.is-link--focus.is-inverted:hover, .btn.is-link--focus.is-inverted:focus, .btn.is-link--focus.is-inverted.is-active, .btn.is-link--focus.is-inverted.is-hovered, .btn.is-link--focus.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-link--focus.is-inverted[disabled], fieldset[disabled] .btn.is-link--focus.is-inverted, .btn.is-link--focus.is-inverted.is-loading {
   color: hsl(217, 71%, 53%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-link--focus.is-outlined {
   color: hsl(217, 71%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(217, 71%, 53%) inset;
+  border-color: #306ed3;
 }
 .btn.is-link--focus.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%233273DC" stroke-width="2"/></svg>');
 }
-.btn.is-link--focus.is-outlined:hover, .btn.is-link--focus.is-outlined:focus, .btn.is-link--focus.is-outlined:active, .btn.is-link--focus.is-outlined.is-hovered, .btn.is-link--focus.is-outlined.is-focused, .btn.is-link--focus.is-outlined.is-active {
+.btn.is-link--focus.is-outlined:active, .btn.is-link--focus.is-outlined:hover, .btn.is-link--focus.is-outlined:focus, .btn.is-link--focus.is-outlined.is-active, .btn.is-link--focus.is-outlined.is-hovered, .btn.is-link--focus.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(217, 71%, 53%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(217, 71%, 53%);
 }
 .btn.is-link--focus.is-outlined[disabled], fieldset[disabled] .btn.is-link--focus.is-outlined, .btn.is-link--focus.is-outlined.is-loading {
   color: hsl(217, 71%, 53%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(217, 71%, 53%) inset;
+  border-color: #306ed3;
 }
 
 .btn.is-grad1 {
   color: #fff;
   background-color: hsl(259, 100%, 67%);
   box-shadow: none;
+  border-color: hsl(259, 100%, 67%);
   background-image: linear-gradient(160deg, hsl(259, 100%, 67%), #6924ff, #580aff);
 }
-.btn.is-grad1:hover, .btn.is-grad1:focus, .btn.is-grad1:active, .btn.is-grad1.is-hovered, .btn.is-grad1.is-focused, .btn.is-grad1.is-active {
+.btn.is-grad1:active, .btn.is-grad1:hover, .btn.is-grad1:focus, .btn.is-grad1.is-active, .btn.is-grad1.is-hovered, .btn.is-grad1.is-focused {
   color: #fff;
-  background-color: #7536ff;
+  background-color: #8150eb;
   background-position: right center;
-  box-shadow: none;
+  border-color: #8150eb;
 }
 .btn.is-grad1[disabled], fieldset[disabled] .btn.is-grad1 {
   opacity: 0.5;
   background-color: hsl(259, 100%, 67%);
+  border-color: hsl(259, 100%, 67%);
   cursor: default;
 }
 .btn.is-grad1.is-loading {
   background-color: hsl(259, 100%, 67%);
+  border-color: hsl(259, 100%, 67%);
   background-position: left center;
 }
 .btn.is-grad1.is-loading::after {
@@ -1497,58 +1573,60 @@ a:focus {
   color: hsl(259, 100%, 67%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-grad1.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%238C57FF" stroke-width="2"/></svg>');
 }
-.btn.is-grad1.is-inverted:hover, .btn.is-grad1.is-inverted:focus, .btn.is-grad1.is-inverted:active, .btn.is-grad1.is-inverted.is-hovered, .btn.is-grad1.is-inverted.is-focused, .btn.is-grad1.is-inverted.is-active {
+.btn.is-grad1.is-inverted:active, .btn.is-grad1.is-inverted:hover, .btn.is-grad1.is-inverted:focus, .btn.is-grad1.is-inverted.is-active, .btn.is-grad1.is-inverted.is-hovered, .btn.is-grad1.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-grad1.is-inverted[disabled], fieldset[disabled] .btn.is-grad1.is-inverted, .btn.is-grad1.is-inverted.is-loading {
   color: hsl(259, 100%, 67%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-grad1.is-outlined {
   color: hsl(259, 100%, 67%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(259, 100%, 67%) inset;
+  border-color: #8654f5;
 }
 .btn.is-grad1.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%238C57FF" stroke-width="2"/></svg>');
 }
-.btn.is-grad1.is-outlined:hover, .btn.is-grad1.is-outlined:focus, .btn.is-grad1.is-outlined:active, .btn.is-grad1.is-outlined.is-hovered, .btn.is-grad1.is-outlined.is-focused, .btn.is-grad1.is-outlined.is-active {
+.btn.is-grad1.is-outlined:active, .btn.is-grad1.is-outlined:hover, .btn.is-grad1.is-outlined:focus, .btn.is-grad1.is-outlined.is-active, .btn.is-grad1.is-outlined.is-hovered, .btn.is-grad1.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(259, 100%, 67%);
   background-image: linear-gradient(160deg, hsl(259, 100%, 67%), #6924ff, #580aff);
-  box-shadow: none;
+  border-color: hsl(259, 100%, 67%);
 }
 .btn.is-grad1.is-outlined[disabled], fieldset[disabled] .btn.is-grad1.is-outlined, .btn.is-grad1.is-outlined.is-loading {
   color: hsl(259, 100%, 67%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(259, 100%, 67%) inset;
+  border-color: #8654f5;
 }
 .btn.is-grad1.is-light {
   color: #4700e0;
   background-color: #f1ebff;
   background-image: none;
-  box-shadow: none;
+  border-color: #f1ebff;
 }
 .btn.is-grad1.is-light::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
 }
-.btn.is-grad1.is-light:hover, .btn.is-grad1.is-light:focus, .btn.is-grad1.is-light:active, .btn.is-grad1.is-light.is-hovered, .btn.is-grad1.is-light.is-focused, .btn.is-grad1.is-light.is-active {
-  background-color: #e3d6ff;
+.btn.is-grad1.is-light:active, .btn.is-grad1.is-light:hover, .btn.is-grad1.is-light:focus, .btn.is-grad1.is-light.is-active, .btn.is-grad1.is-light.is-hovered, .btn.is-grad1.is-light.is-focused {
   color: #4700e0;
-  box-shadow: none;
+  background-color: #e7e2f5;
+  border-color: #e7e2f5;
 }
 .btn.is-grad1.is-light[disabled], fieldset[disabled] .btn.is-grad1.is-light, .btn.is-grad1.is-light.is-loading {
   color: #4700e0;
   background-color: #f1ebff;
   background-image: none;
-  box-shadow: none;
+  border-color: #f1ebff;
 }
 .btn.is-grad1.is-light[disabled]::after, fieldset[disabled] .btn.is-grad1.is-light::after, .btn.is-grad1.is-light.is-loading::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
@@ -1558,21 +1636,24 @@ a:focus {
   color: #fff;
   background-color: hsl(259, 100%, 67%);
   box-shadow: none;
+  border-color: hsl(259, 100%, 67%);
   background-image: none;
 }
-.btn:hover, .btn:focus, .btn:active, .btn.is-hovered, .btn.is-focused, .btn.is-active {
+.btn:active, .btn:hover, .btn:focus, .btn.is-active, .btn.is-hovered, .btn.is-focused {
   color: #fff;
-  background-color: #7536ff;
+  background-color: #8150eb;
   background-position: right center;
-  box-shadow: none;
+  border-color: #8150eb;
 }
 .btn[disabled], fieldset[disabled] .btn {
   opacity: 0.5;
   background-color: hsl(259, 100%, 67%);
+  border-color: hsl(259, 100%, 67%);
   cursor: default;
 }
 .btn.is-loading {
   background-color: hsl(259, 100%, 67%);
+  border-color: hsl(259, 100%, 67%);
   background-position: left center;
 }
 .btn.is-loading::after {
@@ -1582,58 +1663,60 @@ a:focus {
   color: hsl(259, 100%, 67%);
   background-color: #fff;
   background-image: none;
-  box-shadow: none;
+  border-color: #fff;
 }
 .btn.is-inverted::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%238C57FF" stroke-width="2"/></svg>');
 }
-.btn.is-inverted:hover, .btn.is-inverted:focus, .btn.is-inverted:active, .btn.is-inverted.is-hovered, .btn.is-inverted.is-focused, .btn.is-inverted.is-active {
+.btn.is-inverted:active, .btn.is-inverted:hover, .btn.is-inverted:focus, .btn.is-inverted.is-active, .btn.is-inverted.is-hovered, .btn.is-inverted.is-focused {
   background-color: whitesmoke;
+  border-color: whitesmoke;
 }
 .btn.is-inverted[disabled], fieldset[disabled] .btn.is-inverted, .btn.is-inverted.is-loading {
   color: hsl(259, 100%, 67%);
   background-color: #fff;
+  border-color: #fff;
 }
 .btn.is-outlined {
   color: hsl(259, 100%, 67%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(259, 100%, 67%) inset;
+  border-color: #8654f5;
 }
 .btn.is-outlined::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%238C57FF" stroke-width="2"/></svg>');
 }
-.btn.is-outlined:hover, .btn.is-outlined:focus, .btn.is-outlined:active, .btn.is-outlined.is-hovered, .btn.is-outlined.is-focused, .btn.is-outlined.is-active {
+.btn.is-outlined:active, .btn.is-outlined:hover, .btn.is-outlined:focus, .btn.is-outlined.is-active, .btn.is-outlined.is-hovered, .btn.is-outlined.is-focused {
   color: #fff;
   background-color: hsl(259, 100%, 67%);
   background-image: none;
-  box-shadow: none;
+  border-color: hsl(259, 100%, 67%);
 }
 .btn.is-outlined[disabled], fieldset[disabled] .btn.is-outlined, .btn.is-outlined.is-loading {
   color: hsl(259, 100%, 67%);
   background-color: transparent;
   background-image: none;
-  box-shadow: 0 0 0 2px hsl(259, 100%, 67%) inset;
+  border-color: #8654f5;
 }
 .btn.is-light {
   color: #4700e0;
   background-color: #f1ebff;
   background-image: none;
-  box-shadow: none;
+  border-color: #f1ebff;
 }
 .btn.is-light::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
 }
-.btn.is-light:hover, .btn.is-light:focus, .btn.is-light:active, .btn.is-light.is-hovered, .btn.is-light.is-focused, .btn.is-light.is-active {
-  background-color: #e3d6ff;
+.btn.is-light:active, .btn.is-light:hover, .btn.is-light:focus, .btn.is-light.is-active, .btn.is-light.is-hovered, .btn.is-light.is-focused {
   color: #4700e0;
-  box-shadow: none;
+  background-color: #e7e2f5;
+  border-color: #e7e2f5;
 }
 .btn.is-light[disabled], fieldset[disabled] .btn.is-light, .btn.is-light.is-loading {
   color: #4700e0;
   background-color: #f1ebff;
   background-image: none;
-  box-shadow: none;
+  border-color: #f1ebff;
 }
 .btn.is-light[disabled]::after, fieldset[disabled] .btn.is-light::after, .btn.is-light.is-loading::after {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="%234700E0" stroke-width="2"/></svg>');
