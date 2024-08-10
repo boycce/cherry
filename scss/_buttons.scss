@@ -2,6 +2,8 @@ $btn-background-color:   $primary !default;
 $btn-background-image:   null !default;
 $btn-border-color:       null !default;
 $btn-border-color--active: $btn-border-color !default;
+$btn-border-darken:      null !default;
+$btn-border-darken--active: $btn-border-darken !default;
 $btn-border-radius:      5px !default;
 $btn-border-width:       2px !default;
 $btn-box-shadow:         none !default;
@@ -14,7 +16,7 @@ $btn-icon-size:          null !default;
 $btn-gap:                0.7em !default;
 $btn-line-height:        1.5 !default;
 $btn-loading-animation:  loaderOne .9s cubic-bezier(.435,.165,.615,.81) infinite !default;
-$btn-padding:            0.86em 2.06em !default;
+$btn-padding:            0.75em 1.9em !default;
 $btn-min-height:         0 !default;
 $btns-margin-right:      1rem !default;
 $btns-margin-bottom:     1.5rem !default;
@@ -26,6 +28,19 @@ $btn-app-colors: mergeColorMaps($app-colors, (
 
 @mixin loader($color) {
   background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 18 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 9C2 5.5 4.64444 2 9.15556 2C13.6667 2 16 5.88889 16 9" stroke="#{encodecolor($color)}" stroke-width="2"/></svg>')
+}
+
+@function calcBorderColor($color, $darken, $default) {
+  // Darken color if $darken is set
+  @if ($darken) {
+    @return cherryDarkenSmart($color, $darken);
+  }
+  @else if ($default) {
+    @return $default;
+  }
+  @else {
+    @return $color;
+  }
 }
 
 @function calcBoxShadow($border-color: null) {
@@ -70,11 +85,12 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     justify-content: center;
     background-size: 200% auto; /* 200% for gradients */
     border-radius: $btn-border-radius;
-    border: 0;
-    outline: 0;
+    border: $btn-border-width solid transparent; // this needs to be used instead of box-shadow to avoid
+    // outline double up when tabbing
+    // outline: 0;
     box-sizing: border-box;
     cursor: pointer;
-    transition: all 200ms ease;
+    transition: color 200ms ease, background-color 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
     white-space: nowrap;
     -webkit-appearance: none;
     -moz-user-select: -moz-none;
@@ -179,27 +195,36 @@ $btn-app-colors: mergeColorMaps($app-colors, (
     #{$cssname} {
       color: $color-invert;
       background-color: $color;
-      box-shadow: calcBoxShadow($btn-border-color);
+      box-shadow: calcBoxShadow();
+      border-color: calcBorderColor($color, $btn-border-darken, $btn-border-color);
       background-image: $background-image;
+      &:active,
       &:hover,
       &:focus,
-      &:active,
+      &.is-active,
       &.is-hovered,
-      &.is-focused,
-      &.is-active {
+      &.is-focused {
         color: $color-invert;
-        background-color: cherryDarkenSmart($color, 2.5%);
+        background-color: cherryDarkenSmart($color, 4%);
         background-position: right center;
-        box-shadow: calcBoxShadow($btn-border-color--active);
+        border-color: calcBorderColor(cherryDarkenSmart($color, 4%), $btn-border-darken--active, $btn-border-color--active);
       }
+      // &:active,
+      // &:hover,
+      // &.is-active,
+      // &.is-hovered {
+      //   border-color: calcBorderColor(cherryDarkenSmart($color, 2.5%), $btn-border-darken--active, $btn-border-color--active);
+      // }
       &[disabled],
       fieldset[disabled] & {
         opacity: $btn-disabled-opacity;
         background-color: $color;
+        border-color: calcBorderColor($color, $btn-border-darken, $btn-border-color);
         cursor: default;
       }
       &.is-loading {
         background-color: $color;
+        border-color: calcBorderColor($color, $btn-border-darken, $btn-border-color);
         background-position: left center;
         &::after {
           @include loader($color-invert);
@@ -209,23 +234,25 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         color: $color;
         background-color: $color-invert;
         background-image: none;
-        box-shadow: calcBoxShadow();
+        border-color: $color-invert;
         &::after {
           @include loader($color);
         }
+        &:active,
         &:hover,
         &:focus,
-        &:active,
+        &.is-active,
         &.is-hovered,
-        &.is-focused,
-        &.is-active {
+        &.is-focused {
           background-color: cherryDarkenSmart($color-invert, 4%);
+          border-color: cherryDarkenSmart($color-invert, 4%);
         }
         &[disabled],
         fieldset[disabled] &,
         &.is-loading {
           color: $color;
           background-color: $color-invert;
+          border-color: $color-invert;
         }
       }
       &.is-outlined {
@@ -238,28 +265,34 @@ $btn-app-colors: mergeColorMaps($app-colors, (
         color: $color;
         background-color: transparent;
         background-image: none;
-        box-shadow: calcBoxShadow($border-color-outlined);
+        border-color: calcBorderColor($color, 0%, $btn-border-color);
         &::after {
           @include loader($color);
         }
+        &:active,
         &:hover,
         &:focus,
-        &:active,
+        &.is-active,
         &.is-hovered,
-        &.is-focused,
-        &.is-active {
+        &.is-focused {
           color: $color-invert;
           background-color: $color;
           background-image: $background-image;
-          box-shadow: calcBoxShadow($btn-border-color--active);
+          border-color: calcBorderColor($color, $btn-border-darken--active, $btn-border-color--active);
         }
+        // &:active,
+        // &:hover,
+        // &.is-active,
+        // &.is-hovered {
+        //   box-shadow: calcBoxShadow($btn-border-color--active);
+        // }
         &[disabled],
         fieldset[disabled] &,
         &.is-loading {
           color: $color;
           background-color: transparent;
           background-image: none;
-          box-shadow: calcBoxShadow($border-color-outlined);
+          border-color: calcBorderColor($color, 0%, $btn-border-color);
         }
       }
       // If light and dark colors are provided
@@ -270,19 +303,19 @@ $btn-app-colors: mergeColorMaps($app-colors, (
           color: $color-dark;
           background-color: $color-light;
           background-image: none;
-          box-shadow: calcBoxShadow();
+          border-color: $color-light;
           &::after {
             @include loader($color-dark);
           }
+          &:active,
           &:hover,
           &:focus,
-          &:active,
+          &.is-active,
           &.is-hovered,
-          &.is-focused,
-          &.is-active {
-            background-color: cherryDarkenSmart($color-light, 4%);
+          &.is-focused {
             color: $color-dark;
-            box-shadow: calcBoxShadow();
+            background-color: cherryDarkenSmart($color-light, 4%);
+            border-color: cherryDarkenSmart($color-light, 4%);
           }
           &[disabled],
           fieldset[disabled] &,
@@ -290,7 +323,7 @@ $btn-app-colors: mergeColorMaps($app-colors, (
             color: $color-dark;
             background-color: $color-light;
             background-image: none;
-            box-shadow: calcBoxShadow();
+            border-color: $color-light;
             &::after {
               @include loader($color-dark);
             }

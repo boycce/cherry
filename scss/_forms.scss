@@ -261,7 +261,7 @@
       font-size: map-get($map, "input-btn-font-size");
       line-height: map-get($map, "input-line-height");
       border-radius: map-get($map, "input-border-radius");
-      padding: map-get($map, "input-padding");
+      padding: subtractBorder(map-get($map, "input-padding"), $btn-border-width);
       margin-left: -5px;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;

@@ -1,4 +1,5 @@
 @use "sass:math";
+// @use 'sass:color';
 
 @function getFirstColor($list) {
   @each $item in $list {
@@ -196,23 +197,16 @@
   @return rgba($color, $alpha);
 }
 
-@function cherryDarken($color, $amount) {
-  @if type-of($color) != 'color' {
-    @return $color;
-  }
-  @return darken($color, $amount);
-}
-
 @function cherryDarkenSmart($color, $amount) {
-  // Non grey colors need an extra push
   @if type-of($color) != 'color' {
     @return $color;
   }
+  // Darker colors need an extra push
   @if (colorLuminance($color) < 0.70) {
-    @return darken($color, $amount + 4%);
+    @return mix(black, $color, $amount + 4);
   }
   @else {
-    @return darken($color, $amount);
+    @return mix(black, $color, $amount);
   }
 }
 
@@ -240,6 +234,18 @@
     );
   }
   @return $string;
+}
+
+@function subtractBorder($padding, $border: 0px) {
+  $padding-list: if(type-of($padding) == "list", $padding, ($padding,));
+  $result: ();
+
+  @each $value in $padding-list {
+    $new-value: if(unit($value) == "px", $value - $border, $value);
+    $result: append($result, $new-value);
+  }
+
+  @return $result;
 }
 
 @function paddingSide($padding, $side) {
