@@ -48,6 +48,7 @@
     "variable-border-color":       darken(map-get($form, "variable-background"), 12%),
     "variable-border-color--active": map-get($form, "variable-color--active"),
     "variable-background--active": map-get($form, "variable-background"),
+    "variable-padding":            map-get($form, "variable-padding"), // fb: input-padding
   ), $form);
 
   @return map-merge((
@@ -111,7 +112,6 @@
     "variable-border-color":       map-get($form, "variable-border-color"), // fb: darken("variable-background"), 12%)
     "variable-border-color--active": map-get($form, "variable-border-color--active"), // fb: variable-color--active
     "variable-border-width":       map-get($form, "variable-border-width"), // fb: input-border-width
-    "variable-padding":            map-get($form, "variable-padding"), // fb: input-padding
     // Checkbox/radio
     "variable-border-radius":      2px,
     "variable-font-family":        map-get($form, "label-font-family"), 
@@ -121,6 +121,7 @@
     "variable-text-transform":     inherit,
     "variable-padding-left":       0.8em,
     "variable-padding-right":      1.066em,
+    "variable-standalone-padding": paddingSide(map-get($form, "variable-padding"), 'top'),
     // Checkbox 
     "checkbox-height":             map-get($form, "checkbox-height"), // determines width
     "checkbox-inner-height":       map-get($form, "checkbox-inner-height"), // determines width
@@ -222,7 +223,7 @@
     .checkbox-grp,
     .toggle-grp {
       text-align: left;
-      position: relative;
+      position: relative; // is this needed?
     }
 
   /* ---- Placeholder & autofill ------- */
@@ -509,6 +510,7 @@
         text-transform: map-get($map, "variable-text-transform");
         padding: map-get($map, "variable-padding");
         padding-right: map-get($map, "variable-padding-right");
+        // height currentely is the line-height
         user-select: none;
         margin-bottom: 0;
         vertical-align: sub;
@@ -577,7 +579,32 @@
           background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 45 37' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.13 20.11L14.73 31.07L41.81 2.70001' stroke='#{encodecolor(map-get($map, 'variable-color--active'))}' stroke-width='#{map-get($map, 'checkbox-stroke-width')}' /></svg>");
         }
       }
-      
+      &.is-standalone {
+        input + label {
+          padding: map-get($map, "variable-standalone-padding");
+          width: $checkbox-width;
+          height: map-get($map, "checkbox-height"); // since normal checkboxes use the label text line-height as the height, this won't match perfectly
+          box-sizing: content-box;
+        }
+        input + label:before {
+          // center the checkbox in the label
+          left: 50%;
+          margin-left: -(math.div($checkbox-width, 2));
+          margin-top: -(math.div(map-get($map, "checkbox-height"), 2)); 
+        }
+        input + label:after {
+          left: 50%;
+          margin-left: -(math.div($checkbox-inner-width, 2));
+          margin-top: -(math.div(map-get($map, "checkbox-inner-height"), 2));
+        }
+        &.is-tick {
+          input + label:after {
+            left: 50%;
+            margin-left: -(math.div($checkbox-tick-width, 2));
+            margin-top: -(math.div(map-get($map, "checkbox-tick-height"), 2));
+          }
+        }
+      }
     }
     .radio-grp {
       $radio-width: map-get($map, "radio-height");
@@ -597,6 +624,25 @@
         margin-left: calc((#{$radio-width} - #{$radio-inner-width}) / 2);
         margin-top: -(math.div(map-get($map, "radio-inner-height"), 2)); // todo: check that this is minus...
         border-radius: 100% !important;
+      }
+      &.is-standalone {
+        input + label {
+          padding: map-get($map, "variable-standalone-padding");
+          width: $radio-width;
+          height: map-get($map, "radio-height"); // since normal checkboxes use the label text line-height as the height, this won't match perfectly
+          box-sizing: content-box;
+        }
+        input + label:before {
+          // center the radio in the label
+          left: 50%;
+          margin-left: -(math.div($radio-width, 2));
+          margin-top: -(math.div(map-get($map, "radio-height"), 2)); 
+        }
+        input + label:after {
+          left: 50%;
+          margin-left: -(math.div($radio-inner-width, 2));
+          margin-top: -(math.div(map-get($map, "radio-inner-height"), 2));
+        }
       }
     }
     .toggle-grp {
