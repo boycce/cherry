@@ -3994,6 +3994,27 @@ a:focus {
 .form .checkbox-grp.is-tick input:checked + label:after {
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 45 37' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M3.13 20.11L14.73 31.07L41.81 2.70001' stroke='%238C57FF' stroke-width='8' /></svg>");
 }
+.form .checkbox-grp.is-standalone input + label {
+  padding: 0.86em;
+  width: 1.33rem;
+  height: 1.33rem;
+  box-sizing: content-box;
+}
+.form .checkbox-grp.is-standalone input + label:before {
+  left: 50%;
+  margin-left: -0.665rem;
+  margin-top: -0.665rem;
+}
+.form .checkbox-grp.is-standalone input + label:after {
+  left: 50%;
+  margin-left: -0.33rem;
+  margin-top: -0.33rem;
+}
+.form .checkbox-grp.is-standalone.is-tick input + label:after {
+  left: 50%;
+  margin-left: -0.35rem;
+  margin-top: -0.35rem;
+}
 .form .radio-grp input + label {
   padding-left: calc(1.33rem + 0.8em);
 }
@@ -4009,6 +4030,22 @@ a:focus {
   margin-left: calc((1.33rem - 0.66rem) / 2);
   margin-top: -0.33rem;
   border-radius: 100% !important;
+}
+.form .radio-grp.is-standalone input + label {
+  padding: 0.86em;
+  width: 1.33rem;
+  height: 1.33rem;
+  box-sizing: content-box;
+}
+.form .radio-grp.is-standalone input + label:before {
+  left: 50%;
+  margin-left: -0.665rem;
+  margin-top: -0.665rem;
+}
+.form .radio-grp.is-standalone input + label:after {
+  left: 50%;
+  margin-left: -0.33rem;
+  margin-top: -0.33rem;
 }
 .form .toggle-grp input {
   position: absolute;
